@@ -11,8 +11,10 @@ import SwiftUI
 struct QuestionView: View {
     
     @EnvironmentObject var questionViewModel: QuestionViewModel
+    @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
     
     var body: some View {
+        
         ZStack {
             // Background
             Color.offWhite
@@ -21,8 +23,9 @@ struct QuestionView: View {
             // ContentView
             contentView()
         }
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: ReturnButtonView(presentation: presentation))
     }
-    
     
     // ISSUE: QuestionSolveViewはsome Viewでビルドは通ったが、
     // それ以外が通らないのでAnyViewで通している、理由は不明

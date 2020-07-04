@@ -11,7 +11,9 @@ import SwiftUI
 struct WideButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         // FIXME: ContentShapeが実際の大きさより大きく認識されている
-        // ZStackで当たり判定を重ねるか、大きさを変えれば良いのか
+        // ZStackで当たり判定を重ねるか、大きさを変えれば良いの
+        // https://capibara1969.com/1927/より、strokeを使うと判定が大きくなることがわかっている
+        // ↑ 違いそう
         configuration.label
             .frame(width: 330, height: 50)
             .contentShape(RoundedRectangle(cornerRadius: 25))
@@ -25,11 +27,10 @@ struct WideButtonStyle: ButtonStyle {
         if isPressed {
             return AnyView(
                 RoundedRectangle(cornerRadius: 25)
-                    .frame(width: 330, height: 50)
                     .foregroundColor(Color.offWhite)
                     .overlay(
                         RoundedRectangle(cornerRadius: 25)
-                            .stroke(Color.gray, lineWidth: 4)
+                            .strokeBorder(Color.gray, lineWidth: 4)
                             .frame(width: 330, height: 50)
                             .blur(radius: 4)
                             .offset(x: 2, y: 2)
@@ -39,7 +40,7 @@ struct WideButtonStyle: ButtonStyle {
                     )
                     .overlay(
                         RoundedRectangle(cornerRadius: 25)
-                            .stroke(Color.white, lineWidth: 6)
+                            .strokeBorder(Color.white, lineWidth: 4)
                             .blur(radius: 4)
                             .offset(x: -2, y: -2)
                             .mask(RoundedRectangle(cornerRadius: 25)
@@ -61,10 +62,14 @@ struct WideButtonStyle: ButtonStyle {
 
 struct ButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
-        Button(action: {
-            
-        }){
-            Text("Text")
-        }.buttonStyle(WideButtonStyle())
+        ZStack {
+            Color.offWhite
+                .edgesIgnoringSafeArea(.all)
+            Button(action: {
+                
+            }){
+                Text("Text")
+            }.buttonStyle(WideButtonStyle())
+        }
     }
 }
