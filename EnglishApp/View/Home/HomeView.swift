@@ -12,12 +12,6 @@ struct HomeView: View {
     
     @ObservedObject var homeViewModel: HomeViewModel
     
-    // ISSUE:
-    // QuestionViewModelは複数箇所で生成されることがあり、そうなるのenvironmentObjectに指定した時に
-    // 最初のインスタンスしか認められなくなってしまうため、インスタンスは常にこれを使う
-    // あまり好ましくないため、改善が望ましい
-    static var questionViewModel: QuestionViewModel = QuestionViewModel()
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -39,7 +33,9 @@ struct HomeView: View {
                     Spacer()
                     
                     // Buttons
-                    NavigationLink(destination: QuestionView().environmentObject(HomeView.questionViewModel)) {
+                    
+                    // TODO: 今日の10問用のworkbookIdの取得
+                    NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbookId: "123"))) {
                         Text("今日の10問")
                             .foregroundColor(Color.black)
                     }.buttonStyle(WideButtonStyle())

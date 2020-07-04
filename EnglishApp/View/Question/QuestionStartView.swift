@@ -10,22 +10,28 @@ import SwiftUI
 
 struct QuestionStartView: View {
     
-    @EnvironmentObject var questionViewModel: QuestionViewModel
+    @ObservedObject var questionViewModel: QuestionViewModel
     
     var body: some View {
         VStack {
-            Text("Start")
+            Spacer()
+            Text("学習をします")
+            
+            Spacer()
+            
             Button(action: {
                 self.questionViewModel.startSolving()
             }) {
                 Text("始める")
             }.buttonStyle(WideButtonStyle())
+            
+            Spacer()
         }
     }
 }
 
 struct QuestionStartView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionStartView()
+        QuestionStartView(questionViewModel: QuestionViewModel(workbookId: "123"))
     }
 }

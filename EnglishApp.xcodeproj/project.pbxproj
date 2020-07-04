@@ -24,6 +24,7 @@
 		490F870324B068E100EF5622 /* WorkbookFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870224B068E100EF5622 /* WorkbookFormatter.swift */; };
 		490F870624B0741400EF5622 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870524B0741400EF5622 /* SettingView.swift */; };
 		490F870924B07CBD00EF5622 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870824B07CBD00EF5622 /* UserSetting.swift */; };
+		490F870B24B088FF00EF5622 /* QuestionDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870A24B088FF00EF5622 /* QuestionDecoder.swift */; };
 		496CAEDD24AB1CF000F290E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */; };
 		496CAEDF24AB1CF000F290E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */; };
 		496CAEE324AB1CF000F290E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496CAEE224AB1CF000F290E9 /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		490F870224B068E100EF5622 /* WorkbookFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbookFormatter.swift; sourceTree = "<group>"; };
 		490F870524B0741400EF5622 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		490F870824B07CBD00EF5622 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
+		490F870A24B088FF00EF5622 /* QuestionDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDecoder.swift; sourceTree = "<group>"; };
 		496CAED924AB1CF000F290E9 /* EnglishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				490F870224B068E100EF5622 /* WorkbookFormatter.swift */,
+				490F870A24B088FF00EF5622 /* QuestionDecoder.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				496CAF1B24AB353900F290E9 /* QuestionViewModel.swift in Sources */,
 				49E1A56524ACB087008EC140 /* QuestionResultView.swift in Sources */,
 				490F870324B068E100EF5622 /* WorkbookFormatter.swift in Sources */,
+				490F870B24B088FF00EF5622 /* QuestionDecoder.swift in Sources */,
 				490F86EA24B01A7C00EF5622 /* ProgressCircleDelegate.swift in Sources */,
 				490F86F824B0521D00EF5622 /* WorkbookCellView.swift in Sources */,
 				490F86FC24B05D9D00EF5622 /* Workbook.swift in Sources */,

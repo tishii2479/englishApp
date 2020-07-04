@@ -17,19 +17,19 @@ class QuestionViewModel: ObservableObject {
         case pause
     }
     
-    private var questions: Array<Question> = [
-        Question(questionText: "QuestionText1", answer: "Answer", choices: ["Answer", "B", "C", "D"]),
-        Question(questionText: "QuestionText2", answer: "Answer", choices: ["Answer", "C", "C", "D"]),
-        Question(questionText: "QuestionText3", answer: "Answer", choices: ["Answer", "D", "C", "D"]),
-    ]
+    private var questions: Array<Question>!
     
     var timer: Timer!
-     
+
+    var correctCount: Int = 0
+    
     lazy var maxTime: Double = Double(questions.count * UserSetting.timePerQuestion)
     
     lazy var maxQuestionNum: Int = questions.count
     
-    var correctCount: Int = 0
+    private var workbookId: String!
+    
+    private var questionDecoder: QuestionDecoder = QuestionDecoder()
     
     @Published var nowQuestionNum: Int = 0
     
@@ -39,13 +39,21 @@ class QuestionViewModel: ObservableObject {
     
     @Published var remainingTime: Double!
     
-    init() {
-        nowQuestion = questions[nowQuestionNum]
+    init(workbookId: String) {
+        setQuestions(workbookId: workbookId)
         remainingTime = maxTime
     }
     
     deinit {
         stopTimer()
+    }
+    
+    func setQuestions(workbookId: String) {
+        self.workbookId = workbookId
+        guard let _questions = questionDecoder.fetchQuestionFromWorkbookId(workbookId: workbookId) else { fatalError("question were not able to fetch") }
+        self.questions = _questions
+        
+        nowQuestion = questions[nowQuestionNum]
     }
     
     func sendUserChoice(choice: String) {
@@ -98,7 +106,6 @@ class QuestionViewModel: ObservableObject {
         
         status = .start
     }
-    
 }
 
 // タイマー

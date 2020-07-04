@@ -10,7 +10,7 @@ import SwiftUI
 
 struct QuestionSolveView: View {
     
-    @EnvironmentObject var questionViewModel: QuestionViewModel
+    @ObservedObject var questionViewModel: QuestionViewModel
     
     var body: some View {
         VStack {
@@ -65,7 +65,7 @@ struct QuestionSolveView: View {
             
             // ChoiceWindow
             ForEach(0 ..< 4) { (index) in
-                ChoiceButtonView(index: index)
+                ChoiceButtonView(questionViewModel: self.questionViewModel, index: index)
             }
         }
     }
@@ -73,6 +73,6 @@ struct QuestionSolveView: View {
 
 struct QuestionSolveView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionSolveView()
+        QuestionSolveView(questionViewModel: QuestionViewModel(workbookId: "123"))
     }
 }

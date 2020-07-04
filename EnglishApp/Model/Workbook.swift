@@ -10,6 +10,8 @@ import SwiftUI
 
 class Workbook {
     
+    var id: String = "123"
+    
     var title: String = "title"
     
     var detail: String = "detail"

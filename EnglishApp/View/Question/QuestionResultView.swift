@@ -10,7 +10,7 @@ import SwiftUI
 
 struct QuestionResultView: View {
     
-    @EnvironmentObject var questionViewModel: QuestionViewModel
+    @ObservedObject var questionViewModel: QuestionViewModel
     
     var body: some View {
         VStack {
@@ -37,6 +37,7 @@ struct QuestionResultView: View {
             
             Button(action: {
                 // TODO: 学習終了処理
+                self.questionViewModel.quitSolving()
             }) {
                 Text("学習を終了する")
                     .foregroundColor(.offRed)
@@ -50,6 +51,6 @@ struct QuestionResultView: View {
 
 struct QuestionResultView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionResultView()
+        QuestionResultView(questionViewModel: QuestionViewModel(workbookId: "123"))
     }
 }
