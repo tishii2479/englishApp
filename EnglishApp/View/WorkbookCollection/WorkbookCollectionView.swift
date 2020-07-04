@@ -12,8 +12,6 @@ struct WorkbookCollectionView: View {
     
     @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
     
-    @State var isPresenting: Bool = false
-    
     var body: some View {
         ZStack {
             Color.offWhite

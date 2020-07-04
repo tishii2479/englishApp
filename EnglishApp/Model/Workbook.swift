@@ -20,7 +20,7 @@ class Workbook {
     
     var price: Int = 0
     
-    var correctCount: Int = 20
+    var correctCount: Int = 80
     
     var missCount: Int = 10
 

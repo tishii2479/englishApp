@@ -11,6 +11,7 @@ import SwiftUI
 struct QuestionView: View {
     
     @EnvironmentObject var questionViewModel: QuestionViewModel
+    
     @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
     
     var body: some View {

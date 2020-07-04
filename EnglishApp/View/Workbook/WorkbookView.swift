@@ -23,7 +23,7 @@ struct WorkbookView: View {
                 
                 Spacer()
                 
-                ProgressCircle(text: "解いた問題数", radius: 300, solveNumber: workbookViewModel.workbook.correctCount, maxNumber: workbookViewModel.workbook.questionNumber)
+                ProgressCircle(text: "解いた問題数", radius: 200, solveNumber: workbookViewModel.workbook.correctCount, maxNumber: workbookViewModel.workbook.questionNumber)
                 
                 Spacer()
                 
