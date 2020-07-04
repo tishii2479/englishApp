@@ -15,14 +15,20 @@ struct QuestionStartView: View {
     var body: some View {
         VStack {
             Spacer()
-            Text("学習をします")
+            
+            Text(questionViewModel.workbook.title)
+                .font(.title)
+                .padding()
+            Text(questionViewModel.workbook.detail)
+                .fontWeight(.light)
+                .padding()
             
             Spacer()
             
             Button(action: {
                 self.questionViewModel.startSolving()
             }) {
-                Text("始める")
+                Text("学習を始める")
             }.buttonStyle(WideButtonStyle())
             
             Spacer()

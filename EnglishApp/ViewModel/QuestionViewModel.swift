@@ -27,7 +27,7 @@ class QuestionViewModel: ObservableObject {
     
     var maxQuestionNum: Int = UserSetting.maxQuestionNum
     
-    private var workbook: Workbook!
+    var workbook: Workbook!
     
     @Published var nowQuestionNum: Int = 0
     

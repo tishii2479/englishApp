@@ -21,6 +21,7 @@ class CSVDecoder {
         do {
             let csvString = try String(contentsOfFile: path, encoding: String.Encoding.utf8)
             csvLines = csvString.components(separatedBy: .newlines)
+            csvLines.removeFirst()
             csvLines.removeLast()   // 最後の改行を削除するため
         } catch let error as NSError {
             print("error: data not found, message: \(error)")

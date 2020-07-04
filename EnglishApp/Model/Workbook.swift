@@ -47,10 +47,15 @@ class Workbook: Identifiable {
     func fetchQuestions(questionNum: Int) -> Array<Question>? {
         var questionArr = [Question]()
         
-        guard let dataArr: Array<String> = CSVDecoder.convertCSVFileToStringArray(resourceName: "20200704") else { return nil }
+        guard var dataArr: Array<String> = CSVDecoder.convertCSVFileToStringArray(resourceName: self.bookId) else { return nil }
         
-        for i in 1 ..< dataArr.count {
-            let arr = dataArr[i].components(separatedBy: ",")
+        // TODO: 問題を選ぶ際に未回答のみを選ぶ時と、間違えた問題のみを選ぶ時で分ける
+        for i in 0 ..< questionNum {
+            if (dataArr.count < 1) { break }
+            let index = Int.random(in: 0 ..< dataArr.count)
+            
+            let arr = dataArr[index].components(separatedBy: ",")
+            dataArr.remove(at: index)
             
             //　要素数のチェック
             if arr.count != 8 { return nil }
@@ -58,6 +63,7 @@ class Workbook: Identifiable {
             guard let miss = Int(arr[7]) else { return nil }
 
             let choices: Array<String> = [arr[2], arr[3], arr[4], arr[5]]
+            
             questionArr.append(Question(questionText: arr[0], answer: arr[1], choices: choices, correctCount: correct, missCount: miss))
         }
         

@@ -24,6 +24,7 @@ struct QuestionView: View {
             // ContentView
             contentView()
         }
+        .navigationBarHidden(questionViewModel.status != .start)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: ReturnButtonView(presentation: presentation))
     }

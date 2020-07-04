@@ -10,7 +10,7 @@ import Foundation
 
 class UserSetting {
     
-    static var timePerQuestion: Int = 2
+    static var timePerQuestion: Int = 20
     
     static var maxQuestionNum: Int = 10
     
