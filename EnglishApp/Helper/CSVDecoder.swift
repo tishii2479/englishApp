@@ -10,7 +10,7 @@ import Foundation
 
 class CSVDecoder {
     
-    func convertCSVFileToStringArray(resourceName: String) -> Array<String>? {
+    static func convertCSVFileToStringArray(resourceName: String) -> Array<String>? {
         var csvLines = [String]()
         
         guard let path = Bundle.main.path(forResource: resourceName, ofType: "csv") else {

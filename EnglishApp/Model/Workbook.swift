@@ -8,9 +8,11 @@
 
 import SwiftUI
 
-class Workbook {
+class Workbook: Identifiable {
     
-    var id: String = "20200704"
+    var id = UUID()
+    
+    var bookId: String = "20200704"
     
     var title: String = "title"
     
@@ -28,30 +30,32 @@ class Workbook {
 
     var isPurchased: Bool = true
     
-    var csvDecoder: CSVDecoder = CSVDecoder()
+    init() {}
     
-    func fetchQuestions() -> Array<Question>? {
+    init(bookId: String, title: String, detail: String, difficulty: Int, questionNumber: Int, price: Int, correctCount: Int, missCount: Int, isPurchased: Bool) {
+        self.bookId = bookId
+        self.title = title
+        self.detail = detail
+        self.difficulty = difficulty
+        self.questionNumber = questionNumber
+        self.price = price
+        self.correctCount = correctCount
+        self.missCount = missCount
+        self.isPurchased = isPurchased
+    }
+    
+    func fetchQuestions(questionNum: Int) -> Array<Question>? {
         var questionArr = [Question]()
         
-        guard let dataArr: Array<String> = csvDecoder.convertCSVFileToStringArray(resourceName: "20200704") else { return nil }
+        guard let dataArr: Array<String> = CSVDecoder.convertCSVFileToStringArray(resourceName: "20200704") else { return nil }
         
         for i in 1 ..< dataArr.count {
             let arr = dataArr[i].components(separatedBy: ",")
             
-            print(arr)
-            
-            if arr.count != 8 {
-                print("[debug] arr count is invalid")
-                return nil
-            }
-            guard let correct = Int(arr[6]) else {
-                print("[debug] correct is invalid")
-                return nil
-            }
-            guard let miss = Int(arr[7]) else {
-                print("[debug] miss is invalid")
-                return nil
-            }
+            //　要素数のチェック
+            if arr.count != 8 { return nil }
+            guard let correct = Int(arr[6]) else { return nil }
+            guard let miss = Int(arr[7]) else { return nil }
 
             let choices: Array<String> = [arr[2], arr[3], arr[4], arr[5]]
             questionArr.append(Question(questionText: arr[0], answer: arr[1], choices: choices, correctCount: correct, missCount: miss))

@@ -25,7 +25,7 @@ class QuestionViewModel: ObservableObject {
     
     lazy var maxTime: Double = Double(questions.count * UserSetting.timePerQuestion)
     
-    lazy var maxQuestionNum: Int = questions.count
+    var maxQuestionNum: Int = UserSetting.maxQuestionNum
     
     private var workbook: Workbook!
     
@@ -48,7 +48,7 @@ class QuestionViewModel: ObservableObject {
     
     func setQuestions(workbook: Workbook) {
         self.workbook = workbook
-        guard let _questions = workbook.fetchQuestions() else { fatalError("question were not able to fetch") }
+        guard let _questions = workbook.fetchQuestions(questionNum: maxQuestionNum) else { fatalError("questionのdataに問題があります") }
         self.questions = _questions
         
         nowQuestion = questions[nowQuestionNum]
