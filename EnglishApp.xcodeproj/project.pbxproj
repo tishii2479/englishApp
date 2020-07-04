@@ -23,6 +23,7 @@
 		490F870124B065F400EF5622 /* WorkbookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870024B065F400EF5622 /* WorkbookViewModel.swift */; };
 		490F870324B068E100EF5622 /* WorkbookFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870224B068E100EF5622 /* WorkbookFormatter.swift */; };
 		490F870624B0741400EF5622 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870524B0741400EF5622 /* SettingView.swift */; };
+		490F870924B07CBD00EF5622 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870824B07CBD00EF5622 /* UserSetting.swift */; };
 		496CAEDD24AB1CF000F290E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */; };
 		496CAEDF24AB1CF000F290E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */; };
 		496CAEE324AB1CF000F290E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496CAEE224AB1CF000F290E9 /* Assets.xcassets */; };
@@ -77,6 +78,7 @@
 		490F870024B065F400EF5622 /* WorkbookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbookViewModel.swift; sourceTree = "<group>"; };
 		490F870224B068E100EF5622 /* WorkbookFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbookFormatter.swift; sourceTree = "<group>"; };
 		490F870524B0741400EF5622 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		490F870824B07CBD00EF5622 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		496CAED924AB1CF000F290E9 /* EnglishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,14 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		490F870724B07C8A00EF5622 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				490F870824B07CBD00EF5622 /* UserSetting.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		494640D424AC648B0070C745 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +231,7 @@
 		496CAEDB24AB1CF000F290E9 /* EnglishApp */ = {
 			isa = PBXGroup;
 			children = (
+				490F870724B07C8A00EF5622 /* Entity */,
 				494640D424AC648B0070C745 /* Delegate */,
 				496CAF1924AB352C00F290E9 /* ViewModel */,
 				496CAF0D24AB1E0F00F290E9 /* Model */,
@@ -561,6 +572,7 @@
 				490F86E824B0198B00EF5622 /* ProgressCircle.swift in Sources */,
 				496CAF1424AB21E600F290E9 /* ButtonStyle.swift in Sources */,
 				490F86F424B0451700EF5622 /* WorkbookCollectionView.swift in Sources */,
+				490F870924B07CBD00EF5622 /* UserSetting.swift in Sources */,
 				49E1A56224ACAF59008EC140 /* QuestionSolveView.swift in Sources */,
 				490F86ED24B01EF400EF5622 /* SettingButtonView.swift in Sources */,
 				496CAEDF24AB1CF000F290E9 /* SceneDelegate.swift in Sources */,

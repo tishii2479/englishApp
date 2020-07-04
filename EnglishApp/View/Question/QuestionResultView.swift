@@ -30,17 +30,18 @@ struct QuestionResultView: View {
             
             // Buttons
             Button(action: {
-                self.questionViewModel.resumeSolving()
+                self.questionViewModel.startSolving()
             }) {
-                Text("再開する")
+                Text("次の問題を解く")
             }.buttonStyle(WideButtonStyle())
             
             Button(action: {
-                self.questionViewModel.quitSolving()
+                // TODO: 学習終了処理
             }) {
-                Text("中止する")
-                    .foregroundColor(Color.offRed)
+                Text("学習を終了する")
+                    .foregroundColor(.offRed)
             }.buttonStyle(WideButtonStyle())
+            
             
             Spacer()
         }

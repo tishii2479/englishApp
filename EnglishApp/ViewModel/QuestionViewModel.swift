@@ -25,11 +25,11 @@ class QuestionViewModel: ObservableObject {
     
     var timer: Timer!
      
-    var maxTime: Double = 60
+    lazy var maxTime: Double = Double(questions.count * UserSetting.timePerQuestion)
     
-    var maxQuestionNum: Int = 3
+    lazy var maxQuestionNum: Int = questions.count
     
-    var correctCount: Int = 2
+    var correctCount: Int = 0
     
     @Published var nowQuestionNum: Int = 0
     
@@ -37,10 +37,11 @@ class QuestionViewModel: ObservableObject {
     
     @Published var status: Status = .start
     
-    @Published var remainingTime: Double = 60
+    @Published var remainingTime: Double!
     
     init() {
         nowQuestion = questions[nowQuestionNum]
+        remainingTime = maxTime
     }
     
     deinit {
@@ -48,6 +49,15 @@ class QuestionViewModel: ObservableObject {
     }
     
     func sendUserChoice(choice: String) {
+        if (questions[nowQuestionNum].answer == choice) {
+            correctCount += 1
+            // TODO: 正解演出
+            print("正解")
+        } else {
+            // TODO: 不正解演出
+            print("不正解")
+        }
+        
         goToNextQuestion()
     }
     

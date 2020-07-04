@@ -51,10 +51,11 @@ struct WorkbookView: View {
                 Spacer()
                 
                 // Buttons
-                NavigationLink(destination: QuestionView().environmentObject(QuestionViewModel())) {
+                NavigationLink(destination: QuestionView().environmentObject(HomeView.questionViewModel)) {
                     Text("新しい問題を解く")
                 }.buttonStyle(WideButtonStyle())
-                NavigationLink(destination: QuestionView().environmentObject(QuestionViewModel())) {
+                
+                NavigationLink(destination: QuestionView().environmentObject(HomeView.questionViewModel)) {
                     Text("間違えた問題を復習する")
                 }.buttonStyle(WideButtonStyle())
                 
