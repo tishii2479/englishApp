@@ -17,19 +17,17 @@ class QuestionViewModel: ObservableObject {
         case pause
     }
     
-    private var questions: Array<Question> = [
-        Question(questionText: "QuestionText1", answer: "Answer", choices: ["Answer", "B", "C", "D"]),
-        Question(questionText: "QuestionText2", answer: "Answer", choices: ["Answer", "C", "C", "D"]),
-        Question(questionText: "QuestionText3", answer: "Answer", choices: ["Answer", "D", "C", "D"]),
-    ]
+    private var questions: Array<Question>!
     
     var timer: Timer!
-     
-    var maxTime: Double = 60
+
+    var correctCount: Int = 0
     
-    var maxQuestionNum: Int = 3
+    lazy var maxTime: Double = Double(questions.count * UserSetting.timePerQuestion)
     
-    var correctCount: Int = 2
+    var maxQuestionNum: Int = UserSetting.maxQuestionNum
+    
+    var workbook: Workbook!
     
     @Published var nowQuestionNum: Int = 0
     
@@ -37,17 +35,35 @@ class QuestionViewModel: ObservableObject {
     
     @Published var status: Status = .start
     
-    @Published var remainingTime: Double = 60
+    @Published var remainingTime: Double!
     
-    init() {
-        nowQuestion = questions[nowQuestionNum]
+    init(workbook: Workbook) {
+        setQuestions(workbook: workbook)
+        remainingTime = maxTime
     }
     
     deinit {
         stopTimer()
     }
     
+    func setQuestions(workbook: Workbook) {
+        self.workbook = workbook
+        guard let _questions = workbook.fetchQuestions(questionNum: maxQuestionNum) else { fatalError("questionのdataに問題があります") }
+        self.questions = _questions
+        
+        nowQuestion = questions[nowQuestionNum]
+    }
+    
     func sendUserChoice(choice: String) {
+        if (questions[nowQuestionNum].answer == choice) {
+            correctCount += 1
+            // TODO: 正解演出
+            print("正解")
+        } else {
+            // TODO: 不正解演出
+            print("不正解")
+        }
+        
         goToNextQuestion()
     }
     
@@ -88,7 +104,6 @@ class QuestionViewModel: ObservableObject {
         
         status = .start
     }
-    
 }
 
 // タイマー

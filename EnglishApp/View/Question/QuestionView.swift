@@ -10,7 +10,8 @@ import SwiftUI
 
 struct QuestionView: View {
     
-    @EnvironmentObject var questionViewModel: QuestionViewModel
+    @ObservedObject var questionViewModel: QuestionViewModel
+    
     @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
     
     var body: some View {
@@ -23,6 +24,7 @@ struct QuestionView: View {
             // ContentView
             contentView()
         }
+        .navigationBarHidden(questionViewModel.status != .start)
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(leading: ReturnButtonView(presentation: presentation))
     }
@@ -32,19 +34,19 @@ struct QuestionView: View {
     func contentView() -> AnyView {
         switch questionViewModel.status {
         case .start:
-            return AnyView(QuestionStartView())
+            return AnyView(QuestionStartView(questionViewModel: questionViewModel))
         case .solve:
-            return AnyView(QuestionSolveView())
+            return AnyView(QuestionSolveView(questionViewModel: questionViewModel))
         case .result:
-            return AnyView(QuestionResultView())
+            return AnyView(QuestionResultView(questionViewModel: questionViewModel))
         case .pause:
-            return AnyView(QuestionPauseView())
+            return AnyView(QuestionPauseView(questionViewModel: questionViewModel))
         }
     }
 }
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView()
+        QuestionView(questionViewModel: QuestionViewModel(workbook: Workbook()))
     }
 }

@@ -23,7 +23,7 @@ struct WorkbookView: View {
                 
                 Spacer()
                 
-                ProgressCircle(text: "解いた問題数", radius: 300, solveNumber: workbookViewModel.workbook.correctCount, maxNumber: workbookViewModel.workbook.questionNumber)
+                ProgressCircle(text: "解いた問題数", radius: 200, solveNumber: workbookViewModel.workbook.correctCount, maxNumber: workbookViewModel.workbook.questionNumber)
                 
                 Spacer()
                 
@@ -51,10 +51,11 @@ struct WorkbookView: View {
                 Spacer()
                 
                 // Buttons
-                NavigationLink(destination: QuestionView().environmentObject(QuestionViewModel())) {
+                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook))) {
                     Text("新しい問題を解く")
                 }.buttonStyle(WideButtonStyle())
-                NavigationLink(destination: QuestionView().environmentObject(QuestionViewModel())) {
+                
+                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook))) {
                     Text("間違えた問題を復習する")
                 }.buttonStyle(WideButtonStyle())
                 

@@ -33,7 +33,9 @@ struct HomeView: View {
                     Spacer()
                     
                     // Buttons
-                    NavigationLink(destination: QuestionView().environmentObject(QuestionViewModel())) {
+                    
+                    // TODO: 今日の10問用のworkbookIdの取得
+                    NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: UserSetting.workbookArray[0]))) {
                         Text("今日の10問")
                             .foregroundColor(Color.black)
                     }.buttonStyle(WideButtonStyle())
@@ -45,7 +47,7 @@ struct HomeView: View {
                     Spacer()
                 }
             }
-            .navigationBarTitle("Home")
+            .navigationBarTitle("", displayMode: .inline)
             .navigationBarItems(trailing: SettingButtonView())
         }
     }

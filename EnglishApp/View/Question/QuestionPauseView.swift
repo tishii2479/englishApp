@@ -10,7 +10,7 @@ import SwiftUI
 
 struct QuestionPauseView: View {
     
-    @EnvironmentObject var questionViewModel: QuestionViewModel
+    @ObservedObject var questionViewModel: QuestionViewModel
     
     var body: some View {
         VStack {
@@ -47,6 +47,6 @@ struct QuestionPauseView: View {
 
 struct QuestionPauseView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionPauseView()
+        QuestionPauseView(questionViewModel: QuestionViewModel(workbook: Workbook()))
     }
 }

@@ -16,18 +16,20 @@ struct HomeDetailTextView: View {
     
     var unit: String
     
-    
     var body: some View {
         ZStack(alignment: .trailing) {
             HStack(alignment: .firstTextBaseline) {
                 Spacer()
 
                 Text(itemName)
+                    .font(.footnote)
+                
                 Group {
                     Text(amount)
                         .font(.largeTitle)
                     +
                     Text(unit)
+                        .font(.footnote)
                 }.frame(width: 120, height: 40, alignment: .trailing)
             }
             .padding(.trailing, 20)

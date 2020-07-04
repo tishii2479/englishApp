@@ -10,7 +10,7 @@ import SwiftUI
 
 struct WorkbookCellView: View {
     
-    var workbookModel: Workbook
+    var workbook: Workbook
     
     var body: some View {
         ZStack {
@@ -26,20 +26,22 @@ struct WorkbookCellView: View {
             // Details
             HStack {
                 VStack(alignment: .leading) {
-                    Text(workbookModel.title)
+                    Text(workbook.title)
+                        .font(.subheadline)
                         .bold()
-                    Text(workbookModel.detail)
+                    Text(workbook.detail)
+                        .font(.footnote)
                         .fontWeight(.ultraLight)
                     
                     Spacer()
-                    Text(WorkbookFormatter.formatDifficult(difficulty: workbookModel.difficulty))
+                    Text(WorkbookFormatter.formatDifficult(difficulty: workbook.difficulty))
                         .font(.footnote)
                     
                     HStack {
-                        Text(WorkbookFormatter.formatQuestionNumber(number: workbookModel.questionNumber))
+                        Text(WorkbookFormatter.formatQuestionNumber(number: workbook.questionNumber))
                             .font(.footnote)
                         Spacer()
-                        Text(WorkbookFormatter.formatPrice(price: workbookModel.price))
+                        Text(WorkbookFormatter.formatPrice(price: workbook.price))
                             .font(.footnote)
                     }
                 }
@@ -60,8 +62,8 @@ struct WorkbookCellView_Previews: PreviewProvider {
                 .edgesIgnoringSafeArea(.all)
             
             HStack {
-                WorkbookCellView(workbookModel: Workbook())
-                WorkbookCellView(workbookModel: Workbook())
+                WorkbookCellView(workbook: Workbook())
+                WorkbookCellView(workbook: Workbook())
             }
         }
     }

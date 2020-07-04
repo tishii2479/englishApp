@@ -10,7 +10,7 @@ import SwiftUI
 
 struct QuestionResultView: View {
     
-    @EnvironmentObject var questionViewModel: QuestionViewModel
+    @ObservedObject var questionViewModel: QuestionViewModel
     
     var body: some View {
         VStack {
@@ -30,17 +30,19 @@ struct QuestionResultView: View {
             
             // Buttons
             Button(action: {
-                self.questionViewModel.resumeSolving()
+                self.questionViewModel.startSolving()
             }) {
-                Text("再開する")
+                Text("次の問題を解く")
             }.buttonStyle(WideButtonStyle())
             
             Button(action: {
+                // TODO: 学習終了処理
                 self.questionViewModel.quitSolving()
             }) {
-                Text("中止する")
-                    .foregroundColor(Color.offRed)
+                Text("学習を終了する")
+                    .foregroundColor(.offRed)
             }.buttonStyle(WideButtonStyle())
+            
             
             Spacer()
         }
@@ -49,6 +51,6 @@ struct QuestionResultView: View {
 
 struct QuestionResultView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionResultView()
+        QuestionResultView(questionViewModel: QuestionViewModel(workbook: Workbook()))
     }
 }

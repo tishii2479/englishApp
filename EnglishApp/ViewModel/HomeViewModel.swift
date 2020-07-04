@@ -14,6 +14,6 @@ class HomeViewModel: ObservableObject {
     
     var max: Int = 50
     
-    var radius: CGFloat = 250
+    var radius: CGFloat = 200
     
 }

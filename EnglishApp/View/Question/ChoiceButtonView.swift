@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ChoiceButtonView: View {
     
-    @EnvironmentObject var questionViewModel: QuestionViewModel
+    @ObservedObject var questionViewModel: QuestionViewModel
     
     var index: Int
     
@@ -27,6 +27,6 @@ struct ChoiceButtonView: View {
 
 struct ChoiceButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ChoiceButtonView(index: 0)
+        ChoiceButtonView(questionViewModel: QuestionViewModel(workbook: Workbook()), index: 0)
     }
 }
