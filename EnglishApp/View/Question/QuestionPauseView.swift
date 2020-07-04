@@ -47,6 +47,6 @@ struct QuestionPauseView: View {
 
 struct QuestionPauseView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionPauseView(questionViewModel: QuestionViewModel(workbookId: "123"))
+        QuestionPauseView(questionViewModel: QuestionViewModel(workbook: Workbook()))
     }
 }

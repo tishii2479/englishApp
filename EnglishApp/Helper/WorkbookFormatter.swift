@@ -9,6 +9,7 @@
 import Foundation
 
 class WorkbookFormatter {
+    
     static func formatPrice(price: Int) -> String {
         if price == 0 {
             return "無料"
@@ -41,4 +42,5 @@ class WorkbookFormatter {
             return "購入する"
         }
     }
+    
 }

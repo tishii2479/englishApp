@@ -35,7 +35,7 @@ struct HomeView: View {
                     // Buttons
                     
                     // TODO: 今日の10問用のworkbookIdの取得
-                    NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbookId: "123"))) {
+                    NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: Workbook()))) {
                         Text("今日の10問")
                             .foregroundColor(Color.black)
                     }.buttonStyle(WideButtonStyle())

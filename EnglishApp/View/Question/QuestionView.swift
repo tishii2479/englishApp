@@ -46,6 +46,6 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(questionViewModel: QuestionViewModel(workbookId: "123"))
+        QuestionView(questionViewModel: QuestionViewModel(workbook: Workbook()))
     }
 }

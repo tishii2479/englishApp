@@ -73,6 +73,6 @@ struct QuestionSolveView: View {
 
 struct QuestionSolveView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionSolveView(questionViewModel: QuestionViewModel(workbookId: "123"))
+        QuestionSolveView(questionViewModel: QuestionViewModel(workbook: Workbook()))
     }
 }

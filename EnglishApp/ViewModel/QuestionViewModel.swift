@@ -27,9 +27,7 @@ class QuestionViewModel: ObservableObject {
     
     lazy var maxQuestionNum: Int = questions.count
     
-    private var workbookId: String!
-    
-    private var questionDecoder: QuestionDecoder = QuestionDecoder()
+    private var workbook: Workbook!
     
     @Published var nowQuestionNum: Int = 0
     
@@ -39,8 +37,8 @@ class QuestionViewModel: ObservableObject {
     
     @Published var remainingTime: Double!
     
-    init(workbookId: String) {
-        setQuestions(workbookId: workbookId)
+    init(workbook: Workbook) {
+        setQuestions(workbook: workbook)
         remainingTime = maxTime
     }
     
@@ -48,9 +46,9 @@ class QuestionViewModel: ObservableObject {
         stopTimer()
     }
     
-    func setQuestions(workbookId: String) {
-        self.workbookId = workbookId
-        guard let _questions = questionDecoder.fetchQuestionFromWorkbookId(workbookId: workbookId) else { fatalError("question were not able to fetch") }
+    func setQuestions(workbook: Workbook) {
+        self.workbook = workbook
+        guard let _questions = workbook.fetchQuestions() else { fatalError("question were not able to fetch") }
         self.questions = _questions
         
         nowQuestion = questions[nowQuestionNum]
