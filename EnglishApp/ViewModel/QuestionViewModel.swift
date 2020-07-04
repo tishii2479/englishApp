@@ -23,7 +23,6 @@ class QuestionViewModel: ObservableObject {
         Question(questionText: "QuestionText3", answer: "Answer", choices: ["Answer", "D", "C", "D"]),
     ]
     
-    
     var timer: Timer!
      
     var maxTime: Double = 60
@@ -106,6 +105,8 @@ extension QuestionViewModel {
     }
     
     func stopTimer() {
+        guard let _ = timer else { return }
+        
         timer.invalidate()
     }
 

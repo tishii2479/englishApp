@@ -8,12 +8,18 @@
 
 import Foundation
 
-struct Question {
+class Question {
     
-    var questionText: String
+    var questionText: String = ""
+     
+    var answer: String = ""
     
-    var answer: String
+    var choices: Array<String> = []
     
-    var choices: Array<String>
+    init(questionText: String, answer: String, choices: Array<String>) {
+        self.questionText = questionText
+        self.answer = answer
+        self.choices = choices
+    }
     
 }
