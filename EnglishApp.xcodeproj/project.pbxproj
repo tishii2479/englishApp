@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		23ED799823E138E515E1C980 /* Pods_EnglishApp_EnglishAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A53D28BC69394B6EEDF901 /* Pods_EnglishApp_EnglishAppUITests.framework */; };
 		419C7A090BA86F196B2B262B /* Pods_EnglishApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57611A2388B6588676BEE1A /* Pods_EnglishApp.framework */; };
+		4904486224B17F1000391FE5 /* RealmDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486124B17F1000391FE5 /* RealmDecoder.swift */; };
+		4904486424B184B000391FE5 /* QuestionDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486324B184B000391FE5 /* QuestionDecoder.swift */; };
 		490F86E624B0162500EF5622 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E524B0162500EF5622 /* HomeView.swift */; };
 		490F86E824B0198B00EF5622 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E724B0198B00EF5622 /* ProgressCircle.swift */; };
 		490F86EA24B01A7C00EF5622 /* ProgressCircleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */; };
@@ -69,6 +71,8 @@
 /* Begin PBXFileReference section */
 		1D74BC2F5D06A362D900001B /* Pods-EnglishApp-EnglishAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp-EnglishAppUITests.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp-EnglishAppUITests/Pods-EnglishApp-EnglishAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2ED33F85B96196B6918FDDAF /* Pods-EnglishAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishAppTests.debug.xcconfig"; path = "Target Support Files/Pods-EnglishAppTests/Pods-EnglishAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4904486124B17F1000391FE5 /* RealmDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDecoder.swift; sourceTree = "<group>"; };
+		4904486324B184B000391FE5 /* QuestionDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDecoder.swift; sourceTree = "<group>"; };
 		490F86E524B0162500EF5622 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		490F86E724B0198B00EF5622 /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
 		490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 				490F870224B068E100EF5622 /* WorkbookFormatter.swift */,
 				491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */,
 				491DBFD624B0B3EE00A24A79 /* WorkbookDecoder.swift */,
+				4904486124B17F1000391FE5 /* RealmDecoder.swift */,
+				4904486324B184B000391FE5 /* QuestionDecoder.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 				496CAED524AB1CF000F290E9 /* Sources */,
 				496CAED624AB1CF000F290E9 /* Frameworks */,
 				496CAED724AB1CF000F290E9 /* Resources */,
+				D404BE067219937883FAF85D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -433,6 +440,7 @@
 				496CAEF624AB1CF100F290E9 /* Sources */,
 				496CAEF724AB1CF100F290E9 /* Frameworks */,
 				496CAEF824AB1CF100F290E9 /* Resources */,
+				01B21C239A5679049D81A222 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -520,6 +528,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		01B21C239A5679049D81A222 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnglishApp-EnglishAppUITests/Pods-EnglishApp-EnglishAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnglishApp-EnglishAppUITests/Pods-EnglishApp-EnglishAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnglishApp-EnglishAppUITests/Pods-EnglishApp-EnglishAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		1086CA938E51A1D6AB77F6FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,6 +611,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D404BE067219937883FAF85D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnglishApp/Pods-EnglishApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnglishApp/Pods-EnglishApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnglishApp/Pods-EnglishApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -605,6 +647,7 @@
 				490F870924B07CBD00EF5622 /* UserSetting.swift in Sources */,
 				49E1A56224ACAF59008EC140 /* QuestionSolveView.swift in Sources */,
 				490F86ED24B01EF400EF5622 /* SettingButtonView.swift in Sources */,
+				4904486424B184B000391FE5 /* QuestionDecoder.swift in Sources */,
 				496CAEDF24AB1CF000F290E9 /* SceneDelegate.swift in Sources */,
 				496CAF1824AB27CC00F290E9 /* Question.swift in Sources */,
 				490F86F624B0475700EF5622 /* ReturnButtonView.swift in Sources */,
@@ -621,6 +664,7 @@
 				490F86EF24B0292B00EF5622 /* HomeDetailTextView.swift in Sources */,
 				496CAF1624AB238300F290E9 /* ChoiceButtonView.swift in Sources */,
 				49E1A56724ACB0E5008EC140 /* QuestionStartView.swift in Sources */,
+				4904486224B17F1000391FE5 /* RealmDecoder.swift in Sources */,
 				491DBFD724B0B3EE00A24A79 /* WorkbookDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

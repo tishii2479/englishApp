@@ -16,12 +16,27 @@ struct ChoiceButtonView: View {
     
     var body: some View {
         Button(action: {
-            self.questionViewModel.sendUserChoice(choice: self.questionViewModel.nowQuestion.choices[self.index])
+            self.questionViewModel.sendUserChoice(choice: self.getQuestionChoice(index: self.index))
         }) {
-            Text(self.questionViewModel.nowQuestion.choices[self.index])
+            Text(self.getQuestionChoice(index: self.index))
                 .foregroundColor(Color.offBlack)
         }
         .buttonStyle(WideButtonStyle())
+    }
+    
+    private func getQuestionChoice(index: Int) -> String {
+        switch index {
+        case 0:
+            return self.questionViewModel.nowQuestion.choice1
+        case 1:
+            return self.questionViewModel.nowQuestion.choice2
+        case 2:
+            return self.questionViewModel.nowQuestion.choice3
+        case 3:
+            return self.questionViewModel.nowQuestion.choice4
+        default:
+            fatalError("invalid choice index")
+        }
     }
 }
 

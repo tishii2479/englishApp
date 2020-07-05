@@ -14,8 +14,6 @@ class WorkbookViewModel: ObservableObject {
     
     init(workbook: Workbook) {
         self.workbook = workbook
-        
-        print(self.workbook.correctCount)
     }
     
 }

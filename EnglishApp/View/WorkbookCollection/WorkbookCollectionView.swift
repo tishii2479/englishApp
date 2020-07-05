@@ -13,14 +13,12 @@ struct WorkbookCollectionView: View {
     
     @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
 
-    let workbooks = UserSetting.workbookArray
-    
     var body: some View {
         ZStack {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
             
-            QGrid(workbooks, columns: 2) { workbook in
+            QGrid(UserSetting.workbookArray, columns: 2) { workbook in
                 NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook))) {
                     WorkbookCellView(workbook: workbook)
                 }.buttonStyle(PlainButtonStyle())

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class UserSetting {
     
@@ -14,13 +15,19 @@ class UserSetting {
     
     static var maxQuestionNum: Int = 10
     
-    static var workbookArray = [Workbook]()
+    static var workbookArray: Results<Workbook>!
     
     static func setUp() {
-        guard let _workbookArray = WorkbookDecoder.fetchAllWorkbook() else {
-            print("workbookのdataに問題があります")
-            return
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        
+//        QuestionDecoder.convertCsvFileToRealmObject(fileName: "20200704")
+//        WorkbookDecoder.convertCsvFileToRealmObject(fileName: "workbook")
+        
+        guard let _workbookArray: Results<Workbook> = RealmDecoder.fetchAllDatas() else {
+            fatalError("workbookのdataに問題があります")
         }
+        
         workbookArray = _workbookArray
     }
     
