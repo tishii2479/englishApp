@@ -52,14 +52,12 @@ class Workbook: Object, Identifiable {
         
         // 問題がまだ見つかっていない場合にはrealmから取得
         if questions == nil {
-            do {
-                let realm = try Realm()
-                questions = realm.objects(Question.self).filter("bookId = '\(self.bookId)'")
-            } catch {
-                return nil
-            }
+            questions = RealmDecoder.fetchAllDatas()
         }
         
+        if questions == nil { fatalError("questions could not be fetched") }
+        
+        // ISSUE: removeしたいからarrayにしているが、これは処理速度的によくないかもしれない
         var temp = Array(questions!)
         var questionArr = Array<Question>()
         

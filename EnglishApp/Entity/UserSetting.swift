@@ -15,14 +15,14 @@ class UserSetting {
     
     static var maxQuestionNum: Int = 10
     
+    static var onedayQuota: Int = 50
+    
     static var workbookArray: Results<Workbook>!
+
+    static var user: User!
     
     static func setUp() {
-        
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-//        QuestionDecoder.convertCsvFileToRealmObject(fileName: "20200704")
-//        WorkbookDecoder.convertCsvFileToRealmObject(fileName: "workbook")
         
         guard let _workbookArray: Results<Workbook> = RealmDecoder.fetchAllDatas() else {
             fatalError("workbookのdataに問題があります")

@@ -11,6 +11,7 @@ import RealmSwift
 
 class WorkbookDecoder {
     
+    // 要らなくなるかも
     static func convertCsvFileToRealmObject(fileName: String) {
         var workbookArr = [Workbook]()
         
@@ -35,19 +36,8 @@ class WorkbookDecoder {
             
             workbookArr.append(workbook)
         }
-
-        do {
-            let realm = try Realm()
-
-            try workbookArr.forEach { workbook in
-                
-                try realm.write({
-                    realm.add(workbook)
-                })
-            }
-        } catch {
-            print("realm is not working")
-        }
+        
+        RealmDecoder.addDataToRealm(datas: workbookArr)
         
     }
     

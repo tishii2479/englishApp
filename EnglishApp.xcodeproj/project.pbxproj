@@ -11,6 +11,8 @@
 		419C7A090BA86F196B2B262B /* Pods_EnglishApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57611A2388B6588676BEE1A /* Pods_EnglishApp.framework */; };
 		4904486224B17F1000391FE5 /* RealmDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486124B17F1000391FE5 /* RealmDecoder.swift */; };
 		4904486424B184B000391FE5 /* QuestionDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486324B184B000391FE5 /* QuestionDecoder.swift */; };
+		4904486824B1970400391FE5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486724B1970400391FE5 /* User.swift */; };
+		4904486C24B1D6AE00391FE5 /* HomeNavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486B24B1D6AE00391FE5 /* HomeNavigationButtonView.swift */; };
 		490F86E624B0162500EF5622 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E524B0162500EF5622 /* HomeView.swift */; };
 		490F86E824B0198B00EF5622 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E724B0198B00EF5622 /* ProgressCircle.swift */; };
 		490F86EA24B01A7C00EF5622 /* ProgressCircleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */; };
@@ -73,6 +75,8 @@
 		2ED33F85B96196B6918FDDAF /* Pods-EnglishAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishAppTests.debug.xcconfig"; path = "Target Support Files/Pods-EnglishAppTests/Pods-EnglishAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4904486124B17F1000391FE5 /* RealmDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDecoder.swift; sourceTree = "<group>"; };
 		4904486324B184B000391FE5 /* QuestionDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDecoder.swift; sourceTree = "<group>"; };
+		4904486724B1970400391FE5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4904486B24B1D6AE00391FE5 /* HomeNavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationButtonView.swift; sourceTree = "<group>"; };
 		490F86E524B0162500EF5622 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		490F86E724B0198B00EF5622 /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
 		490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				490F86E524B0162500EF5622 /* HomeView.swift */,
+				4904486B24B1D6AE00391FE5 /* HomeNavigationButtonView.swift */,
 				490F86EE24B0292B00EF5622 /* HomeDetailTextView.swift */,
 			);
 			path = Home;
@@ -321,6 +326,7 @@
 			children = (
 				496CAF1724AB27CC00F290E9 /* Question.swift */,
 				490F86FB24B05D9D00EF5622 /* Workbook.swift */,
+				4904486724B1970400391FE5 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -639,6 +645,7 @@
 				490F86F124B030BF00EF5622 /* HomeViewModel.swift in Sources */,
 				496CAF1124AB218800F290E9 /* Color.swift in Sources */,
 				490F86FF24B062A900EF5622 /* WorkbookView.swift in Sources */,
+				4904486824B1970400391FE5 /* User.swift in Sources */,
 				490F86E624B0162500EF5622 /* HomeView.swift in Sources */,
 				496CAF0F24AB20DB00F290E9 /* QuestionView.swift in Sources */,
 				490F86E824B0198B00EF5622 /* ProgressCircle.swift in Sources */,
@@ -664,6 +671,7 @@
 				490F86EF24B0292B00EF5622 /* HomeDetailTextView.swift in Sources */,
 				496CAF1624AB238300F290E9 /* ChoiceButtonView.swift in Sources */,
 				49E1A56724ACB0E5008EC140 /* QuestionStartView.swift in Sources */,
+				4904486C24B1D6AE00391FE5 /* HomeNavigationButtonView.swift in Sources */,
 				4904486224B17F1000391FE5 /* RealmDecoder.swift in Sources */,
 				491DBFD724B0B3EE00A24A79 /* WorkbookDecoder.swift in Sources */,
 			);

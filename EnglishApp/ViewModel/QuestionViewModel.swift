@@ -18,7 +18,7 @@ class QuestionViewModel: ObservableObject {
         case pause
     }
     
-    private var questions: Array<Question>!
+    var user: User = UserSetting.user
     
     var timer: Timer!
 
@@ -30,6 +30,10 @@ class QuestionViewModel: ObservableObject {
     
     var workbook: Workbook!
     
+    let realm = try! Realm()
+    
+    var questions: Array<Question>!
+    
     @Published var nowQuestionNum: Int = 0
     
     @Published var nowQuestion: Question!
@@ -39,16 +43,19 @@ class QuestionViewModel: ObservableObject {
     @Published var remainingTime: Double!
     
     init(workbook: Workbook) {
-        setQuestions(workbook: workbook)
-        remainingTime = maxTime
+        self.workbook = workbook
     }
     
     deinit {
         stopTimer()
     }
+
+}
+
+// MARK: ゲームシステム
+extension QuestionViewModel {
     
     func setQuestions(workbook: Workbook) {
-        self.workbook = workbook
         guard let _questions = workbook.fetchQuestions(questionNum: maxQuestionNum) else { fatalError("questionのdataに問題があります") }
         self.questions = _questions
         
@@ -57,12 +64,9 @@ class QuestionViewModel: ObservableObject {
     
     func sendUserChoice(choice: String) {
         if (questions[nowQuestionNum].answer == choice) {
-            correctCount += 1
-            // TODO: 正解演出
-            print("正解")
+            correctProcess()
         } else {
-            // TODO: 不正解演出
-            print("不正解")
+            missProcess()
         }
         
         goToNextQuestion()
@@ -78,7 +82,46 @@ class QuestionViewModel: ObservableObject {
         }
     }
     
+    func correctProcess() {
+        // TODO: 正解演出
+        do {
+            if questions[nowQuestionNum].correctCount == 0 {
+                user.totalCorrectCount += 1
+            }
+            user.todayCorrectCount += 1
+            self.correctCount += 1
+            
+            try realm.write({
+                questions[nowQuestionNum].correctCount += 1
+            })
+        } catch {
+            print("failed")
+        }
+    }
+    
+    func missProcess() {
+        // TODO: 不正解演出
+        do {
+            if questions[nowQuestionNum].missCount == 0 {
+                user.totalMissCount += 1
+            }
+            user.todayMissCount += 1
+
+            try realm.write({
+                questions[nowQuestionNum].missCount += 1
+            })
+        } catch {
+            print("failed")
+        }
+    }
+    
+}
+
+// MARK: 画面遷移
+extension QuestionViewModel {
     func startSolving() {
+        setQuestions(workbook: workbook)
+        
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: updateTimer(timer:))
         remainingTime = maxTime
         nowQuestionNum = 0
@@ -107,7 +150,7 @@ class QuestionViewModel: ObservableObject {
     }
 }
 
-// タイマー
+// MARK: タイマー処理
 extension QuestionViewModel {
     
     func updateTimer(timer: Timer) {

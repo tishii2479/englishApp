@@ -24,7 +24,7 @@ struct QuestionResultView: View {
             +
             Text(" / " + String(questionViewModel.maxQuestionNum))
                 
-            Text("所要時間　" + String(Int(questionViewModel.maxTime - questionViewModel.remainingTime)))
+            Text(String(format: "所要時間:  %.1f秒", questionViewModel.maxTime - questionViewModel.remainingTime))
             
             Spacer()
             

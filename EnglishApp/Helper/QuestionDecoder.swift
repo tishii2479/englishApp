@@ -11,6 +11,7 @@ import RealmSwift
 
 class QuestionDecoder {
     
+    // 要らなくなるかも
     static func convertCsvFileToRealmObject(fileName: String) {
         
         var questionArr = [Question]()
@@ -30,23 +31,7 @@ class QuestionDecoder {
             questionArr.append(question)
         }
         
-        do {
-            let realm = try Realm()
-            
-            try realm.write({
-                realm.deleteAll()
-            })
-            
-            try questionArr.forEach { question in
-                
-                try realm.write({
-                    realm.add(question)
-                })
-            }
-        } catch {
-            print("realm not working")
-        }
-        
+        RealmDecoder.addDataToRealm(datas: questionArr)
     }
     
 }
