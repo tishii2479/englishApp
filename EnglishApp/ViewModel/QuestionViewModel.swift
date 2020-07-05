@@ -42,6 +42,7 @@ class QuestionViewModel: ObservableObject {
     
     @Published var remainingTime: Double!
     
+    
     init(workbook: Workbook) {
         self.workbook = workbook
     }
@@ -63,7 +64,7 @@ extension QuestionViewModel {
     }
     
     func sendUserChoice(choice: String) {
-        if (questions[nowQuestionNum].answer == choice) {
+        if questions[nowQuestionNum].answer == choice {
             correctProcess()
         } else {
             missProcess()
@@ -85,43 +86,37 @@ extension QuestionViewModel {
     // TODO: それぞれの状態に応じてRealmの更新を考える必要があり
     func correctProcess() {
         // TODO: 正解演出
-        do {
-            if questions[nowQuestionNum].correctCount == 0 {
-                user.totalCorrectCount += 1
-                try realm.write({
-                    workbook.correctCount += 1
-                })
-            }
-            user.todayCorrectCount += 1
-            self.correctCount += 1
+
+        user.incrementCorrectCount()
+        correctCount += 1
+        
+        // 初めて正解した時
+        if nowQuestion.correctCount == 0 {
+            workbook.updateCount(type: .correct, amount: 1)
             
-            try realm.write({
-                questions[nowQuestionNum].correctCount += 1
-            })
-        } catch {
-            print("failed")
+            // 一度間違えたことがある問題であった場合
+            if nowQuestion.missCount > 0  {
+                workbook.updateCount(type: .miss, amount: -1)
+            }
         }
+        
+        // これは最後に書かないとworkbookの更新がうまくいかない
+        nowQuestion.updateCount(type: .correct, amount: 1)
     }
     
     // TODO: それぞれの状態に応じてRealmの更新を考える必要があり
     func missProcess() {
         // TODO: 不正解演出
-        do {
-            if questions[nowQuestionNum].missCount == 0 {
-                user.totalMissCount += 1
-                
-                try realm.write({
-                    workbook.missCount += 1
-                })
-            }
-            user.todayMissCount += 1
-
-            try realm.write({
-                questions[nowQuestionNum].missCount += 1
-            })
-        } catch {
-            print("failed")
+        
+        user.incrementMissCount()
+        
+        // 初めて不正解した時
+        if nowQuestion.missCount == 0 {
+            workbook.updateCount(type: .miss, amount: 1)
         }
+        
+        // これは最後に書かないとworkbookの更新がうまくいかない
+        nowQuestion.updateCount(type: .miss, amount: 1)
     }
     
 }
@@ -134,6 +129,7 @@ extension QuestionViewModel {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: updateTimer(timer:))
         remainingTime = maxTime
         nowQuestionNum = 0
+        correctCount = 0
         
         status = .solve
     }

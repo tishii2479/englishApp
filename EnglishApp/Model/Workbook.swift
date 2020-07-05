@@ -21,13 +21,13 @@ class Workbook: Object, Identifiable {
 
     @objc dynamic var difficulty: Int = 1
 
-    @objc dynamic var questionNumber: Int = 100
+    @objc dynamic var questionNumber: Int = 0
 
     @objc dynamic var price: Int = 0
 
-    @objc dynamic var correctCount: Int = 80
+    @objc dynamic var correctCount: Int = 0
 
-    @objc dynamic var missCount: Int = 10
+    @objc dynamic var missCount: Int = 0
 
     @objc dynamic var isPurchased: Bool = true
     
@@ -70,6 +70,22 @@ class Workbook: Object, Identifiable {
         }
         
         return questionArr
+    }
+    
+    func updateCount(type: CountType, amount: Int) {
+        
+        do {
+            let realm = try Realm()
+            
+            switch type {
+            case .correct:
+                try realm.write { correctCount += amount }
+            case .miss:
+                try realm.write { missCount += amount }
+            }
+        } catch {
+            print("failed to update count")
+        }
     }
     
 }

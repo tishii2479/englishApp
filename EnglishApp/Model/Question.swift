@@ -43,4 +43,19 @@ class Question: Object {
     
     required init() {}
     
+    func updateCount(type: CountType, amount: Int) {
+        do {
+            let realm = try Realm()
+            
+            switch type {
+            case .correct:
+                try realm.write { correctCount += amount }
+            case .miss:
+                try realm.write { missCount += amount }
+            }
+        } catch {
+            print("failed to update count")
+        }
+    }
+    
 }

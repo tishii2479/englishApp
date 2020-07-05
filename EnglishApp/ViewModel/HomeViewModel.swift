@@ -10,4 +10,6 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     
+    @Published var user: User = UserSetting.user
+
 }

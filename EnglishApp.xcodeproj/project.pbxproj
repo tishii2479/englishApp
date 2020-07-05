@@ -34,6 +34,8 @@
 		491DBFD524B0A9D600A24A79 /* CSVDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */; };
 		491DBFD724B0B3EE00A24A79 /* WorkbookDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DBFD624B0B3EE00A24A79 /* WorkbookDecoder.swift */; };
 		491DBFDA24B0C2EE00A24A79 /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 491DBFD924B0C2EE00A24A79 /* QGrid */; };
+		4931A03924B20ED100C26AFD /* CountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A03824B20ED100C26AFD /* CountType.swift */; };
+		4931A03B24B2121400C26AFD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A03A24B2121400C26AFD /* Date.swift */; };
 		496CAEDD24AB1CF000F290E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */; };
 		496CAEDF24AB1CF000F290E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */; };
 		496CAEE324AB1CF000F290E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496CAEE224AB1CF000F290E9 /* Assets.xcassets */; };
@@ -98,6 +100,8 @@
 		491DBFD024B0A97900A24A79 /* workbook.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = workbook.csv; sourceTree = "<group>"; };
 		491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVDecoder.swift; sourceTree = "<group>"; };
 		491DBFD624B0B3EE00A24A79 /* WorkbookDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbookDecoder.swift; sourceTree = "<group>"; };
+		4931A03824B20ED100C26AFD /* CountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountType.swift; sourceTree = "<group>"; };
+		4931A03A24B2121400C26AFD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		496CAED924AB1CF000F290E9 /* EnglishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -220,6 +224,14 @@
 			path = csv;
 			sourceTree = "<group>";
 		};
+		4931A03724B20EC300C26AFD /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				4931A03824B20ED100C26AFD /* CountType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		494640D424AC648B0070C745 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +277,9 @@
 		496CAEDB24AB1CF000F290E9 /* EnglishApp */ = {
 			isa = PBXGroup;
 			children = (
+				496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */,
+				496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */,
+				4931A03724B20EC300C26AFD /* Enum */,
 				491DBFC924B0A79200A24A79 /* csv */,
 				490F870724B07C8A00EF5622 /* Entity */,
 				494640D424AC648B0070C745 /* Delegate */,
@@ -273,8 +288,6 @@
 				496CAF0C24AB1DB700F290E9 /* View */,
 				496CAF1224AB21BE00F290E9 /* Utility */,
 				494640D724AC6C750070C745 /* Helper */,
-				496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */,
-				496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */,
 				496CAEE224AB1CF000F290E9 /* Assets.xcassets */,
 				496CAEE724AB1CF000F290E9 /* LaunchScreen.storyboard */,
 				496CAEEA24AB1CF000F290E9 /* Info.plist */,
@@ -338,6 +351,7 @@
 			children = (
 				496CAF1024AB218800F290E9 /* Color.swift */,
 				4904486D24B1DF8100391FE5 /* UserDefaults.swift */,
+				4931A03A24B2121400C26AFD /* Date.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -644,6 +658,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4931A03B24B2121400C26AFD /* Date.swift in Sources */,
 				496CAEDD24AB1CF000F290E9 /* AppDelegate.swift in Sources */,
 				490F86F124B030BF00EF5622 /* HomeViewModel.swift in Sources */,
 				496CAF1124AB218800F290E9 /* Color.swift in Sources */,
@@ -663,6 +678,7 @@
 				490F86F624B0475700EF5622 /* ReturnButtonView.swift in Sources */,
 				496CAF1B24AB353900F290E9 /* QuestionViewModel.swift in Sources */,
 				49E1A56524ACB087008EC140 /* QuestionResultView.swift in Sources */,
+				4931A03924B20ED100C26AFD /* CountType.swift in Sources */,
 				490F870324B068E100EF5622 /* WorkbookFormatter.swift in Sources */,
 				490F86EA24B01A7C00EF5622 /* ProgressCircleDelegate.swift in Sources */,
 				490F86F824B0521D00EF5622 /* WorkbookCellView.swift in Sources */,
