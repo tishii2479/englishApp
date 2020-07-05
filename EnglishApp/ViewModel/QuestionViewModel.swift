@@ -82,11 +82,15 @@ extension QuestionViewModel {
         }
     }
     
+    // TODO: それぞれの状態に応じてRealmの更新を考える必要があり
     func correctProcess() {
         // TODO: 正解演出
         do {
             if questions[nowQuestionNum].correctCount == 0 {
                 user.totalCorrectCount += 1
+                try realm.write({
+                    workbook.correctCount += 1
+                })
             }
             user.todayCorrectCount += 1
             self.correctCount += 1
@@ -99,11 +103,16 @@ extension QuestionViewModel {
         }
     }
     
+    // TODO: それぞれの状態に応じてRealmの更新を考える必要があり
     func missProcess() {
         // TODO: 不正解演出
         do {
             if questions[nowQuestionNum].missCount == 0 {
                 user.totalMissCount += 1
+                
+                try realm.write({
+                    workbook.missCount += 1
+                })
             }
             user.todayMissCount += 1
 

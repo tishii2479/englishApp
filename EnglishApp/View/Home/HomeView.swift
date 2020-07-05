@@ -27,7 +27,7 @@ struct HomeView: View {
                         
                     Spacer()
                     // Details
-                    HomeDetailTextView(itemName: "正解率", amount: String(format: "%.1f", Double(user.totalCorrectCount * 100) / Double(user.totalCorrectCount + user.totalMissCount)), unit: "%")
+                    HomeDetailTextView(itemName: "正解率", amount: user.correctRatioFormatter(correct: user.totalCorrectCount, miss: user.totalMissCount), unit: "%")
                     HomeDetailTextView(itemName: "解いた問題数", amount: String(user.totalCorrectCount + user.totalMissCount), unit: "問")
                     HomeDetailTextView(itemName: "完了した問題集", amount: String(user.completedWorkbookCount), unit: "個")
                     

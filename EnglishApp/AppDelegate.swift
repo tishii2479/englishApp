@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         setNavigationBarAppearance()
-        UserSetting.setUp()
         
         return true
     }

@@ -27,22 +27,23 @@ struct WorkbookCellView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(workbook.title)
-                        .font(.subheadline)
-                        .bold()
-                    Text(workbook.detail)
                         .font(.footnote)
+                        .bold()
+                        .padding(.bottom, 10)
+                    Text(workbook.detail)
+                        .font(.caption)
                         .fontWeight(.ultraLight)
                     
                     Spacer()
                     Text(WorkbookFormatter.formatDifficult(difficulty: workbook.difficulty))
-                        .font(.footnote)
+                        .font(.caption)
                     
                     HStack {
                         Text(WorkbookFormatter.formatQuestionNumber(number: workbook.questionNumber))
-                            .font(.footnote)
+                            .font(.caption)
                         Spacer()
                         Text(WorkbookFormatter.formatPrice(price: workbook.price))
-                            .font(.footnote)
+                            .font(.caption)
                     }
                 }
                 .padding(15)

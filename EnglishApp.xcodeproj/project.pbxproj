@@ -13,6 +13,7 @@
 		4904486424B184B000391FE5 /* QuestionDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486324B184B000391FE5 /* QuestionDecoder.swift */; };
 		4904486824B1970400391FE5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486724B1970400391FE5 /* User.swift */; };
 		4904486C24B1D6AE00391FE5 /* HomeNavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486B24B1D6AE00391FE5 /* HomeNavigationButtonView.swift */; };
+		4904486E24B1DF8100391FE5 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486D24B1DF8100391FE5 /* UserDefaults.swift */; };
 		490F86E624B0162500EF5622 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E524B0162500EF5622 /* HomeView.swift */; };
 		490F86E824B0198B00EF5622 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E724B0198B00EF5622 /* ProgressCircle.swift */; };
 		490F86EA24B01A7C00EF5622 /* ProgressCircleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */; };
@@ -77,6 +78,7 @@
 		4904486324B184B000391FE5 /* QuestionDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionDecoder.swift; sourceTree = "<group>"; };
 		4904486724B1970400391FE5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4904486B24B1D6AE00391FE5 /* HomeNavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationButtonView.swift; sourceTree = "<group>"; };
+		4904486D24B1DF8100391FE5 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		490F86E524B0162500EF5622 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		490F86E724B0198B00EF5622 /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
 		490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleDelegate.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				496CAF1024AB218800F290E9 /* Color.swift */,
+				4904486D24B1DF8100391FE5 /* UserDefaults.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -663,6 +666,7 @@
 				490F870324B068E100EF5622 /* WorkbookFormatter.swift in Sources */,
 				490F86EA24B01A7C00EF5622 /* ProgressCircleDelegate.swift in Sources */,
 				490F86F824B0521D00EF5622 /* WorkbookCellView.swift in Sources */,
+				4904486E24B1DF8100391FE5 /* UserDefaults.swift in Sources */,
 				491DBFD524B0A9D600A24A79 /* CSVDecoder.swift in Sources */,
 				490F86FC24B05D9D00EF5622 /* Workbook.swift in Sources */,
 				49E1A56924ACB0F3008EC140 /* QuestionPauseView.swift in Sources */,

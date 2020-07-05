@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class User: ObservableObject {
  
@@ -14,10 +15,17 @@ class User: ObservableObject {
     
     @Published var todayMissCount: Int = 0
     
-    @Published var totalCorrectCount: Int = 40
+    @Published var totalCorrectCount: Int = 0
 
-    @Published var totalMissCount: Int = 10
+    @Published var totalMissCount: Int = 0
     
     @Published var completedWorkbookCount: Int = 0
-        
+    
+    func correctRatioFormatter(correct: Int, miss: Int) -> String {
+        if totalCorrectCount + totalMissCount > 0 {
+            return String(format: "%.1f", Double(totalCorrectCount * 100) / Double(totalCorrectCount + totalMissCount))
+        } else {
+            return "0.0"
+        }
+    }
 }
