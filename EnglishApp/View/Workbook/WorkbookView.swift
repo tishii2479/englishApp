@@ -20,6 +20,7 @@ struct WorkbookView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
+                CustomNavigationBar(hasReturn: true, hasSetting: true, title: workbookViewModel.workbook.title)
                 
                 Spacer()
                 
@@ -62,9 +63,8 @@ struct WorkbookView: View {
                 Spacer()
             }
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarTitle(Text(workbookViewModel.workbook.title), displayMode: .inline)
-        .navigationBarItems(leading: ReturnButtonView(presentation: presentation), trailing: SettingButtonView())
+        .navigationBarHidden(true)
+        .navigationBarTitle("")
     }
 }
 

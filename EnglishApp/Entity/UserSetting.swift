@@ -11,21 +11,11 @@ import RealmSwift
 
 class UserSetting {
     
-    static var timePerQuestion: Int = 20
-    
-    static var maxQuestionNum: Int = 10
-    
-    static var onedayQuota: Int = 50
-    
     static var workbookArray: Results<Workbook>!
-
-    static var user: User!
     
     static func setUp() {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
     
-        user = User()
-        
         checkFirstActivationOfToday()
 
         // Comment out these to test memory
@@ -60,14 +50,14 @@ class UserSetting {
     private static func setUpUserInformation() {
         let userDefaults = UserDefaults.standard
         
-        timePerQuestion             = userDefaults.integer(forKey: "timePerQuestion")
-        maxQuestionNum              = userDefaults.integer(forKey: "maxQuestionNum")
-        timePerQuestion             = userDefaults.integer(forKey: "timePerQuestion")
-        user.todayCorrectCount      = userDefaults.integer(forKey: "todayCorrectCount")
-        user.todayMissCount         = userDefaults.integer(forKey: "todayMissCount")
-        user.totalCorrectCount      = userDefaults.integer(forKey: "totalMissCount")
-        user.totalMissCount         = userDefaults.integer(forKey: "totalMissCount")
-        user.completedWorkbookCount = userDefaults.integer(forKey: "completedWorkbookCount")
+        User.shared.timePerQuestion             = userDefaults.integer(forKey: "timePerQuestion")
+        User.shared.maxQuestionNum              = userDefaults.integer(forKey: "maxQuestionNum")
+        User.shared.timePerQuestion             = userDefaults.integer(forKey: "timePerQuestion")
+        User.shared.todayCorrectCount      = userDefaults.integer(forKey: "todayCorrectCount")
+        User.shared.todayMissCount         = userDefaults.integer(forKey: "todayMissCount")
+        User.shared.totalCorrectCount      = userDefaults.integer(forKey: "totalMissCount")
+        User.shared.totalMissCount         = userDefaults.integer(forKey: "totalMissCount")
+        User.shared.completedWorkbookCount = userDefaults.integer(forKey: "completedWorkbookCount")
     }
     
     private static func resetUserInformation() {

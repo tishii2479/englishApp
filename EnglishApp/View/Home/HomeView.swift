@@ -12,7 +12,7 @@ struct HomeView: View {
     
     @ObservedObject var homeViewModel: HomeViewModel
     
-    @ObservedObject var user: User = UserSetting.user
+    @ObservedObject var user: User = User.shared
     
     var body: some View {
         NavigationView {
@@ -21,9 +21,11 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
+                    CustomNavigationBar(hasReturn: false, hasSetting: true, title: "")
+                    
                     Spacer()
                     
-                    ProgressCircle(text: "今日解いた問題数", radius: 200, solveNumber: user.todayCorrectCount + user.todayMissCount, maxNumber: UserSetting.onedayQuota)
+                    ProgressCircle(text: "今日解いた問題数", radius: 200, solveNumber: user.todayCorrectCount + user.todayMissCount, maxNumber: user.onedayQuota)
                         
                     Spacer()
                     // Details
@@ -39,8 +41,8 @@ struct HomeView: View {
                     Spacer()
                 }
             }
-            .navigationBarTitle("", displayMode: .inline)
-            .navigationBarItems(trailing: SettingButtonView())
+            .navigationBarHidden(true)
+            .navigationBarTitle("")
         }
     }
 }

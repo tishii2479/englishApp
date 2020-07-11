@@ -16,10 +16,15 @@ struct SettingView: View {
         ZStack {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                CustomNavigationBar(hasReturn: true, hasSetting: false, title: "設定")
+                
+                Spacer()
+            }
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarTitle("設定", displayMode: .inline)
-        .navigationBarItems(leading: ReturnButtonView(presentation: presentation))
+        .navigationBarHidden(true)
+        .navigationBarTitle("")
     }
 }
 

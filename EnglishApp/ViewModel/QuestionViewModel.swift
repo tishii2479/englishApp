@@ -18,15 +18,15 @@ class QuestionViewModel: ObservableObject {
         case pause
     }
     
-    var user: User = UserSetting.user
+    var user: User = User.shared
     
     var timer: Timer!
 
     var correctCount: Int = 0
     
-    lazy var maxTime: Double = Double(questions.count * UserSetting.timePerQuestion)
+    lazy var maxTime: Double = Double(questions.count * user.timePerQuestion)
     
-    var maxQuestionNum: Int = UserSetting.maxQuestionNum
+    lazy var maxQuestionNum: Int = user.maxQuestionNum
     
     var workbook: Workbook!
     

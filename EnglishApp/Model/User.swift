@@ -21,6 +21,14 @@ class User: ObservableObject {
     
     @Published var completedWorkbookCount: Int = 0
     
+    var timePerQuestion: Int = 20
+    
+    var maxQuestionNum: Int = 10
+    
+    var onedayQuota: Int = 50
+    
+    static let shared = User()
+    
     func correctRatioFormatter(correct: Int, miss: Int) -> String {
         if totalCorrectCount + totalMissCount > 0 {
             return String(format: "%.1f", Double(totalCorrectCount * 100) / Double(totalCorrectCount + totalMissCount))

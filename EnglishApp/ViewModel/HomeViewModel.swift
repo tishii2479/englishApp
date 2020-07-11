@@ -10,6 +10,6 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     
-    @Published var user: User = UserSetting.user
+    @Published var user: User = User.shared
 
 }

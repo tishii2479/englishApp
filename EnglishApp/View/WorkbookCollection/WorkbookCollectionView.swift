@@ -18,16 +18,19 @@ struct WorkbookCollectionView: View {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
             
-            QGrid(UserSetting.workbookArray, columns: 2) { workbook in
-                NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook))) {
-                    WorkbookCellView(workbook: workbook)
-                }.buttonStyle(PlainButtonStyle())
+            VStack {
+                CustomNavigationBar(hasReturn: true, hasSetting: true, title: "問題集")
+            
+                QGrid(UserSetting.workbookArray, columns: 2) { workbook in
+                    NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook))) {
+                        WorkbookCellView(workbook: workbook)
+                    }.buttonStyle(WorkbookCellStyle())
+                }
             }
             
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarTitle("問題集", displayMode: .inline)
-        .navigationBarItems(leading: ReturnButtonView(presentation: presentation), trailing: SettingButtonView())
+        .navigationBarHidden(true)
+        .navigationBarTitle("")
     }
 }
 

@@ -14,6 +14,8 @@ struct QuestionStartView: View {
     
     var body: some View {
         VStack {
+            CustomNavigationBar(hasReturn: true, hasSetting: false, title: "")
+            
             Spacer()
             
             Text(questionViewModel.workbook.title)
