@@ -7,30 +7,33 @@
 //
 
 import SwiftUI
+import RealmSwift
 
-class Workbook: Identifiable {
+class Workbook: Object, Identifiable {
     
     var id = UUID()
     
-    var bookId: String = "20200704"
+    @objc dynamic var bookId: String = "20200704"
     
-    var title: String = "title"
-    
-    var detail: String = "detail"
+    @objc dynamic var title: String = "title"
 
-    var difficulty: Int = 1
-    
-    var questionNumber: Int = 100
-    
-    var price: Int = 0
-    
-    var correctCount: Int = 80
-    
-    var missCount: Int = 10
+    @objc dynamic var detail: String = "detail"
 
-    var isPurchased: Bool = true
+    @objc dynamic var difficulty: Int = 1
+
+    @objc dynamic var questionNumber: Int = 0
+
+    @objc dynamic var price: Int = 0
+
+    @objc dynamic var correctCount: Int = 0
+
+    @objc dynamic var missCount: Int = 0
+
+    @objc dynamic var isPurchased: Bool = true
     
-    init() {}
+    var questions: Results<Question>?
+    
+    required init() {}
     
     init(bookId: String, title: String, detail: String, difficulty: Int, questionNumber: Int, price: Int, correctCount: Int, missCount: Int, isPurchased: Bool) {
         self.bookId = bookId
@@ -43,31 +46,46 @@ class Workbook: Identifiable {
         self.missCount = missCount
         self.isPurchased = isPurchased
     }
-    
-    func fetchQuestions(questionNum: Int) -> Array<Question>? {
-        var questionArr = [Question]()
-        
-        guard var dataArr: Array<String> = CSVDecoder.convertCSVFileToStringArray(resourceName: self.bookId) else { return nil }
-        
-        // TODO: 問題を選ぶ際に未回答のみを選ぶ時と、間違えた問題のみを選ぶ時で分ける
-        for i in 0 ..< questionNum {
-            if (dataArr.count < 1) { break }
-            let index = Int.random(in: 0 ..< dataArr.count)
-            
-            let arr = dataArr[index].components(separatedBy: ",")
-            dataArr.remove(at: index)
-            
-            //　要素数のチェック
-            if arr.count != 8 { return nil }
-            guard let correct = Int(arr[6]) else { return nil }
-            guard let miss = Int(arr[7]) else { return nil }
 
-            let choices: Array<String> = [arr[2], arr[3], arr[4], arr[5]]
+    // TODO: 問題を選ぶ際に未回答のみを選ぶ時と、間違えた問題のみを選ぶ時で分ける
+    func fetchQuestions(questionNum: Int) -> Array<Question>? {
+        
+        // 問題がまだ見つかっていない場合にはrealmから取得
+        if questions == nil {
+            questions = RealmDecoder.fetchAllDatas()
+        }
+        
+        if questions == nil { fatalError("questions could not be fetched") }
+        
+        // ISSUE: removeしたいからarrayにしているが、これは処理速度的によくないかもしれない
+        var temp = Array(questions!)
+        var questionArr = Array<Question>()
+        
+        for _ in 0 ..< questionNum {
+            if temp.count < 1 { return questionArr }
+            let index = Int.random(in: 0 ..< temp.count)
             
-            questionArr.append(Question(questionText: arr[0], answer: arr[1], choices: choices, correctCount: correct, missCount: miss))
+            questionArr.append(temp[index])
+            temp.remove(at: index)
         }
         
         return questionArr
+    }
+    
+    func updateCount(type: CountType, amount: Int) {
+        
+        do {
+            let realm = try Realm()
+            
+            switch type {
+            case .correct:
+                try realm.write { correctCount += amount }
+            case .miss:
+                try realm.write { missCount += amount }
+            }
+        } catch {
+            print("failed to update count")
+        }
     }
     
 }

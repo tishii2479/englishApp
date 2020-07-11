@@ -14,24 +14,27 @@ struct QuestionStartView: View {
     
     var body: some View {
         VStack {
+            CustomNavigationBar(hasReturn: true, hasSetting: false, title: "")
+            
             Spacer()
             
             Text(questionViewModel.workbook.title)
                 .font(.title)
                 .padding()
             Text(questionViewModel.workbook.detail)
-                .fontWeight(.light)
+                .fontWeight(.ultraLight)
                 .padding()
             
+            Spacer()
             Spacer()
             
             Button(action: {
                 self.questionViewModel.startSolving()
             }) {
                 Text("学習を始める")
-            }.buttonStyle(WideButtonStyle())
-            
-            Spacer()
+            }
+            .buttonStyle(WideButtonStyle())
+            .padding(.bottom, 50)
         }
     }
 }

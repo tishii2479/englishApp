@@ -10,10 +10,10 @@ import Foundation
 
 class CSVDecoder {
     
-    static func convertCSVFileToStringArray(resourceName: String) -> Array<String>? {
+    static func convertCSVFileToStringArray(fileName: String) -> Array<String>? {
         var csvLines = [String]()
         
-        guard let path = Bundle.main.path(forResource: resourceName, ofType: "csv") else {
+        guard let path = Bundle.main.path(forResource: fileName, ofType: "csv") else {
             print("error: csv file not found")
             return nil
         }
@@ -21,8 +21,8 @@ class CSVDecoder {
         do {
             let csvString = try String(contentsOfFile: path, encoding: String.Encoding.utf8)
             csvLines = csvString.components(separatedBy: .newlines)
-            csvLines.removeFirst()
-            csvLines.removeLast()   // 最後の改行を削除するため
+            csvLines.removeFirst()  // 最初の行は項目名なので削除
+            csvLines.removeLast()   // 最後の改行を削除
         } catch let error as NSError {
             print("error: data not found, message: \(error)")
             return nil

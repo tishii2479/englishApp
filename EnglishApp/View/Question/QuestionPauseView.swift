@@ -22,7 +22,11 @@ struct QuestionPauseView: View {
             +
             Text(" / " + String(questionViewModel.maxQuestionNum))
                 
-            Text("残り時間　" + String(Int(questionViewModel.remainingTime)))
+            Text(String(format: "残り時間:  %.1f秒", questionViewModel.remainingTime))
+                .fontWeight(.light)
+                .padding(.vertical, 10)
+            
+            Spacer()
             
             Spacer()
             
@@ -38,9 +42,9 @@ struct QuestionPauseView: View {
             }) {
                 Text("中止する")
                     .foregroundColor(Color.offRed)
-            }.buttonStyle(WideButtonStyle())
-            
-            Spacer()
+            }
+            .buttonStyle(WideButtonStyle())
+            .padding(.bottom, 50)
         }
     }
 }

@@ -7,33 +7,38 @@
 //
 
 import Foundation
+import RealmSwift
 
 class WorkbookDecoder {
     
-    static func fetchAllWorkbook() -> [Workbook]? {
+    // 要らなくなるかも
+    static func convertCsvFileToRealmObject(fileName: String) {
         var workbookArr = [Workbook]()
         
-        guard let dataArr: Array<String> = CSVDecoder.convertCSVFileToStringArray(resourceName: "workbook") else {
-            return nil
+        guard let dataArr: Array<String> = CSVDecoder.convertCSVFileToStringArray(fileName: fileName) else {
+            return
         }
         
-        for i in 1 ..< dataArr.count {
-            let arr = dataArr[i].components(separatedBy: ",")
+        for data in dataArr {
+            let arr = data.components(separatedBy: ",")
             
             // 要素数のチェック
-            if arr.count != 9 { return nil }
-            guard let difficulty = Int(arr[3]) else { return nil }
-            guard let questionNumber = Int(arr[4]) else { return nil }
-            guard let price = Int(arr[5]) else { return nil }
-            guard let correct = Int(arr[6]) else { return nil }
-            guard let miss = Int(arr[7]) else { return nil }
-            guard let _isPurchased = Int(arr[8]) else { return nil }
+            if arr.count != 9 { return }
+            guard let difficulty = Int(arr[3]) else { return }
+            guard let questionNumber = Int(arr[4]) else { return }
+            guard let price = Int(arr[5]) else { return }
+            guard let correct = Int(arr[6]) else { return }
+            guard let miss = Int(arr[7]) else { return }
+            guard let _isPurchased = Int(arr[8]) else { return }
             let isPurchased = _isPurchased == 1
             
-            workbookArr.append(Workbook(bookId: arr[0], title: arr[1], detail: arr[2], difficulty: difficulty, questionNumber: questionNumber, price: price, correctCount: correct, missCount: miss, isPurchased: isPurchased))
+            let workbook = Workbook(bookId: arr[0], title: arr[1], detail: arr[2], difficulty: difficulty, questionNumber: questionNumber, price: price, correctCount: correct, missCount: miss, isPurchased: isPurchased)
+            
+            workbookArr.append(workbook)
         }
         
-        return workbookArr
+        RealmDecoder.addDataToRealm(datas: workbookArr)
+        
     }
     
 }

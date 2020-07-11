@@ -12,7 +12,6 @@ struct QuestionView: View {
     
     @ObservedObject var questionViewModel: QuestionViewModel
     
-    @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
     
     var body: some View {
         
@@ -21,12 +20,13 @@ struct QuestionView: View {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
             
-            // ContentView
-            contentView()
+            VStack {
+                // ContentView
+                contentView()
+            }
         }
-        .navigationBarHidden(questionViewModel.status != .start)
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: ReturnButtonView(presentation: presentation))
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
     
     // ISSUE: QuestionSolveViewはsome Viewでビルドは通ったが、

@@ -10,12 +10,9 @@ import SwiftUI
 
 class WorkbookViewModel: ObservableObject {
     
-    var workbook: Workbook!
+    @Published var workbook: Workbook!
     
     init(workbook: Workbook) {
         self.workbook = workbook
-        
-        print(self.workbook.correctCount)
     }
-    
 }

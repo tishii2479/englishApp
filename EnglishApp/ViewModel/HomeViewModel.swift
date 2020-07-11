@@ -10,10 +10,6 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     
-    @Published var progress: Int = 20
-    
-    var max: Int = 50
-    
-    var radius: CGFloat = 200
-    
+    @Published var user: User = User.shared
+
 }

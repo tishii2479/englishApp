@@ -16,15 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         setNavigationBarAppearance()
-        UserSetting.setUp()
         
         return true
     }
 
     private func setNavigationBarAppearance() {
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
-        appearance.shadowColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+        appearance.backgroundColor = UIColor.clear
+        appearance.shadowColor = UIColor.clear
 
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().standardAppearance = appearance
