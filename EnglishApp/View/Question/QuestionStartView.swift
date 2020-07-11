@@ -22,18 +22,19 @@ struct QuestionStartView: View {
                 .font(.title)
                 .padding()
             Text(questionViewModel.workbook.detail)
-                .fontWeight(.light)
+                .fontWeight(.ultraLight)
                 .padding()
             
+            Spacer()
             Spacer()
             
             Button(action: {
                 self.questionViewModel.startSolving()
             }) {
                 Text("学習を始める")
-            }.buttonStyle(WideButtonStyle())
-            
-            Spacer()
+            }
+            .buttonStyle(WideButtonStyle())
+            .padding(.bottom, 50)
         }
     }
 }

@@ -24,7 +24,7 @@ struct WorkbookCollectionView: View {
                 QGrid(UserSetting.workbookArray, columns: 2) { workbook in
                     NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook))) {
                         WorkbookCellView(workbook: workbook)
-                    }.buttonStyle(WorkbookCellStyle())
+                    }.buttonStyle(ShrinkButtonStyle())
                 }
             }
             

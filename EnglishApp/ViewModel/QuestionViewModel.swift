@@ -34,6 +34,8 @@ class QuestionViewModel: ObservableObject {
     
     var questions: Array<Question>!
     
+    private let effectDuration: Double = 0.2
+    
     @Published var nowQuestionNum: Int = 0
     
     @Published var nowQuestion: Question!
@@ -42,6 +44,7 @@ class QuestionViewModel: ObservableObject {
     
     @Published var remainingTime: Double!
     
+    @Published var backgroundColor: Color = .clear
     
     init(workbook: Workbook) {
         self.workbook = workbook
@@ -85,8 +88,8 @@ extension QuestionViewModel {
     
     // TODO: それぞれの状態に応じてRealmの更新を考える必要があり
     func correctProcess() {
-        // TODO: 正解演出
-
+        correctEffect()
+        
         user.incrementCorrectCount()
         correctCount += 1
         
@@ -106,7 +109,7 @@ extension QuestionViewModel {
     
     // TODO: それぞれの状態に応じてRealmの更新を考える必要があり
     func missProcess() {
-        // TODO: 不正解演出
+        missEffect()
         
         user.incrementMissCount()
         
@@ -117,6 +120,27 @@ extension QuestionViewModel {
         
         // これは最後に書かないとworkbookの更新がうまくいかない
         nowQuestion.updateCount(type: .miss, amount: 1)
+    }
+    
+}
+
+// MARK: エフェクト
+extension QuestionViewModel {
+    
+    func correctEffect() {
+        backgroundColor = .offBlue
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + effectDuration, execute: {
+            self.backgroundColor = .clear
+        })
+    }
+    
+    func missEffect() {
+        backgroundColor = .offRed
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + effectDuration, execute: {
+            self.backgroundColor = .clear
+        })
     }
     
 }

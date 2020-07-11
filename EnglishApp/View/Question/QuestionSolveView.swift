@@ -28,7 +28,7 @@ struct QuestionSolveView: View {
             
             HStack {
                 // RemainingTime
-                Text(String(Int(self.questionViewModel.remainingTime))) // TODO: 残り時間の表示形式
+                Text(String(format: "%.1f", questionViewModel.remainingTime))
                     .foregroundColor(Color.gray)
 
                 Spacer()
@@ -38,12 +38,16 @@ struct QuestionSolveView: View {
                     // TODO: 一時停止処理
                     self.questionViewModel.pauseSolving()
                 }) {
-                    Circle()
-                        .frame(width: 50, height: 50)
-                        .foregroundColor(Color.offWhite)
-                        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-                        .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
-                }
+                    ZStack {
+                        Circle()
+                            .frame(width: 50, height: 50)
+                            .foregroundColor(Color.offWhite)
+                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
+                            .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                        Image(systemName: "pause")
+                            .frame(width: 40, height: 40)
+                    }
+                }.buttonStyle(ShrinkButtonStyle())
             }.padding(.horizontal, 10)
             
             // QuestionText
@@ -68,6 +72,11 @@ struct QuestionSolveView: View {
                 ChoiceButtonView(questionViewModel: self.questionViewModel, index: index)
             }
         }
+        .padding(.bottom, 10)
+        .background(
+            questionViewModel.backgroundColor
+                .edgesIgnoringSafeArea(.all)
+                .animation(.spring()))
     }
 }
 

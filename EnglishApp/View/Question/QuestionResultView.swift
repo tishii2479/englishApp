@@ -25,7 +25,12 @@ struct QuestionResultView: View {
             Text(" / " + String(questionViewModel.maxQuestionNum))
                 
             Text(String(format: "所要時間:  %.1f秒", questionViewModel.maxTime - questionViewModel.remainingTime))
+                .fontWeight(.light)
+                .padding(.vertical, 5)
+            Text(String(format: "一問あたりの所要時間: %.1f秒", (questionViewModel.maxTime - questionViewModel.remainingTime) / Double(questionViewModel.maxQuestionNum)))
+                .fontWeight(.light)
             
+            Spacer()
             Spacer()
             
             // Buttons
@@ -41,10 +46,9 @@ struct QuestionResultView: View {
             }) {
                 Text("学習を終了する")
                     .foregroundColor(.offRed)
-            }.buttonStyle(WideButtonStyle())
-            
-            
-            Spacer()
+            }
+            .buttonStyle(WideButtonStyle())
+            .padding(.bottom, 50)
         }
     }
 }

@@ -29,7 +29,7 @@ struct WideButtonStyle: ButtonStyle {
     }
 }
 
-struct WorkbookCellStyle: ButtonStyle {
+struct ShrinkButtonStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
 
         let isPressed = configuration.isPressed
