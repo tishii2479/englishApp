@@ -13,6 +13,7 @@ special_words = ["Mr", "Mrs", "St"]
 
 # 問題文を作る
 def create_questions(raw_data):
+    word_data = set()
     sentences = []
     questions = []
 
@@ -87,7 +88,17 @@ def create_questions(raw_data):
                 new_sentence += words[i] + " "
 
         questions.append([new_sentence, answer])
+        word_data |= set(words)
 
+    data_size = len(word_data)
+    data_list = list(word_data)
+
+    # 選択肢追加
+    for q in questions:
+        choices = []
+        for i in range(3):
+            choices.append(data_list[random.randint(0, data_size - 1)])
+        q += choices
     return questions
 
 
@@ -108,12 +119,10 @@ response = requests.get(url)
 
 if response.status_code != 200:
     print(
-        f"""
-        レスポンスを正常に取得できませんでした。
-        処理を終了します。
-        url: {url}
-        status code: {response.status_code}    
-        """
+        f"""レスポンスを正常に取得できませんでした。
+処理を終了します。
+url: {url}
+status code: {response.status_code}"""
     )
     exit()
 
@@ -124,8 +133,8 @@ csv_file = pathlib.Path(path)
 csv_file.touch()
 print("ファイルが作成されました。")
 
-print("データをフォーマットしています。")
 # BeautifulSoupの設定
+print("データをフォーマットしています。")
 soup = BeautifulSoup(response.content, "html.parser")
 [x.extract() for x in soup.findAll("span")]
 [x.extract() for x in soup.findAll("i")]
@@ -145,6 +154,6 @@ with open(path, "w") as f:
 
 print(
     f"""問題を作成しました。
-        作成したファイルの場所:  {path}
-    """
+作成したファイルの場所:  {path}
+"""
 )
