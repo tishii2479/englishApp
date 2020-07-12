@@ -20,13 +20,16 @@ struct ProgressCircle: View {
     
     var body: some View {
         ZStack {
-            Circle()
-                .trim(from: 0, to: CGFloat(solveNumber) / CGFloat(maxNumber))
-                .stroke(Color.offWhite, style: StrokeStyle(lineWidth: 30, lineCap: .round))
-                .rotationEffect(Angle(degrees: -90), anchor: .center)
-                .frame(width: radius, height: radius)
-                .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-                .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+            
+            DentCircle(radius: radius + 10)
+            
+//            Circle()
+//                .trim(from: 0, to: CGFloat(solveNumber) / CGFloat(maxNumber))
+//                .stroke(Color.offWhite, style: StrokeStyle(lineWidth: 20, lineCap: .round))
+//                .rotationEffect(Angle(degrees: -90), anchor: .center)
+//                .frame(width: radius, height: radius)
+//                .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
+//                .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
             
             VStack {
                 Text(text)

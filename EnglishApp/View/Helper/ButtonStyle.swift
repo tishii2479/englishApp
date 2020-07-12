@@ -86,8 +86,8 @@ struct DentButtonStyle: ButtonStyle {
                 RoundedRectangle(cornerRadius: 25)
                     .foregroundColor(Color.offWhite)
                     .contentShape(RoundedRectangle(cornerRadius: 25).inset(by: 15))
-                    .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
+                    .shadow(color: Color.white.opacity(0.7), radius: 5, x: -3, y: -3)
             )
         }
     }

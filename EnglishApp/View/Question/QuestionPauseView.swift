@@ -16,16 +16,22 @@ struct QuestionPauseView: View {
         VStack {
             Spacer()
             
-            // nowQuestionNumとremainingTimeの表示
-            Text(String(questionViewModel.nowQuestionNum + 1))
-                .font(.system(size: 54))
-            +
-            Text(" / " + String(questionViewModel.maxQuestionNum))
+            ZStack {
+                DentCircle(radius: 280)
                 
-            Text(String(format: "残り時間:  %.1f秒", questionViewModel.remainingTime))
-                .fontWeight(.light)
-                .padding(.vertical, 10)
-            
+                VStack {
+                    // nowQuestionNumとremainingTimeの表示
+                    Text(String(questionViewModel.nowQuestionNum + 1))
+                        .font(.system(size: 54))
+                    +
+                    Text(" / " + String(questionViewModel.maxQuestionNum))
+                        
+                    Text(String(format: "残り時間:  %.1f秒", questionViewModel.remainingTime))
+                        .fontWeight(.light)
+                        .padding(.vertical, 10)
+                }
+            }
+                
             Spacer()
             
             Spacer()

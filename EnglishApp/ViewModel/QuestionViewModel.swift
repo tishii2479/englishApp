@@ -90,12 +90,12 @@ extension QuestionViewModel {
     func correctProcess() {
         correctEffect()
         
-        user.incrementCorrectCount()
         correctCount += 1
         
         // 初めて正解した時
         if nowQuestion.correctCount == 0 {
             workbook.updateCount(type: .correct, amount: 1)
+            user.incrementCorrectCount()
             
             // 一度間違えたことがある問題であった場合
             if nowQuestion.missCount > 0  {
@@ -111,10 +111,9 @@ extension QuestionViewModel {
     func missProcess() {
         missEffect()
         
-        user.incrementMissCount()
-        
         // 初めて不正解した時
         if nowQuestion.missCount == 0 {
+            user.incrementMissCount()
             workbook.updateCount(type: .miss, amount: 1)
         }
         

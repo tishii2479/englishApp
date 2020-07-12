@@ -20,6 +20,12 @@ struct SettingView: View {
             VStack {
                 CustomNavigationBar(hasReturn: true, hasSetting: false, title: "設定")
                 
+                List {
+                    ForEach(0 ..< 5) { index in
+                        SettingCellView(title: "設定項目\(index)")
+                    }
+                }.padding(.top, 10)
+                
                 Spacer()
             }
         }

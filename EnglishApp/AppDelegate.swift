@@ -15,12 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        setNavigationBarAppearance()
+        setUIAppearance()
         
         return true
     }
 
-    private func setNavigationBarAppearance() {
+    private func setUIAppearance() {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundColor = UIColor.clear
         appearance.shadowColor = UIColor.clear
@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance
+        
+        UITableView.appearance().backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+        UITableView.appearance().separatorStyle = .none
     }
     
     // MARK: UISceneSession Lifecycle

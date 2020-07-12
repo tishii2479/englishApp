@@ -12,7 +12,6 @@ struct QuestionView: View {
     
     @ObservedObject var questionViewModel: QuestionViewModel
     
-    
     var body: some View {
         
         ZStack {

@@ -16,20 +16,30 @@ struct QuestionResultView: View {
         VStack {
             Spacer()
             
-            Text("正解した問題数")
             
-            // nowQuestionNumとremainingTimeの表示
-            Text(String(questionViewModel.correctCount))
-                .font(.system(size: 54))
-            +
-            Text(" / " + String(questionViewModel.maxQuestionNum))
+            ZStack {
+                DentCircle(radius: 280)
                 
-            Text(String(format: "所要時間:  %.1f秒", questionViewModel.maxTime - questionViewModel.remainingTime))
-                .fontWeight(.light)
-                .padding(.vertical, 5)
-            Text(String(format: "一問あたりの所要時間: %.1f秒", (questionViewModel.maxTime - questionViewModel.remainingTime) / Double(questionViewModel.maxQuestionNum)))
-                .fontWeight(.light)
-            
+                VStack {
+                    Text("正解した問題数")
+                        .font(.subheadline)
+                    
+                    // nowQuestionNumとremainingTimeの表示
+                    Text(String(questionViewModel.correctCount))
+                        .font(.system(size: 54))
+                    +
+                    Text(" / " + String(questionViewModel.maxQuestionNum))
+                        
+                    Text(String(format: "所要時間:  %.1f秒", questionViewModel.maxTime - questionViewModel.remainingTime))
+                        .font(.footnote)
+                        .fontWeight(.light)
+                        .padding(.vertical, 5)
+                    Text(String(format: "一問あたりの所要時間: %.1f秒", (questionViewModel.maxTime - questionViewModel.remainingTime) / Double(questionViewModel.maxQuestionNum)))
+                        .font(.footnote)
+                        .fontWeight(.light)
+                }
+            }
+                
             Spacer()
             Spacer()
             

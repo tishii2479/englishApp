@@ -18,12 +18,18 @@ struct QuestionStartView: View {
             
             Spacer()
             
-            Text(questionViewModel.workbook.title)
-                .font(.title)
-                .padding()
-            Text(questionViewModel.workbook.detail)
-                .fontWeight(.ultraLight)
-                .padding()
+            ZStack {
+                DentCircle(radius: 280)
+                
+                VStack {
+                    Text(questionViewModel.workbook.title)
+                        .padding()
+                    Text(questionViewModel.workbook.detail)
+                        .font(.subheadline)
+                        .fontWeight(.ultraLight)
+                        .padding()
+                }
+            }
             
             Spacer()
             Spacer()

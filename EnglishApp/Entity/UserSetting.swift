@@ -21,7 +21,7 @@ class UserSetting {
         // Comment out these to test memory
 //        resetUserInformation()
 //        setUpRealm()
-        
+
         setUpUserInformation()
         
         guard let _workbookArray: Results<Workbook> = RealmDecoder.fetchAllDatas() else {
@@ -53,11 +53,11 @@ class UserSetting {
         User.shared.timePerQuestion             = userDefaults.integer(forKey: "timePerQuestion")
         User.shared.maxQuestionNum              = userDefaults.integer(forKey: "maxQuestionNum")
         User.shared.timePerQuestion             = userDefaults.integer(forKey: "timePerQuestion")
-        User.shared.todayCorrectCount      = userDefaults.integer(forKey: "todayCorrectCount")
-        User.shared.todayMissCount         = userDefaults.integer(forKey: "todayMissCount")
-        User.shared.totalCorrectCount      = userDefaults.integer(forKey: "totalMissCount")
-        User.shared.totalMissCount         = userDefaults.integer(forKey: "totalMissCount")
-        User.shared.completedWorkbookCount = userDefaults.integer(forKey: "completedWorkbookCount")
+        User.shared.todayCorrectCount           = userDefaults.integer(forKey: "todayCorrectCount")
+        User.shared.todayMissCount              = userDefaults.integer(forKey: "todayMissCount")
+        User.shared.totalCorrectCount           = userDefaults.integer(forKey: "totalMissCount")
+        User.shared.totalMissCount              = userDefaults.integer(forKey: "totalMissCount")
+        User.shared.completedWorkbookCount      = userDefaults.integer(forKey: "completedWorkbookCount")
     }
     
     private static func resetUserInformation() {
@@ -79,8 +79,8 @@ class UserSetting {
         
         try! realm.write { realm.deleteAll() }
         
-        WorkbookDecoder.convertCsvFileToRealmObject(fileName: "workbook")
-        QuestionDecoder.convertCsvFileToRealmObject(fileName: "20200704")
+        CSVDecoder.convertWorkbookFile(fileName: "workbook")
+        CSVDecoder.convertQuestionFile(fileName: "20200715")
     }
     
 }
