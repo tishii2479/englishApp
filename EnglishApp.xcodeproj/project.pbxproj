@@ -16,8 +16,6 @@
 		490A5E1224BB380400D26929 /* SettingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E1124BB380400D26929 /* SettingCellView.swift */; };
 		490A5E1424BB407400D26929 /* DentCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E1324BB407400D26929 /* DentCircle.swift */; };
 		490A5E1624BB429D00D26929 /* workbook.csv in Resources */ = {isa = PBXBuildFile; fileRef = 490A5E1524BB429D00D26929 /* workbook.csv */; };
-		490A5E1A24BB457200D26929 /* 20200711.csv in Resources */ = {isa = PBXBuildFile; fileRef = 490A5E1924BB457200D26929 /* 20200711.csv */; };
-		490A5E1C24BB491100D26929 /* 20200715.csv in Resources */ = {isa = PBXBuildFile; fileRef = 490A5E1B24BB491100D26929 /* 20200715.csv */; };
 		490F86E624B0162500EF5622 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E524B0162500EF5622 /* HomeView.swift */; };
 		490F86E824B0198B00EF5622 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E724B0198B00EF5622 /* ProgressCircle.swift */; };
 		490F86EA24B01A7C00EF5622 /* ProgressCircleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */; };
@@ -55,6 +53,8 @@
 		49E1A56524ACB087008EC140 /* QuestionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56424ACB087008EC140 /* QuestionResultView.swift */; };
 		49E1A56724ACB0E5008EC140 /* QuestionStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56624ACB0E5008EC140 /* QuestionStartView.swift */; };
 		49E1A56924ACB0F3008EC140 /* QuestionPauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56824ACB0F3008EC140 /* QuestionPauseView.swift */; };
+		49FAB6DD24BC12B1002E7247 /* 20200102.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49FAB6DC24BC12B1002E7247 /* 20200102.csv */; };
+		49FAB6DF24BC1B20002E7247 /* 20200000.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49FAB6DE24BC1B20002E7247 /* 20200000.csv */; };
 		580BCA4491F293C86AA5408E /* Pods_EnglishAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,8 +85,6 @@
 		490A5E1124BB380400D26929 /* SettingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellView.swift; sourceTree = "<group>"; };
 		490A5E1324BB407400D26929 /* DentCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentCircle.swift; sourceTree = "<group>"; };
 		490A5E1524BB429D00D26929 /* workbook.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = workbook.csv; sourceTree = "<group>"; };
-		490A5E1924BB457200D26929 /* 20200711.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 20200711.csv; sourceTree = "<group>"; };
-		490A5E1B24BB491100D26929 /* 20200715.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 20200715.csv; sourceTree = "<group>"; };
 		490F86E524B0162500EF5622 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		490F86E724B0198B00EF5622 /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
 		490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +127,8 @@
 		49E1A56424ACB087008EC140 /* QuestionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResultView.swift; sourceTree = "<group>"; };
 		49E1A56624ACB0E5008EC140 /* QuestionStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStartView.swift; sourceTree = "<group>"; };
 		49E1A56824ACB0F3008EC140 /* QuestionPauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPauseView.swift; sourceTree = "<group>"; };
+		49FAB6DC24BC12B1002E7247 /* 20200102.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 20200102.csv; sourceTree = "<group>"; };
+		49FAB6DE24BC1B20002E7247 /* 20200000.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = 20200000.csv; path = csv/20200000.csv; sourceTree = SOURCE_ROOT; };
 		7386E48E2950A9DF925D34F3 /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		763B43D92BD2283F51B0C5A9 /* Pods-EnglishApp-EnglishAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp-EnglishAppUITests/Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,8 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				490A5E1524BB429D00D26929 /* workbook.csv */,
-				490A5E1924BB457200D26929 /* 20200711.csv */,
-				490A5E1B24BB491100D26929 /* 20200715.csv */,
+				49FAB6DE24BC1B20002E7247 /* 20200000.csv */,
+				49FAB6DC24BC12B1002E7247 /* 20200102.csv */,
 			);
 			path = csv;
 			sourceTree = "<group>";
@@ -532,12 +532,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490A5E1C24BB491100D26929 /* 20200715.csv in Resources */,
 				490A5E1624BB429D00D26929 /* workbook.csv in Resources */,
 				496CAEE924AB1CF000F290E9 /* LaunchScreen.storyboard in Resources */,
+				49FAB6DF24BC1B20002E7247 /* 20200000.csv in Resources */,
 				496CAEE624AB1CF000F290E9 /* Preview Assets.xcassets in Resources */,
 				496CAEE324AB1CF000F290E9 /* Assets.xcassets in Resources */,
-				490A5E1A24BB457200D26929 /* 20200711.csv in Resources */,
+				49FAB6DD24BC12B1002E7247 /* 20200102.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

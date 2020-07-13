@@ -10,6 +10,7 @@ first_text = "***START OF THE PROJECT GUTENBERG EBOOK A MIRROR OF THE TURF***"
 end_text = "***END OF THE PROJECT GUTENBERG EBOOK A MIRROR OF THE TURF***"
 
 special_words = ["Mr", "Mrs", "St"]
+special_symbols = [";", ":"]
 
 # http://gutenberg.org/files/62606/62606-h/62606-h.htm
 
@@ -27,9 +28,12 @@ def create_questions(raw_data):
         sentence = ""
         for c in new_p:
 
-            # ;は処理しない
+            if c == "“" or c == "”":
+                c = '"'
+
+            # :, ;は処理しない
             # 後で直すかもしれない
-            if c != ";":
+            if not c in special_symbols:
                 sentence += c
 
             # 文の終わりの場合
@@ -87,14 +91,17 @@ def create_questions(raw_data):
             # 答えになった箇所を埋める場合
             if i == answer_index:
                 if "," in words[i]:
-                    new_sentence += "*, "
+                    new_sentence += "*,"
                 else:
-                    new_sentence += "* "
-            # 最後の単語の場合
-            elif i == len(words) - 1:
-                new_sentence += words[i] + "."
+                    new_sentence += "*"
             else:
-                new_sentence += words[i] + " "
+                new_sentence += words[i]
+
+            # 最後の単語の場合
+            if i == len(words) - 1:
+                new_sentence += "."
+            else:
+                new_sentence += " "
 
         new_sentence = new_sentence.replace(",", "_")
         questions.append([new_sentence, answer])

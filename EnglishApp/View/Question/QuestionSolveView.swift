@@ -17,12 +17,14 @@ struct QuestionSolveView: View {
             // Timer
             HStack {
                 // TimerBar
-                RoundedRectangle(cornerRadius: 10)
-                    // FIXME: 長さを計算するか他の方法で直す必要あり
-                    .frame(width: CGFloat(330 * self.questionViewModel.remainingTime / self.questionViewModel.maxTime), height: 20, alignment: .leading)
-                    .foregroundColor(Color.offWhite)
-                    .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                GeometryReader{ geometry in
+                    RoundedRectangle(cornerRadius: 10)
+                        // FIXME: 長さを計算するか他の方法で直す必要あり
+                        .frame(width: geometry.size.width * CGFloat(self.questionViewModel.remainingTime / self.questionViewModel.maxTime), height: 20, alignment: .leading)
+                        .foregroundColor(Color.offWhite)
+                        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
+                        .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                }.frame(maxHeight: 20)
                 Spacer()
             }.padding(10)
             

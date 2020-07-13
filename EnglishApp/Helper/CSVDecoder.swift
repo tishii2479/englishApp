@@ -50,11 +50,11 @@ class CSVDecoder {
             
             var choices = [String]()
             for i in 0 ..< 4 {
-                choices.append(arr[i + 1])
+                choices.append(arr[i + 1].replacingOccurrences(of: "\"", with: "").replacingOccurrences(of: "\\", with: ""))
             }
             choices = choices.shuffled()
             
-            let text = arr[0].replacingOccurrences(of: "_", with: ",")
+            let text = arr[0].replacingOccurrences(of: "_", with: ",").replacingOccurrences(of: "*", with: " _______ ").replacingOccurrences(of: "\\", with: "")
             
             let question = Question(bookId: fileName, questionText: text, answer: arr[1], choice1: choices[0], choice2: choices[1], choice3: choices[2], choice4: choices[3], correctCount: 0, missCount: 0)
             

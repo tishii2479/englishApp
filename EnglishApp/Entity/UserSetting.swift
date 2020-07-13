@@ -80,7 +80,8 @@ class UserSetting {
         try! realm.write { realm.deleteAll() }
         
         CSVDecoder.convertWorkbookFile(fileName: "workbook")
-        CSVDecoder.convertQuestionFile(fileName: "20200715")
+        CSVDecoder.convertQuestionFile(fileName: "20200000")
+        CSVDecoder.convertQuestionFile(fileName: "20200102")
     }
     
 }
