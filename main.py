@@ -26,7 +26,11 @@ def create_questions(raw_data):
         # 一文辺り取り出す
         sentence = ""
         for c in new_p:
-            sentence += c
+
+            # ;は処理しない
+            # 後で直すかもしれない
+            if c != ";":
+                sentence += c
 
             # 文の終わりの場合
             # Mr.等に対応する必要がある
