@@ -11,6 +11,8 @@ end_text = "***END OF THE PROJECT GUTENBERG EBOOK A MIRROR OF THE TURF***"
 
 special_words = ["Mr", "Mrs", "St"]
 
+# http://gutenberg.org/files/62606/62606-h/62606-h.htm
+
 # 問題文を作る
 def create_questions(raw_data):
     word_data = set()
@@ -75,18 +77,22 @@ def create_questions(raw_data):
 
         # 答えを決める
         answer_index = random.randint(0, len(words) - 1)
-        answer = words[answer_index]
+        answer = words[answer_index].replace(",", "")
 
         for i in range(len(words)):
             # 答えになった箇所を埋める場合
             if i == answer_index:
-                new_sentence += "*" + " "
+                if "," in words[i]:
+                    new_sentence += "*, "
+                else:
+                    new_sentence += "* "
             # 最後の単語の場合
             elif i == len(words) - 1:
                 new_sentence += words[i] + "."
             else:
                 new_sentence += words[i] + " "
 
+        new_sentence = new_sentence.replace(",", "_")
         questions.append([new_sentence, answer])
         word_data |= set(words)
 
@@ -94,10 +100,11 @@ def create_questions(raw_data):
     data_list = list(word_data)
 
     # 選択肢追加
+    # TODO: 重複を防ぐ
     for q in questions:
         choices = []
         for i in range(3):
-            choices.append(data_list[random.randint(0, data_size - 1)])
+            choices.append(data_list[random.randint(0, data_size - 1)].replace(",", ""))
         q += choices
     return questions
 
@@ -149,11 +156,10 @@ print("問題を作成しています")
 questions = create_questions(raw_data)
 
 with open(path, "w") as f:
-    writer = csv.writer(f)
+    writer = csv.writer(f, quoting=csv.QUOTE_NONE, escapechar="\\")
     writer.writerows(questions)
 
 print(
     f"""問題を作成しました。
-作成したファイルの場所:  {path}
-"""
+作成したファイルの場所:  {path}"""
 )
