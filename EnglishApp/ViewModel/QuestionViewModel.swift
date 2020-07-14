@@ -18,6 +18,8 @@ class QuestionViewModel: ObservableObject {
         case pause
     }
     
+    var finishSolving: Bool = false
+    
     var user: User = User.shared
     
     var timer: Timer!
@@ -33,6 +35,8 @@ class QuestionViewModel: ObservableObject {
     let realm = try! Realm()
     
     var questions: Array<Question>!
+    
+    var userChoices: Array<String> = Array<String>()
     
     private let effectDuration: Double = 0.2
     
@@ -67,6 +71,10 @@ extension QuestionViewModel {
     }
     
     func sendUserChoice(choice: String) {
+        if (finishSolving) { return }
+        
+        userChoices.append(choice)
+            
         if questions[nowQuestionNum].answer == choice {
             correctProcess()
         } else {
@@ -82,7 +90,10 @@ extension QuestionViewModel {
             nowQuestionNum += 1
             nowQuestion = questions[nowQuestionNum]
         } else {
-            endSolving()
+            self.finishSolving = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + effectDuration + 0.3){
+                self.endSolving()
+            }
         }
     }
     
@@ -153,6 +164,8 @@ extension QuestionViewModel {
         remainingTime = maxTime
         nowQuestionNum = 0
         correctCount = 0
+        userChoices.removeAll()
+        finishSolving = false
         
         status = .solve
     }

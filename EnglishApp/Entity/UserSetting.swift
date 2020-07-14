@@ -30,7 +30,7 @@ class UserSetting {
         
         workbookArray = _workbookArray
     }
-    
+
     private static func checkFirstActivationOfToday() {
         let todayDate: String = Date.getTodayDate()
         let userDefaults = UserDefaults.standard
@@ -50,7 +50,7 @@ class UserSetting {
     private static func setUpUserInformation() {
         let userDefaults = UserDefaults.standard
         
-        User.shared.timePerQuestion             = userDefaults.integer(forKey: "timePerQuestion")
+        User.shared.onedayQuota             = userDefaults.integer(forKey: "oneDayQuota")
         User.shared.maxQuestionNum              = userDefaults.integer(forKey: "maxQuestionNum")
         User.shared.timePerQuestion             = userDefaults.integer(forKey: "timePerQuestion")
         User.shared.todayCorrectCount           = userDefaults.integer(forKey: "todayCorrectCount")
@@ -64,7 +64,7 @@ class UserSetting {
         let userDefaults = UserDefaults.standard
         userDefaults.removeAll()
         
-        userDefaults.set(50,    forKey: "onedayQuota")
+        userDefaults.set(50,    forKey: "oneDayQuota")
         userDefaults.set(10,    forKey: "maxQuestionNum")
         userDefaults.set(20,    forKey: "timePerQuestion")
         userDefaults.set(0,     forKey: "todayCorrectCount")
@@ -75,12 +75,13 @@ class UserSetting {
     }
     
     private static func setUpRealm() {
-        let realm = try! Realm()
+        let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+        let realm = try! Realm(configuration: config)
         
         try! realm.write { realm.deleteAll() }
         
         CSVDecoder.convertWorkbookFile(fileName: "workbook")
-        CSVDecoder.convertQuestionFile(fileName: "20200000")
+        CSVDecoder.convertQuestionFile(fileName: "20200001")
         CSVDecoder.convertQuestionFile(fileName: "20200102")
     }
     

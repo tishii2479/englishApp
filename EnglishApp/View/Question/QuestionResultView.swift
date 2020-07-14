@@ -12,13 +12,14 @@ struct QuestionResultView: View {
     
     @ObservedObject var questionViewModel: QuestionViewModel
     
+    @State var isPresented: Bool = false
+    
     var body: some View {
         VStack {
             Spacer()
             
-            
             ZStack {
-                DentCircle(radius: 280)
+                DentCircleView(radius: 320)
                 
                 VStack {
                     Text("正解した問題数")
@@ -31,16 +32,36 @@ struct QuestionResultView: View {
                     Text(" / " + String(questionViewModel.maxQuestionNum))
                         
                     Text(String(format: "所要時間:  %.1f秒", questionViewModel.maxTime - questionViewModel.remainingTime))
-                        .font(.footnote)
+                        .font(.subheadline)
                         .fontWeight(.light)
                         .padding(.vertical, 5)
-                    Text(String(format: "一問あたりの所要時間: %.1f秒", (questionViewModel.maxTime - questionViewModel.remainingTime) / Double(questionViewModel.maxQuestionNum)))
-                        .font(.footnote)
+                    Text(String(format: "一問あたり: %.1f秒", (questionViewModel.maxTime - questionViewModel.remainingTime) / Double(questionViewModel.maxQuestionNum)))
+                        .font(.subheadline)
                         .fontWeight(.light)
+                        
+                    Button(action: {
+                        self.isPresented.toggle()
+                    }) {
+                        ZStack {
+                            Rectangle()
+                                .foregroundColor(Color.offWhite)
+                                .frame(width: 200, height: 40)
+                                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
+                                .shadow(color: Color.white.opacity(0.7), radius: 5, x: -3, y: -3)
+                                
+                            Text("答えを見る")
+                        }
+                    }
+                    .buttonStyle(ShrinkButtonStyle())
+                    .sheet(isPresented: $isPresented) {
+                        QuestionReviewView(isPresented: self.$isPresented, questionViewModel: self.questionViewModel)
+                    }
+                    .padding(.top, 15)
                 }
             }
                 
             Spacer()
+            
             Spacer()
             
             // Buttons

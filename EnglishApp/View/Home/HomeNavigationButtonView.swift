@@ -12,7 +12,7 @@ struct HomeNavigationButtonView: View {
     var body: some View {
         VStack {
             // TODO: 今日の10問用のworkbookIdの取得
-            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: UserSetting.workbookArray[0]))) {
+            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: Workbook()))) {
                 Text("今日の10問")
                     .foregroundColor(Color.black)
             }.buttonStyle(WideButtonStyle())

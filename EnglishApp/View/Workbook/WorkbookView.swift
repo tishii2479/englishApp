@@ -24,7 +24,7 @@ struct WorkbookView: View {
                 
                 Spacer()
                 
-                ProgressCircle(text: "解いた問題数", radius: 200, solveNumber: workbookViewModel.workbook.correctCount, maxNumber: workbookViewModel.workbook.questionNumber)
+                ProgressCircleView(text: "解いた問題数", radius: 200, solveNumber: workbookViewModel.workbook.correctCount, maxNumber: workbookViewModel.workbook.questionNumber)
                 
                 Spacer()
                 
@@ -69,6 +69,7 @@ struct WorkbookView: View {
 }
 
 struct WorkbookView_Previews: PreviewProvider {
+    
     static var previews: some View {
         WorkbookView(workbookViewModel: WorkbookViewModel(workbook: Workbook()))
     }

@@ -1,5 +1,5 @@
 //
-//  DentCircle.swift
+//  DentCircleView.swift
 //  EnglishApp
 //
 //  Created by Tatsuya Ishii on 2020/07/12.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct DentCircle: View {
+struct DentCircleView: View {
     
     var radius: CGFloat
     
@@ -39,8 +39,8 @@ struct DentCircle: View {
     }
 }
 
-struct DentCircle_Previews: PreviewProvider {
+struct DentCircleView_Previews: PreviewProvider {
     static var previews: some View {
-        DentCircle(radius: 60)
+        DentCircleView(radius: 60)
     }
 }

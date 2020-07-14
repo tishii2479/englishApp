@@ -13,7 +13,7 @@ class Workbook: Object, Identifiable {
     
     var id = UUID()
     
-    @objc dynamic var bookId: String = "20200704"
+    @objc dynamic var bookId: String = "20200001"
     
     @objc dynamic var title: String = "title"
 
@@ -79,9 +79,9 @@ class Workbook: Object, Identifiable {
             
             switch type {
             case .correct:
-                try realm.write { correctCount += amount }
+                try realm.write { self.correctCount += amount }
             case .miss:
-                try realm.write { missCount += amount }
+                try realm.write { self.missCount += amount }
             }
         } catch {
             print("failed to update count")

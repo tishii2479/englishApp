@@ -22,14 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setUIAppearance() {
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = UIColor.clear
-        appearance.shadowColor = UIColor.clear
+        appearance.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+        appearance.shadowColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
 
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance
         
         UITableView.appearance().backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+        UITableViewCell.appearance().backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
         UITableView.appearance().separatorStyle = .none
     }
     

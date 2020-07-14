@@ -17,7 +17,7 @@ struct QuestionPauseView: View {
             Spacer()
             
             ZStack {
-                DentCircle(radius: 280)
+                DentCircleView(radius: 280)
                 
                 VStack {
                     // nowQuestionNumとremainingTimeの表示

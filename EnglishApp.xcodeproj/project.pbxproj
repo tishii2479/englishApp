@@ -13,11 +13,10 @@
 		4904486824B1970400391FE5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486724B1970400391FE5 /* User.swift */; };
 		4904486C24B1D6AE00391FE5 /* HomeNavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486B24B1D6AE00391FE5 /* HomeNavigationButtonView.swift */; };
 		4904486E24B1DF8100391FE5 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486D24B1DF8100391FE5 /* UserDefaults.swift */; };
-		490A5E1224BB380400D26929 /* SettingCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E1124BB380400D26929 /* SettingCellView.swift */; };
-		490A5E1424BB407400D26929 /* DentCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E1324BB407400D26929 /* DentCircle.swift */; };
+		490A5E1424BB407400D26929 /* DentCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E1324BB407400D26929 /* DentCircleView.swift */; };
 		490A5E1624BB429D00D26929 /* workbook.csv in Resources */ = {isa = PBXBuildFile; fileRef = 490A5E1524BB429D00D26929 /* workbook.csv */; };
 		490F86E624B0162500EF5622 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E524B0162500EF5622 /* HomeView.swift */; };
-		490F86E824B0198B00EF5622 /* ProgressCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E724B0198B00EF5622 /* ProgressCircle.swift */; };
+		490F86E824B0198B00EF5622 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E724B0198B00EF5622 /* ProgressCircleView.swift */; };
 		490F86EA24B01A7C00EF5622 /* ProgressCircleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */; };
 		490F86ED24B01EF400EF5622 /* SettingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86EC24B01EF400EF5622 /* SettingButtonView.swift */; };
 		490F86EF24B0292B00EF5622 /* HomeDetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86EE24B0292B00EF5622 /* HomeDetailTextView.swift */; };
@@ -49,12 +48,15 @@
 		496CAF1624AB238300F290E9 /* ChoiceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAF1524AB238300F290E9 /* ChoiceButtonView.swift */; };
 		496CAF1824AB27CC00F290E9 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAF1724AB27CC00F290E9 /* Question.swift */; };
 		496CAF1B24AB353900F290E9 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAF1A24AB353800F290E9 /* QuestionViewModel.swift */; };
+		49924CC724BD6D3200AD962A /* PreviewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49924CC624BD6D3200AD962A /* PreviewCellView.swift */; };
+		49AC0DF424BD797C0077ED39 /* SmallChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC0DF324BD797C0077ED39 /* SmallChoiceView.swift */; };
+		49AC0DF624BD82930077ED39 /* QuestionReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC0DF524BD82930077ED39 /* QuestionReviewView.swift */; };
 		49E1A56224ACAF59008EC140 /* QuestionSolveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56124ACAF59008EC140 /* QuestionSolveView.swift */; };
 		49E1A56524ACB087008EC140 /* QuestionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56424ACB087008EC140 /* QuestionResultView.swift */; };
 		49E1A56724ACB0E5008EC140 /* QuestionStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56624ACB0E5008EC140 /* QuestionStartView.swift */; };
 		49E1A56924ACB0F3008EC140 /* QuestionPauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56824ACB0F3008EC140 /* QuestionPauseView.swift */; };
 		49FAB6DD24BC12B1002E7247 /* 20200102.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49FAB6DC24BC12B1002E7247 /* 20200102.csv */; };
-		49FAB6DF24BC1B20002E7247 /* 20200000.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49FAB6DE24BC1B20002E7247 /* 20200000.csv */; };
+		49FAB6E124BC1D55002E7247 /* 20200001.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49FAB6E024BC1D55002E7247 /* 20200001.csv */; };
 		580BCA4491F293C86AA5408E /* Pods_EnglishAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,11 +84,10 @@
 		4904486724B1970400391FE5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4904486B24B1D6AE00391FE5 /* HomeNavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationButtonView.swift; sourceTree = "<group>"; };
 		4904486D24B1DF8100391FE5 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
-		490A5E1124BB380400D26929 /* SettingCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellView.swift; sourceTree = "<group>"; };
-		490A5E1324BB407400D26929 /* DentCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentCircle.swift; sourceTree = "<group>"; };
+		490A5E1324BB407400D26929 /* DentCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentCircleView.swift; sourceTree = "<group>"; };
 		490A5E1524BB429D00D26929 /* workbook.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = workbook.csv; sourceTree = "<group>"; };
 		490F86E524B0162500EF5622 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		490F86E724B0198B00EF5622 /* ProgressCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircle.swift; sourceTree = "<group>"; };
+		490F86E724B0198B00EF5622 /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
 		490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleDelegate.swift; sourceTree = "<group>"; };
 		490F86EC24B01EF400EF5622 /* SettingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonView.swift; sourceTree = "<group>"; };
 		490F86EE24B0292B00EF5622 /* HomeDetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailTextView.swift; sourceTree = "<group>"; };
@@ -123,12 +124,15 @@
 		496CAF1524AB238300F290E9 /* ChoiceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceButtonView.swift; sourceTree = "<group>"; };
 		496CAF1724AB27CC00F290E9 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		496CAF1A24AB353800F290E9 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
+		49924CC624BD6D3200AD962A /* PreviewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCellView.swift; sourceTree = "<group>"; };
+		49AC0DF324BD797C0077ED39 /* SmallChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallChoiceView.swift; sourceTree = "<group>"; };
+		49AC0DF524BD82930077ED39 /* QuestionReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionReviewView.swift; sourceTree = "<group>"; };
 		49E1A56124ACAF59008EC140 /* QuestionSolveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSolveView.swift; sourceTree = "<group>"; };
 		49E1A56424ACB087008EC140 /* QuestionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResultView.swift; sourceTree = "<group>"; };
 		49E1A56624ACB0E5008EC140 /* QuestionStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStartView.swift; sourceTree = "<group>"; };
 		49E1A56824ACB0F3008EC140 /* QuestionPauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPauseView.swift; sourceTree = "<group>"; };
 		49FAB6DC24BC12B1002E7247 /* 20200102.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 20200102.csv; sourceTree = "<group>"; };
-		49FAB6DE24BC1B20002E7247 /* 20200000.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = 20200000.csv; path = csv/20200000.csv; sourceTree = SOURCE_ROOT; };
+		49FAB6E024BC1D55002E7247 /* 20200001.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = 20200001.csv; path = csv/20200001.csv; sourceTree = SOURCE_ROOT; };
 		7386E48E2950A9DF925D34F3 /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		763B43D92BD2283F51B0C5A9 /* Pods-EnglishApp-EnglishAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp-EnglishAppUITests/Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,11 +184,14 @@
 		490F86EB24B01EE200EF5622 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				490F86E724B0198B00EF5622 /* ProgressCircle.swift */,
+				490F86E724B0198B00EF5622 /* ProgressCircleView.swift */,
 				490F86EC24B01EF400EF5622 /* SettingButtonView.swift */,
 				490F86F524B0475700EF5622 /* ReturnButtonView.swift */,
 				4950F13024B9602700466674 /* CustomNavigationBar.swift */,
-				490A5E1324BB407400D26929 /* DentCircle.swift */,
+				490A5E1324BB407400D26929 /* DentCircleView.swift */,
+				496CAF1324AB21E600F290E9 /* ButtonStyle.swift */,
+				49924CC624BD6D3200AD962A /* PreviewCellView.swift */,
+				49AC0DF324BD797C0077ED39 /* SmallChoiceView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -210,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				490F870524B0741400EF5622 /* SettingView.swift */,
-				490A5E1124BB380400D26929 /* SettingCellView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -227,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				490A5E1524BB429D00D26929 /* workbook.csv */,
-				49FAB6DE24BC1B20002E7247 /* 20200000.csv */,
+				49FAB6E024BC1D55002E7247 /* 20200001.csv */,
 				49FAB6DC24BC12B1002E7247 /* 20200102.csv */,
 			);
 			path = csv;
@@ -335,7 +341,6 @@
 				490F86EB24B01EE200EF5622 /* Shared */,
 				490F86FD24B0629700EF5622 /* Workbook */,
 				490F86F224B044F400EF5622 /* WorkbookCollection */,
-				49E1A56B24ACB297008EC140 /* Helper */,
 				490F86E424B0160300EF5622 /* Home */,
 				490F870424B0740400EF5622 /* Setting */,
 				49E1A56A24ACB116008EC140 /* Question */,
@@ -382,16 +387,9 @@
 				49E1A56424ACB087008EC140 /* QuestionResultView.swift */,
 				49E1A56624ACB0E5008EC140 /* QuestionStartView.swift */,
 				49E1A56824ACB0F3008EC140 /* QuestionPauseView.swift */,
+				49AC0DF524BD82930077ED39 /* QuestionReviewView.swift */,
 			);
 			path = Question;
-			sourceTree = "<group>";
-		};
-		49E1A56B24ACB297008EC140 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				496CAF1324AB21E600F290E9 /* ButtonStyle.swift */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		7FB426552F90F8934E07D685 /* Frameworks */ = {
@@ -533,8 +531,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				490A5E1624BB429D00D26929 /* workbook.csv in Resources */,
+				49FAB6E124BC1D55002E7247 /* 20200001.csv in Resources */,
 				496CAEE924AB1CF000F290E9 /* LaunchScreen.storyboard in Resources */,
-				49FAB6DF24BC1B20002E7247 /* 20200000.csv in Resources */,
 				496CAEE624AB1CF000F290E9 /* Preview Assets.xcassets in Resources */,
 				496CAEE324AB1CF000F290E9 /* Assets.xcassets in Resources */,
 				49FAB6DD24BC12B1002E7247 /* 20200102.csv in Resources */,
@@ -665,6 +663,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49AC0DF624BD82930077ED39 /* QuestionReviewView.swift in Sources */,
 				4931A03B24B2121400C26AFD /* Date.swift in Sources */,
 				496CAEDD24AB1CF000F290E9 /* AppDelegate.swift in Sources */,
 				490F86F124B030BF00EF5622 /* HomeViewModel.swift in Sources */,
@@ -674,13 +673,13 @@
 				4950F13124B9602700466674 /* CustomNavigationBar.swift in Sources */,
 				490F86E624B0162500EF5622 /* HomeView.swift in Sources */,
 				496CAF0F24AB20DB00F290E9 /* QuestionView.swift in Sources */,
-				490F86E824B0198B00EF5622 /* ProgressCircle.swift in Sources */,
+				490F86E824B0198B00EF5622 /* ProgressCircleView.swift in Sources */,
 				496CAF1424AB21E600F290E9 /* ButtonStyle.swift in Sources */,
 				490F86F424B0451700EF5622 /* WorkbookCollectionView.swift in Sources */,
 				490F870924B07CBD00EF5622 /* UserSetting.swift in Sources */,
 				49E1A56224ACAF59008EC140 /* QuestionSolveView.swift in Sources */,
 				490F86ED24B01EF400EF5622 /* SettingButtonView.swift in Sources */,
-				490A5E1424BB407400D26929 /* DentCircle.swift in Sources */,
+				490A5E1424BB407400D26929 /* DentCircleView.swift in Sources */,
 				496CAEDF24AB1CF000F290E9 /* SceneDelegate.swift in Sources */,
 				496CAF1824AB27CC00F290E9 /* Question.swift in Sources */,
 				490F86F624B0475700EF5622 /* ReturnButtonView.swift in Sources */,
@@ -691,11 +690,12 @@
 				490F86EA24B01A7C00EF5622 /* ProgressCircleDelegate.swift in Sources */,
 				490F86F824B0521D00EF5622 /* WorkbookCellView.swift in Sources */,
 				4904486E24B1DF8100391FE5 /* UserDefaults.swift in Sources */,
+				49AC0DF424BD797C0077ED39 /* SmallChoiceView.swift in Sources */,
 				491DBFD524B0A9D600A24A79 /* CSVDecoder.swift in Sources */,
+				49924CC724BD6D3200AD962A /* PreviewCellView.swift in Sources */,
 				490F86FC24B05D9D00EF5622 /* Workbook.swift in Sources */,
 				49E1A56924ACB0F3008EC140 /* QuestionPauseView.swift in Sources */,
 				490F870624B0741400EF5622 /* SettingView.swift in Sources */,
-				490A5E1224BB380400D26929 /* SettingCellView.swift in Sources */,
 				490F870124B065F400EF5622 /* WorkbookViewModel.swift in Sources */,
 				490F86EF24B0292B00EF5622 /* HomeDetailTextView.swift in Sources */,
 				496CAF1624AB238300F290E9 /* ChoiceButtonView.swift in Sources */,

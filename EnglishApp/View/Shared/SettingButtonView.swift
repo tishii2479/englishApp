@@ -10,19 +10,25 @@ import SwiftUI
 
 struct SettingButtonView: View {
     
+    @State var isPresented: Bool = false
+    
     var body: some View {
-        NavigationLink(destination: SettingView()) {
+        Button(action: {
+            self.isPresented.toggle()
+        }) {
             ZStack {
                 Circle()
                     .frame(width: 40, height: 40)
                     .foregroundColor(Color.offWhite)
-//                    .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-//                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                
                 Image(systemName: "line.horizontal.3")
                     .resizable()
                     .frame(width: 20, height: 20)
                     .foregroundColor(Color.offBlack)
             }
+        }
+        .sheet(isPresented: $isPresented) {
+            SettingView(isPresented: self.$isPresented)
         }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ProgressCircle.swift
+//  ProgressCircleView.swift
 //  EnglishApp
 //
 //  Created by Tatsuya Ishii on 2020/07/04.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ProgressCircle: View {
+struct ProgressCircleView: View {
     
     var text: String
     
@@ -21,7 +21,7 @@ struct ProgressCircle: View {
     var body: some View {
         ZStack {
             
-            DentCircle(radius: radius + 10)
+            DentCircleView(radius: radius + 10)
             
 //            Circle()
 //                .trim(from: 0, to: CGFloat(solveNumber) / CGFloat(maxNumber))
@@ -46,12 +46,12 @@ struct ProgressCircle: View {
     }
 }
 
-struct ProgressCircle_Previews: PreviewProvider {
+struct ProgressCircleView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
-            ProgressCircle(text: "解いた問題数", radius: 300, solveNumber: 20, maxNumber: 50)
+            ProgressCircleView(text: "解いた問題数", radius: 300, solveNumber: 20, maxNumber: 50)
         }
     }
 }

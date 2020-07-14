@@ -25,7 +25,9 @@ class User: ObservableObject {
     
     var maxQuestionNum: Int = 10
     
-    var onedayQuota: Int = 50
+    @Published var onedayQuota: Int = 50
+    
+    var showCorrectness: Bool = true
     
     static let shared = User()
     
@@ -52,4 +54,5 @@ class User: ObservableObject {
         UserDefaults.standard.set(totalMissCount, forKey: "totalMissCount")
         UserDefaults.standard.set(todayMissCount, forKey: "todayMissCount")
     }
+
 }
