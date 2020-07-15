@@ -12,7 +12,6 @@ struct QuestionView: View {
     
     @ObservedObject var questionViewModel: QuestionViewModel
     
-    
     var body: some View {
         
         ZStack {
@@ -47,6 +46,6 @@ struct QuestionView: View {
 
 struct QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionView(questionViewModel: QuestionViewModel(workbook: Workbook()))
+        QuestionView(questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .onlyNew))
     }
 }

@@ -11,19 +11,22 @@ import RealmSwift
 
 class RealmDecoder {
 
-    static func fetchAllDatas<T>() -> Results<T>? where T: Object  {
+    static func fetchAllDatas<T>(filter: String?) -> Results<T>? where T: Object  {
        
-       do {
-           let realm = try Realm()
-           let datas = realm.objects(T.self)
-           
-           return datas
-       } catch {
-           print("realm did not work")
-           return nil
-       }
+        do {
+            let realm = try Realm()
+            
+            if let _filter = filter {
+                return realm.objects(T.self).filter(_filter)
+            } else {
+                return realm.objects(T.self)
+            }
+        } catch {
+            print("realm did not work")
+            return nil
+        }
 
-   }
+    }
     
     static func addDataToRealm<T>(datas: [T]) where T: Object {
         do {

@@ -48,6 +48,7 @@ struct CustomNavigationBar: View {
 }
 
 struct CustomNavigationBar_Previews: PreviewProvider {
+    
     static var previews: some View {
         CustomNavigationBar(hasReturn: true, hasSetting: true, title: "Title")
     }

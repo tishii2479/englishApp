@@ -9,10 +9,13 @@
 import SwiftUI
 
 struct HomeNavigationButtonView: View {
+    
+    @ObservedObject var homeViewModel: HomeViewModel
+    
     var body: some View {
         VStack {
             // TODO: 今日の10問用のworkbookIdの取得
-            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: UserSetting.workbookArray[0]))) {
+            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: homeViewModel.getTodayWorkbook(), solveMode: .onlyNew))) {
                 Text("今日の10問")
                     .foregroundColor(Color.black)
             }.buttonStyle(WideButtonStyle())
@@ -26,6 +29,6 @@ struct HomeNavigationButtonView: View {
 
 struct HomeNavigationButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeNavigationButtonView()
+        HomeNavigationButtonView(homeViewModel: HomeViewModel())
     }
 }

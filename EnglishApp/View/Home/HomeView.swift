@@ -25,7 +25,7 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    ProgressCircle(text: "今日解いた問題数", radius: 200, solveNumber: user.todayCorrectCount + user.todayMissCount, maxNumber: user.onedayQuota)
+                    ProgressCircleView(text: "今日解いた問題数", radius: 200, solveNumber: user.todayCorrectCount + user.todayMissCount, maxNumber: user.onedayQuota)
                         
                     Spacer()
                     // Details
@@ -36,7 +36,7 @@ struct HomeView: View {
                     Spacer()
                     
                     // Buttons
-                    HomeNavigationButtonView()
+                    HomeNavigationButtonView(homeViewModel: homeViewModel)
                     
                     Spacer()
                 }

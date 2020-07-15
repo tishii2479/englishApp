@@ -24,7 +24,7 @@ struct WorkbookView: View {
                 
                 Spacer()
                 
-                ProgressCircle(text: "解いた問題数", radius: 200, solveNumber: workbookViewModel.workbook.correctCount, maxNumber: workbookViewModel.workbook.questionNumber)
+                ProgressCircleView(text: "解いた問題数", radius: 200, solveNumber: workbookViewModel.workbook.correctCount, maxNumber: workbookViewModel.workbook.questionNumber)
                 
                 Spacer()
                 
@@ -52,13 +52,14 @@ struct WorkbookView: View {
                 Spacer()
                 
                 // Buttons
-                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook))) {
+                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .onlyNew))) {
                     Text("新しい問題を解く")
                 }.buttonStyle(WideButtonStyle())
                 
-                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook))) {
+                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
                     Text("間違えた問題を復習する")
                 }.buttonStyle(WideButtonStyle())
+                
                 
                 Spacer()
             }
@@ -69,6 +70,7 @@ struct WorkbookView: View {
 }
 
 struct WorkbookView_Previews: PreviewProvider {
+    
     static var previews: some View {
         WorkbookView(workbookViewModel: WorkbookViewModel(workbook: Workbook()))
     }

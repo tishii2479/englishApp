@@ -13,7 +13,7 @@ class Workbook: Object, Identifiable {
     
     var id = UUID()
     
-    @objc dynamic var bookId: String = "20200704"
+    @objc dynamic var bookId: String = "20200001"
     
     @objc dynamic var title: String = "title"
 
@@ -31,11 +31,13 @@ class Workbook: Object, Identifiable {
 
     @objc dynamic var isPurchased: Bool = true
     
+    @objc dynamic var category: String = ""
+    
     var questions: Results<Question>?
     
     required init() {}
     
-    init(bookId: String, title: String, detail: String, difficulty: Int, questionNumber: Int, price: Int, correctCount: Int, missCount: Int, isPurchased: Bool) {
+    init(bookId: String, title: String, detail: String, difficulty: Int, questionNumber: Int, price: Int, correctCount: Int, missCount: Int, isPurchased: Bool, category: String) {
         self.bookId = bookId
         self.title = title
         self.detail = detail
@@ -45,20 +47,29 @@ class Workbook: Object, Identifiable {
         self.correctCount = correctCount
         self.missCount = missCount
         self.isPurchased = isPurchased
+        self.category = category
     }
 
-    // TODO: 問題を選ぶ際に未回答のみを選ぶ時と、間違えた問題のみを選ぶ時で分ける
-    func fetchQuestions(questionNum: Int) -> Array<Question>? {
+    func fetchQuestions(questionNum: Int, solveMode: SolveMode) -> Array<Question>? {
+        // ISSUE: 問題の読み込みが遅い場合には、ここで毎回Realmから取得するのをやめれば良い
+        // でも今はそこまで問題となるほど遅くないので、とりあえず良い
+        var filter: String?
         
-        // 問題がまだ見つかっていない場合にはrealmから取得
-        if questions == nil {
-            questions = RealmDecoder.fetchAllDatas()
+        switch solveMode {
+        case .onlyNew:
+            filter = "missCount == 0 AND correctCount == 0 AND bookId == '\(self.bookId)'"
+        case .onlyMissed:
+            filter = "missCount > 0 AND correctCount == 0 AND bookId == '\(self.bookId)'"
+        case .all:
+            filter = "bookId == '\(self.bookId)'"
         }
+        
+        questions = RealmDecoder.fetchAllDatas(filter: filter)
         
         if questions == nil { fatalError("questions could not be fetched") }
         
-        // ISSUE: removeしたいからarrayにしているが、これは処理速度的によくないかもしれない
         var temp = Array(questions!)
+        
         var questionArr = Array<Question>()
         
         for _ in 0 ..< questionNum {
@@ -79,9 +90,9 @@ class Workbook: Object, Identifiable {
             
             switch type {
             case .correct:
-                try realm.write { correctCount += amount }
+                try realm.write { self.correctCount += amount }
             case .miss:
-                try realm.write { missCount += amount }
+                try realm.write { self.missCount += amount }
             }
         } catch {
             print("failed to update count")

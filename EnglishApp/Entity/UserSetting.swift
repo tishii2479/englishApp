@@ -11,7 +11,9 @@ import RealmSwift
 
 class UserSetting {
     
-    static var workbookArray: Results<Workbook>!
+    static var workbookArray: Dictionary<String, Array<Workbook>>!
+    
+    static var workbookCategories: Array<Category>!
     
     static func setUp() {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
@@ -20,17 +22,13 @@ class UserSetting {
 
         // Comment out these to test memory
 //        resetUserInformation()
-//        setUpRealm()
-        
+        setUpRealm()
+
         setUpUserInformation()
-        
-        guard let _workbookArray: Results<Workbook> = RealmDecoder.fetchAllDatas() else {
-            fatalError("workbookのdataに問題があります")
-        }
-        
-        workbookArray = _workbookArray
+        setUpCategories()
+        setUpWorkbooks()
     }
-    
+
     private static func checkFirstActivationOfToday() {
         let todayDate: String = Date.getTodayDate()
         let userDefaults = UserDefaults.standard
@@ -50,21 +48,21 @@ class UserSetting {
     private static func setUpUserInformation() {
         let userDefaults = UserDefaults.standard
         
-        User.shared.timePerQuestion             = userDefaults.integer(forKey: "timePerQuestion")
+        User.shared.onedayQuota             = userDefaults.integer(forKey: "oneDayQuota")
         User.shared.maxQuestionNum              = userDefaults.integer(forKey: "maxQuestionNum")
         User.shared.timePerQuestion             = userDefaults.integer(forKey: "timePerQuestion")
-        User.shared.todayCorrectCount      = userDefaults.integer(forKey: "todayCorrectCount")
-        User.shared.todayMissCount         = userDefaults.integer(forKey: "todayMissCount")
-        User.shared.totalCorrectCount      = userDefaults.integer(forKey: "totalMissCount")
-        User.shared.totalMissCount         = userDefaults.integer(forKey: "totalMissCount")
-        User.shared.completedWorkbookCount = userDefaults.integer(forKey: "completedWorkbookCount")
+        User.shared.todayCorrectCount           = userDefaults.integer(forKey: "todayCorrectCount")
+        User.shared.todayMissCount              = userDefaults.integer(forKey: "todayMissCount")
+        User.shared.totalCorrectCount           = userDefaults.integer(forKey: "totalMissCount")
+        User.shared.totalMissCount              = userDefaults.integer(forKey: "totalMissCount")
+        User.shared.completedWorkbookCount      = userDefaults.integer(forKey: "completedWorkbookCount")
     }
     
     private static func resetUserInformation() {
         let userDefaults = UserDefaults.standard
         userDefaults.removeAll()
         
-        userDefaults.set(50,    forKey: "onedayQuota")
+        userDefaults.set(50,    forKey: "oneDayQuota")
         userDefaults.set(10,    forKey: "maxQuestionNum")
         userDefaults.set(20,    forKey: "timePerQuestion")
         userDefaults.set(0,     forKey: "todayCorrectCount")
@@ -75,12 +73,51 @@ class UserSetting {
     }
     
     private static func setUpRealm() {
-        let realm = try! Realm()
+        let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+        let realm = try! Realm(configuration: config)
         
         try! realm.write { realm.deleteAll() }
         
-        WorkbookDecoder.convertCsvFileToRealmObject(fileName: "workbook")
-        QuestionDecoder.convertCsvFileToRealmObject(fileName: "20200704")
+        CSVDecoder.convertWorkbookFile(fileName: "workbook")
+        CSVDecoder.convertCategoryFile(fileName: "category")
+        CSVDecoder.convertQuestionFile(fileName: "20200001")
+        CSVDecoder.convertQuestionFile(fileName: "20200102")
+    }
+    
+    private static func setUpCategories() {
+        guard let categories: Results<Category> = RealmDecoder.fetchAllDatas(filter: nil) else { fatalError("failed to conver category") }
+        
+        workbookCategories = Array(categories)
+    }
+    
+    private static func setUpWorkbooks() {
+        
+        guard let _workbookArray: Results<Workbook> = RealmDecoder.fetchAllDatas(filter: nil) else {
+            fatalError("workbookのdataに問題があります")
+        }
+        
+        var dic: Dictionary<String, Array<Workbook>> = [:]
+        
+        for category in workbookCategories {
+            dic.updateValue([], forKey: category.title)
+        }
+
+        for workbook in _workbookArray {
+            var isFirstWorkbookOfCategory = true
+            
+            for category in workbookCategories {
+                if workbook.category == category.title {
+                    dic[category.title]?.append(workbook)
+                    isFirstWorkbookOfCategory = false
+                }
+            }
+            
+            if isFirstWorkbookOfCategory {
+                fatalError("category name is invalid")
+            }
+        }
+        
+        workbookArray = dic
     }
     
 }
