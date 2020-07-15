@@ -42,6 +42,6 @@ struct ChoiceButtonView: View {
 
 struct ChoiceButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ChoiceButtonView(questionViewModel: QuestionViewModel(workbook: Workbook()), index: 0)
+        ChoiceButtonView(questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .onlyNew), index: 0)
     }
 }

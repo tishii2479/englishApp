@@ -16,6 +16,7 @@ struct QuestionReviewView: View {
     
     var body: some View {
         UITableView.appearance().separatorStyle = .none
+        
         return ZStack {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
@@ -39,7 +40,10 @@ struct QuestionReviewView: View {
             
                 List {
                     ForEach(0 ..< questionViewModel.maxQuestionNum) { i in
-                        PreviewCellView(question: self.questionViewModel.questions[i], userChoice: self.questionViewModel.userChoices[i], questionNum: i + 1, maxQuestionNum: self.questionViewModel.maxQuestionNum)
+                        // https://developer.apple.com/forums/thread/131577
+                        VStack {
+                            PreviewCellView(question: self.questionViewModel.questions[i], userChoice: self.questionViewModel.userChoices[i], questionNum: i + 1, maxQuestionNum: self.questionViewModel.maxQuestionNum)
+                        }
                     }
                 }
                 .background(Color.offWhite)
@@ -50,6 +54,6 @@ struct QuestionReviewView: View {
 
 struct QuestionReviewView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionReviewView(isPresented: Binding.constant(true), questionViewModel: QuestionViewModel(workbook: Workbook()))
+        QuestionReviewView(isPresented: Binding.constant(true), questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .onlyNew))
     }
 }

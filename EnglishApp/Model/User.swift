@@ -55,4 +55,19 @@ class User: ObservableObject {
         UserDefaults.standard.set(todayMissCount, forKey: "todayMissCount")
     }
 
+    func setUserSetting(key: String, value: Int) {
+        UserDefaults.standard.set(value, forKey: key)
+        
+        switch key {
+        case "timePerQuestion":
+            timePerQuestion = value
+        case "maxQuestionNum":
+            maxQuestionNum = value
+        case "oneDayQuota":
+            onedayQuota = value
+        default:
+            print("error: switch key is invalid: \(key)")
+        }
+    }
+    
 }

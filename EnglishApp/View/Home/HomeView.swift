@@ -36,7 +36,7 @@ struct HomeView: View {
                     Spacer()
                     
                     // Buttons
-                    HomeNavigationButtonView()
+                    HomeNavigationButtonView(homeViewModel: homeViewModel)
                     
                     Spacer()
                 }

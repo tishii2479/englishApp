@@ -12,11 +12,7 @@ struct PreviewCellView: View {
     
     @State var isSaved: Bool = false
     
-    var question: Question {
-        didSet {
-            isSaved = question.isSaved
-        }
-    }
+    var question: Question
     
     var userChoice: String
     
@@ -25,7 +21,7 @@ struct PreviewCellView: View {
     var maxQuestionNum: Int
     
     var body: some View {
-        ZStack {
+        return ZStack {
             RoundedRectangle(cornerRadius: 25)
                 .foregroundColor(Color.offWhite)
                 .frame(height: 320)
@@ -51,6 +47,9 @@ struct PreviewCellView: View {
                     }) {
                         Image(systemName: self.isSaved ? "star.fill" : "star")
                             .frame(width: 30, height: 30)
+                            .onAppear {
+                                self.isSaved = self.question.isSaved
+                            }
                     }.buttonStyle(ShrinkButtonStyle())
                 }
                 
@@ -66,11 +65,11 @@ struct PreviewCellView: View {
                 VStack {
                     HStack {
                         SmallChoiceView(choice: question.choice1, hasSelected: userChoice == question.choice1, isAnswer: question.answer == question.choice1)
-                        SmallChoiceView(choice: question.choice2, hasSelected: userChoice == question.choice1, isAnswer: question.answer == question.choice2)
+                        SmallChoiceView(choice: question.choice2, hasSelected: userChoice == question.choice2, isAnswer: question.answer == question.choice2)
                     }
                     HStack {
-                        SmallChoiceView(choice: question.choice3, hasSelected: userChoice == question.choice1, isAnswer: question.answer == question.choice3)
-                        SmallChoiceView(choice: question.choice4, hasSelected: userChoice == question.choice1, isAnswer: question.answer == question.choice4)
+                        SmallChoiceView(choice: question.choice3, hasSelected: userChoice == question.choice3, isAnswer: question.answer == question.choice3)
+                        SmallChoiceView(choice: question.choice4, hasSelected: userChoice == question.choice4, isAnswer: question.answer == question.choice4)
                     }
                 }
             }

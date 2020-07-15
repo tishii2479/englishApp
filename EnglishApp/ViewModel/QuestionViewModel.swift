@@ -18,6 +18,8 @@ class QuestionViewModel: ObservableObject {
         case pause
     }
     
+    var solveMode: SolveMode = .onlyNew
+    
     var finishSolving: Bool = false
     
     var user: User = User.shared
@@ -26,9 +28,11 @@ class QuestionViewModel: ObservableObject {
 
     var correctCount: Int = 0
     
-    lazy var maxTime: Double = Double(questions.count * user.timePerQuestion)
+    var maxTime: Double = Double(User.shared.timePerQuestion)
     
-    lazy var maxQuestionNum: Int = user.maxQuestionNum
+    var totalTime: Double = 0
+    
+    var maxQuestionNum: Int = User.shared.maxQuestionNum
     
     var workbook: Workbook!
     
@@ -50,8 +54,11 @@ class QuestionViewModel: ObservableObject {
     
     @Published var backgroundColor: Color = .clear
     
-    init(workbook: Workbook) {
+    @Published var progressBarColor: Color = Color.offWhite
+    
+    init(workbook: Workbook, solveMode: SolveMode) {
         self.workbook = workbook
+        self.solveMode = solveMode
     }
     
     deinit {
@@ -63,11 +70,14 @@ class QuestionViewModel: ObservableObject {
 // MARK: ゲームシステム
 extension QuestionViewModel {
     
-    func setQuestions(workbook: Workbook) {
-        guard let _questions = workbook.fetchQuestions(questionNum: maxQuestionNum) else { fatalError("questionのdataに問題があります") }
-        self.questions = _questions
+    func questionExist() {
         
-        nowQuestion = questions[nowQuestionNum]
+    }
+    
+    func fetchQuestions() {
+        guard let _questions = workbook.fetchQuestions(questionNum: maxQuestionNum, solveMode: self.solveMode) else { fatalError("questionのdataに問題があります") }
+
+        questions = _questions
     }
     
     func sendUserChoice(choice: String) {
@@ -87,10 +97,17 @@ extension QuestionViewModel {
     // 次の問題があればnowQuestionNumをインクリメント、なければリザルト画面へ遷移
     func goToNextQuestion() {
         if nowQuestionNum < maxQuestionNum - 1 {
+            
             nowQuestionNum += 1
             nowQuestion = questions[nowQuestionNum]
+            remainingTime = maxTime
+            progressBarColor = Color.offWhite
+            
         } else {
+            
             self.finishSolving = true
+            timer.invalidate()
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + effectDuration + 0.3){
                 self.endSolving()
             }
@@ -158,12 +175,18 @@ extension QuestionViewModel {
 // MARK: 画面遷移
 extension QuestionViewModel {
     func startSolving() {
-        setQuestions(workbook: workbook)
+        fetchQuestions()
+        
+        nowQuestionNum = 0
+        nowQuestion = questions[nowQuestionNum]
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: updateTimer(timer:))
+        maxQuestionNum = user.maxQuestionNum
+        maxTime = Double(user.timePerQuestion)
         remainingTime = maxTime
-        nowQuestionNum = 0
         correctCount = 0
+        totalTime = 0
+        progressBarColor = Color.offWhite
         userChoices.removeAll()
         finishSolving = false
         
@@ -198,7 +221,16 @@ extension QuestionViewModel {
         if status != .solve { return }
         
         remainingTime -= timer.timeInterval
+        totalTime += timer.timeInterval
         
+        // TODO: 色の変わり方を場所によって計算して変更する
+        if remainingTime < maxTime / 5 {
+            progressBarColor = Color.red
+        } else if remainingTime < maxTime / 2 {
+            progressBarColor = Color.offRed
+        }
+        
+        // TODO: モードによって変える
         if remainingTime <= 0 {
             endSolving()
         }

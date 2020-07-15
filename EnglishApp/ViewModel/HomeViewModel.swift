@@ -11,5 +11,11 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
     
     @Published var user: User = User.shared
-
+    
+    func getTodayWorkbook() -> Workbook {
+        // TODO: ここで今日の問題を日にちから取得する
+        // 取得できなければそれを伝える
+        return Workbook()
+    }
+    
 }

@@ -55,6 +55,10 @@
 		49E1A56524ACB087008EC140 /* QuestionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56424ACB087008EC140 /* QuestionResultView.swift */; };
 		49E1A56724ACB0E5008EC140 /* QuestionStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56624ACB0E5008EC140 /* QuestionStartView.swift */; };
 		49E1A56924ACB0F3008EC140 /* QuestionPauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56824ACB0F3008EC140 /* QuestionPauseView.swift */; };
+		49F3B79A24BEB00800012B94 /* SolveMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79924BEB00800012B94 /* SolveMode.swift */; };
+		49F3B79C24BEC90B00012B94 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79B24BEC90B00012B94 /* SectionHeader.swift */; };
+		49F3B79E24BEF3D800012B94 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79D24BEF3D800012B94 /* Category.swift */; };
+		49F3B7A024BEF42300012B94 /* category.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49F3B79F24BEF42300012B94 /* category.csv */; };
 		49FAB6DD24BC12B1002E7247 /* 20200102.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49FAB6DC24BC12B1002E7247 /* 20200102.csv */; };
 		49FAB6E124BC1D55002E7247 /* 20200001.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49FAB6E024BC1D55002E7247 /* 20200001.csv */; };
 		580BCA4491F293C86AA5408E /* Pods_EnglishAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */; };
@@ -131,6 +135,10 @@
 		49E1A56424ACB087008EC140 /* QuestionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResultView.swift; sourceTree = "<group>"; };
 		49E1A56624ACB0E5008EC140 /* QuestionStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStartView.swift; sourceTree = "<group>"; };
 		49E1A56824ACB0F3008EC140 /* QuestionPauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPauseView.swift; sourceTree = "<group>"; };
+		49F3B79924BEB00800012B94 /* SolveMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveMode.swift; sourceTree = "<group>"; };
+		49F3B79B24BEC90B00012B94 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
+		49F3B79D24BEF3D800012B94 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		49F3B79F24BEF42300012B94 /* category.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = category.csv; sourceTree = "<group>"; };
 		49FAB6DC24BC12B1002E7247 /* 20200102.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 20200102.csv; sourceTree = "<group>"; };
 		49FAB6E024BC1D55002E7247 /* 20200001.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = 20200001.csv; path = csv/20200001.csv; sourceTree = SOURCE_ROOT; };
 		7386E48E2950A9DF925D34F3 /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,8 +198,6 @@
 				4950F13024B9602700466674 /* CustomNavigationBar.swift */,
 				490A5E1324BB407400D26929 /* DentCircleView.swift */,
 				496CAF1324AB21E600F290E9 /* ButtonStyle.swift */,
-				49924CC624BD6D3200AD962A /* PreviewCellView.swift */,
-				49AC0DF324BD797C0077ED39 /* SmallChoiceView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 			children = (
 				490F86F324B0451700EF5622 /* WorkbookCollectionView.swift */,
 				490F86F724B0521D00EF5622 /* WorkbookCellView.swift */,
+				49F3B79B24BEC90B00012B94 /* SectionHeader.swift */,
 			);
 			path = WorkbookCollection;
 			sourceTree = "<group>";
@@ -233,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				490A5E1524BB429D00D26929 /* workbook.csv */,
+				49F3B79F24BEF42300012B94 /* category.csv */,
 				49FAB6E024BC1D55002E7247 /* 20200001.csv */,
 				49FAB6DC24BC12B1002E7247 /* 20200102.csv */,
 			);
@@ -243,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				4931A03824B20ED100C26AFD /* CountType.swift */,
+				49F3B79924BEB00800012B94 /* SolveMode.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -354,6 +363,7 @@
 				496CAF1724AB27CC00F290E9 /* Question.swift */,
 				490F86FB24B05D9D00EF5622 /* Workbook.swift */,
 				4904486724B1970400391FE5 /* User.swift */,
+				49F3B79D24BEF3D800012B94 /* Category.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -382,6 +392,8 @@
 			isa = PBXGroup;
 			children = (
 				496CAF0E24AB20DB00F290E9 /* QuestionView.swift */,
+				49924CC624BD6D3200AD962A /* PreviewCellView.swift */,
+				49AC0DF324BD797C0077ED39 /* SmallChoiceView.swift */,
 				496CAF1524AB238300F290E9 /* ChoiceButtonView.swift */,
 				49E1A56124ACAF59008EC140 /* QuestionSolveView.swift */,
 				49E1A56424ACB087008EC140 /* QuestionResultView.swift */,
@@ -534,6 +546,7 @@
 				49FAB6E124BC1D55002E7247 /* 20200001.csv in Resources */,
 				496CAEE924AB1CF000F290E9 /* LaunchScreen.storyboard in Resources */,
 				496CAEE624AB1CF000F290E9 /* Preview Assets.xcassets in Resources */,
+				49F3B7A024BEF42300012B94 /* category.csv in Resources */,
 				496CAEE324AB1CF000F290E9 /* Assets.xcassets in Resources */,
 				49FAB6DD24BC12B1002E7247 /* 20200102.csv in Resources */,
 			);
@@ -663,6 +676,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F3B79A24BEB00800012B94 /* SolveMode.swift in Sources */,
 				49AC0DF624BD82930077ED39 /* QuestionReviewView.swift in Sources */,
 				4931A03B24B2121400C26AFD /* Date.swift in Sources */,
 				496CAEDD24AB1CF000F290E9 /* AppDelegate.swift in Sources */,
@@ -681,6 +695,7 @@
 				490F86ED24B01EF400EF5622 /* SettingButtonView.swift in Sources */,
 				490A5E1424BB407400D26929 /* DentCircleView.swift in Sources */,
 				496CAEDF24AB1CF000F290E9 /* SceneDelegate.swift in Sources */,
+				49F3B79C24BEC90B00012B94 /* SectionHeader.swift in Sources */,
 				496CAF1824AB27CC00F290E9 /* Question.swift in Sources */,
 				490F86F624B0475700EF5622 /* ReturnButtonView.swift in Sources */,
 				496CAF1B24AB353900F290E9 /* QuestionViewModel.swift in Sources */,
@@ -702,6 +717,7 @@
 				49E1A56724ACB0E5008EC140 /* QuestionStartView.swift in Sources */,
 				4904486C24B1D6AE00391FE5 /* HomeNavigationButtonView.swift in Sources */,
 				4904486224B17F1000391FE5 /* RealmDecoder.swift in Sources */,
+				49F3B79E24BEF3D800012B94 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

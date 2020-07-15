@@ -43,10 +43,7 @@ class CSVDecoder {
             if arr.count == 1 { continue }
             
             // 要素数のチェック
-            guard arr.count == 5  else {
-                print("column number is invalid at question file")
-                return
-            }
+            guard arr.count == 5  else { fatalError("failed to convert question") }
             
             var choices = [String]()
             for i in 0 ..< 4 {
@@ -75,22 +72,39 @@ class CSVDecoder {
             let arr = data.components(separatedBy: ",")
             
             // 要素数のチェック
-            guard arr.count == 6,
+            guard arr.count == 7,
                 let difficulty = Int(arr[3]),
                 let questionNumber = Int(arr[4]),
-                let price = Int(arr[5]) else {
-                    print("column number is invalid at workbook file")
-                    return
-                }
+                let price = Int(arr[5]) else { fatalError("failed to convert workbook") }
             
             let isPurchased = price == 0
             
-            let workbook = Workbook(bookId: arr[0], title: arr[1], detail: arr[2], difficulty: difficulty, questionNumber: questionNumber, price: price, correctCount: 0, missCount: 0, isPurchased: isPurchased)
+            let workbook = Workbook(bookId: arr[0], title: arr[1], detail: arr[2], difficulty: difficulty, questionNumber: questionNumber, price: price, correctCount: 0, missCount: 0, isPurchased: isPurchased, category: arr[6])
             
             workbookArr.append(workbook)
         }
         
         RealmDecoder.addDataToRealm(datas: workbookArr)
+    }
+    
+    static func convertCategoryFile(fileName: String) {
+        var categoryArr = [Category]()
+        
+        guard let dataArr: Array<String> = CSVDecoder.convertCSVFileToStringArray(fileName: fileName) else {
+            return
+        }
+        
+        for data in dataArr {
+            let arr = data.components(separatedBy: ",")
+            
+            guard arr.count == 1 else { fatalError("failed to convert category") }
+            
+            let category = Category(title: arr[0])
+            
+            categoryArr.append(category)
+        }
+        
+        RealmDecoder.addDataToRealm(datas: categoryArr)
     }
     
 }

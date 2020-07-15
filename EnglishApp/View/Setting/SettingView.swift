@@ -22,6 +22,8 @@ struct SettingView: View {
     
     @Binding var isPresented: Bool
     
+    var user = User.shared
+    
     var body: some View {
         UITableView.appearance().separatorStyle = .singleLine
         return NavigationView {
@@ -43,8 +45,7 @@ struct SettingView: View {
                                         .navigationBarTitle("一問あたりの時間", displayMode: .inline)
                                 }
                                 .onReceive([self.timePerQuestion].publisher.first()) { (value) in
-                                    UserDefaults.standard.set(self.timePerQuestion, forKey: "timePerQuestion")
-                                    User.shared.timePerQuestion = self.timePerQuestion
+                                    self.user.setUserSetting(key: "timePerQuestion", value: self.timePerQuestion)
                                 }
                                 Picker(selection: self.$maxQuestionNum, label: Text("一回あたりの問題数")) {
                                     Text("5").tag(5)
@@ -56,8 +57,7 @@ struct SettingView: View {
                                         .navigationBarTitle("一回あたりの問題数", displayMode: .inline)
                                 }
                                 .onReceive([self.maxQuestionNum].publisher.first()) { (value) in
-                                    UserDefaults.standard.set(self.maxQuestionNum, forKey: "maxQuestionNum")
-                                    User.shared.maxQuestionNum = self.maxQuestionNum
+                                    self.user.setUserSetting(key: "maxQuestionNum", value: self.maxQuestionNum)
                                 }
                                 Picker(selection: self.$oneDayQuota, label: Text("一日の目標問題数")) {
                                     Text("10").tag(10)
@@ -69,8 +69,7 @@ struct SettingView: View {
                                         .navigationBarTitle("一日の目標問題数", displayMode: .inline)
                                 }
                                 .onReceive([self.oneDayQuota].publisher.first()) { (value) in
-                                    UserDefaults.standard.set(self.oneDayQuota, forKey: "oneDayQuota")
-                                    User.shared.onedayQuota = self.oneDayQuota
+                                    self.user.setUserSetting(key: "oneDayQuota", value: self.oneDayQuota)
                                 }
                             }
                             

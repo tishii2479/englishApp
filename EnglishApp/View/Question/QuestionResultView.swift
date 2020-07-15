@@ -31,11 +31,11 @@ struct QuestionResultView: View {
                     +
                     Text(" / " + String(questionViewModel.maxQuestionNum))
                         
-                    Text(String(format: "所要時間:  %.1f秒", questionViewModel.maxTime - questionViewModel.remainingTime))
+                    Text(String(format: "所要時間:  %.1f秒", questionViewModel.totalTime))
                         .font(.subheadline)
                         .fontWeight(.light)
                         .padding(.vertical, 5)
-                    Text(String(format: "一問あたり: %.1f秒", (questionViewModel.maxTime - questionViewModel.remainingTime) / Double(questionViewModel.maxQuestionNum)))
+                    Text(String(format: "一問あたり: %.1f秒", questionViewModel.totalTime / Double(questionViewModel.maxQuestionNum)))
                         .font(.subheadline)
                         .fontWeight(.light)
                         
@@ -86,6 +86,6 @@ struct QuestionResultView: View {
 
 struct QuestionResultView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionResultView(questionViewModel: QuestionViewModel(workbook: Workbook()))
+        QuestionResultView(questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .onlyNew))
     }
 }
