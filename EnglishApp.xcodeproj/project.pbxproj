@@ -15,9 +15,11 @@
 		4904486E24B1DF8100391FE5 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486D24B1DF8100391FE5 /* UserDefaults.swift */; };
 		490A5E1424BB407400D26929 /* DentCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E1324BB407400D26929 /* DentCircleView.swift */; };
 		490A5E1624BB429D00D26929 /* workbook.csv in Resources */ = {isa = PBXBuildFile; fileRef = 490A5E1524BB429D00D26929 /* workbook.csv */; };
+		490BE05D24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490BE05C24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift */; };
+		490BE06C24BF490A00E0F1F9 /* miss.caf in Resources */ = {isa = PBXBuildFile; fileRef = 490BE06A24BF490A00E0F1F9 /* miss.caf */; };
+		490BE06D24BF490A00E0F1F9 /* correct.caf in Resources */ = {isa = PBXBuildFile; fileRef = 490BE06B24BF490A00E0F1F9 /* correct.caf */; };
 		490F86E624B0162500EF5622 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E524B0162500EF5622 /* HomeView.swift */; };
 		490F86E824B0198B00EF5622 /* ProgressCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E724B0198B00EF5622 /* ProgressCircleView.swift */; };
-		490F86EA24B01A7C00EF5622 /* ProgressCircleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */; };
 		490F86ED24B01EF400EF5622 /* SettingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86EC24B01EF400EF5622 /* SettingButtonView.swift */; };
 		490F86EF24B0292B00EF5622 /* HomeDetailTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86EE24B0292B00EF5622 /* HomeDetailTextView.swift */; };
 		490F86F124B030BF00EF5622 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F86F024B030BF00EF5622 /* HomeViewModel.swift */; };
@@ -90,9 +92,11 @@
 		4904486D24B1DF8100391FE5 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		490A5E1324BB407400D26929 /* DentCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentCircleView.swift; sourceTree = "<group>"; };
 		490A5E1524BB429D00D26929 /* workbook.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = workbook.csv; sourceTree = "<group>"; };
+		490BE05C24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAudioPlayer.swift; sourceTree = "<group>"; };
+		490BE06A24BF490A00E0F1F9 /* miss.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = miss.caf; sourceTree = "<group>"; };
+		490BE06B24BF490A00E0F1F9 /* correct.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = correct.caf; sourceTree = "<group>"; };
 		490F86E524B0162500EF5622 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		490F86E724B0198B00EF5622 /* ProgressCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleView.swift; sourceTree = "<group>"; };
-		490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCircleDelegate.swift; sourceTree = "<group>"; };
 		490F86EC24B01EF400EF5622 /* SettingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonView.swift; sourceTree = "<group>"; };
 		490F86EE24B0292B00EF5622 /* HomeDetailTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailTextView.swift; sourceTree = "<group>"; };
 		490F86F024B030BF00EF5622 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -179,6 +183,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490BE05524BF389F00E0F1F9 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				490BE06B24BF490A00E0F1F9 /* correct.caf */,
+				490BE06A24BF490A00E0F1F9 /* miss.caf */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
 		490F86E424B0160300EF5622 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,7 +272,6 @@
 		494640D424AC648B0070C745 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				490F86E924B01A7C00EF5622 /* ProgressCircleDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -270,6 +282,7 @@
 				490F870224B068E100EF5622 /* WorkbookFormatter.swift */,
 				491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */,
 				4904486124B17F1000391FE5 /* RealmDecoder.swift */,
+				490BE05C24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -302,6 +315,7 @@
 				496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */,
 				496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */,
 				4931A03724B20EC300C26AFD /* Enum */,
+				490BE05524BF389F00E0F1F9 /* audio */,
 				491DBFC924B0A79200A24A79 /* csv */,
 				490F870724B07C8A00EF5622 /* Entity */,
 				494640D424AC648B0070C745 /* Delegate */,
@@ -546,6 +560,8 @@
 				49FAB6E124BC1D55002E7247 /* 20200001.csv in Resources */,
 				496CAEE924AB1CF000F290E9 /* LaunchScreen.storyboard in Resources */,
 				496CAEE624AB1CF000F290E9 /* Preview Assets.xcassets in Resources */,
+				490BE06C24BF490A00E0F1F9 /* miss.caf in Resources */,
+				490BE06D24BF490A00E0F1F9 /* correct.caf in Resources */,
 				49F3B7A024BEF42300012B94 /* category.csv in Resources */,
 				496CAEE324AB1CF000F290E9 /* Assets.xcassets in Resources */,
 				49FAB6DD24BC12B1002E7247 /* 20200102.csv in Resources */,
@@ -693,6 +709,7 @@
 				490F870924B07CBD00EF5622 /* UserSetting.swift in Sources */,
 				49E1A56224ACAF59008EC140 /* QuestionSolveView.swift in Sources */,
 				490F86ED24B01EF400EF5622 /* SettingButtonView.swift in Sources */,
+				490BE05D24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift in Sources */,
 				490A5E1424BB407400D26929 /* DentCircleView.swift in Sources */,
 				496CAEDF24AB1CF000F290E9 /* SceneDelegate.swift in Sources */,
 				49F3B79C24BEC90B00012B94 /* SectionHeader.swift in Sources */,
@@ -702,7 +719,6 @@
 				49E1A56524ACB087008EC140 /* QuestionResultView.swift in Sources */,
 				4931A03924B20ED100C26AFD /* CountType.swift in Sources */,
 				490F870324B068E100EF5622 /* WorkbookFormatter.swift in Sources */,
-				490F86EA24B01A7C00EF5622 /* ProgressCircleDelegate.swift in Sources */,
 				490F86F824B0521D00EF5622 /* WorkbookCellView.swift in Sources */,
 				4904486E24B1DF8100391FE5 /* UserDefaults.swift in Sources */,
 				49AC0DF424BD797C0077ED39 /* SmallChoiceView.swift in Sources */,

@@ -34,7 +34,7 @@ struct QuestionView: View {
         switch questionViewModel.status {
         case .start:
             return AnyView(QuestionStartView(questionViewModel: questionViewModel))
-        case .solve:
+        case .solve, .idle:
             return AnyView(QuestionSolveView(questionViewModel: questionViewModel))
         case .result:
             return AnyView(QuestionResultView(questionViewModel: questionViewModel))

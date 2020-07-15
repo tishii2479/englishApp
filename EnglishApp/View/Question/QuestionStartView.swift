@@ -54,16 +54,6 @@ struct QuestionStartView: View {
             }
             
             Spacer()
-
-        }.onAppear {
-            // TODO: 問題の共有ができていないため、毎回取得し直している
-            // 今後処理が多くて困るかもしれない
-            self.questionViewModel.fetchQuestions()
-            
-            if self.questionViewModel.questions.count == 0 {
-                // 問題が一つも存在しないため、問題を解けなくする
-                self.showStartButton = false
-            }
         }
     }
 }

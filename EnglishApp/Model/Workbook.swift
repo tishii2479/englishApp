@@ -18,6 +18,8 @@ class Workbook: Object, Identifiable {
     @objc dynamic var title: String = "title"
 
     @objc dynamic var detail: String = "detail"
+    
+    @objc dynamic var category: String = ""
 
     @objc dynamic var difficulty: Int = 1
 
@@ -31,13 +33,13 @@ class Workbook: Object, Identifiable {
 
     @objc dynamic var isPurchased: Bool = true
     
-    @objc dynamic var category: String = ""
+    @objc dynamic var isCleared: Bool = false
     
     var questions: Results<Question>?
     
     required init() {}
     
-    init(bookId: String, title: String, detail: String, difficulty: Int, questionNumber: Int, price: Int, correctCount: Int, missCount: Int, isPurchased: Bool, category: String) {
+    init(bookId: String, title: String, detail: String, category: String, difficulty: Int, questionNumber: Int, price: Int, correctCount: Int, missCount: Int, isPurchased: Bool, isCleared: Bool) {
         self.bookId = bookId
         self.title = title
         self.detail = detail
@@ -48,6 +50,7 @@ class Workbook: Object, Identifiable {
         self.missCount = missCount
         self.isPurchased = isPurchased
         self.category = category
+        self.isCleared = isCleared
     }
 
     func fetchQuestions(questionNum: Int, solveMode: SolveMode) -> Array<Question>? {
@@ -61,6 +64,8 @@ class Workbook: Object, Identifiable {
         case .onlyMissed:
             filter = "missCount > 0 AND correctCount == 0 AND bookId == '\(self.bookId)'"
         case .all:
+            filter = "bookId == '\(self.bookId)'"
+        case .test:
             filter = "bookId == '\(self.bookId)'"
         }
         
@@ -96,6 +101,16 @@ class Workbook: Object, Identifiable {
             }
         } catch {
             print("failed to update count")
+        }
+    }
+    
+    func setCleared(isCleared: Bool) {
+        do {
+            let realm = try Realm()
+            
+            try realm.write { self.isCleared = isCleared }
+        } catch {
+            print("failed to update iscleared")
         }
     }
     

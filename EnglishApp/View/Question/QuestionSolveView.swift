@@ -22,8 +22,8 @@ struct QuestionSolveView: View {
                         // FIXME: 長さを計算するか他の方法で直す必要あり
                         .frame(width: geometry.size.width * CGFloat(self.questionViewModel.remainingTime / self.questionViewModel.maxTime), height: 20, alignment: .leading)
                         .foregroundColor(self.questionViewModel.progressBarColor)
-                        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 10, y: 10)
-                        .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
+                        .shadow(color: self.questionViewModel.progressBarDownerShadowColor, radius: 6, x: 10, y: 10)
+                        .shadow(color: self.questionViewModel.progressBarUpperShadowColor, radius: 6, x: -5, y: -5)
                         .animation(.easeIn)
                         Spacer()
                 }.frame(maxHeight: 20)
@@ -58,7 +58,7 @@ struct QuestionSolveView: View {
             Text(self.questionViewModel.nowQuestion.questionText)
                 .padding(10)
             Spacer()
-            
+                
             // ProgressBar
             HStack {
                 Spacer()
@@ -70,9 +70,33 @@ struct QuestionSolveView: View {
                     .foregroundColor(Color.gray)
             }.padding([.horizontal], 20)
             
-            // ChoiceWindow
-            ForEach(0 ..< 4) { (index) in
-                ChoiceButtonView(questionViewModel: self.questionViewModel, index: index)
+            ZStack {
+                // ChoiceWindow
+                VStack {
+                    ForEach(0 ..< 4) { (index) in
+                        ChoiceButtonView(questionViewModel: self.questionViewModel, index: index)
+                    }
+                }
+                
+                // Effect
+                Group {
+                    if self.questionViewModel.showMissCross {
+                        Image(systemName: "multiply")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(Color.offRed)
+                            .frame(width: 80, height: 80)
+                    }
+                }
+                Group {
+                    if self.questionViewModel.showCorrectCircle {
+                        Image(systemName: "circle")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(Color.offGreen)
+                            .frame(width: 80, height: 80)
+                    }
+                }
             }
         }
         .padding(.bottom, 10)

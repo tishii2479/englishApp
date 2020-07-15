@@ -22,7 +22,7 @@ class UserSetting {
 
         // Comment out these to test memory
 //        resetUserInformation()
-        setUpRealm()
+//        setUpRealm()
 
         setUpUserInformation()
         setUpCategories()
