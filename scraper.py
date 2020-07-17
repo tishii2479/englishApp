@@ -171,6 +171,6 @@ with open(path, "w") as f:
     writer.writerows(questions)
 
 print(
-    f"""問題を作成しました。
+f"""問題を作成しました。
 作成したファイルの場所:  {path}"""
 )
