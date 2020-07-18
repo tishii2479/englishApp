@@ -126,7 +126,10 @@ def create_questions(raw_data):
         answer = code_regex.sub("", answer)
 
         # 文章のカンマを変えて、答えを抜き出す
-        new_sentence = s.replace(",", "_").replace(answer, "*", 1)
+        new_sentence = s.replace(",", "_").replace(" " + answer + " ", " * ", 1)
+
+        # 改行をなくす
+        new_p = re.sub(r"(?<!\n)\n(?![\n\t])", " ", new_sentence.replace("\r", ""))
 
         questions.append([new_sentence, answer])
         word_data |= set(words)
