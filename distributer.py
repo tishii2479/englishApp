@@ -2,36 +2,46 @@ import os
 import csv
 import pathlib
 import re
+import random
+
+paths = []
 
 while True:
-    file_name = input("分配するファイル名を入力:  ")
-    file_name += ".csv"
-    path = os.path.join(os.getcwd(), "csv", file_name)
+    while True:
+        file_name = input("分配するファイル名を入力:  ")
+        file_name += ".csv"
+        path = os.path.join(os.getcwd(), "csv", file_name)
 
-    if os.path.exists(path):
+        if os.path.exists(path):
+            paths.append(path)
+            break
+        else:
+            print("入力したファイルが見つかりません。")
+
+    command = input("ファイルを追加しますか？[y/n]")
+    if command == "n":
         break
-    else:
-        print("入力したファイルが見つかりません。")
 
 size = int(input("分配される問題数を入力:  "))
 
 root_file_name = input("分配されるファイル名を入力:  ")
 
 print("問題を分配しています...")
-
 questions = []
 
-with open(path) as f:
-    reader = csv.reader(f, quoting=csv.QUOTE_NONE, escapechar="\\")
-    questions = [row for row in reader]
+for path in paths:
+    with open(path) as f:
+        reader = csv.reader(f, quoting=csv.QUOTE_NONE, escapechar="\\")
+        questions += [row for row in reader]
 
 version = 1
 
 while len(questions) >= size:
     new_questions = []
     for i in range(size):
-        new_questions.append(questions[0])
-        questions.pop(0)
+        index = random.randint(0, len(questions) - 1)
+        new_questions.append(questions[index])
+        questions.pop(index)
 
     new_file_name = root_file_name + f"_{version}.csv"
     new_file_path = os.path.join(os.getcwd(), "csv", new_file_name)
@@ -43,5 +53,5 @@ while len(questions) >= size:
     print(f"ファイルを作成しました:  {new_file_path}")
     version += 1
 
-print(f"{len(questions)}この質問が余りました。")
+print(f"{len(questions)}個の質問が余りました。")
 
