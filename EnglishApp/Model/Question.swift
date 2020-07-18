@@ -29,9 +29,9 @@ class Question: Object {
     
     @objc dynamic var missCount: Int = 0
     
-    @objc dynamic var isSaved: Bool = false
+    @objc dynamic var isLiked: Bool = false
     
-    init(bookId: String, questionText: String, answer: String, choice1: String, choice2: String, choice3: String, choice4: String, correctCount: Int, missCount: Int, isSaved: Bool) {
+    init(bookId: String, questionText: String, answer: String, choice1: String, choice2: String, choice3: String, choice4: String, correctCount: Int, missCount: Int, isLiked: Bool) {
         self.bookId = bookId
         self.questionText = questionText
         self.answer = answer
@@ -41,7 +41,7 @@ class Question: Object {
         self.choice4 = choice4
         self.correctCount = correctCount
         self.missCount = missCount
-        self.isSaved = isSaved
+        self.isLiked = isLiked
     }
     
     required init() {}
@@ -55,17 +55,19 @@ class Question: Object {
                 try realm.write { self.correctCount += amount }
             case .miss:
                 try realm.write { self.missCount += amount }
+            case .like:
+                return
             }
         } catch {
             print("failed to update count")
         }
     }
  
-    func changeIsSaved(isSaved: Bool) {
+    func changeIsLiked(isLiked: Bool) {
         do {
             let realm = try Realm()
             
-            try realm.write { self.isSaved = isSaved }
+            try realm.write { self.isLiked = isLiked }
         } catch {
             print("failed to save question")
         }

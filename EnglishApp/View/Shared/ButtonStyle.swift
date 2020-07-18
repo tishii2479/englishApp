@@ -22,7 +22,7 @@ struct WideButtonStyle: ButtonStyle {
             configuration.label
                 .contentShape(RoundedRectangle(cornerRadius: 25).inset(by: 15))
         }
-        .frame(maxWidth: 330, maxHeight: 50)
+        .frame(maxWidth: 330, minHeight: 50, idealHeight: 50, maxHeight: 50)
         .padding(10)
         .scaleEffect(x: isPressed ? 0.9 : 1, y: isPressed ? 0.9 : 1, anchor: .center)
         .animation(.spring(response: 0.2, dampingFraction: 0.9, blendDuration: 0))

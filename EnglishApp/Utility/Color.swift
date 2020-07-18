@@ -21,4 +21,10 @@ extension Color {
     static let offRed = withColorCode(red: 255, green: 132, blue: 132)
  
     static let offBlue = withColorCode(red: 187, green: 200, blue: 246)
+    
+    static let offGreen = withColorCode(red: 136, green: 207, blue: 127)
+    
+    static let lightGray = withColorCode(red: 210, green: 211, blue: 211)
+    
+    static let darkRed = withColorCode(red: 242, green: 97, blue: 99)
 }

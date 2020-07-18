@@ -11,4 +11,5 @@ import Foundation
 enum CountType {
     case correct
     case miss
+    case like
 }

@@ -21,11 +21,11 @@ class User: ObservableObject {
     
     @Published var completedWorkbookCount: Int = 0
     
+    @Published var onedayQuota: Int = 50
+    
     var timePerQuestion: Int = 20
     
     var maxQuestionNum: Int = 10
-    
-    @Published var onedayQuota: Int = 50
     
     var showCorrectness: Bool = true
     
@@ -53,6 +53,12 @@ class User: ObservableObject {
         
         UserDefaults.standard.set(totalMissCount, forKey: "totalMissCount")
         UserDefaults.standard.set(todayMissCount, forKey: "todayMissCount")
+    }
+    
+    func incrementClearCount() {
+        completedWorkbookCount += 1
+        
+        UserDefaults.standard.set(completedWorkbookCount, forKey: "completedWorkbookCount")
     }
 
     func setUserSetting(key: String, value: Int) {

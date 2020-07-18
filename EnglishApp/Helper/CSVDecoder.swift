@@ -53,7 +53,7 @@ class CSVDecoder {
             
             let text = arr[0].replacingOccurrences(of: "_", with: ",").replacingOccurrences(of: "*", with: " _______ ").replacingOccurrences(of: "\\", with: "")
             
-            let question = Question(bookId: fileName, questionText: text, answer: arr[1], choice1: choices[0], choice2: choices[1], choice3: choices[2], choice4: choices[3], correctCount: 0, missCount: 0, isSaved: false)
+            let question = Question(bookId: fileName, questionText: text, answer: arr[1], choice1: choices[0], choice2: choices[1], choice3: choices[2], choice4: choices[3], correctCount: 0, missCount: 0, isLiked: false)
             
             questionArr.append(question)
         }
@@ -73,13 +73,13 @@ class CSVDecoder {
             
             // 要素数のチェック
             guard arr.count == 7,
-                let difficulty = Int(arr[3]),
-                let questionNumber = Int(arr[4]),
-                let price = Int(arr[5]) else { fatalError("failed to convert workbook") }
+                let difficulty = Int(arr[4]),
+                let questionNumber = Int(arr[5]),
+                let price = Int(arr[6]) else { fatalError("failed to convert workbook") }
             
             let isPurchased = price == 0
             
-            let workbook = Workbook(bookId: arr[0], title: arr[1], detail: arr[2], difficulty: difficulty, questionNumber: questionNumber, price: price, correctCount: 0, missCount: 0, isPurchased: isPurchased, category: arr[6])
+            let workbook = Workbook(bookId: arr[0], title: arr[1], detail: arr[2], category: arr[3], difficulty: difficulty, questionNumber: questionNumber, price: price, correctCount: 0, missCount: 0, isPurchased: isPurchased, isCleared: false)
             
             workbookArr.append(workbook)
         }

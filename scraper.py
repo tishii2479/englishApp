@@ -9,8 +9,11 @@ from bs4 import BeautifulSoup
 first_text = "***START OF THE PROJECT GUTENBERG EBOOK A MIRROR OF THE TURF***"
 end_text = "***END OF THE PROJECT GUTENBERG EBOOK A MIRROR OF THE TURF***"
 
-special_words = ["Mr", "Mrs", "St"]
-special_symbols = [";", ":"]
+special_words = ["Mr", "Mrs", "St", "gs"]
+special_symbols = "[!\"#$%&'\\\\()*+,-./:;<=>?@[\\]^_`{|}~「」〔〕“”〈〉『』【】＆＊・（）＄＃＠。、？！｀＋￥％]"
+
+# 特殊記号を抜く
+code_regex = re.compile(special_symbols)
 
 # http://gutenberg.org/files/62606/62606-h/62606-h.htm
 
@@ -24,20 +27,28 @@ def create_questions(raw_data):
         # 改行をなくす
         new_p = re.sub(r"(?<!\n)\n(?![\n\t])", " ", str(p).replace("\r", ""))
 
+        # 最初と最後の["]の削除
+        if len(new_p) > 1:
+            if new_p[0] == '"':
+                new_p = new_p[1:]
+            if new_p[-1] == '"':
+                new_p = new_p[:-1]
+
         # 一文辺り取り出す
         sentence = ""
+        quote_count = 0
         for c in new_p:
 
+            # 謎のダブルクオテーション対策
             if c == "“" or c == "”":
                 c = '"'
 
-            # :, ;は処理しない
-            # 後で直すかもしれない
-            if not c in special_symbols:
-                sentence += c
+            sentence += c
+
+            if c == '"':
+                quote_count += 1
 
             # 文の終わりの場合
-            # Mr.等に対応する必要がある
             if c == ".":
                 flag = True
                 # Mr, Mrsなどの単語のチェック
@@ -45,23 +56,33 @@ def create_questions(raw_data):
                     if sw in sentence[-4:]:
                         flag = False
                 # 最後の文字が大文字、数字であるかのチェック
-                if len(re.findall("[A-Z0-9\u2160-\u217F_]", sentence[-2])) > 0:
-                    flag = False
+                if len(sentence) > 2:
+                    if len(re.findall("[A-Z0-9\u2160-\u217F_]", sentence[-2])) > 0:
+                        flag = False
                 # いずれでもなければ文章の終わりと判定
                 if flag:
+                    if quote_count % 2 == 1:
+                        sentence += '"'
                     sentences.append(sentence)
                     sentence = ""
+                    quote_count = 0
 
     for s in sentences:
         words = []
         word = ""
-        new_sentence = ""
 
         # 最初の空白を削除
         s = s.lstrip()
 
+        # 最初の文字が大文字でなければ削除
+        if len(s) > 0:
+            if len(re.findall("[A-Z]", s[0])) != 1:
+                continue
+
         # 単語を取り出す
         for c in s:
+            if len(re.findall(special_symbols, c)) > 0:
+                continue
             if c == " ":
                 words.append(word)
                 word = ""
@@ -80,30 +101,33 @@ def create_questions(raw_data):
             else:
                 word += c
 
-        if len(words) <= 0:
+        # 短すぎる問題と長すぎる問題は削除
+        if len(words) <= 3 or 45 < len(words):
             continue
 
         # 答えを決める
-        answer_index = random.randint(0, len(words) - 1)
-        answer = words[answer_index].replace(",", "")
+        answer_count = 0
+        while True:
+            answer_index = random.randint(0, len(words) - 1)
+            answer = words[answer_index]
 
-        for i in range(len(words)):
-            # 答えになった箇所を埋める場合
-            if i == answer_index:
-                if "," in words[i]:
-                    new_sentence += "*,"
-                else:
-                    new_sentence += "*"
-            else:
-                new_sentence += words[i]
+            answer_count += 1
+            if len(re.findall(special_symbols, answer)) == 0:
+                break
+            if answer_count > 50:
+                print("的する答えが見つかりませんでした。")
+                break
+        if answer_count > 50:
+            continue
 
-            # 最後の単語の場合
-            if i == len(words) - 1:
-                new_sentence += "."
-            else:
-                new_sentence += " "
+        # 単語から特殊記号を抜き取る
+        for w in words:
+            w = code_regex.sub("", w)
+        answer = code_regex.sub("", answer)
 
-        new_sentence = new_sentence.replace(",", "_")
+        # 文章のカンマを変えて、答えを抜き出す
+        new_sentence = s.replace(",", "_").replace(" " + answer + " ", " * ", 1)
+
         questions.append([new_sentence, answer])
         word_data |= set(words)
 
@@ -111,11 +135,19 @@ def create_questions(raw_data):
     data_list = list(word_data)
 
     # 選択肢追加
-    # TODO: 重複を防ぐ
     for q in questions:
         choices = []
         for i in range(3):
-            choices.append(data_list[random.randint(0, data_size - 1)].replace(",", ""))
+            while True:
+                choice = data_list[random.randint(0, data_size - 1)]
+                # 被りがないかをチェック
+                flag = True
+                for j in range(1, i + 1):
+                    if questions[j] == choice:
+                        flag = False
+                if flag:
+                    choices.append(choice)
+                    break
         q += choices
     return questions
 
@@ -172,5 +204,10 @@ with open(path, "w") as f:
 
 print(
     f"""問題を作成しました。
-作成したファイルの場所:  {path}"""
+作成したファイルの場所:  {path}
+問題数:  {len(questions)}"""
 )
+
+for q in questions:
+    if len(q) != 5:
+        print(f"エラーの文章: {q}")

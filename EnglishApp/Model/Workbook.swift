@@ -18,6 +18,8 @@ class Workbook: Object, Identifiable {
     @objc dynamic var title: String = "title"
 
     @objc dynamic var detail: String = "detail"
+    
+    @objc dynamic var category: String = ""
 
     @objc dynamic var difficulty: Int = 1
 
@@ -28,16 +30,18 @@ class Workbook: Object, Identifiable {
     @objc dynamic var correctCount: Int = 0
 
     @objc dynamic var missCount: Int = 0
-
-    @objc dynamic var isPurchased: Bool = true
     
-    @objc dynamic var category: String = ""
+    @objc dynamic var likeCount: Int = 0
+
+    @objc dynamic var isPurchased: Bool = false
+    
+    @objc dynamic var isCleared: Bool = false
     
     var questions: Results<Question>?
     
     required init() {}
     
-    init(bookId: String, title: String, detail: String, difficulty: Int, questionNumber: Int, price: Int, correctCount: Int, missCount: Int, isPurchased: Bool, category: String) {
+    init(bookId: String, title: String, detail: String, category: String, difficulty: Int, questionNumber: Int, price: Int, correctCount: Int, missCount: Int, isPurchased: Bool, isCleared: Bool) {
         self.bookId = bookId
         self.title = title
         self.detail = detail
@@ -48,11 +52,10 @@ class Workbook: Object, Identifiable {
         self.missCount = missCount
         self.isPurchased = isPurchased
         self.category = category
+        self.isCleared = isCleared
     }
 
     func fetchQuestions(questionNum: Int, solveMode: SolveMode) -> Array<Question>? {
-        // ISSUE: 問題の読み込みが遅い場合には、ここで毎回Realmから取得するのをやめれば良い
-        // でも今はそこまで問題となるほど遅くないので、とりあえず良い
         var filter: String?
         
         switch solveMode {
@@ -62,6 +65,10 @@ class Workbook: Object, Identifiable {
             filter = "missCount > 0 AND correctCount == 0 AND bookId == '\(self.bookId)'"
         case .all:
             filter = "bookId == '\(self.bookId)'"
+        case .test:
+            filter = "bookId == '\(self.bookId)'"
+        case .liked:
+            filter = "isLiked == true AND bookId == '\(self.bookId)'"
         }
         
         questions = RealmDecoder.fetchAllDatas(filter: filter)
@@ -93,9 +100,21 @@ class Workbook: Object, Identifiable {
                 try realm.write { self.correctCount += amount }
             case .miss:
                 try realm.write { self.missCount += amount }
+            case .like:
+                try realm.write{ self.likeCount += amount }
             }
         } catch {
             print("failed to update count")
+        }
+    }
+    
+    func setCleared(isCleared: Bool) {
+        do {
+            let realm = try Realm()
+            
+            try realm.write { self.isCleared = isCleared }
+        } catch {
+            print("failed to update iscleared")
         }
     }
     

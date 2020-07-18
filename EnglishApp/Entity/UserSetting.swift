@@ -22,14 +22,16 @@ class UserSetting {
 
         // Comment out these to test memory
 //        resetUserInformation()
-        setUpRealm()
+//        setUpRealm()
 
         setUpUserInformation()
         setUpCategories()
         setUpWorkbooks()
+        
+//        resetQuestions()
     }
 
-    private static func checkFirstActivationOfToday() {
+    static func checkFirstActivationOfToday() {
         let todayDate: String = Date.getTodayDate()
         let userDefaults = UserDefaults.standard
         
@@ -45,7 +47,7 @@ class UserSetting {
     
     // TODO: 設定項目の更新処理を追加する必要がある
     // 特にtodayCorrect/MissCountの更新
-    private static func setUpUserInformation() {
+    static func setUpUserInformation() {
         let userDefaults = UserDefaults.standard
         
         User.shared.onedayQuota             = userDefaults.integer(forKey: "oneDayQuota")
@@ -58,7 +60,7 @@ class UserSetting {
         User.shared.completedWorkbookCount      = userDefaults.integer(forKey: "completedWorkbookCount")
     }
     
-    private static func resetUserInformation() {
+    static func resetUserInformation() {
         let userDefaults = UserDefaults.standard
         userDefaults.removeAll()
         
@@ -72,7 +74,7 @@ class UserSetting {
         userDefaults.set(0,     forKey: "completedWorkbookCount")
     }
     
-    private static func setUpRealm() {
+    static func setUpRealm() {
         let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
         let realm = try! Realm(configuration: config)
         
@@ -80,17 +82,17 @@ class UserSetting {
         
         CSVDecoder.convertWorkbookFile(fileName: "workbook")
         CSVDecoder.convertCategoryFile(fileName: "category")
-        CSVDecoder.convertQuestionFile(fileName: "20200001")
-        CSVDecoder.convertQuestionFile(fileName: "20200102")
+        
+        
     }
     
-    private static func setUpCategories() {
+    static func setUpCategories() {
         guard let categories: Results<Category> = RealmDecoder.fetchAllDatas(filter: nil) else { fatalError("failed to conver category") }
         
         workbookCategories = Array(categories)
     }
     
-    private static func setUpWorkbooks() {
+    static func setUpWorkbooks() {
         
         guard let _workbookArray: Results<Workbook> = RealmDecoder.fetchAllDatas(filter: nil) else {
             fatalError("workbookのdataに問題があります")
@@ -120,4 +122,34 @@ class UserSetting {
         workbookArray = dic
     }
     
+    static func resetQuestions() {
+        for arr in workbookArray.values {
+            for w in arr {
+                CSVDecoder.convertQuestionFile(fileName: w.bookId)
+            }
+        }
+    }
+    
+    static func deleteUserData() {
+        resetUserInformation()
+        
+        guard let workbookArray: Results<Workbook> = RealmDecoder.fetchAllDatas(filter: nil) else {
+            fatalError("workbookのdataに問題があります")
+        }
+        do {
+            let realm = try Realm()
+            
+            for w in workbookArray {
+                try realm.write {
+                    w.correctCount = 0
+                    w.missCount = 0
+                    w.isCleared = false
+                }
+            }
+        } catch {
+            print("failed to delete data")
+        }
+        
+        resetQuestions()
+    }
 }

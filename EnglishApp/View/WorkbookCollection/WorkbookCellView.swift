@@ -50,7 +50,7 @@ struct WorkbookCellView: View {
                 .padding(.leading, 10)
                 Spacer()
             }
-            .frame(width: 180, height: 150)
+            .frame(width: 200, height: 160)
         }
     }
     

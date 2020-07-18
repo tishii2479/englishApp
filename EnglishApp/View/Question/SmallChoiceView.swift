@@ -17,17 +17,28 @@ struct SmallChoiceView: View {
     var isAnswer: Bool
     
     var body: some View {
-        GeometryReader { geometry in
+        
+        return GeometryReader { geometry in
             Text(self.choice)
                 .font(.subheadline)
                 .frame(width: geometry.size.width, height: 40)
                 .padding(5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 15)
-                        .stroke(self.isAnswer ? Color.offBlue : Color.offBlack, lineWidth: 2)
+                        .stroke(self.strokeColor(), lineWidth: 2)
                         .frame(width: geometry.size.width, height: 40)
                 )
         }.frame(height: 40)
+    }
+    
+    func strokeColor() -> Color {
+        if hasSelected {
+            return Color.offGreen
+        } else if isAnswer {
+            return Color.offRed
+        } else {
+            return Color.lightGray
+        }
     }
 }
 
