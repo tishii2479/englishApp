@@ -35,10 +35,10 @@ struct WorkbookCollectionView: View {
                                                 NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook))) {
                                                     WorkbookCellView(workbook: workbook)
                                                 }
-                                                .rotation3DEffect(.degrees(min(Double((geometry.frame(in: .global).minX - fullView.size.width / 2) / -2), 0)), axis: (x: 0, y: 1, z: 0))
+                                                .rotation3DEffect(.degrees(min(Double((geometry.frame(in: .global).minX - fullView.size.width / 2) / -5), 0)), axis: (x: 0, y: 1, z: 0))
                                                 .buttonStyle(ShrinkButtonStyle())
                                             }
-                                            .frame(width: 190, height: 200)
+                                            .frame(width: 200, height: 200)
                                         }
                                     }
                                     .padding(.trailing, 50)

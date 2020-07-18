@@ -18,7 +18,9 @@ struct SettingView: View {
     
     @State var oneDayQuota: Int = UserDefaults.standard.integer(forKey: "oneDayQuota")
     
-    @State var showCorrectness: Bool = UserDefaults.standard.bool(forKey: "showCorrectness")
+    @State var isShowingAlert: Bool = false
+    
+    @State var isLoading: Bool = false
     
     @Binding var isPresented: Bool
     
@@ -82,20 +84,15 @@ struct SettingView: View {
                                 }
                                 
                                 // TODO: これらのタップアクションの処理
-                                Text("利用規約")
-                                    .onTapGesture {
-                                        print("tapped")
-                                    }
-                                
-                                Text("プライバシーポリシー")
-                                    .onTapGesture {
-                                        print("tapped")
-                                    }
-                                
-                                Text("問い合わせ")
-                                    .onTapGesture {
-                                        print("tapped")
-                                    }
+                                NavigationLink(destination: SettingTextView(content: "")) {
+                                    Text("利用規約")
+                                }
+                                NavigationLink(destination: SettingTextView(content: "")) {
+                                    Text("プライバシーポリシー")
+                                }
+                                NavigationLink(destination: SettingTextView(content: "")) {
+                                    Text("問い合わせ")
+                                }
                             }
                              
                             Section(header: Text("")) {
@@ -105,8 +102,17 @@ struct SettingView: View {
                                         .foregroundColor(Color.offRed)
                                     Spacer()
                                 }
+                                .contentShape(Rectangle())
                                 .onTapGesture {
-                                    print("tapped")
+                                    self.isShowingAlert.toggle()
+                                }
+                                .alert(isPresented: self.$isShowingAlert) {
+                                    Alert(title: Text("学習データの削除"),
+                                          message: Text("データは完全に削除されます。\nよろしいですか？\n※課金情報は残ります。"),
+                                          primaryButton: .cancel(Text("キャンセル")),
+                                          secondaryButton: .destructive(Text("削除"), action: {
+                                            UserSetting.deleteUserData()
+                                    }))
                                 }
                             }
                         }

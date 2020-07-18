@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PreviewCellView: View {
     
-    @State var isSaved: Bool = false
+    @State var isLiked: Bool = false
     
     var question: Question
     
@@ -19,6 +19,8 @@ struct PreviewCellView: View {
     var questionNum: Int
     
     var maxQuestionNum: Int
+    
+    var questionViewModel: QuestionViewModel
     
     var body: some View {
         return ZStack {
@@ -41,14 +43,14 @@ struct PreviewCellView: View {
                     Spacer()
                     
                     Button(action: {
-                        self.isSaved.toggle()
-                        print(self.isSaved)
-                        self.question.changeIsSaved(isSaved: self.isSaved)
+                        self.isLiked.toggle()
+                        self.question.changeIsLiked(isLiked: self.isLiked)
+                        self.questionViewModel.workbook.updateCount(type: .like, amount: self.isLiked ? 1 : 0)
                     }) {
-                        Image(systemName: self.isSaved ? "star.fill" : "star")
+                        Image(systemName: self.isLiked ? "star.fill" : "star")
                             .frame(width: 30, height: 30)
                             .onAppear {
-                                self.isSaved = self.question.isSaved
+                                self.isLiked = self.question.isLiked
                             }
                     }.buttonStyle(ShrinkButtonStyle())
                 }
@@ -86,7 +88,7 @@ struct PreviewCellView_Previews: PreviewProvider {
         ZStack {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
-            PreviewCellView(question: Question(), userChoice: "user", questionNum: 1, maxQuestionNum: 10)
+            PreviewCellView(question: Question(), userChoice: "user", questionNum: 1, maxQuestionNum: 10, questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .all))
         }
     }
 }

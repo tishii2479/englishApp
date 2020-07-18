@@ -30,8 +30,10 @@ class Workbook: Object, Identifiable {
     @objc dynamic var correctCount: Int = 0
 
     @objc dynamic var missCount: Int = 0
+    
+    @objc dynamic var likeCount: Int = 0
 
-    @objc dynamic var isPurchased: Bool = true
+    @objc dynamic var isPurchased: Bool = false
     
     @objc dynamic var isCleared: Bool = false
     
@@ -54,8 +56,6 @@ class Workbook: Object, Identifiable {
     }
 
     func fetchQuestions(questionNum: Int, solveMode: SolveMode) -> Array<Question>? {
-        // ISSUE: 問題の読み込みが遅い場合には、ここで毎回Realmから取得するのをやめれば良い
-        // でも今はそこまで問題となるほど遅くないので、とりあえず良い
         var filter: String?
         
         switch solveMode {
@@ -67,6 +67,8 @@ class Workbook: Object, Identifiable {
             filter = "bookId == '\(self.bookId)'"
         case .test:
             filter = "bookId == '\(self.bookId)'"
+        case .liked:
+            filter = "isLiked == true AND bookId == '\(self.bookId)'"
         }
         
         questions = RealmDecoder.fetchAllDatas(filter: filter)
@@ -98,6 +100,8 @@ class Workbook: Object, Identifiable {
                 try realm.write { self.correctCount += amount }
             case .miss:
                 try realm.write { self.missCount += amount }
+            case .like:
+                try realm.write{ self.likeCount += amount }
             }
         } catch {
             print("failed to update count")

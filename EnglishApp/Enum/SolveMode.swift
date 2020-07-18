@@ -13,4 +13,5 @@ enum SolveMode {
     case onlyMissed
     case all
     case test
+    case liked
 }

@@ -42,7 +42,7 @@ struct QuestionReviewView: View {
                     ForEach(0 ..< questionViewModel.maxQuestionNum) { i in
                         // https://developer.apple.com/forums/thread/131577
                         VStack {
-                            PreviewCellView(question: self.questionViewModel.questions[i], userChoice: self.questionViewModel.userChoices[i], questionNum: i + 1, maxQuestionNum: self.questionViewModel.maxQuestionNum)
+                            PreviewCellView(question: self.questionViewModel.questions[i], userChoice: self.questionViewModel.userChoices[i], questionNum: i + 1, maxQuestionNum: self.questionViewModel.maxQuestionNum, questionViewModel: self.questionViewModel)
                         }
                     }
                 }

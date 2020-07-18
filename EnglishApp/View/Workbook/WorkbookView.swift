@@ -71,6 +71,13 @@ struct WorkbookView: View {
                     NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .all))) {
                         Text("総復習をする")
                     }.buttonStyle(WideButtonStyle())
+                    Group {
+                        if workbook.likeCount > 0 {
+                            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .liked))) {
+                                Text("お気に入りした問題を解く")
+                            }.buttonStyle(WideButtonStyle())
+                        }
+                    }
                 }
             )
         } else if hasNewQuestions {

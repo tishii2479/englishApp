@@ -53,7 +53,7 @@ class CSVDecoder {
             
             let text = arr[0].replacingOccurrences(of: "_", with: ",").replacingOccurrences(of: "*", with: " _______ ").replacingOccurrences(of: "\\", with: "")
             
-            let question = Question(bookId: fileName, questionText: text, answer: arr[1], choice1: choices[0], choice2: choices[1], choice3: choices[2], choice4: choices[3], correctCount: 0, missCount: 0, isSaved: false)
+            let question = Question(bookId: fileName, questionText: text, answer: arr[1], choice1: choices[0], choice2: choices[1], choice3: choices[2], choice4: choices[3], correctCount: 0, missCount: 0, isLiked: false)
             
             questionArr.append(question)
         }

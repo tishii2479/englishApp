@@ -21,11 +21,11 @@ class User: ObservableObject {
     
     @Published var completedWorkbookCount: Int = 0
     
+    @Published var onedayQuota: Int = 50
+    
     var timePerQuestion: Int = 20
     
     var maxQuestionNum: Int = 10
-    
-    @Published var onedayQuota: Int = 50
     
     var showCorrectness: Bool = true
     

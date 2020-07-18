@@ -8,6 +8,7 @@ target 'EnglishApp' do
   # Pods for EnglishApp
   
   pod 'RealmSwift'
+  pod 'Firebase/Analytics'
   
   target 'EnglishAppTests' do
     inherit! :search_paths
