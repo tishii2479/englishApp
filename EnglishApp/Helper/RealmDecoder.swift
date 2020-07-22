@@ -42,4 +42,27 @@ class RealmDecoder {
         }
     }
     
+    static func deleteAllDataOf<T>(data: T) where T: Object {
+        do {
+            let realm = try Realm()
+            
+            let allData = realm.objects(T.self)
+            
+            try realm.write {
+                realm.delete(allData)
+            }
+        } catch {
+            print("realm not working")
+        }
+    }
+    
+    // データを初期化する時に使う
+    static func resetRealm() {
+        let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+        let realm = try! Realm(configuration: config)
+        
+        try! realm.write { realm.deleteAll() }
+    }
+    
+    
 }

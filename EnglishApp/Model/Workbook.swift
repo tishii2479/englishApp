@@ -58,8 +58,6 @@ class Workbook: Object, Identifiable {
     func fetchQuestions(questionNum: Int, solveMode: SolveMode) -> Array<Question>? {
         var filter: String?
         
-        print(solveMode)
-        
         switch solveMode {
         case .onlyNew:
             filter = "missCount == 0 AND correctCount == 0 AND bookId == '\(self.bookId)'"
@@ -78,8 +76,6 @@ class Workbook: Object, Identifiable {
         if questions == nil { fatalError("questions could not be fetched") }
         
         var temp = Array(questions!)
-        
-        print(temp)
         
         var questionArr = Array<Question>()
         

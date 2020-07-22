@@ -14,7 +14,7 @@
 		4904486C24B1D6AE00391FE5 /* HomeNavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486B24B1D6AE00391FE5 /* HomeNavigationButtonView.swift */; };
 		4904486E24B1DF8100391FE5 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486D24B1DF8100391FE5 /* UserDefaults.swift */; };
 		490A5E1424BB407400D26929 /* DentCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E1324BB407400D26929 /* DentCircleView.swift */; };
-		490A5E1624BB429D00D26929 /* workbook_1-0.csv in Resources */ = {isa = PBXBuildFile; fileRef = 490A5E1524BB429D00D26929 /* workbook_1-0.csv */; };
+		490A5E1624BB429D00D26929 /* workbook.csv in Resources */ = {isa = PBXBuildFile; fileRef = 490A5E1524BB429D00D26929 /* workbook.csv */; };
 		490BE05D24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490BE05C24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift */; };
 		490BE06C24BF490A00E0F1F9 /* miss.caf in Resources */ = {isa = PBXBuildFile; fileRef = 490BE06A24BF490A00E0F1F9 /* miss.caf */; };
 		490BE06D24BF490A00E0F1F9 /* correct.caf in Resources */ = {isa = PBXBuildFile; fileRef = 490BE06B24BF490A00E0F1F9 /* correct.caf */; };
@@ -32,6 +32,17 @@
 		490F870324B068E100EF5622 /* WorkbookFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870224B068E100EF5622 /* WorkbookFormatter.swift */; };
 		490F870624B0741400EF5622 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870524B0741400EF5622 /* SettingView.swift */; };
 		490F870924B07CBD00EF5622 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870824B07CBD00EF5622 /* UserSetting.swift */; };
+		49131DCE24C860BC00BBB379 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49131DCD24C860BC00BBB379 /* UserDefaultsHelper.swift */; };
+		49131DEB24C8687A00BBB379 /* basic_34.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DD424C8687900BBB379 /* basic_34.csv */; };
+		49131DEC24C8687A00BBB379 /* basic_31.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DD524C8687A00BBB379 /* basic_31.csv */; };
+		49131DED24C8687A00BBB379 /* basic_37.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DD624C8687A00BBB379 /* basic_37.csv */; };
+		49131DEF24C8687A00BBB379 /* basic_33.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DD824C8687A00BBB379 /* basic_33.csv */; };
+		49131DF324C8687A00BBB379 /* basic_35.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DDC24C8687A00BBB379 /* basic_35.csv */; };
+		49131DF424C8687A00BBB379 /* basic_40.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DDD24C8687A00BBB379 /* basic_40.csv */; };
+		49131DF524C8687A00BBB379 /* basic_36.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DDE24C8687A00BBB379 /* basic_36.csv */; };
+		49131DFA24C8687A00BBB379 /* basic_38.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DE324C8687A00BBB379 /* basic_38.csv */; };
+		49131DFC24C8687A00BBB379 /* basic_32.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DE524C8687A00BBB379 /* basic_32.csv */; };
+		49131DFD24C8687A00BBB379 /* basic_39.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DE624C8687A00BBB379 /* basic_39.csv */; };
 		491DBFD524B0A9D600A24A79 /* CSVDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */; };
 		491DBFDA24B0C2EE00A24A79 /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 491DBFD924B0C2EE00A24A79 /* QGrid */; };
 		4931A03924B20ED100C26AFD /* CountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A03824B20ED100C26AFD /* CountType.swift */; };
@@ -94,7 +105,7 @@
 		49F3B79A24BEB00800012B94 /* SolveMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79924BEB00800012B94 /* SolveMode.swift */; };
 		49F3B79C24BEC90B00012B94 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79B24BEC90B00012B94 /* SectionHeader.swift */; };
 		49F3B79E24BEF3D800012B94 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79D24BEF3D800012B94 /* Category.swift */; };
-		49F3B7A024BEF42300012B94 /* category_1-0.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49F3B79F24BEF42300012B94 /* category_1-0.csv */; };
+		49F3B7A024BEF42300012B94 /* category.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49F3B79F24BEF42300012B94 /* category.csv */; };
 		580BCA4491F293C86AA5408E /* Pods_EnglishAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,7 +134,7 @@
 		4904486B24B1D6AE00391FE5 /* HomeNavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationButtonView.swift; sourceTree = "<group>"; };
 		4904486D24B1DF8100391FE5 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		490A5E1324BB407400D26929 /* DentCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentCircleView.swift; sourceTree = "<group>"; };
-		490A5E1524BB429D00D26929 /* workbook_1-0.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "workbook_1-0.csv"; sourceTree = "<group>"; };
+		490A5E1524BB429D00D26929 /* workbook.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = workbook.csv; sourceTree = "<group>"; };
 		490BE05C24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAudioPlayer.swift; sourceTree = "<group>"; };
 		490BE06A24BF490A00E0F1F9 /* miss.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = miss.caf; sourceTree = "<group>"; };
 		490BE06B24BF490A00E0F1F9 /* correct.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = correct.caf; sourceTree = "<group>"; };
@@ -141,6 +152,17 @@
 		490F870224B068E100EF5622 /* WorkbookFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbookFormatter.swift; sourceTree = "<group>"; };
 		490F870524B0741400EF5622 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		490F870824B07CBD00EF5622 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
+		49131DCD24C860BC00BBB379 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		49131DD424C8687900BBB379 /* basic_34.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_34.csv; path = csv/basic_34.csv; sourceTree = SOURCE_ROOT; };
+		49131DD524C8687A00BBB379 /* basic_31.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_31.csv; path = csv/basic_31.csv; sourceTree = SOURCE_ROOT; };
+		49131DD624C8687A00BBB379 /* basic_37.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_37.csv; path = csv/basic_37.csv; sourceTree = SOURCE_ROOT; };
+		49131DD824C8687A00BBB379 /* basic_33.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_33.csv; path = csv/basic_33.csv; sourceTree = SOURCE_ROOT; };
+		49131DDC24C8687A00BBB379 /* basic_35.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_35.csv; path = csv/basic_35.csv; sourceTree = SOURCE_ROOT; };
+		49131DDD24C8687A00BBB379 /* basic_40.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_40.csv; path = csv/basic_40.csv; sourceTree = SOURCE_ROOT; };
+		49131DDE24C8687A00BBB379 /* basic_36.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_36.csv; path = csv/basic_36.csv; sourceTree = SOURCE_ROOT; };
+		49131DE324C8687A00BBB379 /* basic_38.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_38.csv; path = csv/basic_38.csv; sourceTree = SOURCE_ROOT; };
+		49131DE524C8687A00BBB379 /* basic_32.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_32.csv; path = csv/basic_32.csv; sourceTree = SOURCE_ROOT; };
+		49131DE624C8687A00BBB379 /* basic_39.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_39.csv; path = csv/basic_39.csv; sourceTree = SOURCE_ROOT; };
 		491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVDecoder.swift; sourceTree = "<group>"; };
 		4931A03824B20ED100C26AFD /* CountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountType.swift; sourceTree = "<group>"; };
 		4931A03A24B2121400C26AFD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -208,7 +230,7 @@
 		49F3B79924BEB00800012B94 /* SolveMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveMode.swift; sourceTree = "<group>"; };
 		49F3B79B24BEC90B00012B94 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		49F3B79D24BEF3D800012B94 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		49F3B79F24BEF42300012B94 /* category_1-0.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "category_1-0.csv"; sourceTree = "<group>"; };
+		49F3B79F24BEF42300012B94 /* category.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = category.csv; sourceTree = "<group>"; };
 		7386E48E2950A9DF925D34F3 /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		763B43D92BD2283F51B0C5A9 /* Pods-EnglishApp-EnglishAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp-EnglishAppUITests/Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,10 +337,30 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		49131DCF24C8682900BBB379 /* 1_0_1 */ = {
+			isa = PBXGroup;
+			children = (
+				49131DD524C8687A00BBB379 /* basic_31.csv */,
+				49131DE524C8687A00BBB379 /* basic_32.csv */,
+				49131DD824C8687A00BBB379 /* basic_33.csv */,
+				49131DD424C8687900BBB379 /* basic_34.csv */,
+				49131DDC24C8687A00BBB379 /* basic_35.csv */,
+				49131DDE24C8687A00BBB379 /* basic_36.csv */,
+				49131DD624C8687A00BBB379 /* basic_37.csv */,
+				49131DE324C8687A00BBB379 /* basic_38.csv */,
+				49131DE624C8687A00BBB379 /* basic_39.csv */,
+				49131DDD24C8687A00BBB379 /* basic_40.csv */,
+			);
+			path = 1_0_1;
+			sourceTree = "<group>";
+		};
 		491DBFC924B0A79200A24A79 /* csv */ = {
 			isa = PBXGroup;
 			children = (
+				490A5E1524BB429D00D26929 /* workbook.csv */,
+				49F3B79F24BEF42300012B94 /* category.csv */,
 				499E642924C82B210064BF0A /* 1_0 */,
+				49131DCF24C8682900BBB379 /* 1_0_1 */,
 			);
 			path = csv;
 			sourceTree = "<group>";
@@ -340,6 +382,7 @@
 				491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */,
 				4904486124B17F1000391FE5 /* RealmDecoder.swift */,
 				490BE05C24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift */,
+				49131DCD24C860BC00BBB379 /* UserDefaultsHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -462,8 +505,6 @@
 		499E642924C82B210064BF0A /* 1_0 */ = {
 			isa = PBXGroup;
 			children = (
-				490A5E1524BB429D00D26929 /* workbook_1-0.csv */,
-				49F3B79F24BEF42300012B94 /* category_1-0.csv */,
 				49BED28E24C2C04F00684B70 /* basic_1.csv */,
 				49BED2A624C2C05000684B70 /* basic_2.csv */,
 				49BED29E24C2C04F00684B70 /* basic_3.csv */,
@@ -656,12 +697,17 @@
 				49BED2B324C2C05000684B70 /* basic_21.csv in Resources */,
 				49BED2B224C2C05000684B70 /* basic_4.csv in Resources */,
 				49BED2C124C2C05000684B70 /* basic_12.csv in Resources */,
-				490A5E1624BB429D00D26929 /* workbook_1-0.csv in Resources */,
+				49131DF424C8687A00BBB379 /* basic_40.csv in Resources */,
+				490A5E1624BB429D00D26929 /* workbook.csv in Resources */,
 				49BED2B424C2C05000684B70 /* basic_22.csv in Resources */,
 				49BED2AB24C2C05000684B70 /* basic_27.csv in Resources */,
+				49131DFC24C8687A00BBB379 /* basic_32.csv in Resources */,
 				49BED2BA24C2C05000684B70 /* basic_7.csv in Resources */,
+				49131DEB24C8687A00BBB379 /* basic_34.csv in Resources */,
 				49BED2B824C2C05000684B70 /* basic_24.csv in Resources */,
 				496CAEE924AB1CF000F290E9 /* LaunchScreen.storyboard in Resources */,
+				49131DEC24C8687A00BBB379 /* basic_31.csv in Resources */,
+				49131DF524C8687A00BBB379 /* basic_36.csv in Resources */,
 				49BED2C224C2C05000684B70 /* basic_11.csv in Resources */,
 				49BED2BE24C2C05000684B70 /* basic_14.csv in Resources */,
 				49B94D7724C2EDCE009B0D13 /* GoogleService-Info.plist in Resources */,
@@ -675,9 +721,11 @@
 				49BED2BF24C2C05000684B70 /* basic_16.csv in Resources */,
 				49BED2C624C2C05000684B70 /* basic_13.csv in Resources */,
 				496CAEE624AB1CF000F290E9 /* Preview Assets.xcassets in Resources */,
+				49131DF324C8687A00BBB379 /* basic_35.csv in Resources */,
 				49BED2B524C2C05000684B70 /* basic_19.csv in Resources */,
 				49BED2AF24C2C05000684B70 /* basic_30.csv in Resources */,
 				49BED2BC24C2C05000684B70 /* basic_3.csv in Resources */,
+				49131DEF24C8687A00BBB379 /* basic_33.csv in Resources */,
 				49BED2C524C2C05000684B70 /* basic_20.csv in Resources */,
 				49BED2B124C2C05000684B70 /* basic_25.csv in Resources */,
 				49BED2C424C2C05000684B70 /* basic_2.csv in Resources */,
@@ -686,10 +734,13 @@
 				49BED2BD24C2C05000684B70 /* basic_23.csv in Resources */,
 				490BE06C24BF490A00E0F1F9 /* miss.caf in Resources */,
 				49BED2BB24C2C05000684B70 /* basic_6.csv in Resources */,
+				49131DED24C8687A00BBB379 /* basic_37.csv in Resources */,
+				49131DFD24C8687A00BBB379 /* basic_39.csv in Resources */,
 				49BED2B024C2C05000684B70 /* basic_5.csv in Resources */,
 				490BE06D24BF490A00E0F1F9 /* correct.caf in Resources */,
-				49F3B7A024BEF42300012B94 /* category_1-0.csv in Resources */,
+				49F3B7A024BEF42300012B94 /* category.csv in Resources */,
 				496CAEE324AB1CF000F290E9 /* Assets.xcassets in Resources */,
+				49131DFA24C8687A00BBB379 /* basic_38.csv in Resources */,
 				49BED2C324C2C05000684B70 /* basic_10.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -859,6 +910,7 @@
 				490A5E1424BB407400D26929 /* DentCircleView.swift in Sources */,
 				496CAEDF24AB1CF000F290E9 /* SceneDelegate.swift in Sources */,
 				49F3B79C24BEC90B00012B94 /* SectionHeader.swift in Sources */,
+				49131DCE24C860BC00BBB379 /* UserDefaultsHelper.swift in Sources */,
 				496CAF1824AB27CC00F290E9 /* Question.swift in Sources */,
 				490F86F624B0475700EF5622 /* ReturnButtonView.swift in Sources */,
 				496CAF1B24AB353900F290E9 /* QuestionViewModel.swift in Sources */,
