@@ -13,9 +13,7 @@ class HomeViewModel: ObservableObject {
     @Published var user: User = User.shared
     
     func getTodayWorkbook() -> Workbook {
-        // TODO: ここで今日の問題を日にちから取得する
-        // 取得できなければそれを伝える
-        return Workbook()
+        return Workbook(bookId: "0", title: "ランダム問題集", detail: "難易度はランダムです。", category: "0", difficulty: 0, questionNumber: User.shared.maxQuestionNum, price: 0, correctCount: 0, missCount: 0, isPurchased: true, isCleared: false)
     }
     
 }

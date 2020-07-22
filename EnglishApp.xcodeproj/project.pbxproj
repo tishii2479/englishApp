@@ -95,7 +95,6 @@
 		49BED2C424C2C05000684B70 /* basic_2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49BED2A624C2C05000684B70 /* basic_2.csv */; };
 		49BED2C524C2C05000684B70 /* basic_20.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49BED2A724C2C05000684B70 /* basic_20.csv */; };
 		49BED2C624C2C05000684B70 /* basic_13.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49BED2A824C2C05000684B70 /* basic_13.csv */; };
-		49BED2C824C2D4AB00684B70 /* WorkbookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BED2C724C2D4AB00684B70 /* WorkbookType.swift */; };
 		49BED2CC24C2E34600684B70 /* SettingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BED2CB24C2E34600684B70 /* SettingTextView.swift */; };
 		49BED2CE24C2E7A400684B70 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BED2CD24C2E7A400684B70 /* LoadingView.swift */; };
 		49E1A56224ACAF59008EC140 /* QuestionSolveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56124ACAF59008EC140 /* QuestionSolveView.swift */; };
@@ -153,16 +152,16 @@
 		490F870524B0741400EF5622 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		490F870824B07CBD00EF5622 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		49131DCD24C860BC00BBB379 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
-		49131DD424C8687900BBB379 /* basic_34.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_34.csv; path = csv/basic_34.csv; sourceTree = SOURCE_ROOT; };
-		49131DD524C8687A00BBB379 /* basic_31.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_31.csv; path = csv/basic_31.csv; sourceTree = SOURCE_ROOT; };
-		49131DD624C8687A00BBB379 /* basic_37.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_37.csv; path = csv/basic_37.csv; sourceTree = SOURCE_ROOT; };
-		49131DD824C8687A00BBB379 /* basic_33.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_33.csv; path = csv/basic_33.csv; sourceTree = SOURCE_ROOT; };
-		49131DDC24C8687A00BBB379 /* basic_35.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_35.csv; path = csv/basic_35.csv; sourceTree = SOURCE_ROOT; };
-		49131DDD24C8687A00BBB379 /* basic_40.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_40.csv; path = csv/basic_40.csv; sourceTree = SOURCE_ROOT; };
-		49131DDE24C8687A00BBB379 /* basic_36.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_36.csv; path = csv/basic_36.csv; sourceTree = SOURCE_ROOT; };
-		49131DE324C8687A00BBB379 /* basic_38.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_38.csv; path = csv/basic_38.csv; sourceTree = SOURCE_ROOT; };
-		49131DE524C8687A00BBB379 /* basic_32.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_32.csv; path = csv/basic_32.csv; sourceTree = SOURCE_ROOT; };
-		49131DE624C8687A00BBB379 /* basic_39.csv */ = {isa = PBXFileReference; lastKnownFileType = file; name = basic_39.csv; path = csv/basic_39.csv; sourceTree = SOURCE_ROOT; };
+		49131DD424C8687900BBB379 /* basic_34.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_34.csv; path = csv/basic_34.csv; sourceTree = SOURCE_ROOT; };
+		49131DD524C8687A00BBB379 /* basic_31.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_31.csv; path = csv/basic_31.csv; sourceTree = SOURCE_ROOT; };
+		49131DD624C8687A00BBB379 /* basic_37.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_37.csv; path = csv/basic_37.csv; sourceTree = SOURCE_ROOT; };
+		49131DD824C8687A00BBB379 /* basic_33.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_33.csv; path = csv/basic_33.csv; sourceTree = SOURCE_ROOT; };
+		49131DDC24C8687A00BBB379 /* basic_35.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_35.csv; path = csv/basic_35.csv; sourceTree = SOURCE_ROOT; };
+		49131DDD24C8687A00BBB379 /* basic_40.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_40.csv; path = csv/basic_40.csv; sourceTree = SOURCE_ROOT; };
+		49131DDE24C8687A00BBB379 /* basic_36.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_36.csv; path = csv/basic_36.csv; sourceTree = SOURCE_ROOT; };
+		49131DE324C8687A00BBB379 /* basic_38.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_38.csv; path = csv/basic_38.csv; sourceTree = SOURCE_ROOT; };
+		49131DE524C8687A00BBB379 /* basic_32.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_32.csv; path = csv/basic_32.csv; sourceTree = SOURCE_ROOT; };
+		49131DE624C8687A00BBB379 /* basic_39.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_39.csv; path = csv/basic_39.csv; sourceTree = SOURCE_ROOT; };
 		491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVDecoder.swift; sourceTree = "<group>"; };
 		4931A03824B20ED100C26AFD /* CountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountType.swift; sourceTree = "<group>"; };
 		4931A03A24B2121400C26AFD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
@@ -220,7 +219,6 @@
 		49BED2A624C2C05000684B70 /* basic_2.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_2.csv; path = EnglishApp/csv/1_0/basic_2.csv; sourceTree = SOURCE_ROOT; };
 		49BED2A724C2C05000684B70 /* basic_20.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_20.csv; path = EnglishApp/csv/1_0/basic_20.csv; sourceTree = SOURCE_ROOT; };
 		49BED2A824C2C05000684B70 /* basic_13.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_13.csv; path = EnglishApp/csv/1_0/basic_13.csv; sourceTree = SOURCE_ROOT; };
-		49BED2C724C2D4AB00684B70 /* WorkbookType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbookType.swift; sourceTree = "<group>"; };
 		49BED2CB24C2E34600684B70 /* SettingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTextView.swift; sourceTree = "<group>"; };
 		49BED2CD24C2E7A400684B70 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		49E1A56124ACAF59008EC140 /* QuestionSolveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSolveView.swift; sourceTree = "<group>"; };
@@ -370,7 +368,6 @@
 			children = (
 				4931A03824B20ED100C26AFD /* CountType.swift */,
 				49F3B79924BEB00800012B94 /* SolveMode.swift */,
-				49BED2C724C2D4AB00684B70 /* WorkbookType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -915,7 +912,6 @@
 				490F86F624B0475700EF5622 /* ReturnButtonView.swift in Sources */,
 				496CAF1B24AB353900F290E9 /* QuestionViewModel.swift in Sources */,
 				49E1A56524ACB087008EC140 /* QuestionResultView.swift in Sources */,
-				49BED2C824C2D4AB00684B70 /* WorkbookType.swift in Sources */,
 				4931A03924B20ED100C26AFD /* CountType.swift in Sources */,
 				490F870324B068E100EF5622 /* WorkbookFormatter.swift in Sources */,
 				490F86F824B0521D00EF5622 /* WorkbookCellView.swift in Sources */,

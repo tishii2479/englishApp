@@ -39,6 +39,8 @@ class Workbook: Object, Identifiable {
     
     var questions: Results<Question>?
     
+    var solveMode: SolveMode = .all
+    
     required init() {}
     
     init(bookId: String, title: String, detail: String, category: String, difficulty: Int, questionNumber: Int, price: Int, correctCount: Int, missCount: Int, isPurchased: Bool, isCleared: Bool) {
@@ -69,6 +71,8 @@ class Workbook: Object, Identifiable {
             filter = "bookId == '\(self.bookId)'"
         case .liked:
             filter = "isLiked == true AND bookId == '\(self.bookId)'"
+        case .random:
+            filter = nil
         }
         
         questions = RealmDecoder.fetchAllDatas(filter: filter)
