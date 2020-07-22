@@ -17,18 +17,36 @@ class UserSetting {
     
     static func setUp() {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-    
+        
+        checkNewVersionUpdate()
         checkFirstActivationOfToday()
+    }
+    
+    static func checkNewVersionUpdate() {
+        let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
 
-        // Comment out these to test memory
-//        resetUserInformation()
-//        setUpRealm()
-
-        setUpUserInformation()
         setUpCategories()
         setUpWorkbooks()
         
-//        resetQuestions()
+        // 初回起動
+        if UserDefaults.standard.string(forKey: "appVersion") == nil {
+            print("first activate")
+            resetQuestions()
+            UserDefaults.standard.set(version, forKey: "appVersion")
+        }
+        // 新しいバージョンがある時
+        else if version != UserDefaults.standard.string(forKey: "appVersion") {
+            print("new version")
+            loadDataWithVersion(version: version)
+            
+            UserDefaults.standard.set(version, forKey: "appVersion")
+        }
+        // 通常起動
+        else {
+            print("normal activate")
+        }
+        
+        setUpUserInformation()
     }
 
     static func checkFirstActivationOfToday() {
@@ -50,7 +68,7 @@ class UserSetting {
     static func setUpUserInformation() {
         let userDefaults = UserDefaults.standard
         
-        User.shared.onedayQuota             = userDefaults.integer(forKey: "oneDayQuota")
+        User.shared.onedayQuota                 = userDefaults.integer(forKey: "oneDayQuota")
         User.shared.maxQuestionNum              = userDefaults.integer(forKey: "maxQuestionNum")
         User.shared.timePerQuestion             = userDefaults.integer(forKey: "timePerQuestion")
         User.shared.todayCorrectCount           = userDefaults.integer(forKey: "todayCorrectCount")
@@ -74,25 +92,23 @@ class UserSetting {
         userDefaults.set(0,     forKey: "completedWorkbookCount")
     }
     
-    static func setUpRealm() {
+    static func resetRealm() {
         let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
         let realm = try! Realm(configuration: config)
         
         try! realm.write { realm.deleteAll() }
-        
-        CSVDecoder.convertWorkbookFile(fileName: "workbook")
-        CSVDecoder.convertCategoryFile(fileName: "category")
-        
-        
     }
     
     static func setUpCategories() {
+        CSVDecoder.convertWorkbookFile(fileName: "workbook")
+        
         guard let categories: Results<Category> = RealmDecoder.fetchAllDatas(filter: nil) else { fatalError("failed to conver category") }
         
         workbookCategories = Array(categories)
     }
     
     static func setUpWorkbooks() {
+        CSVDecoder.convertCategoryFile(fileName: "category")
         
         guard let _workbookArray: Results<Workbook> = RealmDecoder.fetchAllDatas(filter: nil) else {
             fatalError("workbookのdataに問題があります")
@@ -151,5 +167,9 @@ class UserSetting {
         }
         
         resetQuestions()
+    }
+    
+    static func loadDataWithVersion(version: String) {
+        
     }
 }

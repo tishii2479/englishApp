@@ -14,7 +14,7 @@
 		4904486C24B1D6AE00391FE5 /* HomeNavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486B24B1D6AE00391FE5 /* HomeNavigationButtonView.swift */; };
 		4904486E24B1DF8100391FE5 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4904486D24B1DF8100391FE5 /* UserDefaults.swift */; };
 		490A5E1424BB407400D26929 /* DentCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490A5E1324BB407400D26929 /* DentCircleView.swift */; };
-		490A5E1624BB429D00D26929 /* workbook.csv in Resources */ = {isa = PBXBuildFile; fileRef = 490A5E1524BB429D00D26929 /* workbook.csv */; };
+		490A5E1624BB429D00D26929 /* workbook_1-0.csv in Resources */ = {isa = PBXBuildFile; fileRef = 490A5E1524BB429D00D26929 /* workbook_1-0.csv */; };
 		490BE05D24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490BE05C24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift */; };
 		490BE06C24BF490A00E0F1F9 /* miss.caf in Resources */ = {isa = PBXBuildFile; fileRef = 490BE06A24BF490A00E0F1F9 /* miss.caf */; };
 		490BE06D24BF490A00E0F1F9 /* correct.caf in Resources */ = {isa = PBXBuildFile; fileRef = 490BE06B24BF490A00E0F1F9 /* correct.caf */; };
@@ -94,7 +94,7 @@
 		49F3B79A24BEB00800012B94 /* SolveMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79924BEB00800012B94 /* SolveMode.swift */; };
 		49F3B79C24BEC90B00012B94 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79B24BEC90B00012B94 /* SectionHeader.swift */; };
 		49F3B79E24BEF3D800012B94 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79D24BEF3D800012B94 /* Category.swift */; };
-		49F3B7A024BEF42300012B94 /* category.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49F3B79F24BEF42300012B94 /* category.csv */; };
+		49F3B7A024BEF42300012B94 /* category_1-0.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49F3B79F24BEF42300012B94 /* category_1-0.csv */; };
 		580BCA4491F293C86AA5408E /* Pods_EnglishAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,7 +123,7 @@
 		4904486B24B1D6AE00391FE5 /* HomeNavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationButtonView.swift; sourceTree = "<group>"; };
 		4904486D24B1DF8100391FE5 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		490A5E1324BB407400D26929 /* DentCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentCircleView.swift; sourceTree = "<group>"; };
-		490A5E1524BB429D00D26929 /* workbook.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = workbook.csv; sourceTree = "<group>"; };
+		490A5E1524BB429D00D26929 /* workbook_1-0.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "workbook_1-0.csv"; sourceTree = "<group>"; };
 		490BE05C24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAudioPlayer.swift; sourceTree = "<group>"; };
 		490BE06A24BF490A00E0F1F9 /* miss.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = miss.caf; sourceTree = "<group>"; };
 		490BE06B24BF490A00E0F1F9 /* correct.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = correct.caf; sourceTree = "<group>"; };
@@ -168,36 +168,36 @@
 		49AC0DF324BD797C0077ED39 /* SmallChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallChoiceView.swift; sourceTree = "<group>"; };
 		49AC0DF524BD82930077ED39 /* QuestionReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionReviewView.swift; sourceTree = "<group>"; };
 		49B94D7624C2EDCE009B0D13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		49BED28B24C2C04F00684B70 /* basic_15.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_15.csv; path = csv/basic_15.csv; sourceTree = SOURCE_ROOT; };
-		49BED28C24C2C04F00684B70 /* basic_26.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_26.csv; path = csv/basic_26.csv; sourceTree = SOURCE_ROOT; };
-		49BED28D24C2C04F00684B70 /* basic_27.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_27.csv; path = csv/basic_27.csv; sourceTree = SOURCE_ROOT; };
-		49BED28E24C2C04F00684B70 /* basic_1.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_1.csv; path = csv/basic_1.csv; sourceTree = SOURCE_ROOT; };
-		49BED28F24C2C04F00684B70 /* basic_29.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_29.csv; path = csv/basic_29.csv; sourceTree = SOURCE_ROOT; };
-		49BED29024C2C04F00684B70 /* basic_18.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_18.csv; path = csv/basic_18.csv; sourceTree = SOURCE_ROOT; };
-		49BED29124C2C04F00684B70 /* basic_30.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_30.csv; path = csv/basic_30.csv; sourceTree = SOURCE_ROOT; };
-		49BED29224C2C04F00684B70 /* basic_5.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_5.csv; path = csv/basic_5.csv; sourceTree = SOURCE_ROOT; };
-		49BED29324C2C04F00684B70 /* basic_25.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_25.csv; path = csv/basic_25.csv; sourceTree = SOURCE_ROOT; };
-		49BED29424C2C04F00684B70 /* basic_4.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_4.csv; path = csv/basic_4.csv; sourceTree = SOURCE_ROOT; };
-		49BED29524C2C04F00684B70 /* basic_21.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_21.csv; path = csv/basic_21.csv; sourceTree = SOURCE_ROOT; };
-		49BED29624C2C04F00684B70 /* basic_22.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_22.csv; path = csv/basic_22.csv; sourceTree = SOURCE_ROOT; };
-		49BED29724C2C04F00684B70 /* basic_19.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_19.csv; path = csv/basic_19.csv; sourceTree = SOURCE_ROOT; };
-		49BED29824C2C04F00684B70 /* basic_8.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_8.csv; path = csv/basic_8.csv; sourceTree = SOURCE_ROOT; };
-		49BED29924C2C04F00684B70 /* basic_28.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_28.csv; path = csv/basic_28.csv; sourceTree = SOURCE_ROOT; };
-		49BED29A24C2C04F00684B70 /* basic_24.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_24.csv; path = csv/basic_24.csv; sourceTree = SOURCE_ROOT; };
-		49BED29B24C2C04F00684B70 /* basic_9.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_9.csv; path = csv/basic_9.csv; sourceTree = SOURCE_ROOT; };
-		49BED29C24C2C04F00684B70 /* basic_7.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_7.csv; path = csv/basic_7.csv; sourceTree = SOURCE_ROOT; };
-		49BED29D24C2C04F00684B70 /* basic_6.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_6.csv; path = csv/basic_6.csv; sourceTree = SOURCE_ROOT; };
-		49BED29E24C2C04F00684B70 /* basic_3.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_3.csv; path = csv/basic_3.csv; sourceTree = SOURCE_ROOT; };
-		49BED29F24C2C05000684B70 /* basic_23.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_23.csv; path = csv/basic_23.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A024C2C05000684B70 /* basic_14.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_14.csv; path = csv/basic_14.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A124C2C05000684B70 /* basic_16.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_16.csv; path = csv/basic_16.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A224C2C05000684B70 /* basic_17.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_17.csv; path = csv/basic_17.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A324C2C05000684B70 /* basic_12.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_12.csv; path = csv/basic_12.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A424C2C05000684B70 /* basic_11.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_11.csv; path = csv/basic_11.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A524C2C05000684B70 /* basic_10.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_10.csv; path = csv/basic_10.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A624C2C05000684B70 /* basic_2.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_2.csv; path = csv/basic_2.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A724C2C05000684B70 /* basic_20.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_20.csv; path = csv/basic_20.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A824C2C05000684B70 /* basic_13.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_13.csv; path = csv/basic_13.csv; sourceTree = SOURCE_ROOT; };
+		49BED28B24C2C04F00684B70 /* basic_15.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_15.csv; path = EnglishApp/csv/1_0/basic_15.csv; sourceTree = SOURCE_ROOT; };
+		49BED28C24C2C04F00684B70 /* basic_26.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_26.csv; path = EnglishApp/csv/1_0/basic_26.csv; sourceTree = SOURCE_ROOT; };
+		49BED28D24C2C04F00684B70 /* basic_27.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_27.csv; path = EnglishApp/csv/1_0/basic_27.csv; sourceTree = SOURCE_ROOT; };
+		49BED28E24C2C04F00684B70 /* basic_1.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_1.csv; path = EnglishApp/csv/1_0/basic_1.csv; sourceTree = SOURCE_ROOT; };
+		49BED28F24C2C04F00684B70 /* basic_29.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_29.csv; path = EnglishApp/csv/1_0/basic_29.csv; sourceTree = SOURCE_ROOT; };
+		49BED29024C2C04F00684B70 /* basic_18.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_18.csv; path = EnglishApp/csv/1_0/basic_18.csv; sourceTree = SOURCE_ROOT; };
+		49BED29124C2C04F00684B70 /* basic_30.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_30.csv; path = EnglishApp/csv/1_0/basic_30.csv; sourceTree = SOURCE_ROOT; };
+		49BED29224C2C04F00684B70 /* basic_5.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_5.csv; path = EnglishApp/csv/1_0/basic_5.csv; sourceTree = SOURCE_ROOT; };
+		49BED29324C2C04F00684B70 /* basic_25.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_25.csv; path = EnglishApp/csv/1_0/basic_25.csv; sourceTree = SOURCE_ROOT; };
+		49BED29424C2C04F00684B70 /* basic_4.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_4.csv; path = EnglishApp/csv/1_0/basic_4.csv; sourceTree = SOURCE_ROOT; };
+		49BED29524C2C04F00684B70 /* basic_21.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_21.csv; path = EnglishApp/csv/1_0/basic_21.csv; sourceTree = SOURCE_ROOT; };
+		49BED29624C2C04F00684B70 /* basic_22.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_22.csv; path = EnglishApp/csv/1_0/basic_22.csv; sourceTree = SOURCE_ROOT; };
+		49BED29724C2C04F00684B70 /* basic_19.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_19.csv; path = EnglishApp/csv/1_0/basic_19.csv; sourceTree = SOURCE_ROOT; };
+		49BED29824C2C04F00684B70 /* basic_8.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_8.csv; path = EnglishApp/csv/1_0/basic_8.csv; sourceTree = SOURCE_ROOT; };
+		49BED29924C2C04F00684B70 /* basic_28.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_28.csv; path = EnglishApp/csv/1_0/basic_28.csv; sourceTree = SOURCE_ROOT; };
+		49BED29A24C2C04F00684B70 /* basic_24.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_24.csv; path = EnglishApp/csv/1_0/basic_24.csv; sourceTree = SOURCE_ROOT; };
+		49BED29B24C2C04F00684B70 /* basic_9.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_9.csv; path = EnglishApp/csv/1_0/basic_9.csv; sourceTree = SOURCE_ROOT; };
+		49BED29C24C2C04F00684B70 /* basic_7.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_7.csv; path = EnglishApp/csv/1_0/basic_7.csv; sourceTree = SOURCE_ROOT; };
+		49BED29D24C2C04F00684B70 /* basic_6.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_6.csv; path = EnglishApp/csv/1_0/basic_6.csv; sourceTree = SOURCE_ROOT; };
+		49BED29E24C2C04F00684B70 /* basic_3.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_3.csv; path = EnglishApp/csv/1_0/basic_3.csv; sourceTree = SOURCE_ROOT; };
+		49BED29F24C2C05000684B70 /* basic_23.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_23.csv; path = EnglishApp/csv/1_0/basic_23.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A024C2C05000684B70 /* basic_14.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_14.csv; path = EnglishApp/csv/1_0/basic_14.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A124C2C05000684B70 /* basic_16.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_16.csv; path = EnglishApp/csv/1_0/basic_16.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A224C2C05000684B70 /* basic_17.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_17.csv; path = EnglishApp/csv/1_0/basic_17.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A324C2C05000684B70 /* basic_12.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_12.csv; path = EnglishApp/csv/1_0/basic_12.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A424C2C05000684B70 /* basic_11.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_11.csv; path = EnglishApp/csv/1_0/basic_11.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A524C2C05000684B70 /* basic_10.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_10.csv; path = EnglishApp/csv/1_0/basic_10.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A624C2C05000684B70 /* basic_2.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_2.csv; path = EnglishApp/csv/1_0/basic_2.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A724C2C05000684B70 /* basic_20.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_20.csv; path = EnglishApp/csv/1_0/basic_20.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A824C2C05000684B70 /* basic_13.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_13.csv; path = EnglishApp/csv/1_0/basic_13.csv; sourceTree = SOURCE_ROOT; };
 		49BED2C724C2D4AB00684B70 /* WorkbookType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbookType.swift; sourceTree = "<group>"; };
 		49BED2CB24C2E34600684B70 /* SettingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTextView.swift; sourceTree = "<group>"; };
 		49BED2CD24C2E7A400684B70 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 		49F3B79924BEB00800012B94 /* SolveMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveMode.swift; sourceTree = "<group>"; };
 		49F3B79B24BEC90B00012B94 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		49F3B79D24BEF3D800012B94 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		49F3B79F24BEF42300012B94 /* category.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = category.csv; sourceTree = "<group>"; };
+		49F3B79F24BEF42300012B94 /* category_1-0.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = "category_1-0.csv"; sourceTree = "<group>"; };
 		7386E48E2950A9DF925D34F3 /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		763B43D92BD2283F51B0C5A9 /* Pods-EnglishApp-EnglishAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp-EnglishAppUITests/Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -318,38 +318,7 @@
 		491DBFC924B0A79200A24A79 /* csv */ = {
 			isa = PBXGroup;
 			children = (
-				490A5E1524BB429D00D26929 /* workbook.csv */,
-				49F3B79F24BEF42300012B94 /* category.csv */,
-				49BED28E24C2C04F00684B70 /* basic_1.csv */,
-				49BED2A624C2C05000684B70 /* basic_2.csv */,
-				49BED29E24C2C04F00684B70 /* basic_3.csv */,
-				49BED29424C2C04F00684B70 /* basic_4.csv */,
-				49BED29224C2C04F00684B70 /* basic_5.csv */,
-				49BED29D24C2C04F00684B70 /* basic_6.csv */,
-				49BED29C24C2C04F00684B70 /* basic_7.csv */,
-				49BED29824C2C04F00684B70 /* basic_8.csv */,
-				49BED29B24C2C04F00684B70 /* basic_9.csv */,
-				49BED2A524C2C05000684B70 /* basic_10.csv */,
-				49BED2A424C2C05000684B70 /* basic_11.csv */,
-				49BED2A324C2C05000684B70 /* basic_12.csv */,
-				49BED2A824C2C05000684B70 /* basic_13.csv */,
-				49BED2A024C2C05000684B70 /* basic_14.csv */,
-				49BED28B24C2C04F00684B70 /* basic_15.csv */,
-				49BED2A124C2C05000684B70 /* basic_16.csv */,
-				49BED2A224C2C05000684B70 /* basic_17.csv */,
-				49BED29024C2C04F00684B70 /* basic_18.csv */,
-				49BED29724C2C04F00684B70 /* basic_19.csv */,
-				49BED2A724C2C05000684B70 /* basic_20.csv */,
-				49BED29524C2C04F00684B70 /* basic_21.csv */,
-				49BED29624C2C04F00684B70 /* basic_22.csv */,
-				49BED29F24C2C05000684B70 /* basic_23.csv */,
-				49BED29A24C2C04F00684B70 /* basic_24.csv */,
-				49BED29324C2C04F00684B70 /* basic_25.csv */,
-				49BED28C24C2C04F00684B70 /* basic_26.csv */,
-				49BED28D24C2C04F00684B70 /* basic_27.csv */,
-				49BED29924C2C04F00684B70 /* basic_28.csv */,
-				49BED28F24C2C04F00684B70 /* basic_29.csv */,
-				49BED29124C2C04F00684B70 /* basic_30.csv */,
+				499E642924C82B210064BF0A /* 1_0 */,
 			);
 			path = csv;
 			sourceTree = "<group>";
@@ -490,6 +459,45 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		499E642924C82B210064BF0A /* 1_0 */ = {
+			isa = PBXGroup;
+			children = (
+				490A5E1524BB429D00D26929 /* workbook_1-0.csv */,
+				49F3B79F24BEF42300012B94 /* category_1-0.csv */,
+				49BED28E24C2C04F00684B70 /* basic_1.csv */,
+				49BED2A624C2C05000684B70 /* basic_2.csv */,
+				49BED29E24C2C04F00684B70 /* basic_3.csv */,
+				49BED29424C2C04F00684B70 /* basic_4.csv */,
+				49BED29224C2C04F00684B70 /* basic_5.csv */,
+				49BED29D24C2C04F00684B70 /* basic_6.csv */,
+				49BED29C24C2C04F00684B70 /* basic_7.csv */,
+				49BED29824C2C04F00684B70 /* basic_8.csv */,
+				49BED29B24C2C04F00684B70 /* basic_9.csv */,
+				49BED2A524C2C05000684B70 /* basic_10.csv */,
+				49BED2A424C2C05000684B70 /* basic_11.csv */,
+				49BED2A324C2C05000684B70 /* basic_12.csv */,
+				49BED2A824C2C05000684B70 /* basic_13.csv */,
+				49BED2A024C2C05000684B70 /* basic_14.csv */,
+				49BED28B24C2C04F00684B70 /* basic_15.csv */,
+				49BED2A124C2C05000684B70 /* basic_16.csv */,
+				49BED2A224C2C05000684B70 /* basic_17.csv */,
+				49BED29024C2C04F00684B70 /* basic_18.csv */,
+				49BED29724C2C04F00684B70 /* basic_19.csv */,
+				49BED2A724C2C05000684B70 /* basic_20.csv */,
+				49BED29524C2C04F00684B70 /* basic_21.csv */,
+				49BED29624C2C04F00684B70 /* basic_22.csv */,
+				49BED29F24C2C05000684B70 /* basic_23.csv */,
+				49BED29A24C2C04F00684B70 /* basic_24.csv */,
+				49BED29324C2C04F00684B70 /* basic_25.csv */,
+				49BED28C24C2C04F00684B70 /* basic_26.csv */,
+				49BED28D24C2C04F00684B70 /* basic_27.csv */,
+				49BED29924C2C04F00684B70 /* basic_28.csv */,
+				49BED28F24C2C04F00684B70 /* basic_29.csv */,
+				49BED29124C2C04F00684B70 /* basic_30.csv */,
+			);
+			path = 1_0;
+			sourceTree = "<group>";
+		};
 		49E1A56A24ACB116008EC140 /* Question */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +549,7 @@
 				496CAED624AB1CF000F290E9 /* Frameworks */,
 				496CAED724AB1CF000F290E9 /* Resources */,
 				D404BE067219937883FAF85D /* [CP] Embed Pods Frameworks */,
+				499E642824C81B870064BF0A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -647,7 +656,7 @@
 				49BED2B324C2C05000684B70 /* basic_21.csv in Resources */,
 				49BED2B224C2C05000684B70 /* basic_4.csv in Resources */,
 				49BED2C124C2C05000684B70 /* basic_12.csv in Resources */,
-				490A5E1624BB429D00D26929 /* workbook.csv in Resources */,
+				490A5E1624BB429D00D26929 /* workbook_1-0.csv in Resources */,
 				49BED2B424C2C05000684B70 /* basic_22.csv in Resources */,
 				49BED2AB24C2C05000684B70 /* basic_27.csv in Resources */,
 				49BED2BA24C2C05000684B70 /* basic_7.csv in Resources */,
@@ -679,7 +688,7 @@
 				49BED2BB24C2C05000684B70 /* basic_6.csv in Resources */,
 				49BED2B024C2C05000684B70 /* basic_5.csv in Resources */,
 				490BE06D24BF490A00E0F1F9 /* correct.caf in Resources */,
-				49F3B7A024BEF42300012B94 /* category.csv in Resources */,
+				49F3B7A024BEF42300012B94 /* category_1-0.csv in Resources */,
 				496CAEE324AB1CF000F290E9 /* Assets.xcassets in Resources */,
 				49BED2C324C2C05000684B70 /* basic_10.csv in Resources */,
 			);
@@ -762,6 +771,25 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		499E642824C81B870064BF0A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		CA3017E33BC37EA1D79375AB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1020,6 +1048,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"EnglishApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 4XV222H52K;
 				ENABLE_PREVIEWS = YES;
@@ -1031,7 +1060,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tishii24.EnglishApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1052,7 +1081,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tishii24.EnglishApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -12,7 +12,6 @@ class CSVDecoder {
     
     static func convertCSVFileToStringArray(fileName: String) -> Array<String>? {
         var csvLines = [String]()
-        
         guard let path = Bundle.main.path(forResource: fileName, ofType: "csv") else {
             print("error: csv file not found")
             return nil
