@@ -65,6 +65,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.7.1):
     - GoogleUtilities/Logger
+  - LicensePlist (2.16.0)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
@@ -77,12 +78,15 @@ PODS:
   - RealmSwift (5.3.2):
     - Realm (= 5.3.2)
   - Siren (5.4.5)
+  - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Crashlytics
+  - LicensePlist
   - RealmSwift
   - Siren
+  - SwiftyStoreKit
 
 SPEC REPOS:
   trunk:
@@ -95,11 +99,13 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
+    - LicensePlist
     - nanopb
     - PromisesObjC
     - Realm
     - RealmSwift
     - Siren
+    - SwiftyStoreKit
 
 SPEC CHECKSUMS:
   Firebase: ed042590caa0029392257529a8003c25ee82bc18
@@ -111,12 +117,14 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 8cd1f289d60e629cf16ab03363b9e89c776b9651
   GoogleDataTransport: 8a40cb194ad242b6f6dfe72c14fe40fc67c4dcd7
   GoogleUtilities: e121a3867449ce16b0e35ddf1797ea7a389ffdf2
+  LicensePlist: 26afd3ef32fffcc649a15b31d96fef5eded65497
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   PromisesObjC: b48e0338dbbac2207e611750777895f7a5811b75
   Realm: c6794276ca8884808ba168a22f9d71362b170b85
   RealmSwift: 42ec6cec3170aeeda407f797f07268a7d055ebc7
   Siren: 4c6f4863ea5b7f2d0e58b576663fefd8f6ef417f
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: afb19614dded6474ab20e73a4214f376bb4a4534
+PODFILE CHECKSUM: a32391dff64a57f56ab6380612c771acefa46c53
 
 COCOAPODS: 1.9.3

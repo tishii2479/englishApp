@@ -84,13 +84,13 @@ struct SettingView: View {
                                 }
                                 
                                 // TODO: これらのタップアクションの処理
-                                NavigationLink(destination: SettingTextView(content: "")) {
+                                NavigationLink(destination: SettingTextView(content: TextData.termsOfService)) {
                                     Text("利用規約")
                                 }
-                                NavigationLink(destination: SettingTextView(content: "")) {
+                                NavigationLink(destination: SettingTextView(content: TextData.privacyPolicy)) {
                                     Text("プライバシーポリシー")
                                 }
-                                NavigationLink(destination: SettingTextView(content: "")) {
+                                NavigationLink(destination: SettingTextView(content: TextData.contact)) {
                                     Text("問い合わせ")
                                 }
                             }
