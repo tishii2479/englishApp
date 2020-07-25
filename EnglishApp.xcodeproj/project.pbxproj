@@ -168,7 +168,7 @@
 		4931A03824B20ED100C26AFD /* CountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountType.swift; sourceTree = "<group>"; };
 		4931A03A24B2121400C26AFD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		4950F13024B9602700466674 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
-		496CAED924AB1CF000F290E9 /* EnglishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		496CAED924AB1CF000F290E9 /* エイドク.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "エイドク.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		496CAEE224AB1CF000F290E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -405,7 +405,7 @@
 		496CAEDA24AB1CF000F290E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				496CAED924AB1CF000F290E9 /* EnglishApp.app */,
+				496CAED924AB1CF000F290E9 /* エイドク.app */,
 				496CAEEF24AB1CF000F290E9 /* EnglishAppTests.xctest */,
 				496CAEFA24AB1CF100F290E9 /* EnglishAppUITests.xctest */,
 			);
@@ -605,7 +605,7 @@
 				491DBFD924B0C2EE00A24A79 /* QGrid */,
 			);
 			productName = EnglishApp;
-			productReference = 496CAED924AB1CF000F290E9 /* EnglishApp.app */;
+			productReference = 496CAED924AB1CF000F290E9 /* エイドク.app */;
 			productType = "com.apple.product-type.application";
 		};
 		496CAEEE24AB1CF000F290E9 /* EnglishAppTests */ = {
@@ -1132,7 +1132,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tishii24.EnglishApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "エイドク";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1153,7 +1153,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tishii24.EnglishApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "エイドク";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
