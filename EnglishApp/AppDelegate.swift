@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 import Firebase
+import Siren
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,22 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         setUIAppearance()
+        forceUpdate()
         
         return true
-    }
-
-    private func setUIAppearance() {
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
-        appearance.shadowColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
-
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().compactAppearance = appearance
-        
-        UITableView.appearance().backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
-        UITableViewCell.appearance().backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
-        UITableView.appearance().separatorStyle = .none
     }
     
     // MARK: UISceneSession Lifecycle
@@ -50,6 +38,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
 }
 
+private extension AppDelegate {
+
+    func setUIAppearance() {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+        appearance.shadowColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        
+        UITableView.appearance().backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+        UITableViewCell.appearance().backgroundColor = UIColor(red: 225 / 255, green: 225 / 255, blue: 235 / 255, alpha: 1)
+        UITableView.appearance().separatorStyle = .none
+    }
+    
+    func forceUpdate() {
+        let siren = Siren.shared
+        // 言語を日本語に設定
+        siren.presentationManager = PresentationManager(forceLanguageLocalization: .japanese)
+
+        // ruleを設定
+        siren.rulesManager = RulesManager(globalRules: .critical)
+
+        // sirenの実行関数
+        siren.wail { results in
+            switch results {
+            case .success(let updateResults):
+                print("AlertAction ", updateResults.alertAction)
+                print("Localization ", updateResults.localization)
+                print("Model ", updateResults.model)
+                print("UpdateType ", updateResults.updateType)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+
+    }
+    
+}

@@ -64,6 +64,7 @@ struct WorkbookView: View {
     func buttonContent(workbook: Workbook) -> AnyView {
 
         let hasNewQuestions: Bool = workbook.correctCount + workbook.missCount < workbook.questionNumber
+        let hasMissQuestions: Bool = workbook.missCount > 0
         
         if workbook.isCleared {
             return AnyView(
@@ -87,9 +88,13 @@ struct WorkbookView: View {
                         Text("新しい問題を解く")
                     }.buttonStyle(WideButtonStyle())
                     
-                    NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
-                        Text("間違えた問題を復習する")
-                    }.buttonStyle(WideButtonStyle())
+                    Group {
+                        if hasMissQuestions {
+                            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
+                                Text("間違えた問題を復習する")
+                            }.buttonStyle(WideButtonStyle())
+                        }
+                    }
                 }
             )
         } else {
@@ -99,9 +104,13 @@ struct WorkbookView: View {
                         Text("確認テストを受ける")
                     }.buttonStyle(WideButtonStyle())
                     
-                    NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
-                        Text("間違えた問題を復習する")
-                    }.buttonStyle(WideButtonStyle())
+                    Group {
+                        if hasMissQuestions {
+                            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
+                                Text("間違えた問題を復習する")
+                            }.buttonStyle(WideButtonStyle())
+                        }
+                    }
                 }
             )
         }

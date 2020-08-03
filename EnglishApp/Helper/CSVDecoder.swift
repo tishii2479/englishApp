@@ -12,7 +12,6 @@ class CSVDecoder {
     
     static func convertCSVFileToStringArray(fileName: String) -> Array<String>? {
         var csvLines = [String]()
-        
         guard let path = Bundle.main.path(forResource: fileName, ofType: "csv") else {
             print("error: csv file not found")
             return nil
@@ -30,11 +29,11 @@ class CSVDecoder {
         return csvLines
     }
     
-    static func convertQuestionFile(fileName: String) {
+    static func convertQuestionFile(fileName: String) -> Array<Question> {
         
         var questionArr = [Question]()
         
-        guard let dataArr: Array<String> = CSVDecoder.convertCSVFileToStringArray(fileName: fileName) else { return }
+        guard let dataArr: Array<String> = CSVDecoder.convertCSVFileToStringArray(fileName: fileName) else { fatalError("question failed to read") }
         
         for data in dataArr {
             let arr = data.components(separatedBy: ",")
@@ -58,14 +57,14 @@ class CSVDecoder {
             questionArr.append(question)
         }
         
-        RealmDecoder.addDataToRealm(datas: questionArr)
+        return questionArr
     }
     
-    static func convertWorkbookFile(fileName: String) {
+    static func convertWorkbookFile(fileName: String) -> Array<Workbook> {
         var workbookArr = [Workbook]()
         
         guard let dataArr: Array<String> = CSVDecoder.convertCSVFileToStringArray(fileName: fileName) else {
-            return
+            fatalError("workbook failed to read file")
         }
         
         for data in dataArr {
@@ -84,14 +83,14 @@ class CSVDecoder {
             workbookArr.append(workbook)
         }
         
-        RealmDecoder.addDataToRealm(datas: workbookArr)
+        return workbookArr
     }
     
-    static func convertCategoryFile(fileName: String) {
+    static func convertCategoryFile(fileName: String) -> Array<Category> {
         var categoryArr = [Category]()
         
         guard let dataArr: Array<String> = CSVDecoder.convertCSVFileToStringArray(fileName: fileName) else {
-            return
+            fatalError("category failed to read file")
         }
         
         for data in dataArr {
@@ -104,7 +103,7 @@ class CSVDecoder {
             categoryArr.append(category)
         }
         
-        RealmDecoder.addDataToRealm(datas: categoryArr)
+        return categoryArr
     }
     
 }

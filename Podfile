@@ -8,8 +8,13 @@ target 'EnglishApp' do
   # Pods for EnglishApp
   
   pod 'RealmSwift'
-  pod 'Firebase/Analytics'
+  pod 'Siren'
   
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+  pod 'LicensePlist'
+  pod 'SwiftyStoreKit'
+
   target 'EnglishAppTests' do
     inherit! :search_paths
     # Pods for testing
@@ -18,5 +23,4 @@ target 'EnglishApp' do
   target 'EnglishAppUITests' do
     # Pods for testing
   end
-
 end

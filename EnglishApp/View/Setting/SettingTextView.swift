@@ -17,8 +17,13 @@ struct SettingTextView: View {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
             
-            Text(content)
-                .lineLimit(nil)
+            ScrollView  {
+                Text(content)
+                    .font(.subheadline)
+                    .fontWeight(.light)
+                    .lineLimit(nil)
+                    .padding(20)
+            }
         }
     }
 }

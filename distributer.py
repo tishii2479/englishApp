@@ -1,7 +1,6 @@
 import os
 import csv
 import pathlib
-import re
 import random
 
 paths = []
@@ -27,6 +26,7 @@ size = int(input("分配される問題数を入力:  "))
 root_file_name = input("分配されるファイル名を入力:  ")
 
 print("問題を分配しています...")
+
 questions = []
 
 for path in paths:

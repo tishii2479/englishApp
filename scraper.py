@@ -6,11 +6,10 @@ import random
 import requests
 from bs4 import BeautifulSoup
 
-first_text = "***START OF THE PROJECT GUTENBERG EBOOK A MIRROR OF THE TURF***"
-end_text = "***END OF THE PROJECT GUTENBERG EBOOK A MIRROR OF THE TURF***"
-
-special_words = ["Mr", "Mrs", "St", "gs"]
-special_symbols = "[!\"#$%&'\\\\()*+,-./:;<=>?@[\\]^_`{|}~「」〔〕“”〈〉『』【】＆＊・（）＄＃＠。、？！｀＋￥％]"
+special_words = ["Mr", "Mrs", "St", "gs", "Dr"]
+special_symbols = (
+    "[!\"#$%&'\\\\()*+,-./:;<=>?@[\\]^_`’‘{|}~「」〔〕“”〈〉『』【】＆＊・（）＄＃＠。、？！｀＋￥％]"
+)
 
 # 特殊記号を抜く
 code_regex = re.compile(special_symbols)
@@ -22,6 +21,11 @@ def create_questions(raw_data):
     word_data = set()
     sentences = []
     questions = []
+    noa_miss_count = 0
+    len_short_miss_count = 0
+    len_long_miss_count = 0
+    cap_miss_count = 0
+    ans_miss_count = 0
 
     for p in raw_data:
         # 改行をなくす
@@ -39,7 +43,7 @@ def create_questions(raw_data):
         quote_count = 0
         for c in new_p:
 
-            # 謎のダブルクオテーション対策
+            # 全角ダブルクオテーション対策
             if c == "“" or c == "”":
                 c = '"'
 
@@ -49,7 +53,7 @@ def create_questions(raw_data):
                 quote_count += 1
 
             # 文の終わりの場合
-            if c == ".":
+            if c == "." or c == "?" or c == "!":
                 flag = True
                 # Mr, Mrsなどの単語のチェック
                 for sw in special_words:
@@ -59,10 +63,11 @@ def create_questions(raw_data):
                 if len(sentence) > 2:
                     if len(re.findall("[A-Z0-9\u2160-\u217F_]", sentence[-2])) > 0:
                         flag = False
+                if quote_count % 2 == 1:
+                    continue
+
                 # いずれでもなければ文章の終わりと判定
                 if flag:
-                    if quote_count % 2 == 1:
-                        sentence += '"'
                     sentences.append(sentence)
                     sentence = ""
                     quote_count = 0
@@ -74,9 +79,15 @@ def create_questions(raw_data):
         # 最初の空白を削除
         s = s.lstrip()
 
+        # 最初の[" ]を削除
+        if len(s) > 1:
+            if s[0] == '"' and s[1] == " ":
+                s = s[2:]
+
         # 最初の文字が大文字でなければ削除
         if len(s) > 0:
-            if len(re.findall("[A-Z]", s[0])) != 1:
+            if len(re.findall('[A-Z"]', s[0])) != 1:
+                cap_miss_count += 1
                 continue
 
         # 単語を取り出す
@@ -102,34 +113,58 @@ def create_questions(raw_data):
                 word += c
 
         # 短すぎる問題と長すぎる問題は削除
-        if len(words) <= 3 or 45 < len(words):
+        if len(words) <= 3:
+            len_short_miss_count += 1
+            continue
+        if len(words) > 50:
+            len_long_miss_count += 1
             continue
 
         # 答えを決める
         answer_count = 0
         while True:
-            answer_index = random.randint(0, len(words) - 1)
+            answer_index = random.randint(1, len(words) - 1)
             answer = words[answer_index]
 
             answer_count += 1
             if len(re.findall(special_symbols, answer)) == 0:
                 break
             if answer_count > 50:
-                print("的する答えが見つかりませんでした。")
+                print("適する答えが見つかりませんでした。")
                 break
         if answer_count > 50:
+            noa_miss_count += 1
             continue
 
+        # 答えを抜き出す (don'tなどに対応できていない)
+        new_sentence = s.replace(" " + answer + " ", " * ", 1)
+
+        if new_sentence.count("*") == 0:
+            new_sentence = new_sentence.replace(" " + answer + ",", " *,", 1)
+
+        if new_sentence.count("*") == 0:
+            new_sentence = new_sentence.replace(" " + answer + ".", " *.", 1)
+
+        if new_sentence.count("*") == 0:
+            new_sentence = new_sentence.replace(" " + answer + ";", " *;", 1)
+
+        if new_sentence.count("*") != 1:
+            ans_miss_count += 1
+            continue
+
+        # カンマを抜き出す
+        new_sentence = new_sentence.replace(",", "_")
+
         # 単語から特殊記号を抜き取る
+        new_words = []
         for w in words:
-            w = code_regex.sub("", w)
+            # 不要な記号を含んでいないか
+            if len(re.findall(special_symbols, w)) == 0:
+                new_words.append(code_regex.sub("", w))
         answer = code_regex.sub("", answer)
 
-        # 文章のカンマを変えて、答えを抜き出す
-        new_sentence = s.replace(",", "_").replace(" " + answer + " ", " * ", 1)
-
         questions.append([new_sentence, answer])
-        word_data |= set(words)
+        word_data |= set(new_words)
 
     data_size = len(word_data)
     data_list = list(word_data)
@@ -140,15 +175,24 @@ def create_questions(raw_data):
         for i in range(3):
             while True:
                 choice = data_list[random.randint(0, data_size - 1)]
+
                 # 被りがないかをチェック
                 flag = True
                 for j in range(1, i + 1):
                     if questions[j] == choice:
                         flag = False
+
+                # チェックを通過すれば採用
                 if flag:
                     choices.append(choice)
                     break
         q += choices
+
+    print(f"noa: {noa_miss_count}")
+    print(f"len_short: {len_short_miss_count}")
+    print(f"len_long: {len_long_miss_count}")
+    print(f"cap: {cap_miss_count}")
+    print(f"ans: {ans_miss_count}")
     return questions
 
 
@@ -187,7 +231,6 @@ print("ファイルが作成されました。")
 print("データをフォーマットしています。")
 soup = BeautifulSoup(response.content, "html.parser")
 [x.extract() for x in soup.findAll("span")]
-[x.extract() for x in soup.findAll("i")]
 [x.extract() for x in soup.findAll("a")]
 
 raw_data = soup.find_all("p", class_="")

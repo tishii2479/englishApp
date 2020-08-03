@@ -14,9 +14,8 @@ struct HomeNavigationButtonView: View {
     
     var body: some View {
         VStack {
-            // TODO: 今日の10問用のworkbookIdの取得
-            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: homeViewModel.getTodayWorkbook(), solveMode: .onlyNew))) {
-                Text("今日の10問")
+            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook:homeViewModel.getTodayWorkbook(), solveMode: .random))) {
+                Text("ランダムに解く")
                     .foregroundColor(Color.black)
             }.buttonStyle(WideButtonStyle())
 

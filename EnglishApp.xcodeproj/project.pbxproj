@@ -32,6 +32,17 @@
 		490F870324B068E100EF5622 /* WorkbookFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870224B068E100EF5622 /* WorkbookFormatter.swift */; };
 		490F870624B0741400EF5622 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870524B0741400EF5622 /* SettingView.swift */; };
 		490F870924B07CBD00EF5622 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F870824B07CBD00EF5622 /* UserSetting.swift */; };
+		49131DCE24C860BC00BBB379 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49131DCD24C860BC00BBB379 /* UserDefaultsHelper.swift */; };
+		49131DEB24C8687A00BBB379 /* basic_34.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DD424C8687900BBB379 /* basic_34.csv */; };
+		49131DEC24C8687A00BBB379 /* basic_31.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DD524C8687A00BBB379 /* basic_31.csv */; };
+		49131DED24C8687A00BBB379 /* basic_37.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DD624C8687A00BBB379 /* basic_37.csv */; };
+		49131DEF24C8687A00BBB379 /* basic_33.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DD824C8687A00BBB379 /* basic_33.csv */; };
+		49131DF324C8687A00BBB379 /* basic_35.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DDC24C8687A00BBB379 /* basic_35.csv */; };
+		49131DF424C8687A00BBB379 /* basic_40.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DDD24C8687A00BBB379 /* basic_40.csv */; };
+		49131DF524C8687A00BBB379 /* basic_36.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DDE24C8687A00BBB379 /* basic_36.csv */; };
+		49131DFA24C8687A00BBB379 /* basic_38.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DE324C8687A00BBB379 /* basic_38.csv */; };
+		49131DFC24C8687A00BBB379 /* basic_32.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DE524C8687A00BBB379 /* basic_32.csv */; };
+		49131DFD24C8687A00BBB379 /* basic_39.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49131DE624C8687A00BBB379 /* basic_39.csv */; };
 		491DBFD524B0A9D600A24A79 /* CSVDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */; };
 		491DBFDA24B0C2EE00A24A79 /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 491DBFD924B0C2EE00A24A79 /* QGrid */; };
 		4931A03924B20ED100C26AFD /* CountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A03824B20ED100C26AFD /* CountType.swift */; };
@@ -51,6 +62,8 @@
 		496CAF1824AB27CC00F290E9 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAF1724AB27CC00F290E9 /* Question.swift */; };
 		496CAF1B24AB353900F290E9 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAF1A24AB353800F290E9 /* QuestionViewModel.swift */; };
 		49924CC724BD6D3200AD962A /* PreviewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49924CC624BD6D3200AD962A /* PreviewCellView.swift */; };
+		49A1DA4A24C9556A00293165 /* TextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1DA4924C9556A00293165 /* TextData.swift */; };
+		49A1DA5B24C95E3F00293165 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49A1DA5A24C95E3E00293165 /* Settings.bundle */; };
 		49AC0DF424BD797C0077ED39 /* SmallChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC0DF324BD797C0077ED39 /* SmallChoiceView.swift */; };
 		49AC0DF624BD82930077ED39 /* QuestionReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC0DF524BD82930077ED39 /* QuestionReviewView.swift */; };
 		49B94D7724C2EDCE009B0D13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49B94D7624C2EDCE009B0D13 /* GoogleService-Info.plist */; };
@@ -84,7 +97,6 @@
 		49BED2C424C2C05000684B70 /* basic_2.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49BED2A624C2C05000684B70 /* basic_2.csv */; };
 		49BED2C524C2C05000684B70 /* basic_20.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49BED2A724C2C05000684B70 /* basic_20.csv */; };
 		49BED2C624C2C05000684B70 /* basic_13.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49BED2A824C2C05000684B70 /* basic_13.csv */; };
-		49BED2C824C2D4AB00684B70 /* WorkbookType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BED2C724C2D4AB00684B70 /* WorkbookType.swift */; };
 		49BED2CC24C2E34600684B70 /* SettingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BED2CB24C2E34600684B70 /* SettingTextView.swift */; };
 		49BED2CE24C2E7A400684B70 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BED2CD24C2E7A400684B70 /* LoadingView.swift */; };
 		49E1A56224ACAF59008EC140 /* QuestionSolveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56124ACAF59008EC140 /* QuestionSolveView.swift */; };
@@ -141,11 +153,22 @@
 		490F870224B068E100EF5622 /* WorkbookFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbookFormatter.swift; sourceTree = "<group>"; };
 		490F870524B0741400EF5622 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		490F870824B07CBD00EF5622 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
+		49131DCD24C860BC00BBB379 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		49131DD424C8687900BBB379 /* basic_34.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_34.csv; path = csv/basic_34.csv; sourceTree = SOURCE_ROOT; };
+		49131DD524C8687A00BBB379 /* basic_31.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_31.csv; path = csv/basic_31.csv; sourceTree = SOURCE_ROOT; };
+		49131DD624C8687A00BBB379 /* basic_37.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_37.csv; path = csv/basic_37.csv; sourceTree = SOURCE_ROOT; };
+		49131DD824C8687A00BBB379 /* basic_33.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_33.csv; path = csv/basic_33.csv; sourceTree = SOURCE_ROOT; };
+		49131DDC24C8687A00BBB379 /* basic_35.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_35.csv; path = csv/basic_35.csv; sourceTree = SOURCE_ROOT; };
+		49131DDD24C8687A00BBB379 /* basic_40.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_40.csv; path = csv/basic_40.csv; sourceTree = SOURCE_ROOT; };
+		49131DDE24C8687A00BBB379 /* basic_36.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_36.csv; path = csv/basic_36.csv; sourceTree = SOURCE_ROOT; };
+		49131DE324C8687A00BBB379 /* basic_38.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_38.csv; path = csv/basic_38.csv; sourceTree = SOURCE_ROOT; };
+		49131DE524C8687A00BBB379 /* basic_32.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_32.csv; path = csv/basic_32.csv; sourceTree = SOURCE_ROOT; };
+		49131DE624C8687A00BBB379 /* basic_39.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_39.csv; path = csv/basic_39.csv; sourceTree = SOURCE_ROOT; };
 		491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVDecoder.swift; sourceTree = "<group>"; };
 		4931A03824B20ED100C26AFD /* CountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountType.swift; sourceTree = "<group>"; };
 		4931A03A24B2121400C26AFD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		4950F13024B9602700466674 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
-		496CAED924AB1CF000F290E9 /* EnglishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		496CAED924AB1CF000F290E9 /* エイドク.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "エイドク.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		496CAEE224AB1CF000F290E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,40 +188,41 @@
 		496CAF1724AB27CC00F290E9 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		496CAF1A24AB353800F290E9 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
 		49924CC624BD6D3200AD962A /* PreviewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCellView.swift; sourceTree = "<group>"; };
+		49A1DA4924C9556A00293165 /* TextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextData.swift; sourceTree = "<group>"; };
+		49A1DA5A24C95E3E00293165 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = EnglishApp/Settings.bundle; sourceTree = "<group>"; };
 		49AC0DF324BD797C0077ED39 /* SmallChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallChoiceView.swift; sourceTree = "<group>"; };
 		49AC0DF524BD82930077ED39 /* QuestionReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionReviewView.swift; sourceTree = "<group>"; };
 		49B94D7624C2EDCE009B0D13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		49BED28B24C2C04F00684B70 /* basic_15.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_15.csv; path = csv/basic_15.csv; sourceTree = SOURCE_ROOT; };
-		49BED28C24C2C04F00684B70 /* basic_26.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_26.csv; path = csv/basic_26.csv; sourceTree = SOURCE_ROOT; };
-		49BED28D24C2C04F00684B70 /* basic_27.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_27.csv; path = csv/basic_27.csv; sourceTree = SOURCE_ROOT; };
-		49BED28E24C2C04F00684B70 /* basic_1.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_1.csv; path = csv/basic_1.csv; sourceTree = SOURCE_ROOT; };
-		49BED28F24C2C04F00684B70 /* basic_29.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_29.csv; path = csv/basic_29.csv; sourceTree = SOURCE_ROOT; };
-		49BED29024C2C04F00684B70 /* basic_18.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_18.csv; path = csv/basic_18.csv; sourceTree = SOURCE_ROOT; };
-		49BED29124C2C04F00684B70 /* basic_30.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_30.csv; path = csv/basic_30.csv; sourceTree = SOURCE_ROOT; };
-		49BED29224C2C04F00684B70 /* basic_5.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_5.csv; path = csv/basic_5.csv; sourceTree = SOURCE_ROOT; };
-		49BED29324C2C04F00684B70 /* basic_25.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_25.csv; path = csv/basic_25.csv; sourceTree = SOURCE_ROOT; };
-		49BED29424C2C04F00684B70 /* basic_4.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_4.csv; path = csv/basic_4.csv; sourceTree = SOURCE_ROOT; };
-		49BED29524C2C04F00684B70 /* basic_21.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_21.csv; path = csv/basic_21.csv; sourceTree = SOURCE_ROOT; };
-		49BED29624C2C04F00684B70 /* basic_22.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_22.csv; path = csv/basic_22.csv; sourceTree = SOURCE_ROOT; };
-		49BED29724C2C04F00684B70 /* basic_19.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_19.csv; path = csv/basic_19.csv; sourceTree = SOURCE_ROOT; };
-		49BED29824C2C04F00684B70 /* basic_8.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_8.csv; path = csv/basic_8.csv; sourceTree = SOURCE_ROOT; };
-		49BED29924C2C04F00684B70 /* basic_28.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_28.csv; path = csv/basic_28.csv; sourceTree = SOURCE_ROOT; };
-		49BED29A24C2C04F00684B70 /* basic_24.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_24.csv; path = csv/basic_24.csv; sourceTree = SOURCE_ROOT; };
-		49BED29B24C2C04F00684B70 /* basic_9.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_9.csv; path = csv/basic_9.csv; sourceTree = SOURCE_ROOT; };
-		49BED29C24C2C04F00684B70 /* basic_7.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_7.csv; path = csv/basic_7.csv; sourceTree = SOURCE_ROOT; };
-		49BED29D24C2C04F00684B70 /* basic_6.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_6.csv; path = csv/basic_6.csv; sourceTree = SOURCE_ROOT; };
-		49BED29E24C2C04F00684B70 /* basic_3.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_3.csv; path = csv/basic_3.csv; sourceTree = SOURCE_ROOT; };
-		49BED29F24C2C05000684B70 /* basic_23.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_23.csv; path = csv/basic_23.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A024C2C05000684B70 /* basic_14.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_14.csv; path = csv/basic_14.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A124C2C05000684B70 /* basic_16.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_16.csv; path = csv/basic_16.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A224C2C05000684B70 /* basic_17.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_17.csv; path = csv/basic_17.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A324C2C05000684B70 /* basic_12.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_12.csv; path = csv/basic_12.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A424C2C05000684B70 /* basic_11.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_11.csv; path = csv/basic_11.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A524C2C05000684B70 /* basic_10.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_10.csv; path = csv/basic_10.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A624C2C05000684B70 /* basic_2.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_2.csv; path = csv/basic_2.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A724C2C05000684B70 /* basic_20.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_20.csv; path = csv/basic_20.csv; sourceTree = SOURCE_ROOT; };
-		49BED2A824C2C05000684B70 /* basic_13.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_13.csv; path = csv/basic_13.csv; sourceTree = SOURCE_ROOT; };
-		49BED2C724C2D4AB00684B70 /* WorkbookType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbookType.swift; sourceTree = "<group>"; };
+		49BED28B24C2C04F00684B70 /* basic_15.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_15.csv; path = EnglishApp/csv/1_0/basic_15.csv; sourceTree = SOURCE_ROOT; };
+		49BED28C24C2C04F00684B70 /* basic_26.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_26.csv; path = EnglishApp/csv/1_0/basic_26.csv; sourceTree = SOURCE_ROOT; };
+		49BED28D24C2C04F00684B70 /* basic_27.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_27.csv; path = EnglishApp/csv/1_0/basic_27.csv; sourceTree = SOURCE_ROOT; };
+		49BED28E24C2C04F00684B70 /* basic_1.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_1.csv; path = EnglishApp/csv/1_0/basic_1.csv; sourceTree = SOURCE_ROOT; };
+		49BED28F24C2C04F00684B70 /* basic_29.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_29.csv; path = EnglishApp/csv/1_0/basic_29.csv; sourceTree = SOURCE_ROOT; };
+		49BED29024C2C04F00684B70 /* basic_18.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_18.csv; path = EnglishApp/csv/1_0/basic_18.csv; sourceTree = SOURCE_ROOT; };
+		49BED29124C2C04F00684B70 /* basic_30.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_30.csv; path = EnglishApp/csv/1_0/basic_30.csv; sourceTree = SOURCE_ROOT; };
+		49BED29224C2C04F00684B70 /* basic_5.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_5.csv; path = EnglishApp/csv/1_0/basic_5.csv; sourceTree = SOURCE_ROOT; };
+		49BED29324C2C04F00684B70 /* basic_25.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_25.csv; path = EnglishApp/csv/1_0/basic_25.csv; sourceTree = SOURCE_ROOT; };
+		49BED29424C2C04F00684B70 /* basic_4.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_4.csv; path = EnglishApp/csv/1_0/basic_4.csv; sourceTree = SOURCE_ROOT; };
+		49BED29524C2C04F00684B70 /* basic_21.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_21.csv; path = EnglishApp/csv/1_0/basic_21.csv; sourceTree = SOURCE_ROOT; };
+		49BED29624C2C04F00684B70 /* basic_22.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_22.csv; path = EnglishApp/csv/1_0/basic_22.csv; sourceTree = SOURCE_ROOT; };
+		49BED29724C2C04F00684B70 /* basic_19.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_19.csv; path = EnglishApp/csv/1_0/basic_19.csv; sourceTree = SOURCE_ROOT; };
+		49BED29824C2C04F00684B70 /* basic_8.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_8.csv; path = EnglishApp/csv/1_0/basic_8.csv; sourceTree = SOURCE_ROOT; };
+		49BED29924C2C04F00684B70 /* basic_28.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_28.csv; path = EnglishApp/csv/1_0/basic_28.csv; sourceTree = SOURCE_ROOT; };
+		49BED29A24C2C04F00684B70 /* basic_24.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_24.csv; path = EnglishApp/csv/1_0/basic_24.csv; sourceTree = SOURCE_ROOT; };
+		49BED29B24C2C04F00684B70 /* basic_9.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_9.csv; path = EnglishApp/csv/1_0/basic_9.csv; sourceTree = SOURCE_ROOT; };
+		49BED29C24C2C04F00684B70 /* basic_7.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_7.csv; path = EnglishApp/csv/1_0/basic_7.csv; sourceTree = SOURCE_ROOT; };
+		49BED29D24C2C04F00684B70 /* basic_6.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_6.csv; path = EnglishApp/csv/1_0/basic_6.csv; sourceTree = SOURCE_ROOT; };
+		49BED29E24C2C04F00684B70 /* basic_3.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_3.csv; path = EnglishApp/csv/1_0/basic_3.csv; sourceTree = SOURCE_ROOT; };
+		49BED29F24C2C05000684B70 /* basic_23.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_23.csv; path = EnglishApp/csv/1_0/basic_23.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A024C2C05000684B70 /* basic_14.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_14.csv; path = EnglishApp/csv/1_0/basic_14.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A124C2C05000684B70 /* basic_16.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_16.csv; path = EnglishApp/csv/1_0/basic_16.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A224C2C05000684B70 /* basic_17.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_17.csv; path = EnglishApp/csv/1_0/basic_17.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A324C2C05000684B70 /* basic_12.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_12.csv; path = EnglishApp/csv/1_0/basic_12.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A424C2C05000684B70 /* basic_11.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_11.csv; path = EnglishApp/csv/1_0/basic_11.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A524C2C05000684B70 /* basic_10.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_10.csv; path = EnglishApp/csv/1_0/basic_10.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A624C2C05000684B70 /* basic_2.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_2.csv; path = EnglishApp/csv/1_0/basic_2.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A724C2C05000684B70 /* basic_20.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_20.csv; path = EnglishApp/csv/1_0/basic_20.csv; sourceTree = SOURCE_ROOT; };
+		49BED2A824C2C05000684B70 /* basic_13.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = basic_13.csv; path = EnglishApp/csv/1_0/basic_13.csv; sourceTree = SOURCE_ROOT; };
 		49BED2CB24C2E34600684B70 /* SettingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTextView.swift; sourceTree = "<group>"; };
 		49BED2CD24C2E7A400684B70 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		49E1A56124ACAF59008EC140 /* QuestionSolveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSolveView.swift; sourceTree = "<group>"; };
@@ -315,41 +339,30 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
+		49131DCF24C8682900BBB379 /* 1_0_1 */ = {
+			isa = PBXGroup;
+			children = (
+				49131DD524C8687A00BBB379 /* basic_31.csv */,
+				49131DE524C8687A00BBB379 /* basic_32.csv */,
+				49131DD824C8687A00BBB379 /* basic_33.csv */,
+				49131DD424C8687900BBB379 /* basic_34.csv */,
+				49131DDC24C8687A00BBB379 /* basic_35.csv */,
+				49131DDE24C8687A00BBB379 /* basic_36.csv */,
+				49131DD624C8687A00BBB379 /* basic_37.csv */,
+				49131DE324C8687A00BBB379 /* basic_38.csv */,
+				49131DE624C8687A00BBB379 /* basic_39.csv */,
+				49131DDD24C8687A00BBB379 /* basic_40.csv */,
+			);
+			path = 1_0_1;
+			sourceTree = "<group>";
+		};
 		491DBFC924B0A79200A24A79 /* csv */ = {
 			isa = PBXGroup;
 			children = (
 				490A5E1524BB429D00D26929 /* workbook.csv */,
 				49F3B79F24BEF42300012B94 /* category.csv */,
-				49BED28E24C2C04F00684B70 /* basic_1.csv */,
-				49BED2A624C2C05000684B70 /* basic_2.csv */,
-				49BED29E24C2C04F00684B70 /* basic_3.csv */,
-				49BED29424C2C04F00684B70 /* basic_4.csv */,
-				49BED29224C2C04F00684B70 /* basic_5.csv */,
-				49BED29D24C2C04F00684B70 /* basic_6.csv */,
-				49BED29C24C2C04F00684B70 /* basic_7.csv */,
-				49BED29824C2C04F00684B70 /* basic_8.csv */,
-				49BED29B24C2C04F00684B70 /* basic_9.csv */,
-				49BED2A524C2C05000684B70 /* basic_10.csv */,
-				49BED2A424C2C05000684B70 /* basic_11.csv */,
-				49BED2A324C2C05000684B70 /* basic_12.csv */,
-				49BED2A824C2C05000684B70 /* basic_13.csv */,
-				49BED2A024C2C05000684B70 /* basic_14.csv */,
-				49BED28B24C2C04F00684B70 /* basic_15.csv */,
-				49BED2A124C2C05000684B70 /* basic_16.csv */,
-				49BED2A224C2C05000684B70 /* basic_17.csv */,
-				49BED29024C2C04F00684B70 /* basic_18.csv */,
-				49BED29724C2C04F00684B70 /* basic_19.csv */,
-				49BED2A724C2C05000684B70 /* basic_20.csv */,
-				49BED29524C2C04F00684B70 /* basic_21.csv */,
-				49BED29624C2C04F00684B70 /* basic_22.csv */,
-				49BED29F24C2C05000684B70 /* basic_23.csv */,
-				49BED29A24C2C04F00684B70 /* basic_24.csv */,
-				49BED29324C2C04F00684B70 /* basic_25.csv */,
-				49BED28C24C2C04F00684B70 /* basic_26.csv */,
-				49BED28D24C2C04F00684B70 /* basic_27.csv */,
-				49BED29924C2C04F00684B70 /* basic_28.csv */,
-				49BED28F24C2C04F00684B70 /* basic_29.csv */,
-				49BED29124C2C04F00684B70 /* basic_30.csv */,
+				499E642924C82B210064BF0A /* 1_0 */,
+				49131DCF24C8682900BBB379 /* 1_0_1 */,
 			);
 			path = csv;
 			sourceTree = "<group>";
@@ -359,7 +372,6 @@
 			children = (
 				4931A03824B20ED100C26AFD /* CountType.swift */,
 				49F3B79924BEB00800012B94 /* SolveMode.swift */,
-				49BED2C724C2D4AB00684B70 /* WorkbookType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -371,6 +383,8 @@
 				491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */,
 				4904486124B17F1000391FE5 /* RealmDecoder.swift */,
 				490BE05C24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift */,
+				49131DCD24C860BC00BBB379 /* UserDefaultsHelper.swift */,
+				49A1DA4924C9556A00293165 /* TextData.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -378,6 +392,7 @@
 		496CAED024AB1CEF00F290E9 = {
 			isa = PBXGroup;
 			children = (
+				49A1DA5A24C95E3E00293165 /* Settings.bundle */,
 				496CAEDB24AB1CF000F290E9 /* EnglishApp */,
 				496CAEF224AB1CF000F290E9 /* EnglishAppTests */,
 				496CAEFD24AB1CF100F290E9 /* EnglishAppUITests */,
@@ -390,7 +405,7 @@
 		496CAEDA24AB1CF000F290E9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				496CAED924AB1CF000F290E9 /* EnglishApp.app */,
+				496CAED924AB1CF000F290E9 /* エイドク.app */,
 				496CAEEF24AB1CF000F290E9 /* EnglishAppTests.xctest */,
 				496CAEFA24AB1CF100F290E9 /* EnglishAppUITests.xctest */,
 			);
@@ -490,6 +505,43 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		499E642924C82B210064BF0A /* 1_0 */ = {
+			isa = PBXGroup;
+			children = (
+				49BED28E24C2C04F00684B70 /* basic_1.csv */,
+				49BED2A624C2C05000684B70 /* basic_2.csv */,
+				49BED29E24C2C04F00684B70 /* basic_3.csv */,
+				49BED29424C2C04F00684B70 /* basic_4.csv */,
+				49BED29224C2C04F00684B70 /* basic_5.csv */,
+				49BED29D24C2C04F00684B70 /* basic_6.csv */,
+				49BED29C24C2C04F00684B70 /* basic_7.csv */,
+				49BED29824C2C04F00684B70 /* basic_8.csv */,
+				49BED29B24C2C04F00684B70 /* basic_9.csv */,
+				49BED2A524C2C05000684B70 /* basic_10.csv */,
+				49BED2A424C2C05000684B70 /* basic_11.csv */,
+				49BED2A324C2C05000684B70 /* basic_12.csv */,
+				49BED2A824C2C05000684B70 /* basic_13.csv */,
+				49BED2A024C2C05000684B70 /* basic_14.csv */,
+				49BED28B24C2C04F00684B70 /* basic_15.csv */,
+				49BED2A124C2C05000684B70 /* basic_16.csv */,
+				49BED2A224C2C05000684B70 /* basic_17.csv */,
+				49BED29024C2C04F00684B70 /* basic_18.csv */,
+				49BED29724C2C04F00684B70 /* basic_19.csv */,
+				49BED2A724C2C05000684B70 /* basic_20.csv */,
+				49BED29524C2C04F00684B70 /* basic_21.csv */,
+				49BED29624C2C04F00684B70 /* basic_22.csv */,
+				49BED29F24C2C05000684B70 /* basic_23.csv */,
+				49BED29A24C2C04F00684B70 /* basic_24.csv */,
+				49BED29324C2C04F00684B70 /* basic_25.csv */,
+				49BED28C24C2C04F00684B70 /* basic_26.csv */,
+				49BED28D24C2C04F00684B70 /* basic_27.csv */,
+				49BED29924C2C04F00684B70 /* basic_28.csv */,
+				49BED28F24C2C04F00684B70 /* basic_29.csv */,
+				49BED29124C2C04F00684B70 /* basic_30.csv */,
+			);
+			path = 1_0;
+			sourceTree = "<group>";
+		};
 		49E1A56A24ACB116008EC140 /* Question */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,6 +593,8 @@
 				496CAED624AB1CF000F290E9 /* Frameworks */,
 				496CAED724AB1CF000F290E9 /* Resources */,
 				D404BE067219937883FAF85D /* [CP] Embed Pods Frameworks */,
+				499E642824C81B870064BF0A /* ShellScript */,
+				49A1DA4D24C95AF100293165 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -551,7 +605,7 @@
 				491DBFD924B0C2EE00A24A79 /* QGrid */,
 			);
 			productName = EnglishApp;
-			productReference = 496CAED924AB1CF000F290E9 /* EnglishApp.app */;
+			productReference = 496CAED924AB1CF000F290E9 /* エイドク.app */;
 			productType = "com.apple.product-type.application";
 		};
 		496CAEEE24AB1CF000F290E9 /* EnglishAppTests */ = {
@@ -647,12 +701,17 @@
 				49BED2B324C2C05000684B70 /* basic_21.csv in Resources */,
 				49BED2B224C2C05000684B70 /* basic_4.csv in Resources */,
 				49BED2C124C2C05000684B70 /* basic_12.csv in Resources */,
+				49131DF424C8687A00BBB379 /* basic_40.csv in Resources */,
 				490A5E1624BB429D00D26929 /* workbook.csv in Resources */,
 				49BED2B424C2C05000684B70 /* basic_22.csv in Resources */,
 				49BED2AB24C2C05000684B70 /* basic_27.csv in Resources */,
+				49131DFC24C8687A00BBB379 /* basic_32.csv in Resources */,
 				49BED2BA24C2C05000684B70 /* basic_7.csv in Resources */,
+				49131DEB24C8687A00BBB379 /* basic_34.csv in Resources */,
 				49BED2B824C2C05000684B70 /* basic_24.csv in Resources */,
 				496CAEE924AB1CF000F290E9 /* LaunchScreen.storyboard in Resources */,
+				49131DEC24C8687A00BBB379 /* basic_31.csv in Resources */,
+				49131DF524C8687A00BBB379 /* basic_36.csv in Resources */,
 				49BED2C224C2C05000684B70 /* basic_11.csv in Resources */,
 				49BED2BE24C2C05000684B70 /* basic_14.csv in Resources */,
 				49B94D7724C2EDCE009B0D13 /* GoogleService-Info.plist in Resources */,
@@ -666,9 +725,12 @@
 				49BED2BF24C2C05000684B70 /* basic_16.csv in Resources */,
 				49BED2C624C2C05000684B70 /* basic_13.csv in Resources */,
 				496CAEE624AB1CF000F290E9 /* Preview Assets.xcassets in Resources */,
+				49A1DA5B24C95E3F00293165 /* Settings.bundle in Resources */,
+				49131DF324C8687A00BBB379 /* basic_35.csv in Resources */,
 				49BED2B524C2C05000684B70 /* basic_19.csv in Resources */,
 				49BED2AF24C2C05000684B70 /* basic_30.csv in Resources */,
 				49BED2BC24C2C05000684B70 /* basic_3.csv in Resources */,
+				49131DEF24C8687A00BBB379 /* basic_33.csv in Resources */,
 				49BED2C524C2C05000684B70 /* basic_20.csv in Resources */,
 				49BED2B124C2C05000684B70 /* basic_25.csv in Resources */,
 				49BED2C424C2C05000684B70 /* basic_2.csv in Resources */,
@@ -677,10 +739,13 @@
 				49BED2BD24C2C05000684B70 /* basic_23.csv in Resources */,
 				490BE06C24BF490A00E0F1F9 /* miss.caf in Resources */,
 				49BED2BB24C2C05000684B70 /* basic_6.csv in Resources */,
+				49131DED24C8687A00BBB379 /* basic_37.csv in Resources */,
+				49131DFD24C8687A00BBB379 /* basic_39.csv in Resources */,
 				49BED2B024C2C05000684B70 /* basic_5.csv in Resources */,
 				490BE06D24BF490A00E0F1F9 /* correct.caf in Resources */,
 				49F3B7A024BEF42300012B94 /* category.csv in Resources */,
 				496CAEE324AB1CF000F290E9 /* Assets.xcassets in Resources */,
+				49131DFA24C8687A00BBB379 /* basic_38.csv in Resources */,
 				49BED2C324C2C05000684B70 /* basic_10.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -763,6 +828,42 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		499E642824C81B870064BF0A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		49A1DA4D24C95AF100293165 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ $CONFIGURATION = \"Debug\" ]; then\n${PODS_ROOT}/LicensePlist/license-plist --output-path $PRODUCT_NAME/Settings.bundle --github-token YOUR_GITHUB_TOKEN\nfi\n";
+		};
 		CA3017E33BC37EA1D79375AB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -831,12 +932,13 @@
 				490A5E1424BB407400D26929 /* DentCircleView.swift in Sources */,
 				496CAEDF24AB1CF000F290E9 /* SceneDelegate.swift in Sources */,
 				49F3B79C24BEC90B00012B94 /* SectionHeader.swift in Sources */,
+				49131DCE24C860BC00BBB379 /* UserDefaultsHelper.swift in Sources */,
 				496CAF1824AB27CC00F290E9 /* Question.swift in Sources */,
 				490F86F624B0475700EF5622 /* ReturnButtonView.swift in Sources */,
 				496CAF1B24AB353900F290E9 /* QuestionViewModel.swift in Sources */,
 				49E1A56524ACB087008EC140 /* QuestionResultView.swift in Sources */,
-				49BED2C824C2D4AB00684B70 /* WorkbookType.swift in Sources */,
 				4931A03924B20ED100C26AFD /* CountType.swift in Sources */,
+				49A1DA4A24C9556A00293165 /* TextData.swift in Sources */,
 				490F870324B068E100EF5622 /* WorkbookFormatter.swift in Sources */,
 				490F86F824B0521D00EF5622 /* WorkbookCellView.swift in Sources */,
 				4904486E24B1DF8100391FE5 /* UserDefaults.swift in Sources */,
@@ -1020,6 +1122,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"EnglishApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 4XV222H52K;
 				ENABLE_PREVIEWS = YES;
@@ -1029,9 +1132,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tishii24.EnglishApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "エイドク";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1050,9 +1153,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tishii24.EnglishApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "エイドク";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
