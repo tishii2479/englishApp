@@ -46,6 +46,7 @@ class UserSetting {
             RealmDecoder.addDataToRealm(datas: workbookArr)
             let categoryArr = CSVDecoder.convertCategoryFile(fileName: "category")
             RealmDecoder.addDataToRealm(datas: categoryArr)
+            
             setUpWorkbooks()
             resetQuestionData()
             userDefaults.set(version, forKey: "appVersion")

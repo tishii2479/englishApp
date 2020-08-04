@@ -34,7 +34,7 @@ struct WorkbookCollectionView: View {
                                         }
                                         .buttonStyle(ShrinkButtonStyle())
                                     }
-                                    .frame(width: 170, height: 200)
+                                    .frame(width: 180, height: 180)
                                 }
                                 .padding(.horizontal, 30)
                             }

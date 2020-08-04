@@ -16,7 +16,7 @@ struct SectionHeader: View {
             .font(.subheadline)
             .fontWeight(.bold)
             .padding(.horizontal, 30)
-            .frame(width: UIScreen.main.bounds.width, height: 28,alignment: .leading)
+            .frame(width: UIScreen.main.bounds.width, height: 40,alignment: .leading)
             .background(Color.offWhite)
     }
 }
