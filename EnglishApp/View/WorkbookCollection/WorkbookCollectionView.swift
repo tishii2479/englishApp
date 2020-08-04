@@ -18,40 +18,34 @@ struct WorkbookCollectionView: View {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
             
-            GeometryReader { fullView in
-                VStack {
-                    CustomNavigationBar(hasReturn: true, hasSetting: true, title: "問題集")
-                    
-                    List {
-                        ForEach(UserSetting.workbookCategories.indices) { index in
-                            Section(header:
-                                SectionHeader(title: UserSetting.workbookCategories[index].title)
-                            ) {
-                                ScrollView(.horizontal, showsIndicators: false) {
-                                    HStack {
-                                        ForEach (UserSetting.workbookArray[UserSetting.workbookCategories[index].title]!, id: \.bookId) { workbook in
-                                            GeometryReader { geometry in
-                                                NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook))) {
-                                                    WorkbookCellView(workbook: workbook)
-                                                }
-                                                .rotation3DEffect(.degrees(min(Double((geometry.frame(in: .global).minX - fullView.size.width / 2) / -5), 0)), axis: (x: 0, y: 1, z: 0))
-                                                .buttonStyle(ShrinkButtonStyle())
-                                            }
-                                            .frame(width: 200, height: 200)
+            VStack {
+                CustomNavigationBar(hasReturn: true, hasSetting: true, title: "問題集")
+                
+                List {
+                    ForEach(UserSetting.workbookCategories.indices) { index in
+                        Section(header:
+                            SectionHeader(title: UserSetting.workbookCategories[index].title)
+                        ) {
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack {
+                                    ForEach (UserSetting.workbookArray[UserSetting.workbookCategories[index].title]!, id: \.bookId) { workbook in
+                                        NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook))) {
+                                            WorkbookCellView(workbook: workbook)
                                         }
+                                        .buttonStyle(ShrinkButtonStyle())
                                     }
-                                    .padding(.trailing, 50)
-                                    .padding(.leading, 30)
-                                }.padding(.horizontal, -30)
+                                    .frame(width: 170, height: 200)
+                                }
+                                .padding(.horizontal, 30)
                             }
-                        }
-                    }.padding(.top, 20)
+                        }.padding(.horizontal, -30)
+                    }
                 }
+                .padding(.top, 20)
             }
-            
+            .navigationBarHidden(true)
+            .navigationBarTitle("")
         }
-        .navigationBarHidden(true)
-        .navigationBarTitle("")
     }
 }
 

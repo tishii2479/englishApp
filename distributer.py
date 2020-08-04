@@ -44,7 +44,7 @@ while len(questions) >= size:
         questions.pop(index)
 
     new_file_name = root_file_name + f"_{version}.csv"
-    new_file_path = os.path.join(os.getcwd(), "csv", new_file_name)
+    new_file_path = os.path.join(os.getcwd(), "csv/book", new_file_name)
 
     with open(new_file_path, "w") as f:
         writer = csv.writer(f, quoting=csv.QUOTE_NONE, escapechar="\\")

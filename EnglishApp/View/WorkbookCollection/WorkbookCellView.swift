@@ -17,7 +17,7 @@ struct WorkbookCellView: View {
             // Background
             RoundedRectangle(cornerRadius: 10)
                 .foregroundColor(Color.offWhite)
-                .frame(width: 180, height: 150)
+                .frame(width: 150, height: 150)
                 .padding(.horizontal, 10)
                 .padding(.vertical, 20)
                 .shadow(color: Color.black.opacity(0.2), radius: 5, x: 5, y: 5)
@@ -50,7 +50,7 @@ struct WorkbookCellView: View {
                 .padding(.leading, 10)
                 Spacer()
             }
-            .frame(width: 200, height: 160)
+            .frame(width: 170, height: 160)
         }
     }
     

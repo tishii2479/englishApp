@@ -127,13 +127,16 @@ def create_questions(raw_data):
             answer = words[answer_index]
 
             answer_count += 1
-            if len(re.findall(special_symbols, answer)) == 0:
+            if (
+                len(re.findall(special_symbols, answer)) == 0
+                and any(c.isdigit() for c in answer) == False
+                and answer.islower()
+            ):
                 break
             if answer_count > 50:
-                print("適する答えが見つかりませんでした。")
+                noa_miss_count += 1
                 break
         if answer_count > 50:
-            noa_miss_count += 1
             continue
 
         # 答えを抜き出す (don'tなどに対応できていない)
@@ -159,8 +162,20 @@ def create_questions(raw_data):
         new_words = []
         for w in words:
             # 不要な記号を含んでいないか
-            if len(re.findall(special_symbols, w)) == 0:
-                new_words.append(code_regex.sub("", w))
+            if len(re.findall(special_symbols, w)) > 0:
+                continue
+
+            # 大文字を含まないか
+            if w.islower() == False:
+                continue
+
+            # 数値を含まないか
+            if any(c.isdigit() for c in w):
+                continue
+
+            # 適切な言葉であれば選択肢に追加する
+            new_words.append(code_regex.sub("", w))
+
         answer = code_regex.sub("", answer)
 
         questions.append([new_sentence, answer])

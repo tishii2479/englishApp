@@ -42,7 +42,10 @@ class CSVDecoder {
             if arr.count == 1 { continue }
             
             // 要素数のチェック
-            guard arr.count == 5  else { fatalError("failed to convert question") }
+            guard arr.count == 5  else {
+                print(arr)
+                fatalError("failed to convert question")
+            }
             
             var choices = [String]()
             for i in 0 ..< 4 {
