@@ -77,6 +77,8 @@ class UserSetting {
             userDefaults.set(0, forKey: "todayCorrectCount")
             userDefaults.set(0, forKey: "todayMissCount")
         }
+        
+        User.shared.isLoading = false
     }
     
     // 問題集を配列に読み込む時に使う

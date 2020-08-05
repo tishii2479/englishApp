@@ -10,8 +10,6 @@ import SwiftUI
 
 struct LoadingView: View {
     
-    var window: UIWindow
-    
     var body: some View {
         ZStack {
             Color.offWhite
@@ -20,16 +18,19 @@ struct LoadingView: View {
             VStack {
                 Spacer()
                 Text("ロード中...　アプリを終了せずにお待ちください。")
-                    .padding(.bottom, 40)
+                    .font(.footnote)
+                    .padding(.bottom, 80)
             }
     
             Image("Icon")
+                .resizable()
+                .frame(width: 220, height: 220)
         }
     }
 }
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingView(window: UIWindow())
+        LoadingView()
     }
 }

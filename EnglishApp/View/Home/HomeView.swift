@@ -14,7 +14,6 @@ struct HomeView: View {
     
     @ObservedObject var user: User = User.shared
     
-    
     var body: some View {
         let questionView = QuestionView(questionViewModel: QuestionViewModel(workbook:homeViewModel.getTodayWorkbook(), solveMode: .random))
         
@@ -42,6 +41,12 @@ struct HomeView: View {
                     HomeNavigationButtonView(homeViewModel: homeViewModel, questionView: questionView)
                     
                     Spacer()
+                }
+                
+                Group {
+                    if user.isLoading {
+                        LoadingView()
+                    }
                 }
             }
             .navigationBarHidden(true)
