@@ -35,6 +35,7 @@ struct WorkbookCellView: View {
                         .fontWeight(.ultraLight)
                     
                     Spacer()
+                    
                     Text(WorkbookFormatter.formatDifficult(difficulty: workbook.difficulty))
                         .font(.caption)
                     
@@ -61,7 +62,7 @@ struct WorkbookCellView_Previews: PreviewProvider {
         ZStack {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
-            
+
             HStack {
                 WorkbookCellView(workbook: Workbook())
                 WorkbookCellView(workbook: Workbook())

@@ -1,34 +1,33 @@
 //
-//  QuestionStartView.swift
+//  QuestionBackView.swift
 //  EnglishApp
 //
-//  Created by Tatsuya Ishii on 2020/07/01.
+//  Created by Tatsuya Ishii on 2020/08/04.
 //  Copyright © 2020 Tatsuya Ishii. All rights reserved.
 //
 
 import SwiftUI
 
-struct QuestionStartView: View {
+struct QuestionBackView: View {
     
     @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
     
     @ObservedObject var questionViewModel: QuestionViewModel
     
-    @State var count: Int = 0
+    @State var showStartButton: Bool = true
     
     var body: some View {
         ZStack {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
-                .onAppear(perform: {
-                    self.questionViewModel.startSolving()
-                })
-        }
+        }.onAppear(perform: {
+            self.presentation.wrappedValue.dismiss()
+        })
     }
 }
 
-struct QuestionStartView_Previews: PreviewProvider {
+struct QuestionBackView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionStartView(questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .onlyNew))
+        QuestionBackView(questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .all))
     }
 }

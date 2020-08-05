@@ -16,7 +16,8 @@ class QuestionViewModel: ObservableObject {
         case solve
         case result
         case pause
-        case idle
+        case back   // 問題集画面に戻るとき
+        case idle   // 問題の正解不正解演出中
     }
     
     var solveMode: SolveMode = .onlyNew
@@ -66,6 +67,7 @@ class QuestionViewModel: ObservableObject {
     @Published var showMissCross: Bool = false
     
     init(workbook: Workbook, solveMode: SolveMode) {
+        print(workbook.title, solveMode)
         self.workbook = workbook
         self.solveMode = solveMode
     }
@@ -212,6 +214,7 @@ extension QuestionViewModel {
 
 // MARK: 画面遷移
 extension QuestionViewModel {
+    
     func startSolving() {
         questions = fetchQuestions(workbook: self.workbook, maxQuestionNum: self.maxQuestionNum, solveMode: self.solveMode)
         
@@ -248,7 +251,7 @@ extension QuestionViewModel {
     func quitSolving() {
         stopTimer()
         
-        status = .start
+        status = .back
     }
 }
 

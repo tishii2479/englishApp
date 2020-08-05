@@ -28,8 +28,6 @@ struct QuestionView: View {
         .navigationBarHidden(true)
     }
     
-    // ISSUE: QuestionSolveViewはsome Viewでビルドは通ったが、
-    // それ以外が通らないのでAnyViewで通している、理由は不明
     func contentView() -> AnyView {
         switch questionViewModel.status {
         case .start:
@@ -40,7 +38,14 @@ struct QuestionView: View {
             return AnyView(QuestionResultView(questionViewModel: questionViewModel))
         case .pause:
             return AnyView(QuestionPauseView(questionViewModel: questionViewModel))
+        case .back:
+            return AnyView(QuestionBackView(questionViewModel: questionViewModel))
         }
+    }
+    
+    func setSolveMode(solveMode: SolveMode) -> some View {
+        questionViewModel.solveMode = solveMode
+        return self
     }
 }
 

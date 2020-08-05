@@ -50,7 +50,6 @@ struct WorkbookCollectionView: View {
 }
 
 struct WorkbookCollectionView_Previews: PreviewProvider {
-    
     static var previews: some View {
         WorkbookCollectionView()
     }

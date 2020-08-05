@@ -12,9 +12,11 @@ struct HomeNavigationButtonView: View {
     
     @ObservedObject var homeViewModel: HomeViewModel
     
+    var questionView: QuestionView
+    
     var body: some View {
         VStack {
-            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook:homeViewModel.getTodayWorkbook(), solveMode: .random))) {
+            NavigationLink(destination: questionView) {
                 Text("ランダムに解く")
                     .foregroundColor(Color.black)
             }.buttonStyle(WideButtonStyle())
@@ -28,6 +30,6 @@ struct HomeNavigationButtonView: View {
 
 struct HomeNavigationButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeNavigationButtonView(homeViewModel: HomeViewModel())
+        HomeNavigationButtonView(homeViewModel: HomeViewModel(), questionView: QuestionView(questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .random)))
     }
 }

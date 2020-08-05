@@ -14,8 +14,11 @@ struct HomeView: View {
     
     @ObservedObject var user: User = User.shared
     
+    
     var body: some View {
-        NavigationView {
+        let questionView = QuestionView(questionViewModel: QuestionViewModel(workbook:homeViewModel.getTodayWorkbook(), solveMode: .random))
+        
+        return NavigationView {
             ZStack {
                 Color.offWhite
                     .edgesIgnoringSafeArea(.all)
@@ -36,7 +39,7 @@ struct HomeView: View {
                     Spacer()
                     
                     // Buttons
-                    HomeNavigationButtonView(homeViewModel: homeViewModel)
+                    HomeNavigationButtonView(homeViewModel: homeViewModel, questionView: questionView)
                     
                     Spacer()
                 }

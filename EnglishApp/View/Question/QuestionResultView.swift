@@ -66,6 +66,7 @@ struct QuestionResultView: View {
             
             // Buttons
             Button(action: {
+                // 応急処置
                 self.questionViewModel.startSolving()
             }) {
                 Text("次の問題を解く")
