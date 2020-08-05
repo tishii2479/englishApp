@@ -42,11 +42,6 @@ struct QuestionView: View {
             return AnyView(QuestionBackView(questionViewModel: questionViewModel))
         }
     }
-    
-    func setSolveMode(solveMode: SolveMode) -> some View {
-        questionViewModel.solveMode = solveMode
-        return self
-    }
 }
 
 struct QuestionView_Previews: PreviewProvider {

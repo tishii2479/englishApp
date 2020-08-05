@@ -14,8 +14,6 @@ struct QuestionStartView: View {
     
     @ObservedObject var questionViewModel: QuestionViewModel
     
-    @State var count: Int = 0
-    
     var body: some View {
         ZStack {
             Color.offWhite
