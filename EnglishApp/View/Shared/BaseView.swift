@@ -32,7 +32,6 @@ struct BaseView: View {
                 if isShowingTabBar {
                     VStack {
                         Spacer()
-                        
                         CustomTabBar(selectedIndex: $selectedIndex)
                     }
                 }

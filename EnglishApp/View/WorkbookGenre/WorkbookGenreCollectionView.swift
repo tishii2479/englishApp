@@ -21,8 +21,7 @@ struct WorkbookGenreCollectionView: View {
                 CustomNavigationBar(hasReturn: false, hasSetting: true, title: "問題集一覧")
                 
                 ScrollView {
-                    ForEach(UserSetting.workbookCategories, id: \.self) { category in
-                        
+                    ForEach(UserSetting.workbookCategories, id: \.title) { category in
                         NavigationLink(destination: WorkbookCollectionView(isShowingTabBar: self.$isShowingTabBar, category: category)) {
                             WorkbookGenreCellView(category: category)
                         }

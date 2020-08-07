@@ -10,8 +10,6 @@ import SwiftUI
 
 struct WorkbookView: View {
     
-    @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
-    
     @ObservedObject var workbookViewModel: WorkbookViewModel
     
     @Binding var isShowingTabBar: Bool

@@ -10,8 +10,6 @@ import SwiftUI
 
 struct SettingView: View {
     
-    @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
-    
     @State var timePerQuestion: Int = UserDefaults.standard.integer(forKey: "timePerQuestion")
     
     @State var maxQuestionNum: Int = UserDefaults.standard.integer(forKey: "maxQuestionNum")

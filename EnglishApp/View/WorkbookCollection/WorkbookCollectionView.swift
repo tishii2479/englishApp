@@ -11,8 +11,6 @@ import QGrid
 
 struct WorkbookCollectionView: View {
     
-    @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
-    
     @Binding var isShowingTabBar: Bool
     
     var category: Category

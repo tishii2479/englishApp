@@ -10,8 +10,6 @@ import SwiftUI
 
 struct QuestionStartView: View {
     
-    @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
-    
     @ObservedObject var questionViewModel: QuestionViewModel
     
     var body: some View {
