@@ -79,6 +79,7 @@ class UserSetting {
         }
         
         User.shared.isLoading = false
+        print("load completed")
     }
     
     // 問題集を配列に読み込む時に使う

@@ -14,9 +14,9 @@ struct HomeView: View {
     
     @ObservedObject var user: User = User.shared
     
+    @Binding var isShowingTabBar: Bool
+    
     var body: some View {
-        let questionView = QuestionView(questionViewModel: QuestionViewModel(workbook:homeViewModel.getTodayWorkbook(), solveMode: .random))
-        
         return NavigationView {
             ZStack {
                 Color.offWhite
@@ -36,27 +36,20 @@ struct HomeView: View {
                     HomeDetailTextView(itemName: "完了した問題集", amount: String(user.completedWorkbookCount), unit: "個")
                     
                     Spacer()
-                    
-                    // Buttons
-                    HomeNavigationButtonView(homeViewModel: homeViewModel, questionView: questionView)
-                    
-                    Spacer()
                 }
-                
-                Group {
-                    if user.isLoading {
-                        LoadingView()
-                    }
-                }
+                .padding(.bottom, 80)
             }
             .navigationBarHidden(true)
             .navigationBarTitle("")
+            .onAppear {
+                self.isShowingTabBar = true
+            }
         }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(homeViewModel: HomeViewModel())
+        HomeView(homeViewModel: HomeViewModel(), isShowingTabBar: Binding.constant(true))
     }
 }

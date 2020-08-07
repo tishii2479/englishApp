@@ -14,6 +14,8 @@ struct WorkbookView: View {
     
     @ObservedObject var workbookViewModel: WorkbookViewModel
     
+    @Binding var isShowingTabBar: Bool
+    
     var body: some View {
         let workbook = self.workbookViewModel.workbook!
         let hasNewQuestions: Bool = workbook.correctCount + workbook.missCount < workbook.questionNumber
@@ -112,11 +114,14 @@ struct WorkbookView: View {
         }
         .navigationBarHidden(true)
         .navigationBarTitle("")
+        .onAppear {
+            self.isShowingTabBar = false
+        }
     }
 }
 
 struct WorkbookView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkbookView(workbookViewModel: WorkbookViewModel(workbook: Workbook()))
+        WorkbookView(workbookViewModel: WorkbookViewModel(workbook: Workbook()), isShowingTabBar: Binding.constant(false))
     }
 }

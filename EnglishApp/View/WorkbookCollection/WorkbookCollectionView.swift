@@ -12,14 +12,17 @@ struct WorkbookCollectionView: View {
     
     @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
     
+    @Binding var isShowingTabBar: Bool
+    
     var body: some View {
         UITableView.appearance().separatorStyle = .none
+        
         return ZStack {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                CustomNavigationBar(hasReturn: true, hasSetting: true, title: "問題集")
+                CustomNavigationBar(hasReturn: false, hasSetting: true, title: "問題集")
                 
                 List {
                     ForEach(UserSetting.workbookCategories.indices) { index in
@@ -29,7 +32,7 @@ struct WorkbookCollectionView: View {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
                                     ForEach (UserSetting.workbookArray[UserSetting.workbookCategories[index].title]!, id: \.bookId) { workbook in
-                                        NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook))) {
+                                        NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook), isShowingTabBar: self.$isShowingTabBar)) {
                                             WorkbookCellView(workbook: workbook)
                                         }
                                         .buttonStyle(ShrinkButtonStyle())
@@ -40,17 +43,24 @@ struct WorkbookCollectionView: View {
                             }
                         }.padding(.horizontal, -30)
                     }
+                    
+                    // タブバーのための余白
+                    Color.offWhite
+                        .frame(height: 80)
                 }
                 .padding(.top, 20)
             }
             .navigationBarHidden(true)
             .navigationBarTitle("")
+            .onAppear {
+                self.isShowingTabBar = true
+            }
         }
     }
 }
 
 struct WorkbookCollectionView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkbookCollectionView()
+        WorkbookCollectionView(isShowingTabBar: Binding.constant(true))
     }
 }

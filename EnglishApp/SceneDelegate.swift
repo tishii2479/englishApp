@@ -26,8 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 UserSetting.setUp()
             }
             
-            let homeView = HomeView(homeViewModel: HomeViewModel())
-            window.rootViewController = UIHostingController(rootView: homeView)
+            let baseView = BaseView()
+            window.rootViewController = UIHostingController(rootView: baseView)
             self.window = window
             window.makeKeyAndVisible()
         }
