@@ -48,7 +48,7 @@ struct WorkbookGenreCellView: View {
                     Spacer()
                     
                     Text(String(format: "%.2f", Double(100 * self.category.correctQuestionNum) / Double(self.category.totalQuestionNum)) + "%")
-                        .font(.subheadline)
+                        .font(.footnote)
                         .fontWeight(.light)
                         .padding(.trailing, 10)
                 }
