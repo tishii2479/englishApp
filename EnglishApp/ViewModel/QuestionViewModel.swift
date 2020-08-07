@@ -16,7 +16,8 @@ class QuestionViewModel: ObservableObject {
         case solve
         case result
         case pause
-        case idle
+        case back   // 問題集画面に戻るとき
+        case idle   // 問題の正解不正解演出中
     }
     
     var solveMode: SolveMode = .onlyNew
@@ -34,6 +35,8 @@ class QuestionViewModel: ObservableObject {
     var maxQuestionNum: Int = User.shared.maxQuestionNum
     
     var workbook: Workbook!
+    
+    var category: Category!
     
     let realm = try! Realm()
     
@@ -65,7 +68,9 @@ class QuestionViewModel: ObservableObject {
     
     @Published var showMissCross: Bool = false
     
-    init(workbook: Workbook, solveMode: SolveMode) {
+    init(category: Category, workbook: Workbook, solveMode: SolveMode) {
+        print("init \(workbook.title), \(solveMode)")
+        self.category = category
         self.workbook = workbook
         self.solveMode = solveMode
     }
@@ -137,6 +142,8 @@ extension QuestionViewModel {
             if nowQuestion.missCount > 0  {
                 workbook.updateCount(type: .miss, amount: -1)
             }
+            
+            category.incrementCorrectCount()
         }
         
         // これは最後に書かないとworkbookの更新がうまくいかない
@@ -212,6 +219,7 @@ extension QuestionViewModel {
 
 // MARK: 画面遷移
 extension QuestionViewModel {
+    
     func startSolving() {
         questions = fetchQuestions(workbook: self.workbook, maxQuestionNum: self.maxQuestionNum, solveMode: self.solveMode)
         
@@ -248,7 +256,7 @@ extension QuestionViewModel {
     func quitSolving() {
         stopTimer()
         
-        status = .start
+        status = .back
     }
 }
 

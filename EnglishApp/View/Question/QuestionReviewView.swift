@@ -54,6 +54,6 @@ struct QuestionReviewView: View {
 
 struct QuestionReviewView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionReviewView(isPresented: Binding.constant(true), questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .onlyNew))
+        QuestionReviewView(isPresented: Binding.constant(true), questionViewModel: QuestionViewModel(category: Category(), workbook: Workbook(), solveMode: .onlyNew))
     }
 }

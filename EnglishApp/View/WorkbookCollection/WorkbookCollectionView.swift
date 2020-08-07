@@ -7,57 +7,45 @@
 //
 
 import SwiftUI
+import QGrid
 
 struct WorkbookCollectionView: View {
     
-    @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
+    @Binding var isShowingTabBar: Bool
+    
+    var category: Category
     
     var body: some View {
-        UITableView.appearance().separatorStyle = .none
+        guard let workbookArr = UserSetting.workbookArray[category.title] else { fatalError() }
         return ZStack {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
             
-            GeometryReader { fullView in
-                VStack {
-                    CustomNavigationBar(hasReturn: true, hasSetting: true, title: "問題集")
-                    
-                    List {
-                        ForEach(UserSetting.workbookCategories.indices) { index in
-                            Section(header:
-                                SectionHeader(title: UserSetting.workbookCategories[index].title)
-                            ) {
-                                ScrollView(.horizontal, showsIndicators: false) {
-                                    HStack {
-                                        ForEach (UserSetting.workbookArray[UserSetting.workbookCategories[index].title]!, id: \.bookId) { workbook in
-                                            GeometryReader { geometry in
-                                                NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook))) {
-                                                    WorkbookCellView(workbook: workbook)
-                                                }
-                                                .rotation3DEffect(.degrees(min(Double((geometry.frame(in: .global).minX - fullView.size.width / 2) / -5), 0)), axis: (x: 0, y: 1, z: 0))
-                                                .buttonStyle(ShrinkButtonStyle())
-                                            }
-                                            .frame(width: 200, height: 200)
-                                        }
-                                    }
-                                    .padding(.trailing, 50)
-                                    .padding(.leading, 30)
-                                }.padding(.horizontal, -30)
-                            }
-                        }
-                    }.padding(.top, 20)
+            VStack {
+                CustomNavigationBar(hasReturn: true, hasSetting: true, title: category.title)
+                
+                QGrid(workbookArr,
+                      columns: 2, vPadding: 0) { workbook in
+                        NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook), isShowingTabBar: self.$isShowingTabBar, category: self.category)) {
+                            WorkbookCellView(workbook: workbook)
+                        }.buttonStyle(ShrinkButtonStyle())
                 }
+                .padding(.top, 10)
+                .padding(.bottom, 0)
+                .edgesIgnoringSafeArea(.bottom)
             }
-            
+            .navigationBarHidden(true)
+            .navigationBarTitle("")
+            .onAppear {
+                UITableView.appearance().separatorStyle = .none
+                self.isShowingTabBar = false
+            }
         }
-        .navigationBarHidden(true)
-        .navigationBarTitle("")
     }
 }
 
 struct WorkbookCollectionView_Previews: PreviewProvider {
-    
     static var previews: some View {
-        WorkbookCollectionView()
+        WorkbookCollectionView(isShowingTabBar: Binding.constant(true), category: Category())
     }
 }

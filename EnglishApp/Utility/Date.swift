@@ -15,6 +15,7 @@ extension Date {
         let f = DateFormatter()
         f.dateStyle = .medium
         f.timeStyle = .none
+        f.timeZone = TimeZone(identifier: "Asia/Tokyo")
         f.locale = Locale(identifier: "ja_JP")
         
         return f.string(from: Date())

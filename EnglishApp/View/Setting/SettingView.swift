@@ -10,8 +10,6 @@ import SwiftUI
 
 struct SettingView: View {
     
-    @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
-    
     @State var timePerQuestion: Int = UserDefaults.standard.integer(forKey: "timePerQuestion")
     
     @State var maxQuestionNum: Int = UserDefaults.standard.integer(forKey: "maxQuestionNum")
@@ -27,7 +25,6 @@ struct SettingView: View {
     var user = User.shared
     
     var body: some View {
-        UITableView.appearance().separatorStyle = .singleLine
         return NavigationView {
             ZStack {
                 Color.offWhite
@@ -130,6 +127,9 @@ struct SettingView: View {
                 }
                 .buttonStyle(ShrinkButtonStyle())
                 .frame(width: 30, height: 30))
+            }
+            .onAppear{
+                UITableView.appearance().separatorStyle = .singleLine
             }
     }
 }

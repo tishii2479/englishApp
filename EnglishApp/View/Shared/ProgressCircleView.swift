@@ -39,7 +39,7 @@ struct ProgressCircleView: View {
             VStack {
                 Text(text)
                     .font(.caption)
-                    .padding(10)
+                    .padding(.vertical, 10)
 
                 Text(String(solveNumber))
                     .font(.largeTitle)

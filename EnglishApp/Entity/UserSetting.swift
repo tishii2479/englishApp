@@ -46,6 +46,7 @@ class UserSetting {
             RealmDecoder.addDataToRealm(datas: workbookArr)
             let categoryArr = CSVDecoder.convertCategoryFile(fileName: "category")
             RealmDecoder.addDataToRealm(datas: categoryArr)
+            
             setUpWorkbooks()
             resetQuestionData()
             userDefaults.set(version, forKey: "appVersion")
@@ -76,6 +77,9 @@ class UserSetting {
             userDefaults.set(0, forKey: "todayCorrectCount")
             userDefaults.set(0, forKey: "todayMissCount")
         }
+        
+        User.shared.isLoading = false
+        print("load completed")
     }
     
     // 問題集を配列に読み込む時に使う
@@ -106,6 +110,8 @@ class UserSetting {
             }
             
             if isFirstWorkbookOfCategory {
+                print(categories)
+                print(workbook.category)
                 fatalError("category name is invalid")
             }
         }

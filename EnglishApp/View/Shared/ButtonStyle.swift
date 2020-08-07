@@ -43,7 +43,6 @@ struct ShrinkButtonStyle: ButtonStyle {
 struct DentButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         // insetを指定することで修正
-        // ただ、アニメーションがあまり美しくないため使っていない
         ZStack {
             contentView(isPressed: configuration.isPressed)
             

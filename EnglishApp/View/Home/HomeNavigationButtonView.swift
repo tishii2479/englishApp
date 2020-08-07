@@ -8,26 +8,28 @@
 
 import SwiftUI
 
-struct HomeNavigationButtonView: View {
-    
-    @ObservedObject var homeViewModel: HomeViewModel
-    
-    var body: some View {
-        VStack {
-            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook:homeViewModel.getTodayWorkbook(), solveMode: .random))) {
-                Text("ランダムに解く")
-                    .foregroundColor(Color.black)
-            }.buttonStyle(WideButtonStyle())
-
-            NavigationLink(destination: WorkbookCollectionView()) {
-                Text("問題集を解く")
-            }.buttonStyle(WideButtonStyle())
-        }
-    }
-}
-
-struct HomeNavigationButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeNavigationButtonView(homeViewModel: HomeViewModel())
-    }
-}
+//struct HomeNavigationButtonView: View {
+//
+//    @ObservedObject var homeViewModel: HomeViewModel
+//
+//    var questionView: QuestionView
+//
+//    var body: some View {
+//        VStack {
+//            NavigationLink(destination: questionView) {
+//                Text("ランダムに解く")
+//                    .foregroundColor(Color.black)
+//            }.buttonStyle(WideButtonStyle())
+//
+//            NavigationLink(destination: WorkbookCollectionView(isShowingTabBar: <#T##Binding<Bool>#>)) {
+//                Text("問題集を解く")
+//            }.buttonStyle(WideButtonStyle())
+//        }
+//    }
+//}
+//
+//struct HomeNavigationButtonView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeNavigationButtonView(homeViewModel: HomeViewModel(), questionView: QuestionView(questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .random)))
+//    }
+//}

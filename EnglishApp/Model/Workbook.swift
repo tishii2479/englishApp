@@ -105,7 +105,7 @@ class Workbook: Object, Identifiable {
             case .miss:
                 try realm.write { self.missCount += amount }
             case .like:
-                try realm.write{ self.likeCount += amount }
+                try realm.write { self.likeCount += amount }
             }
         } catch {
             print("failed to update count")

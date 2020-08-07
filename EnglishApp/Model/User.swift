@@ -29,6 +29,8 @@ class User: ObservableObject {
     
     var showCorrectness: Bool = true
     
+    var isLoading: Bool = true
+    
     static let shared = User()
     
     func correctRatioFormatter(correct: Int, miss: Int) -> String {

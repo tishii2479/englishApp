@@ -42,7 +42,10 @@ class CSVDecoder {
             if arr.count == 1 { continue }
             
             // 要素数のチェック
-            guard arr.count == 5  else { fatalError("failed to convert question") }
+            guard arr.count == 5  else {
+                print(arr)
+                fatalError("failed to convert question")
+            }
             
             var choices = [String]()
             for i in 0 ..< 4 {
@@ -96,9 +99,10 @@ class CSVDecoder {
         for data in dataArr {
             let arr = data.components(separatedBy: ",")
             
-            guard arr.count == 1 else { fatalError("failed to convert category") }
+            guard arr.count == 3,
+                let totalQuestionNum = Int(arr[2]) else { fatalError("failed to convert category") }
             
-            let category = Category(title: arr[0])
+            let category = Category(title: arr[0], detail: arr[1], totalQuestionNum: totalQuestionNum, correctQuestionNum: 0)
             
             categoryArr.append(category)
         }

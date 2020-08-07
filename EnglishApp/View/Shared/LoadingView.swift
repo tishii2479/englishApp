@@ -9,12 +9,22 @@
 import SwiftUI
 
 struct LoadingView: View {
+    
     var body: some View {
         ZStack {
-            Color.black.opacity(0.2)
+            Color.offWhite
                 .edgesIgnoringSafeArea(.all)
             
-            Text("削除しています...。そのままお待ちください")
+            VStack {
+                Spacer()
+                Text("ロード中...　アプリを終了せずにお待ちください。")
+                    .font(.footnote)
+                    .padding(.bottom, 80)
+            }
+    
+            Image("Icon")
+                .resizable()
+                .frame(width: 220, height: 220)
         }
     }
 }

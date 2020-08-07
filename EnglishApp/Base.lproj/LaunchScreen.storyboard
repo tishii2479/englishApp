@@ -16,17 +16,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="9AL-ZV-Oam">
-                                <rect key="frame" x="100" y="341.5" width="214" height="213"/>
+                                <rect key="frame" x="97" y="338" width="220" height="220"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="214" id="8zH-Cl-vZn"/>
-                                    <constraint firstAttribute="height" constant="213" id="DQq-zq-fe2"/>
+                                    <constraint firstAttribute="width" constant="220" id="hE5-kg-BDc"/>
+                                    <constraint firstAttribute="height" constant="220" id="nws-b7-Op9"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.88235294117647056" green="0.88235294117647056" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="9AL-ZV-Oam" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="B5o-BF-dfW"/>
                             <constraint firstItem="9AL-ZV-Oam" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Emv-Kc-bbt"/>
-                            <constraint firstItem="9AL-ZV-Oam" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="kxL-tg-YNf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon" width="400" height="400"/>
+        <image name="Icon" width="512" height="512"/>
     </resources>
 </document>
