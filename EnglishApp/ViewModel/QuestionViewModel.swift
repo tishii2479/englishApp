@@ -36,6 +36,8 @@ class QuestionViewModel: ObservableObject {
     
     var workbook: Workbook!
     
+    var category: Category!
+    
     let realm = try! Realm()
     
     var questions: Array<Question>!
@@ -66,8 +68,8 @@ class QuestionViewModel: ObservableObject {
     
     @Published var showMissCross: Bool = false
     
-    init(workbook: Workbook, solveMode: SolveMode) {
-        print(workbook.title, solveMode)
+    init(category: Category, workbook: Workbook, solveMode: SolveMode) {
+        self.category = category
         self.workbook = workbook
         self.solveMode = solveMode
     }
@@ -139,6 +141,8 @@ extension QuestionViewModel {
             if nowQuestion.missCount > 0  {
                 workbook.updateCount(type: .miss, amount: -1)
             }
+            
+            category.incrementCorrectCount()
         }
         
         // これは最後に書かないとworkbookの更新がうまくいかない

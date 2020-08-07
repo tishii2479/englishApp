@@ -27,6 +27,6 @@ struct QuestionStartView: View {
 
 struct QuestionStartView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionStartView(questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .onlyNew))
+        QuestionStartView(questionViewModel: QuestionViewModel(category: Category(), workbook: Workbook(), solveMode: .onlyNew))
     }
 }

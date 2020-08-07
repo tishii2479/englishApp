@@ -88,7 +88,7 @@ struct PreviewCellView_Previews: PreviewProvider {
         ZStack {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
-            PreviewCellView(question: Question(), userChoice: "user", questionNum: 1, maxQuestionNum: 10, questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .all))
+            PreviewCellView(question: Question(), userChoice: "user", questionNum: 1, maxQuestionNum: 10, questionViewModel: QuestionViewModel(category: Category(), workbook: Workbook(), solveMode: .all))
         }
     }
 }

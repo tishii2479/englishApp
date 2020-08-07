@@ -110,6 +110,8 @@ class UserSetting {
             }
             
             if isFirstWorkbookOfCategory {
+                print(categories)
+                print(workbook.category)
                 fatalError("category name is invalid")
             }
         }

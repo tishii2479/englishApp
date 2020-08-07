@@ -40,6 +40,7 @@
 		4950F13124B9602700466674 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4950F13024B9602700466674 /* CustomNavigationBar.swift */; };
 		495BBFC024DCE2E000A35B25 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BBFBF24DCE2E000A35B25 /* BaseView.swift */; };
 		495BBFC224DCE2F200A35B25 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BBFC124DCE2F200A35B25 /* CustomTabBar.swift */; };
+		495BBFC624DCFAF400A35B25 /* WorkbookGenreCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495BBFC524DCFAF400A35B25 /* WorkbookGenreCellView.swift */; };
 		496CAEDD24AB1CF000F290E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */; };
 		496CAEDF24AB1CF000F290E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */; };
 		496CAEE324AB1CF000F290E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 496CAEE224AB1CF000F290E9 /* Assets.xcassets */; };
@@ -193,6 +194,7 @@
 		496DF56624D9380A0073B2AC /* story3_10.csv in Resources */ = {isa = PBXBuildFile; fileRef = 496DF55A24D9380A0073B2AC /* story3_10.csv */; };
 		496DF56724D9380A0073B2AC /* story3_11.csv in Resources */ = {isa = PBXBuildFile; fileRef = 496DF55B24D9380A0073B2AC /* story3_11.csv */; };
 		49924CC724BD6D3200AD962A /* PreviewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49924CC624BD6D3200AD962A /* PreviewCellView.swift */; };
+		499919F924DD6468009B45D4 /* WorkbookGenreCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499919F824DD6468009B45D4 /* WorkbookGenreCollectionView.swift */; };
 		49A1DA4A24C9556A00293165 /* TextData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1DA4924C9556A00293165 /* TextData.swift */; };
 		49A1DA5B24C95E3F00293165 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 49A1DA5A24C95E3E00293165 /* Settings.bundle */; };
 		49AC0DF424BD797C0077ED39 /* SmallChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC0DF324BD797C0077ED39 /* SmallChoiceView.swift */; };
@@ -262,6 +264,7 @@
 		4950F13024B9602700466674 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		495BBFBF24DCE2E000A35B25 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		495BBFC124DCE2F200A35B25 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		495BBFC524DCFAF400A35B25 /* WorkbookGenreCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbookGenreCellView.swift; sourceTree = "<group>"; };
 		496CAED924AB1CF000F290E9 /* EnglishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -421,6 +424,7 @@
 		496DF55A24D9380A0073B2AC /* story3_10.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = story3_10.csv; path = csv/book/story3_10.csv; sourceTree = SOURCE_ROOT; };
 		496DF55B24D9380A0073B2AC /* story3_11.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = story3_11.csv; path = csv/book/story3_11.csv; sourceTree = SOURCE_ROOT; };
 		49924CC624BD6D3200AD962A /* PreviewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCellView.swift; sourceTree = "<group>"; };
+		499919F824DD6468009B45D4 /* WorkbookGenreCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkbookGenreCollectionView.swift; sourceTree = "<group>"; };
 		49A1DA4924C9556A00293165 /* TextData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextData.swift; sourceTree = "<group>"; };
 		49A1DA5A24C95E3E00293165 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = EnglishApp/Settings.bundle; sourceTree = "<group>"; };
 		49AC0DF324BD797C0077ED39 /* SmallChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallChoiceView.swift; sourceTree = "<group>"; };
@@ -654,6 +658,7 @@
 			children = (
 				490F86EB24B01EE200EF5622 /* Shared */,
 				490F86FD24B0629700EF5622 /* Workbook */,
+				499919F724DD6443009B45D4 /* WorkbookGenre */,
 				490F86F224B044F400EF5622 /* WorkbookCollection */,
 				490F86E424B0160300EF5622 /* Home */,
 				490F870424B0740400EF5622 /* Setting */,
@@ -691,6 +696,15 @@
 				490F870024B065F400EF5622 /* WorkbookViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		499919F724DD6443009B45D4 /* WorkbookGenre */ = {
+			isa = PBXGroup;
+			children = (
+				499919F824DD6468009B45D4 /* WorkbookGenreCollectionView.swift */,
+				495BBFC524DCFAF400A35B25 /* WorkbookGenreCellView.swift */,
+			);
+			path = WorkbookGenre;
 			sourceTree = "<group>";
 		};
 		499E642924C82B210064BF0A /* 1_0 */ = {
@@ -1340,7 +1354,9 @@
 				4931A03924B20ED100C26AFD /* CountType.swift in Sources */,
 				49A1DA4A24C9556A00293165 /* TextData.swift in Sources */,
 				490F870324B068E100EF5622 /* WorkbookFormatter.swift in Sources */,
+				499919F924DD6468009B45D4 /* WorkbookGenreCollectionView.swift in Sources */,
 				490F86F824B0521D00EF5622 /* WorkbookCellView.swift in Sources */,
+				495BBFC624DCFAF400A35B25 /* WorkbookGenreCellView.swift in Sources */,
 				4904486E24B1DF8100391FE5 /* UserDefaults.swift in Sources */,
 				49AC0DF424BD797C0077ED39 /* SmallChoiceView.swift in Sources */,
 				491DBFD524B0A9D600A24A79 /* CSVDecoder.swift in Sources */,

@@ -87,6 +87,6 @@ struct QuestionResultView: View {
 
 struct QuestionResultView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionResultView(questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .onlyNew))
+        QuestionResultView(questionViewModel: QuestionViewModel(category: Category(), workbook: Workbook(), solveMode: .onlyNew))
     }
 }

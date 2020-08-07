@@ -27,7 +27,6 @@ struct SettingView: View {
     var user = User.shared
     
     var body: some View {
-        UITableView.appearance().separatorStyle = .singleLine
         return NavigationView {
             ZStack {
                 Color.offWhite
@@ -130,6 +129,9 @@ struct SettingView: View {
                 }
                 .buttonStyle(ShrinkButtonStyle())
                 .frame(width: 30, height: 30))
+            }
+            .onAppear{
+                UITableView.appearance().separatorStyle = .singleLine
             }
     }
 }

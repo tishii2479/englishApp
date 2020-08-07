@@ -99,9 +99,10 @@ class CSVDecoder {
         for data in dataArr {
             let arr = data.components(separatedBy: ",")
             
-            guard arr.count == 1 else { fatalError("failed to convert category") }
+            guard arr.count == 3,
+                let totalQuestionNum = Int(arr[2]) else { fatalError("failed to convert category") }
             
-            let category = Category(title: arr[0])
+            let category = Category(title: arr[0], detail: arr[1], totalQuestionNum: totalQuestionNum, correctQuestionNum: 0)
             
             categoryArr.append(category)
         }

@@ -19,7 +19,6 @@ struct QuestionSolveView: View {
                 // TimerBar
                 GeometryReader{ geometry in
                     RoundedRectangle(cornerRadius: 10)
-                        // FIXME: 長さを計算するか他の方法で直す必要あり
                         .frame(width: geometry.size.width * CGFloat(self.questionViewModel.remainingTime / self.questionViewModel.maxTime), height: 20, alignment: .leading)
                         .foregroundColor(self.questionViewModel.progressBarColor)
                         .shadow(color: self.questionViewModel.progressBarDownerShadowColor, radius: 6, x: 10, y: 10)
@@ -109,6 +108,6 @@ struct QuestionSolveView: View {
 
 struct QuestionSolveView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionSolveView(questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .onlyNew))
+        QuestionSolveView(questionViewModel: QuestionViewModel(category: Category(), workbook: Workbook(), solveMode: .onlyNew))
     }
 }

@@ -24,7 +24,7 @@ struct BaseView: View {
                         HomeView(homeViewModel: HomeViewModel(), isShowingTabBar: $isShowingTabBar)
                     } else if selectedIndex == 1 {
                         NavigationView {
-                            WorkbookCollectionView(isShowingTabBar: $isShowingTabBar)
+                            WorkbookGenreCollectionView(isShowingTabBar: $isShowingTabBar)
                         }
                     }
                 }

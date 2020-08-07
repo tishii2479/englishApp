@@ -28,6 +28,6 @@ struct QuestionBackView: View {
 
 struct QuestionBackView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionBackView(questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .all))
+        QuestionBackView(questionViewModel: QuestionViewModel(category: Category(), workbook: Workbook(), solveMode: .all))
     }
 }

@@ -57,6 +57,6 @@ struct QuestionPauseView: View {
 
 struct QuestionPauseView_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionPauseView(questionViewModel: QuestionViewModel(workbook: Workbook(), solveMode: .onlyNew))
+        QuestionPauseView(questionViewModel: QuestionViewModel(category: Category(), workbook: Workbook(), solveMode: .onlyNew))
     }
 }

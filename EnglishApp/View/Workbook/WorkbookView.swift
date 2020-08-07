@@ -16,6 +16,8 @@ struct WorkbookView: View {
     
     @Binding var isShowingTabBar: Bool
     
+    var category: Category
+    
     var body: some View {
         let workbook = self.workbookViewModel.workbook!
         let hasNewQuestions: Bool = workbook.correctCount + workbook.missCount < workbook.questionNumber
@@ -62,12 +64,12 @@ struct WorkbookView: View {
                     if workbook.isCleared {
                         AnyView(
                             VStack {
-                                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .all))) {
+                                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .all))) {
                                     Text("総復習をする")
                                 }.buttonStyle(WideButtonStyle())
                                 Group {
                                     if workbook.likeCount > 0 {
-                                        NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .liked))) {
+                                        NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .liked))) {
                                             Text("お気に入りした問題を解く")
                                         }.buttonStyle(WideButtonStyle())
                                     }
@@ -77,13 +79,13 @@ struct WorkbookView: View {
                     } else if hasNewQuestions {
                         AnyView(
                             VStack {
-                                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .onlyNew))) {
+                                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .onlyNew))) {
                                     Text("新しい問題を解く")
                                 }.buttonStyle(WideButtonStyle())
                                 
                                 Group {
                                     if hasMissQuestions {
-                                        NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
+                                        NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
                                             Text("間違えた問題を復習する")
                                         }.buttonStyle(WideButtonStyle())
                                     }
@@ -93,13 +95,13 @@ struct WorkbookView: View {
                     } else {
                         AnyView(
                             VStack {
-                                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .test))) {
+                                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .test))) {
                                     Text("確認テストを受ける")
                                 }.buttonStyle(WideButtonStyle())
                                 
                                 Group {
                                     if hasMissQuestions {
-                                        NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
+                                        NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
                                             Text("間違えた問題を復習する")
                                         }.buttonStyle(WideButtonStyle())
                                     }
@@ -122,6 +124,6 @@ struct WorkbookView: View {
 
 struct WorkbookView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkbookView(workbookViewModel: WorkbookViewModel(workbook: Workbook()), isShowingTabBar: Binding.constant(false))
+        WorkbookView(workbookViewModel: WorkbookViewModel(workbook: Workbook()), isShowingTabBar: Binding.constant(false), category: Category())
     }
 }

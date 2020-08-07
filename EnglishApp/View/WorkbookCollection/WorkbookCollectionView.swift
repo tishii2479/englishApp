@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import QGrid
 
 struct WorkbookCollectionView: View {
     
@@ -14,46 +15,30 @@ struct WorkbookCollectionView: View {
     
     @Binding var isShowingTabBar: Bool
     
+    var category: Category
+    
     var body: some View {
-        UITableView.appearance().separatorStyle = .none
-        
+        guard let workbookArr = UserSetting.workbookArray[category.title] else { fatalError() }
         return ZStack {
             Color.offWhite
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                CustomNavigationBar(hasReturn: false, hasSetting: true, title: "問題集")
+                CustomNavigationBar(hasReturn: true, hasSetting: true, title: category.title)
                 
-                List {
-                    ForEach(UserSetting.workbookCategories.indices) { index in
-                        Section(header:
-                            SectionHeader(title: UserSetting.workbookCategories[index].title)
-                        ) {
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack {
-                                    ForEach (UserSetting.workbookArray[UserSetting.workbookCategories[index].title]!, id: \.bookId) { workbook in
-                                        NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook), isShowingTabBar: self.$isShowingTabBar)) {
-                                            WorkbookCellView(workbook: workbook)
-                                        }
-                                        .buttonStyle(ShrinkButtonStyle())
-                                    }
-                                    .frame(width: 180, height: 180)
-                                }
-                                .padding(.horizontal, 30)
-                            }
-                        }.padding(.horizontal, -30)
-                    }
-                    
-                    // タブバーのための余白
-                    Color.offWhite
-                        .frame(height: 80)
+                QGrid(workbookArr,
+                      columns: 2) { workbook in
+                        NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook), isShowingTabBar: self.$isShowingTabBar, category: self.category)) {
+                            WorkbookCellView(workbook: workbook)
+                        }.buttonStyle(ShrinkButtonStyle())
                 }
-                .padding(.top, 20)
+                .edgesIgnoringSafeArea(.bottom)
             }
             .navigationBarHidden(true)
             .navigationBarTitle("")
             .onAppear {
-                self.isShowingTabBar = true
+                UITableView.appearance().separatorStyle = .none
+                self.isShowingTabBar = false
             }
         }
     }
@@ -61,6 +46,6 @@ struct WorkbookCollectionView: View {
 
 struct WorkbookCollectionView_Previews: PreviewProvider {
     static var previews: some View {
-        WorkbookCollectionView(isShowingTabBar: Binding.constant(true))
+        WorkbookCollectionView(isShowingTabBar: Binding.constant(true), category: Category())
     }
 }
