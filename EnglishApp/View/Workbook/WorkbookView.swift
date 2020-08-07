@@ -62,46 +62,52 @@ struct WorkbookView: View {
                 // Buttons
                 Group {
                     if workbook.isCleared {
-                        VStack {
-                            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .all))) {
-                                Text("総復習をする")
-                            }.buttonStyle(WideButtonStyle())
-                            Group {
-                                if workbook.likeCount > 0 {
-                                    NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .liked))) {
-                                        Text("お気に入りした問題を解く")
-                                    }.buttonStyle(WideButtonStyle())
+                        AnyView(
+                            VStack {
+                                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .all))) {
+                                    Text("総復習をする")
+                                }.buttonStyle(WideButtonStyle())
+                                Group {
+                                    if workbook.likeCount > 0 {
+                                        NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .liked))) {
+                                            Text("お気に入りした問題を解く")
+                                        }.buttonStyle(WideButtonStyle())
+                                    }
                                 }
                             }
-                        }
+                        )
                     } else if hasNewQuestions {
-                        VStack {
-                            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .onlyNew))) {
-                                Text("新しい問題を解く")
-                            }.buttonStyle(WideButtonStyle())
-                            
-                            Group {
-                                if hasMissQuestions {
-                                    NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
-                                        Text("間違えた問題を復習する")
-                                    }.buttonStyle(WideButtonStyle())
+                        AnyView(
+                            VStack {
+                                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .onlyNew))) {
+                                    Text("新しい問題を解く")
+                                }.buttonStyle(WideButtonStyle())
+                                
+                                Group {
+                                    if hasMissQuestions {
+                                        NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
+                                            Text("間違えた問題を復習する")
+                                        }.buttonStyle(WideButtonStyle())
+                                    }
                                 }
                             }
-                        }
+                        )
                     } else {
-                        VStack {
-                            NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .test))) {
-                                Text("確認テストを受ける")
-                            }.buttonStyle(WideButtonStyle())
-                            
-                            Group {
-                                if hasMissQuestions {
-                                    NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
-                                        Text("間違えた問題を復習する")
-                                    }.buttonStyle(WideButtonStyle())
+                        AnyView(
+                            VStack {
+                                NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .test))) {
+                                    Text("確認テストを受ける")
+                                }.buttonStyle(WideButtonStyle())
+                                
+                                Group {
+                                    if hasMissQuestions {
+                                        NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
+                                            Text("間違えた問題を復習する")
+                                        }.buttonStyle(WideButtonStyle())
+                                    }
                                 }
                             }
-                        }
+                        )
                     }
                 }
                 

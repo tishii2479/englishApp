@@ -69,7 +69,6 @@ class QuestionViewModel: ObservableObject {
     @Published var showMissCross: Bool = false
     
     init(category: Category, workbook: Workbook, solveMode: SolveMode) {
-        print("init \(workbook.title), \(solveMode)")
         self.category = category
         self.workbook = workbook
         self.solveMode = solveMode
