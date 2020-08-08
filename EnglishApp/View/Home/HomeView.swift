@@ -23,7 +23,7 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
-                    CustomNavigationBar(hasReturn: false, hasSetting: true, title: "")
+                    CustomNavigationBar(hasReturn: false, hasSetting: true, hasShop: false, title: "")
                     
                     Spacer()
                     

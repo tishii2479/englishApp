@@ -18,7 +18,7 @@ struct WorkbookGenreCollectionView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                CustomNavigationBar(hasReturn: false, hasSetting: true, title: "問題集一覧")
+                CustomNavigationBar(hasReturn: false, hasSetting: false, hasShop: true, title: "問題集一覧")
                 
                 ScrollView {
                     ForEach(UserSetting.workbookCategories, id: \.title) { category in

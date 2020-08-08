@@ -22,7 +22,7 @@ struct WorkbookCollectionView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                CustomNavigationBar(hasReturn: true, hasSetting: true, title: category.title)
+                CustomNavigationBar(hasReturn: true, hasSetting: false, hasShop: true, title: category.title)
                 
                 QGrid(workbookArr,
                       columns: 2, vPadding: 0) { workbook in
@@ -30,7 +30,7 @@ struct WorkbookCollectionView: View {
                             WorkbookCellView(workbook: workbook)
                         }.buttonStyle(ShrinkButtonStyle())
                 }
-                .padding(.top, 10)
+                .padding(.top, 20)
                 .padding(.bottom, 0)
                 .edgesIgnoringSafeArea(.bottom)
             }

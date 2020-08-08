@@ -26,7 +26,7 @@ struct WorkbookView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                CustomNavigationBar(hasReturn: true, hasSetting: true, title: workbookViewModel.workbook.title)
+                CustomNavigationBar(hasReturn: true, hasSetting: false, hasShop: true, title: workbookViewModel.workbook.title)
                 
                 Spacer()
                 

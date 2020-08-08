@@ -31,7 +31,6 @@ struct SettingView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 GeometryReader { geometry in
-
                     VStack {
                         Form {
                             Section(header: Text("ユーザー設定")) {
