@@ -49,7 +49,7 @@ struct WorkbookView: View {
                             Text(WorkbookFormatter.formatQuestionNumber(number: workbookViewModel.workbook.questionNumber))
                                 .font(.caption)
                             Spacer()
-                            Text(WorkbookFormatter.formatStatus(isPurchased: workbookViewModel.workbook.isPurchased))
+                            Text(WorkbookFormatter.formatStatus(isPurchased: workbookViewModel.workbook.isPurchased, isPlayable: workbookViewModel.workbook.isPlayable))
                                 .font(.caption)
                         }
                     }.padding(20)
@@ -59,7 +59,9 @@ struct WorkbookView: View {
                 
                 // Buttons
                 Group {
-                    if workbook.isCleared {
+                    if workbook.isPlayable == false {
+                        Text("この問題集はまだ利用できません。")
+                    } else if workbook.isCleared {
                         VStack {
                             NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .all))) {
                                 Text("総復習をする")

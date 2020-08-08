@@ -37,10 +37,10 @@ struct ShopView: View {
                             }
                         }
                         
-                        NavigationLink(destination: SettingTextView(content: TextData.termsOfService)) {
+                        NavigationLink(destination: SettingTextView(content: TextData.actOnSettlement)) {
                             Text("資金決済法に基づく表示")
                         }
-                        NavigationLink(destination: SettingTextView(content: TextData.privacyPolicy)) {
+                        NavigationLink(destination: SettingTextView(content: TextData.commericalTransaction)) {
                             Text("特定商取引に基づく表示")
                         }
                     }

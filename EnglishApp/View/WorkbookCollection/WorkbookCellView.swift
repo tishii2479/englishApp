@@ -52,6 +52,23 @@ struct WorkbookCellView: View {
                 Spacer()
             }
             .frame(width: 170, height: 160)
+            
+            // Lock Layer
+            Group {
+                if workbook.isPlayable == false {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 10)
+                            .foregroundColor(Color.offBlack.opacity(0.3))
+                            .frame(width: 160, height: 150)
+                        
+                        Image(systemName: "lock")
+                            .resizable()
+                            .scaledToFill()
+                            .foregroundColor(Color.offWhite)
+                            .frame(width: 30, height: 30)
+                    }
+                }
+            }
         }
     }
     

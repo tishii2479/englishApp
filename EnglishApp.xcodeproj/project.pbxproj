@@ -211,6 +211,7 @@
 		49E9848B24DE4F14002783FE /* ShopCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9848A24DE4F14002783FE /* ShopCellView.swift */; };
 		49E9848D24DE598B002783FE /* ShopData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9848C24DE598B002783FE /* ShopData.swift */; };
 		49E9848F24DE59AA002783FE /* ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9848E24DE59AA002783FE /* ShopItem.swift */; };
+		49E9849124DE6F09002783FE /* LoadingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E9849024DE6F09002783FE /* LoadingCircle.swift */; };
 		49F31A4924D974ED0075FA86 /* QuestionBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F31A4824D974ED0075FA86 /* QuestionBackView.swift */; };
 		49F3B79A24BEB00800012B94 /* SolveMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79924BEB00800012B94 /* SolveMode.swift */; };
 		49F3B79C24BEC90B00012B94 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79B24BEC90B00012B94 /* SectionHeader.swift */; };
@@ -446,6 +447,7 @@
 		49E9848A24DE4F14002783FE /* ShopCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCellView.swift; sourceTree = "<group>"; };
 		49E9848C24DE598B002783FE /* ShopData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopData.swift; sourceTree = "<group>"; };
 		49E9848E24DE59AA002783FE /* ShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItem.swift; sourceTree = "<group>"; };
+		49E9849024DE6F09002783FE /* LoadingCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCircle.swift; sourceTree = "<group>"; };
 		49F31A4824D974ED0075FA86 /* QuestionBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBackView.swift; sourceTree = "<group>"; };
 		49F3B79924BEB00800012B94 /* SolveMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolveMode.swift; sourceTree = "<group>"; };
 		49F3B79B24BEC90B00012B94 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				495BBFBF24DCE2E000A35B25 /* BaseView.swift */,
 				495BBFC124DCE2F200A35B25 /* CustomTabBar.swift */,
 				49E9848524DE4BA3002783FE /* ShopButtonView.swift */,
+				49E9849024DE6F09002783FE /* LoadingCircle.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -1363,6 +1366,7 @@
 				490F86E824B0198B00EF5622 /* ProgressCircleView.swift in Sources */,
 				496CAF1424AB21E600F290E9 /* ButtonStyle.swift in Sources */,
 				495BBFC024DCE2E000A35B25 /* BaseView.swift in Sources */,
+				49E9849124DE6F09002783FE /* LoadingCircle.swift in Sources */,
 				490F86F424B0451700EF5622 /* WorkbookCollectionView.swift in Sources */,
 				490F870924B07CBD00EF5622 /* UserSetting.swift in Sources */,
 				49E1A56224ACAF59008EC140 /* QuestionSolveView.swift in Sources */,

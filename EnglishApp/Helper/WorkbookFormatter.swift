@@ -36,10 +36,14 @@ class WorkbookFormatter {
         return result
     }
     
-    static func formatStatus(isPurchased: Bool) -> String {
-        if isPurchased {
+    static func formatStatus(isPurchased: Bool, isPlayable: Bool) -> String {
+        if isPlayable && isPurchased {
             return "利用可能"
-        } else {
+        }
+        else if isPurchased {
+            return "利用不可"
+        }
+        else {
             return "購入する"
         }
     }

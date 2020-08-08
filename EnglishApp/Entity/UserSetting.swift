@@ -123,6 +123,8 @@ class UserSetting {
     // 学習データを消去するときのみに呼び出す
     // それ以外の時に呼び出すとデータが消えてしまう
     static func resetQuestionData() {
+        RealmDecoder.deleteAllDataOf(data: Question())
+        
         for arr in workbookArray.values {
             for w in arr {
                 let questionArr = CSVDecoder.convertQuestionFile(fileName: w.bookId)
@@ -146,6 +148,7 @@ class UserSetting {
                     w.correctCount = 0
                     w.missCount = 0
                     w.isCleared = false
+                    w.isPlayable = false
                 }
             }
         } catch {
@@ -153,6 +156,12 @@ class UserSetting {
         }
         
         resetQuestionData()
+        
+        let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
+        
+        UserDefaults.standard.set(version, forKey: "appVersion")
+        
+        print("deleted data")
     }
     
     // バージョンに変更があった場合、初回起動時に呼び出される

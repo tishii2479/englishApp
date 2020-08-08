@@ -75,7 +75,7 @@ struct SettingView: View {
                                 HStack {
                                     Text("バージョン")
                                     Spacer()
-                                    Text("1.0.0")
+                                    Text(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String)
                                         .fontWeight(.light)
                                 }
                                 
@@ -104,14 +104,25 @@ struct SettingView: View {
                                 }
                                 .alert(isPresented: self.$isShowingAlert) {
                                     Alert(title: Text("学習データの削除"),
-                                          message: Text("データは完全に削除されます。\nよろしいですか？\n※課金情報は残ります。"),
+                                          message: Text("データは完全に削除されます。\nこの操作は取り消せません。\n※課金情報は残ります。"),
                                           primaryButton: .cancel(Text("キャンセル")),
                                           secondaryButton: .destructive(Text("削除"), action: {
-                                            UserSetting.deleteUserData()
-                                    }))
+                                            self.isLoading = true
+                                            DispatchQueue.main.async {
+                                                UserSetting.deleteUserData()
+                                                self.isLoading = false
+                                            }
+                                          })
+                                    )
                                 }
                             }
                         }
+                    }
+                }
+                
+                Group {
+                    if isLoading {
+                        LoadingCircle()
                     }
                 }
             }
