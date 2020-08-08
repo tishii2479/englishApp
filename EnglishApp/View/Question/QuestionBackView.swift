@@ -22,7 +22,6 @@ struct QuestionBackView: View {
                 .edgesIgnoringSafeArea(.all)
         }.onAppear(perform: {
             self.presentation.wrappedValue.dismiss()
-            self.questionViewModel.status = .start
         })
     }
 }

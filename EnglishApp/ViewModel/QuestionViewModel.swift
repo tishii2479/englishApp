@@ -221,6 +221,7 @@ extension QuestionViewModel {
 extension QuestionViewModel {
     
     func startSolving() {
+        print("start Solving")
         questions = fetchQuestions(workbook: self.workbook, maxQuestionNum: self.maxQuestionNum, solveMode: self.solveMode)
         
         nowQuestionNum = 0
