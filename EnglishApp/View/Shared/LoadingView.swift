@@ -17,8 +17,12 @@ struct LoadingView: View {
             
             VStack {
                 Spacer()
+                
                 Text("ロード中...　アプリを終了せずにお待ちください。")
                     .font(.footnote)
+                    .padding(.bottom, 10)
+                Text("※初回ダウンロードは30秒程度時間がかかります。")
+                    .font(.caption)
                     .padding(.bottom, 80)
             }
     

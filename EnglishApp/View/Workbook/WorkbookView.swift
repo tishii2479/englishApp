@@ -60,7 +60,10 @@ struct WorkbookView: View {
                 // Buttons
                 Group {
                     if workbook.isPlayable == false {
-                        Text("この問題集はまだ利用できません。")
+                        Text("この問題集はまだ利用できません。\nこの問題集以前の問題集を完了してください。")
+                            .multilineTextAlignment(.center)
+                            .font(.subheadline)
+                            .padding(10)
                     } else if workbook.isCleared {
                         VStack {
                             NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .all))) {
@@ -112,6 +115,7 @@ struct WorkbookView: View {
         .navigationBarTitle("")
         .onAppear {
             self.isShowingTabBar = false
+            
         }
     }
 }

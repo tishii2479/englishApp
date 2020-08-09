@@ -10,8 +10,12 @@ import SwiftUI
 
 struct ShopView: View {
     
+    @ObservedObject var user: User = User.shared
+    
     @Binding var isPresented: Bool
+
     @State var isShowingAlert: Bool = false
+    
     @State var selectedItem: ShopItem!
     
     var body: some View {

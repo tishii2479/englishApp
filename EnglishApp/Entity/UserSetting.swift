@@ -42,6 +42,9 @@ class UserSetting {
         if UserDefaults.standard.string(forKey: "appVersion") == nil {
             print("first activate")
             UserDefaultsHelper.resetUserInformation()
+            RealmDecoder.deleteAllDataOf(data: Workbook())
+            RealmDecoder.deleteAllDataOf(data: Category())
+
             let workbookArr = CSVDecoder.convertWorkbookFile(fileName: "workbook")
             RealmDecoder.addDataToRealm(datas: workbookArr)
             let categoryArr = CSVDecoder.convertCategoryFile(fileName: "category")
@@ -148,7 +151,6 @@ class UserSetting {
                     w.correctCount = 0
                     w.missCount = 0
                     w.isCleared = false
-                    w.isPlayable = false
                 }
             }
         } catch {
@@ -172,26 +174,28 @@ class UserSetting {
         RealmDecoder.deleteAllDataOf(data: Category())
         RealmDecoder.addDataToRealm(datas: newCategoryArr)
         
-        if let oldWorkbookArr: Results<Workbook> = RealmDecoder.fetchAllDatas(filter: nil) {
-            
-            for newWorkbook in newWorkbookArr {
-                var isNewBook = true
-                for oldWorkbook in oldWorkbookArr {
-                    if newWorkbook.bookId == oldWorkbook.bookId {
-                        isNewBook = false
-                        break
-                    }
-                }
-                if isNewBook {
-                    print("new book: \(newWorkbook.bookId)")
-                    let newQuestions = CSVDecoder.convertQuestionFile(fileName: newWorkbook.bookId)
-                    RealmDecoder.addDataToRealm(datas: newQuestions)
-                    RealmDecoder.addDataToRealm(datas: [newWorkbook])
+        guard let oldWorkbookArr: Results<Workbook> = RealmDecoder.fetchAllDatas(filter: nil) else { fatalError("no old workbook") }
+        
+        for newWorkbook in newWorkbookArr {
+            var isNewBook = true
+            for oldWorkbook in oldWorkbookArr {
+                if newWorkbook.bookId == oldWorkbook.bookId {
+                    isNewBook = false
+                    break
                 }
             }
-        } else {
-            fatalError("no old workbook")
+            if isNewBook {
+                print("new book: \(newWorkbook.bookId)")
+                
+                // もし前回途中でロードを中断していたら、その分を削除
+                if let existingData: Results<Workbook> = RealmDecoder.fetchAllDatas(filter: "bookId == '\(newWorkbook.bookId)'") {
+                    RealmDecoder.deleteData(data: existingData)
+                }
+                
+                let newQuestions = CSVDecoder.convertQuestionFile(fileName: newWorkbook.bookId)
+                RealmDecoder.addDataToRealm(datas: newQuestions)
+                RealmDecoder.addDataToRealm(datas: [newWorkbook])
+            }
         }
     }
-    
 }

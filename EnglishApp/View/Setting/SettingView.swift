@@ -91,31 +91,31 @@ struct SettingView: View {
                                 }
                             }
                              
-                            Section(header: Text("")) {
-                                HStack {
-                                    Spacer()
-                                    Text("学習データを削除する")
-                                        .foregroundColor(Color.offRed)
-                                    Spacer()
-                                }
-                                .contentShape(Rectangle())
-                                .onTapGesture {
-                                    self.isShowingAlert.toggle()
-                                }
-                                .alert(isPresented: self.$isShowingAlert) {
-                                    Alert(title: Text("学習データの削除"),
-                                          message: Text("データは完全に削除されます。\nこの操作は取り消せません。\n※課金情報は残ります。"),
-                                          primaryButton: .cancel(Text("キャンセル")),
-                                          secondaryButton: .destructive(Text("削除"), action: {
-                                            self.isLoading = true
-                                            DispatchQueue.main.async {
-                                                UserSetting.deleteUserData()
-                                                self.isLoading = false
-                                            }
-                                          })
-                                    )
-                                }
-                            }
+//                            Section(header: Text("")) {
+//                                HStack {
+//                                    Spacer()
+//                                    Text("学習データを削除する")
+//                                        .foregroundColor(Color.offRed)
+//                                    Spacer()
+//                                }
+//                                .contentShape(Rectangle())
+//                                .onTapGesture {
+//                                    self.isShowingAlert.toggle()
+//                                }
+//                                .alert(isPresented: self.$isShowingAlert) {
+//                                    Alert(title: Text("学習データの削除"),
+//                                          message: Text("データは完全に削除されます。\nこの操作は取り消せません。\n※課金情報は残ります。"),
+//                                          primaryButton: .cancel(Text("キャンセル")),
+//                                          secondaryButton: .destructive(Text("削除"), action: {
+//                                            self.isLoading = true
+//                                            DispatchQueue.main.async {
+//                                                UserSetting.deleteUserData()
+//                                                self.isLoading = false
+//                                            }
+//                                          })
+//                                    )
+//                                }
+//                            }
                         }
                     }
                 }

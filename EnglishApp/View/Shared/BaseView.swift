@@ -28,13 +28,15 @@ struct BaseView: View {
                         }
                     }
                 }
-            
-                if isShowingTabBar {
-                    VStack {
-                        Spacer()
+                
+                VStack {
+                    Spacer()
+                    
+                    if isShowingTabBar {
                         CustomTabBar(selectedIndex: $selectedIndex)
                     }
                 }
+                .padding(.top, 40)
             }
         }
     }

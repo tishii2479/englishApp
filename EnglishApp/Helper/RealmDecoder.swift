@@ -42,6 +42,18 @@ class RealmDecoder {
         }
     }
     
+    static func deleteData<T>(data: Results<T>) where T: Object {
+        do {
+            let realm = try Realm()
+            
+            try realm.write {
+                realm.delete(data)
+            }
+        } catch {
+            print("realm not working")
+        }
+    }
+    
     static func deleteAllDataOf<T>(data: T) where T: Object {
         do {
             let realm = try Realm()

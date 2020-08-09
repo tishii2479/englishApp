@@ -31,13 +31,19 @@ struct HomeView: View {
                         
                     Spacer()
                     // Details
-                    HomeDetailTextView(itemName: "正解率", amount: user.correctRatioFormatter(correct: user.totalCorrectCount, miss: user.totalMissCount), unit: "%")
+                    HomeDetailTextView(itemName: "正解率", amount: user.correctRatioFormatter(), unit: "%")
                     HomeDetailTextView(itemName: "解いた問題数", amount: String(user.totalCorrectCount + user.totalMissCount), unit: "問")
                     HomeDetailTextView(itemName: "完了した問題集", amount: String(user.completedWorkbookCount), unit: "個")
                     
                     Spacer()
                 }
                 .padding(.bottom, 80)
+                
+                VStack {
+                    CoinWindowView(coin: user.coin)
+                    
+                    Spacer()
+                }
             }
             .navigationBarHidden(true)
             .navigationBarTitle("")
