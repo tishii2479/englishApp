@@ -46,6 +46,13 @@ struct WorkbookCellView: View {
                             Text(WorkbookFormatter.formatQuestionNumber(number: self.workbook.questionNumber))
                                 .font(.caption)
                             Spacer()
+                            
+                            if self.workbook.price != 0 {
+                                Image(systemName: "dollarsign.circle")
+                                    .resizable()
+                                    .frame(width: 10, height: 10)
+                            }
+                                
                             Text(WorkbookFormatter.formatPrice(price: self.workbook.price))
                                 .font(.caption)
                         }
@@ -84,7 +91,6 @@ struct WorkbookCellView: View {
                             }
                         }
                     }
-                    .frame(maxWidth: geometry.size.width - 60)
                     .padding(15)
                     
                     Spacer()

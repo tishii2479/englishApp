@@ -15,7 +15,7 @@ class WorkbookFormatter {
         if price == 0 {
             return "無料"
         } else {
-            return String(price) + "円"
+            return String(price)
         }
     }
     
@@ -40,11 +40,11 @@ class WorkbookFormatter {
         if isPlayable && isPurchased {
             return "利用可能"
         }
-        else if isPurchased {
-            return "利用不可"
+        else if isPlayable {
+            return "購入可能"
         }
         else {
-            return "購入する"
+            return "利用不可"
         }
     }
     

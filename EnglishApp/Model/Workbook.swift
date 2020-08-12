@@ -153,4 +153,20 @@ class Workbook: Object, Identifiable {
         }
     }
     
+    func purchase() {
+        print("purchase")
+        
+        do {
+            let realm = try Realm()
+            
+            try realm.write { self.isPurchased = true }
+
+            User.shared.coin -= self.price
+            
+            User.shared.setUserSetting(key: "coin", value: User.shared.coin)
+        } catch {
+            print("failed to purcahse")
+        }
+    }
+    
 }

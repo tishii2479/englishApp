@@ -14,7 +14,15 @@ struct WorkbookView: View {
     
     @Binding var isShowingTabBar: Bool
     
+    @State var isShowingPurchaseAlert: Bool = false
+ 
+    @State var isAbleToPurchase: Bool = false
+    
+    @State var isPresentedShop: Bool = false
+    
     var category: Category
+    
+    var user: User = User.shared
     
     var body: some View {
         let workbook = self.workbookViewModel.workbook!
@@ -86,7 +94,36 @@ struct WorkbookView: View {
                             .multilineTextAlignment(.center)
                             .font(.subheadline)
                             .padding(10)
-                    } else if workbook.isCleared {
+                    }
+                    else if workbook.isPurchased == false {
+                        Button(action: {
+                            if self.user.coin >= workbook.price {
+                                self.isAbleToPurchase = true
+                            } else {
+                                self.isAbleToPurchase = false
+                            }
+                            self.isShowingPurchaseAlert.toggle()
+                        }) {
+                            Text("購入する")
+                        }
+                        .buttonStyle(WideButtonStyle())
+                        .alert(isPresented: self.$isShowingPurchaseAlert) {
+                            if self.isAbleToPurchase {
+                                return Alert(title: Text("問題集の購入"), message: Text("「\(workbook.title) (\(workbook.price)コイン)」を購入しますか？"), primaryButton: .default(Text("購入する"), action: {
+                                    self.workbookViewModel.workbook.purchase()
+                                }), secondaryButton: .cancel(Text("キャンセル")))
+                            } else {
+                                return Alert(title: Text("コインが足りません"), primaryButton: .default(Text("ショップへ"), action: {
+                                    self.isPresentedShop.toggle()
+                                }), secondaryButton: .cancel(Text("キャンセル")))
+                            }
+                        }
+                        .sheet(isPresented: self.$isPresentedShop) {
+                            ShopView(isPresented: self.$isPresentedShop)
+                        }
+                    
+                    }
+                    else if workbook.isCleared {
                         VStack {
                             NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .all))) {
                                 Text("総復習をする")
