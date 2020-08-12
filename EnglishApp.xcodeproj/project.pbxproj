@@ -219,6 +219,7 @@
 		49F3B79E24BEF3D800012B94 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79D24BEF3D800012B94 /* Category.swift */; };
 		49F3B7A024BEF42300012B94 /* category.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49F3B79F24BEF42300012B94 /* category.csv */; };
 		49F7DD9924E3B89F0071E7B7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F7DD9824E3B89F0071E7B7 /* StoreKit.framework */; };
+		49F7DD9C24E41A8C0071E7B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49F7DD9E24E41A8C0071E7B7 /* InfoPlist.strings */; };
 		580BCA4491F293C86AA5408E /* Pods_EnglishAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -457,6 +458,9 @@
 		49F3B79D24BEF3D800012B94 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		49F3B79F24BEF42300012B94 /* category.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = category.csv; sourceTree = "<group>"; };
 		49F7DD9824E3B89F0071E7B7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		49F7DD9D24E41A8C0071E7B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49F7DD9F24E41AAD0071E7B7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		49F7DDA024E41AAD0071E7B7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7386E48E2950A9DF925D34F3 /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		763B43D92BD2283F51B0C5A9 /* Pods-EnglishApp-EnglishAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp-EnglishAppUITests/Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -605,6 +609,7 @@
 		496CAED024AB1CEF00F290E9 = {
 			isa = PBXGroup;
 			children = (
+				49F7DD9E24E41A8C0071E7B7 /* InfoPlist.strings */,
 				49A1DA5A24C95E3E00293165 /* Settings.bundle */,
 				496CAEDB24AB1CF000F290E9 /* EnglishApp */,
 				496CAEF224AB1CF000F290E9 /* EnglishAppTests */,
@@ -1022,6 +1027,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 496CAED024AB1CEF00F290E9;
 			packageReferences = (
@@ -1174,6 +1180,7 @@
 				496DF4BC24D932A20073B2AC /* story2_8.csv in Resources */,
 				496DF4E724D932A20073B2AC /* history_8.csv in Resources */,
 				490BE06D24BF490A00E0F1F9 /* correct.caf in Resources */,
+				49F7DD9C24E41A8C0071E7B7 /* InfoPlist.strings in Resources */,
 				49F3B7A024BEF42300012B94 /* category.csv in Resources */,
 				496DF4BE24D932A20073B2AC /* basic_7.csv in Resources */,
 				496DF4AC24D932A20073B2AC /* history_14.csv in Resources */,
@@ -1451,8 +1458,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				496CAEE824AB1CF000F290E9 /* Base */,
+				49F7DD9F24E41AAD0071E7B7 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		49F7DD9E24E41A8C0071E7B7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49F7DD9D24E41A8C0071E7B7 /* en */,
+				49F7DDA024E41AAD0071E7B7 /* ja */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1462,6 +1479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1522,6 +1540,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

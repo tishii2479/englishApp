@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  EnglishApp
+
+  Created by Tatsuya Ishii on 2020/08/12.
+  Copyright © 2020 Tatsuya Ishii. All rights reserved.
+*/
+
+CFBundleDisplayName = "エイドク";
