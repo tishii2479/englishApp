@@ -218,6 +218,7 @@
 		49F3B79C24BEC90B00012B94 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79B24BEC90B00012B94 /* SectionHeader.swift */; };
 		49F3B79E24BEF3D800012B94 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3B79D24BEF3D800012B94 /* Category.swift */; };
 		49F3B7A024BEF42300012B94 /* category.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49F3B79F24BEF42300012B94 /* category.csv */; };
+		49F7DD9924E3B89F0071E7B7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F7DD9824E3B89F0071E7B7 /* StoreKit.framework */; };
 		580BCA4491F293C86AA5408E /* Pods_EnglishAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -455,6 +456,7 @@
 		49F3B79B24BEC90B00012B94 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		49F3B79D24BEF3D800012B94 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		49F3B79F24BEF42300012B94 /* category.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = category.csv; sourceTree = "<group>"; };
+		49F7DD9824E3B89F0071E7B7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7386E48E2950A9DF925D34F3 /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		763B43D92BD2283F51B0C5A9 /* Pods-EnglishApp-EnglishAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp-EnglishAppUITests/Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -469,6 +471,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49F7DD9924E3B89F0071E7B7 /* StoreKit.framework in Frameworks */,
 				491DBFDA24B0C2EE00A24A79 /* QGrid in Frameworks */,
 				419C7A090BA86F196B2B262B /* Pods_EnglishApp.framework in Frameworks */,
 			);
@@ -902,6 +905,7 @@
 		7FB426552F90F8934E07D685 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49F7DD9824E3B89F0071E7B7 /* StoreKit.framework */,
 				E57611A2388B6588676BEE1A /* Pods_EnglishApp.framework */,
 				A7A53D28BC69394B6EEDF901 /* Pods_EnglishApp_EnglishAppUITests.framework */,
 				7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */,
@@ -1574,6 +1578,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"EnglishApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 4XV222H52K;
@@ -1583,6 +1588,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tishii24.EnglishApp;
 				PRODUCT_NAME = EnglishApp;
 				SWIFT_VERSION = 5.0;
@@ -1596,6 +1602,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_ASSET_PATHS = "\"EnglishApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 4XV222H52K;
 				ENABLE_PREVIEWS = YES;
@@ -1604,6 +1611,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tishii24.EnglishApp;
 				PRODUCT_NAME = EnglishApp;
 				SWIFT_VERSION = 5.0;

@@ -30,9 +30,31 @@ struct WorkbookView: View {
                 
                 Spacer()
                 
-                ProgressCircleView(text: "解いた問題数", radius: 200, solveNumber: workbookViewModel.workbook.correctCount, maxNumber: workbookViewModel.workbook.questionNumber)
-                
-                Spacer()
+                ProgressCircleView(text: "解いた問題数", radius: UIScreen.main.bounds.width * CGFloat(0.6), solveNumber: workbookViewModel.workbook.correctCount, maxNumber: workbookViewModel.workbook.questionNumber)
+                    .padding(.top, 10)
+
+                // Liked
+                HStack {
+                    Spacer()
+
+                    if self.workbookViewModel.workbook.likeCount > 0 {
+                        NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbook, solveMode: .liked))) {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 20)
+                                    .frame(width: 100, height: 40)
+                                    .foregroundColor(Color.offWhite)
+                                    .shadow(color: Color.black.opacity(0.2), radius: 7, x: 7, y: 7)
+                                    .shadow(color: Color.white.opacity(0.7), radius: 7, x: -3, y: -3)
+
+                                Image(systemName: "star.fill")
+                                    .resizable()
+                                    .frame(width: 24, height: 24)
+                            }
+                        }
+                        .buttonStyle(ShrinkButtonStyle())
+                    }
+
+                }.padding([.top, .horizontal], 20)
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 15) {
@@ -69,10 +91,11 @@ struct WorkbookView: View {
                             NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .all))) {
                                 Text("総復習をする")
                             }.buttonStyle(WideButtonStyle())
+                            
                             Group {
-                                if workbook.likeCount > 0 {
-                                    NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .liked))) {
-                                        Text("お気に入りした問題を解く")
+                                if hasMissQuestions {
+                                    NavigationLink(destination: QuestionView(questionViewModel: QuestionViewModel(category: category, workbook: workbookViewModel.workbook, solveMode: .onlyMissed))) {
+                                        Text("間違えた問題を復習する")
                                     }.buttonStyle(WideButtonStyle())
                                 }
                             }

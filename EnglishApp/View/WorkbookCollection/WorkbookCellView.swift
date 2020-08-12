@@ -26,6 +26,8 @@ struct WorkbookCellView: View {
                 
                 // Details
                 HStack {
+                    Spacer()
+                    
                     VStack(alignment: .leading) {
                         Text(self.workbook.title)
                             .font(.footnote)
@@ -47,12 +49,47 @@ struct WorkbookCellView: View {
                             Text(WorkbookFormatter.formatPrice(price: self.workbook.price))
                                 .font(.caption)
                         }
+                        
+                        // Progress
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 5)
+                                .frame(width: geometry.size.width - 45, height: 10)
+                                .foregroundColor(Color.offWhite)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .strokeBorder(Color.gray, lineWidth: 1)
+                                        .frame(width: geometry.size.width - 45, height: 10)
+                                        .blur(radius: 2)
+                                        .offset(x: 0.5, y: 2)
+                                        .mask(RoundedRectangle(cornerRadius: 5)
+                                                .fill(LinearGradient(gradient: Gradient(colors: [Color.black, Color.clear]), startPoint: .topLeading, endPoint: .bottomTrailing)))
+                                        .frame(width: geometry.size.width - 45, height: 10)
+                                )
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .strokeBorder(Color.white, lineWidth: 1.5)
+                                        .blur(radius: 2)
+                                        .offset(x: 0, y: -2)
+                                        .mask(RoundedRectangle(cornerRadius: 5)
+                                            .fill(LinearGradient(gradient: Gradient(colors: [Color.clear, Color.black]), startPoint: .topLeading, endPoint: .bottomTrailing)))
+                                            .frame(width: geometry.size.width - 45, height: 10)
+                                )
+                            HStack {
+                                RoundedRectangle(cornerRadius: 5)
+                                    .frame(width: (geometry.size.width - 40) * CGFloat(self.workbook.correctCount) / CGFloat(self.workbook.questionNumber), height: 10)
+                                    .foregroundColor(Color.offRed)
+                                    .shadow(color: Color.offRed, radius: 6, x: 7, y: 7)
+                                    .shadow(color: Color.white.opacity(0.5), radius: 6, x: -5, y: -5)
+                                Spacer()
+                            }
+                        }
                     }
+                    .frame(maxWidth: geometry.size.width - 60)
                     .padding(15)
                     
                     Spacer()
                 }
-                .frame(width: geometry.size.width - 10, height: 160)
+                .frame(height: 160)
                 
                 // Lock Layer
                 Group {

@@ -25,9 +25,10 @@ struct HomeView: View {
                 VStack {
                     CustomNavigationBar(hasReturn: false, hasSetting: true, hasShop: false, title: "")
                     
-                    Spacer()
+                    CoinWindowView(coin: user.coin)
+                        .padding(.bottom, 20)
                     
-                    ProgressCircleView(text: "今日解いた問題数", radius: 200, solveNumber: user.todayCorrectCount + user.todayMissCount, maxNumber: user.onedayQuota)
+                    ProgressCircleView(text: "今日解いた問題数", radius: UIScreen.main.bounds.width * CGFloat(0.6), solveNumber: user.todayCorrectCount + user.todayMissCount, maxNumber: user.onedayQuota)
                         
                     Spacer()
                     // Details
@@ -38,12 +39,6 @@ struct HomeView: View {
                     Spacer()
                 }
                 .padding(.bottom, 80)
-                
-                VStack {
-                    CoinWindowView(coin: user.coin)
-                    
-                    Spacer()
-                }
             }
             .navigationBarHidden(true)
             .navigationBarTitle("")

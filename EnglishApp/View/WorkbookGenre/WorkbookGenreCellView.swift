@@ -80,7 +80,7 @@ struct WorkbookGenreCellView: View {
                             )
                         HStack {
                             RoundedRectangle(cornerRadius: 10)
-                                .frame(width: geometry.size.width * CGFloat(self.category.correctQuestionNum) / CGFloat(self.category.totalQuestionNum), height: 15)
+                                .frame(width: (geometry.size.width) * CGFloat(self.category.correctQuestionNum) / CGFloat(self.category.totalQuestionNum), height: 15)
                                 .foregroundColor(Color.offRed)
                                 .shadow(color: Color.offRed, radius: 6, x: 7, y: 7)
                                 .shadow(color: Color.white.opacity(0.5), radius: 6, x: -5, y: -5)
