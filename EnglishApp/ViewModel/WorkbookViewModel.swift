@@ -15,4 +15,8 @@ class WorkbookViewModel: ObservableObject {
     init(workbook: Workbook) {
         self.workbook = workbook
     }
+    
+    func updateView() {
+        self.objectWillChange.send()
+    }
 }

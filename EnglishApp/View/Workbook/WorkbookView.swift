@@ -175,7 +175,7 @@ struct WorkbookView: View {
         .navigationBarTitle("")
         .onAppear {
             self.isShowingTabBar = false
-            
+            self.workbookViewModel.updateView()
         }
     }
 }
