@@ -8,6 +8,7 @@
 
 import SwiftUI
 import RealmSwift
+import StoreKit
 
 class QuestionViewModel: ObservableObject {
     
@@ -169,8 +170,11 @@ extension QuestionViewModel {
         if isFirstClear {
             workbook.setCleared(isCleared: true)
             user.incrementClearCount()
-            
+
             workbook.setNextWorkbookPlayable()
+            
+            // レビューを求める
+            SKStoreReviewController.requestReview()
         }
     }
     
