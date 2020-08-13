@@ -69,7 +69,7 @@ struct ShopCellView_Previews: PreviewProvider {
                 .edgesIgnoringSafeArea(.all)
             
             List {
-                ShopCellView(item: ShopItem(itemId: "aaa", title: "aaa", detail: "aaa", price: 120))
+                ShopCellView(item: ShopItem(itemId: "aaa", title: "aaa", detail: "aaa", price: 120, coin: 50))
             }
         }
     }

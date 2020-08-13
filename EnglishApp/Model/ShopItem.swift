@@ -18,11 +18,14 @@ class ShopItem {
     
     var price: Int
     
-    init (itemId: String, title: String, detail: String, price: Int) {
+    var coin: Int
+    
+    init (itemId: String, title: String, detail: String, price: Int, coin: Int) {
         self.itemId = itemId
         self.title = title
         self.detail = detail
         self.price = price
+        self.coin = coin
     }
     
 }

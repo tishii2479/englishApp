@@ -17,7 +17,11 @@ struct ShopView: View {
 
     @State var isShowingAlert: Bool = false
     
+    @State var isShowingError: Bool = false
+    
     @State var selectedItem: ShopItem!
+    
+    @State var errorText: String = ""
     
     var body: some View {
         NavigationView {
@@ -32,35 +36,42 @@ struct ShopView: View {
                         ForEach(ShopData.shopItems, id: \.itemId) { item in
                             Button(action: {
                                 self.selectedItem = item
+                                self.isShowingError = false
                                 self.isShowingAlert = true
                             }) {
                                 ShopCellView(item: item)
                             }
                             .buttonStyle(PlainButtonStyle())
                             .alert(isPresented: self.$isShowingAlert) {
-                                Alert(title: Text("商品の購入"), message: Text(self.selectedItem.title), primaryButton: .cancel(Text("キャンセル")), secondaryButton: .default(Text("購入"), action: {
-                                    SwiftyStoreKit.purchaseProduct(item.itemId, quantity: 1, atomically: true) { result in
-                                        print(self.selectedItem.itemId)
-                                        switch result {
-                                        case .success(let purchase):
-                                            print("Purchase Success: \(purchase.productId)")
-                                            
-                                        case .error(let error):
-                                            switch error.code {
-                                            case .unknown: print("Unknown error. Please contact support")
-                                            case .clientInvalid: print("Not allowed to make the payment")
-                                            case .paymentCancelled: break
-                                            case .paymentInvalid: print("The purchase identifier was invalid")
-                                            case .paymentNotAllowed: print("The device is not allowed to make the payment")
-                                            case .storeProductNotAvailable: print("The product is not available in the current storefront")
-                                            case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
-                                            case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
-                                            case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
-                                            default: print("Unknown error")
+                                if self.isShowingError {
+                                    return Alert(title: Text("購入に失敗しました"), message: Text("エラー: \(self.errorText)"))
+                                } else {
+                                    return Alert(title: Text("商品の購入"), message: Text(self.selectedItem.title), primaryButton: .cancel(Text("キャンセル")), secondaryButton: .default(Text("購入"), action: {
+                                        SwiftyStoreKit.purchaseProduct(self.selectedItem.itemId, quantity: 1, atomically: true) { result in
+                                            switch result {
+                                            case .success(let purchase):
+                                                print("Purchase Success: \(purchase.productId)")
+                                                User.shared.updateUserCoins(difference: self.selectedItem.coin)
+                                            case .error(let error):
+                                                switch error.code {
+                                                case .unknown: self.errorText = "10001"
+                                                case .clientInvalid: self.errorText = "10002"
+                                                case .paymentCancelled: self.errorText = "購入のキャンセル"
+                                                case .paymentInvalid: self.errorText = "10003"
+                                                case .paymentNotAllowed: self.errorText = "10004"
+                                                case .storeProductNotAvailable: self.errorText = "10005"
+                                                case .cloudServicePermissionDenied: self.errorText = "10006"
+                                                case .cloudServiceNetworkConnectionFailed: self.errorText = "10007"
+                                                case .cloudServiceRevoked: self.errorText = "10008"
+                                                default: self.errorText = "20001"
+                                                }
+                                                self.isShowingAlert = false
+                                                self.isShowingError = true
+                                                self.isShowingAlert = true
                                             }
                                         }
-                                    }
-                                }))
+                                    }))
+                                }
                             }
                         }
                         

@@ -46,8 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 private extension AppDelegate {
 
     func setUpStore() {
+        print("setup store")
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
             for purchase in purchases {
+                print(purchase)
                 switch purchase.transaction.transactionState {
                 case .purchased, .restored:
                     if purchase.needsFinishTransaction {
