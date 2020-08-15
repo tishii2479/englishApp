@@ -86,7 +86,9 @@ class Workbook: Object, Identifiable {
         
         var questionArr = Array<Question>()
         
-        for _ in 0 ..< questionNum {
+        let n = solveMode == .test ? 10 : questionNum
+        
+        for _ in 0 ..< n {
             if temp.count < 1 { return questionArr }
             let index = Int.random(in: 0 ..< temp.count)
             
