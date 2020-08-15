@@ -23,15 +23,16 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
-                    CustomNavigationBar(hasReturn: false, hasSetting: true, title: "")
+                    CustomNavigationBar(hasReturn: false, hasSetting: true, hasShop: false, title: "")
                     
-                    Spacer()
+                    CoinWindowView(coin: user.coin)
+                        .padding(.bottom, 20)
                     
-                    ProgressCircleView(text: "今日解いた問題数", radius: 200, solveNumber: user.todayCorrectCount + user.todayMissCount, maxNumber: user.onedayQuota)
+                    ProgressCircleView(text: "今日解いた問題数", radius: UIScreen.main.bounds.width * CGFloat(0.6), solveNumber: user.todayCorrectCount + user.todayMissCount, maxNumber: user.onedayQuota)
                         
                     Spacer()
                     // Details
-                    HomeDetailTextView(itemName: "正解率", amount: user.correctRatioFormatter(correct: user.totalCorrectCount, miss: user.totalMissCount), unit: "%")
+                    HomeDetailTextView(itemName: "正解率", amount: user.correctRatioFormatter(), unit: "%")
                     HomeDetailTextView(itemName: "解いた問題数", amount: String(user.totalCorrectCount + user.totalMissCount), unit: "問")
                     HomeDetailTextView(itemName: "完了した問題集", amount: String(user.completedWorkbookCount), unit: "個")
                     

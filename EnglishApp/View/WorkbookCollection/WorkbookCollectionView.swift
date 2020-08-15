@@ -22,17 +22,16 @@ struct WorkbookCollectionView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                CustomNavigationBar(hasReturn: true, hasSetting: true, title: category.title)
+                CustomNavigationBar(hasReturn: true, hasSetting: false, hasShop: true, title: category.title)
                 
                 QGrid(workbookArr,
-                      columns: 2, vPadding: 0) { workbook in
+                      columns: 2, vPadding: 0, hPadding: 0) { workbook in
                         NavigationLink(destination: WorkbookView(workbookViewModel: WorkbookViewModel(workbook: workbook), isShowingTabBar: self.$isShowingTabBar, category: self.category)) {
                             WorkbookCellView(workbook: workbook)
                         }.buttonStyle(ShrinkButtonStyle())
                 }
-                .padding(.top, 10)
+                .padding(.top, 20)
                 .padding(.bottom, 0)
-                .edgesIgnoringSafeArea(.bottom)
             }
             .navigationBarHidden(true)
             .navigationBarTitle("")

@@ -24,6 +24,9 @@ struct QuestionView: View {
                 contentView()
             }
         }
+        .onAppear {
+            self.questionViewModel.status = .start
+        }
         .navigationBarTitle("")
         .navigationBarHidden(true)
     }

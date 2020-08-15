@@ -18,9 +18,10 @@ class UserDefaultsHelper {
         User.shared.timePerQuestion             = userDefaults.integer(forKey: "timePerQuestion")
         User.shared.todayCorrectCount           = userDefaults.integer(forKey: "todayCorrectCount")
         User.shared.todayMissCount              = userDefaults.integer(forKey: "todayMissCount")
-        User.shared.totalCorrectCount           = userDefaults.integer(forKey: "totalMissCount")
+        User.shared.totalCorrectCount           = userDefaults.integer(forKey: "totalCorrectCount")
         User.shared.totalMissCount              = userDefaults.integer(forKey: "totalMissCount")
         User.shared.completedWorkbookCount      = userDefaults.integer(forKey: "completedWorkbookCount")
+        User.shared.coin                        = userDefaults.integer(forKey: "coin")
     }
     
     static func resetUserInformation() {
@@ -35,5 +36,6 @@ class UserDefaultsHelper {
         userDefaults.set(0,     forKey: "totalCorrectCount")
         userDefaults.set(0,     forKey: "totalMissCount")
         userDefaults.set(0,     forKey: "completedWorkbookCount")
+        userDefaults.set(0,     forKey: "coin")
     }
 }

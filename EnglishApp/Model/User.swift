@@ -23,6 +23,8 @@ class User: ObservableObject {
     
     @Published var onedayQuota: Int = 50
     
+    @Published var coin: Int = 0
+    
     var timePerQuestion: Int = 20
     
     var maxQuestionNum: Int = 10
@@ -33,7 +35,7 @@ class User: ObservableObject {
     
     static let shared = User()
     
-    func correctRatioFormatter(correct: Int, miss: Int) -> String {
+    func correctRatioFormatter() -> String {
         if totalCorrectCount + totalMissCount > 0 {
             return String(format: "%.1f", Double(totalCorrectCount * 100) / Double(totalCorrectCount + totalMissCount))
         } else {
@@ -61,6 +63,12 @@ class User: ObservableObject {
         completedWorkbookCount += 1
         
         UserDefaults.standard.set(completedWorkbookCount, forKey: "completedWorkbookCount")
+    }
+    
+    func updateUserCoins(difference: Int) {
+        coin += difference
+        
+        UserDefaults.standard.set(coin, forKey: "coin")
     }
 
     func setUserSetting(key: String, value: Int) {

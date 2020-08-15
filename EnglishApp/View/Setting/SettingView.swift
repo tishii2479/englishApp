@@ -31,7 +31,6 @@ struct SettingView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 GeometryReader { geometry in
-
                     VStack {
                         Form {
                             Section(header: Text("ユーザー設定")) {
@@ -76,7 +75,7 @@ struct SettingView: View {
                                 HStack {
                                     Text("バージョン")
                                     Spacer()
-                                    Text("1.0.0")
+                                    Text(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String)
                                         .fontWeight(.light)
                                 }
                                 
@@ -92,27 +91,38 @@ struct SettingView: View {
                                 }
                             }
                              
-                            Section(header: Text("")) {
-                                HStack {
-                                    Spacer()
-                                    Text("学習データを削除する")
-                                        .foregroundColor(Color.offRed)
-                                    Spacer()
-                                }
-                                .contentShape(Rectangle())
-                                .onTapGesture {
-                                    self.isShowingAlert.toggle()
-                                }
-                                .alert(isPresented: self.$isShowingAlert) {
-                                    Alert(title: Text("学習データの削除"),
-                                          message: Text("データは完全に削除されます。\nよろしいですか？\n※課金情報は残ります。"),
-                                          primaryButton: .cancel(Text("キャンセル")),
-                                          secondaryButton: .destructive(Text("削除"), action: {
-                                            UserSetting.deleteUserData()
-                                    }))
-                                }
-                            }
+//                            Section(header: Text("")) {
+//                                HStack {
+//                                    Spacer()
+//                                    Text("学習データを削除する")
+//                                        .foregroundColor(Color.offRed)
+//                                    Spacer()
+//                                }
+//                                .contentShape(Rectangle())
+//                                .onTapGesture {
+//                                    self.isShowingAlert.toggle()
+//                                }
+//                                .alert(isPresented: self.$isShowingAlert) {
+//                                    Alert(title: Text("学習データの削除"),
+//                                          message: Text("データは完全に削除されます。\nこの操作は取り消せません。\n※課金情報は残ります。"),
+//                                          primaryButton: .cancel(Text("キャンセル")),
+//                                          secondaryButton: .destructive(Text("削除"), action: {
+//                                            self.isLoading = true
+//                                            DispatchQueue.main.async {
+//                                                UserSetting.deleteUserData()
+//                                                self.isLoading = false
+//                                            }
+//                                          })
+//                                    )
+//                                }
+//                            }
                         }
+                    }
+                }
+                
+                Group {
+                    if isLoading {
+                        LoadingCircle()
                     }
                 }
             }

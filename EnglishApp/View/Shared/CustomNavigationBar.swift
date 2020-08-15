@@ -16,6 +16,8 @@ struct CustomNavigationBar: View {
     
     var hasSetting: Bool
     
+    var hasShop: Bool
+    
     var title: String
     
     var body: some View {
@@ -34,7 +36,10 @@ struct CustomNavigationBar: View {
                 
                 Spacer()
                 
-                Group {
+                HStack {
+                    if hasShop {
+                        ShopButtonView()
+                    }
                     if hasSetting {
                         SettingButtonView()
                     }
@@ -50,6 +55,6 @@ struct CustomNavigationBar: View {
 struct CustomNavigationBar_Previews: PreviewProvider {
     
     static var previews: some View {
-        CustomNavigationBar(hasReturn: true, hasSetting: true, title: "Title")
+        CustomNavigationBar(hasReturn: true, hasSetting: true, hasShop: false, title: "Title")
     }
 }

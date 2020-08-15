@@ -74,14 +74,16 @@ class CSVDecoder {
             let arr = data.components(separatedBy: ",")
             
             // 要素数のチェック
-            guard arr.count == 7,
+            guard arr.count == 8,
                 let difficulty = Int(arr[4]),
                 let questionNumber = Int(arr[5]),
-                let price = Int(arr[6]) else { fatalError("failed to convert workbook") }
+                let price = Int(arr[6]),
+                let _isPlayable = Int(arr[7]) else { fatalError("failed to convert workbook") }
             
             let isPurchased = price == 0
+            let isPlayable = _isPlayable == 1
             
-            let workbook = Workbook(bookId: arr[0], title: arr[1], detail: arr[2], category: arr[3], difficulty: difficulty, questionNumber: questionNumber, price: price, correctCount: 0, missCount: 0, isPurchased: isPurchased, isCleared: false)
+            let workbook = Workbook(bookId: arr[0], title: arr[1], detail: arr[2], category: arr[3], difficulty: difficulty, questionNumber: questionNumber, price: price, correctCount: 0, missCount: 0, isPurchased: isPurchased, isCleared: false, isPlayable: isPlayable)
             
             workbookArr.append(workbook)
         }

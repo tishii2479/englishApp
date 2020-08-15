@@ -8,6 +8,7 @@
 
 import SwiftUI
 import RealmSwift
+import StoreKit
 
 class QuestionViewModel: ObservableObject {
     
@@ -164,11 +165,16 @@ extension QuestionViewModel {
     }
     
     func checkClearOfWorkbook(solveMode: SolveMode, maxQuestionNum: Int, correctCount: Int, workbook: Workbook) {
-        let firstClear: Bool = solveMode == .test && maxQuestionNum == correctCount && workbook.isCleared == false
+        let isFirstClear: Bool = solveMode == .test && maxQuestionNum == correctCount && workbook.isCleared == false
         
-        if firstClear {
+        if isFirstClear {
             workbook.setCleared(isCleared: true)
             user.incrementClearCount()
+
+            workbook.setNextWorkbookPlayable()
+            
+            // レビューを求める
+            SKStoreReviewController.requestReview()
         }
     }
     
@@ -221,6 +227,7 @@ extension QuestionViewModel {
 extension QuestionViewModel {
     
     func startSolving() {
+        print("start Solving")
         questions = fetchQuestions(workbook: self.workbook, maxQuestionNum: self.maxQuestionNum, solveMode: self.solveMode)
         
         nowQuestionNum = 0
