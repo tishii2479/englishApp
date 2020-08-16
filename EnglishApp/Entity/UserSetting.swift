@@ -71,8 +71,6 @@ class UserSetting {
             setUpWorkbooks()
         }
 
-        UserDefaultsHelper.setUpUserInformation()
-        
         // 今日最初の起動かどうか
         if todayDate != userDefaults.string(forKey: "recentActivation") {
             print("first activation of today")
@@ -80,6 +78,8 @@ class UserSetting {
             userDefaults.set(0, forKey: "todayCorrectCount")
             userDefaults.set(0, forKey: "todayMissCount")
         }
+        
+        UserDefaultsHelper.setUpUserInformation()
         
         User.shared.isLoading = false
         print("load completed")

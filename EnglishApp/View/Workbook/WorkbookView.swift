@@ -62,7 +62,10 @@ struct WorkbookView: View {
                         .buttonStyle(ShrinkButtonStyle())
                     }
 
-                }.padding(.horizontal, 20)
+                }
+                .frame(height: 40)
+                .padding(.horizontal, 20)
+                
                 
                 HStack {
                     VStack(alignment: .leading, spacing: 15) {
