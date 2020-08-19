@@ -14,26 +14,6 @@ import FirebaseFirestore
 
 class FirebaseManager {
     
-    static func authenticate(email: String, errorMessage: inout String) -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
-        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        let result = emailTest.evaluate(with: email)
-        
-        if result == false {
-            errorMessage = "入力が メールアドレスの形式でありません。"
-            return true
-        }
-        
-        // Success
-        UserDefaults.standard.set(email, forKey: "email")
-        User.shared.email = email
-        
-        setUserPurchaseData()
-        
-        User.shared.showLogin = false
-        return false
-    }
-    
     static func setUserPurchaseData() {
         
         let email = User.shared.email
