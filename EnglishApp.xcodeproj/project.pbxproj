@@ -211,6 +211,7 @@
 		49BED2CC24C2E34600684B70 /* SettingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BED2CB24C2E34600684B70 /* SettingTextView.swift */; };
 		49BED2CE24C2E7A400684B70 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BED2CD24C2E7A400684B70 /* LoadingView.swift */; };
 		49C991E824ED02BA0092E50E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C991E724ED02BA0092E50E /* LoginView.swift */; };
+		49C991EA24ED82A00092E50E /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C991E924ED82A00092E50E /* TimerViewModel.swift */; };
 		49E1A56224ACAF59008EC140 /* QuestionSolveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56124ACAF59008EC140 /* QuestionSolveView.swift */; };
 		49E1A56524ACB087008EC140 /* QuestionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56424ACB087008EC140 /* QuestionResultView.swift */; };
 		49E1A56724ACB0E5008EC140 /* QuestionStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56624ACB0E5008EC140 /* QuestionStartView.swift */; };
@@ -463,6 +464,7 @@
 		49BED2CB24C2E34600684B70 /* SettingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTextView.swift; sourceTree = "<group>"; };
 		49BED2CD24C2E7A400684B70 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		49C991E724ED02BA0092E50E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		49C991E924ED82A00092E50E /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		49E1A56124ACAF59008EC140 /* QuestionSolveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSolveView.swift; sourceTree = "<group>"; };
 		49E1A56424ACB087008EC140 /* QuestionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResultView.swift; sourceTree = "<group>"; };
 		49E1A56624ACB0E5008EC140 /* QuestionStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStartView.swift; sourceTree = "<group>"; };
@@ -755,6 +757,7 @@
 				496CAF1A24AB353800F290E9 /* QuestionViewModel.swift */,
 				490F86F024B030BF00EF5622 /* HomeViewModel.swift */,
 				490F870024B065F400EF5622 /* WorkbookViewModel.swift */,
+				49C991E924ED82A00092E50E /* TimerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1477,6 +1480,7 @@
 				491DBFD524B0A9D600A24A79 /* CSVDecoder.swift in Sources */,
 				49924CC724BD6D3200AD962A /* PreviewCellView.swift in Sources */,
 				490F86FC24B05D9D00EF5622 /* Workbook.swift in Sources */,
+				49C991EA24ED82A00092E50E /* TimerViewModel.swift in Sources */,
 				49E1A56924ACB0F3008EC140 /* QuestionPauseView.swift in Sources */,
 				49F213FC24E8D5D400A2E265 /* TutorialViewPages.swift in Sources */,
 				490F870624B0741400EF5622 /* SettingView.swift in Sources */,
@@ -1672,7 +1676,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EnglishApp/EnglishApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.2;
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"EnglishApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 4XV222H52K;
@@ -1697,7 +1701,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EnglishApp/EnglishApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.2;
+				CURRENT_PROJECT_VERSION = 1.0.3;
 				DEVELOPMENT_ASSET_PATHS = "\"EnglishApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 4XV222H52K;
 				ENABLE_PREVIEWS = YES;

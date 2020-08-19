@@ -10,6 +10,8 @@ import SwiftUI
 
 struct LoadingView: View {
     
+    @ObservedObject var timerViewModel: TimerViewModel = TimerViewModel()
+    
     var body: some View {
         ZStack {
             Color.offWhite
@@ -25,10 +27,20 @@ struct LoadingView: View {
                     .font(.caption)
                     .padding(.bottom, 80)
             }
-    
+            
             Image("Icon")
                 .resizable()
                 .frame(width: 220, height: 220)
+        }
+        .onAppear {
+            print("appear")
+            
+            self.timerViewModel.start()
+        }
+        .onDisappear {
+            print("disappear")
+            
+            self.timerViewModel.stopTimer()
         }
     }
 }
