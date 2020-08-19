@@ -583,6 +583,7 @@
 			children = (
 				490F870524B0741400EF5622 /* SettingView.swift */,
 				49BED2CB24C2E34600684B70 /* SettingTextView.swift */,
+				4926A21824EB85B300124756 /* RestoreView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -943,7 +944,6 @@
 			children = (
 				49E9848824DE4C63002783FE /* ShopView.swift */,
 				49E9848A24DE4F14002783FE /* ShopCellView.swift */,
-				4926A21824EB85B300124756 /* RestoreView.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";

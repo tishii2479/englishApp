@@ -90,23 +90,6 @@ struct SettingView: View {
                                 }
                             }
                             
-                            Section(header: Text("学習データ")) {
-                                NavigationLink(destination: RestoreView(option: .backup)) {
-                                    HStack {
-                                        Text("学習データをバックアップする")
-                                        Spacer()
-                                    }
-                                }
-                               
-                                NavigationLink(destination: RestoreView(option: .restore)) {
-                                    HStack {
-                                        Text("学習データを復元する")
-                                            .foregroundColor(Color.offRed)
-                                        Spacer()
-                                    }
-                                }
-                            }
-                            
                             Section(header: Text("このアプリについて")) {
                                 HStack {
                                     Text("バージョン")
@@ -136,6 +119,22 @@ struct SettingView: View {
                                 }
                             }
                             
+                            Section(header: Text("学習データ")) {
+                                NavigationLink(destination: RestoreView(option: .backup)) {
+                                    HStack {
+                                        Text("学習データをバックアップする")
+                                        Spacer()
+                                    }
+                                }
+                               
+                                NavigationLink(destination: RestoreView(option: .restore)) {
+                                    HStack {
+                                        Text("学習データを復元する")
+                                            .foregroundColor(Color.offRed)
+                                        Spacer()
+                                    }
+                                }
+                            }
                             
                              
 //                            Section(header: Text("")) {

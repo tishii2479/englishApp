@@ -137,6 +137,7 @@ class UserSetting {
         
         for arr in workbookArray.values {
             for w in arr {
+                print(w.bookId)
                 let questionArr = CSVDecoder.convertQuestionFile(fileName: w.bookId)
                 RealmDecoder.addDataToRealm(datas: questionArr)
             }
@@ -237,5 +238,7 @@ class UserSetting {
         User.shared.totalCorrectCount = correctCount
         User.shared.totalMissCount = missCount
         User.shared.completedWorkbookCount = completedWorkbookCount
+        
+        print(correctCount, missCount, completedWorkbookCount)
     }
 }

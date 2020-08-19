@@ -133,7 +133,15 @@ struct RestoreView: View {
     }
     
     private func backup() {
-
+        
+        let todayDate: String = Date.getTodayDate()
+        
+        if todayDate == UserDefaults.standard.string(forKey: "lastBackup") {
+            self.errorMessage = "バックアップは一日に一回しかできません。"
+            self.isShowingAlert = true
+            return
+        }
+        
         if self.isProcessing { return }
         
         self.isProcessing = true
@@ -157,6 +165,8 @@ struct RestoreView: View {
                 self.errorMessage = "エラー: 30001"
             } else {
                 print("upload success : \(String(describing: metadata))")
+                
+                UserDefaults.standard.set(todayDate, forKey: "lastBackup")
                 self.errorMessage = ""
             }
             
@@ -174,8 +184,16 @@ struct RestoreView: View {
     
     private func restore() {
         
-        if self.isProcessing { return }
+        let todayDate: String = Date.getTodayDate()
         
+        if todayDate == UserDefaults.standard.string(forKey: "lastRestore") {
+            self.errorMessage = "復元は一日に一回しかできません。"
+            self.isShowingAlert = true
+            return
+        }
+        
+        if self.isProcessing { return }
+    
         self.isProcessing = true
         
         if self.email == "" {
@@ -191,7 +209,7 @@ struct RestoreView: View {
         userDataRef.downloadURL { url, error in
             if let _error = error {
                 print("download error: \(_error)")
-                self.errorMessage = "エラー: 30002"
+                self.errorMessage = "バックアップデータが存在しません。"
 
                 self.isProcessing = false
                 self.isShowingAlert = true
@@ -204,6 +222,7 @@ struct RestoreView: View {
                         print("download success")
                         UserSetting.reloadData()
                         
+                        UserDefaults.standard.set(todayDate, forKey: "lastRestore")
                         self.errorMessage = FirebaseManager.getUserPurchaseData()
                     }
 

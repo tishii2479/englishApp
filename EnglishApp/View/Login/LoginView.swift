@@ -110,8 +110,6 @@ struct LoginView: View {
                 UserDefaults.standard.set(self.email, forKey: "email")
                 User.shared.email = self.email
                 
-                FirebaseManager.setUserPurchaseData()
-                
                 User.shared.showLogin = false
             }
             
