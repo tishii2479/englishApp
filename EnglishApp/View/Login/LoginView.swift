@@ -49,7 +49,7 @@ struct LoginView: View {
                         Text("ログインする")
                     }
                     .alert(isPresented: self.$isShowingAlert) {
-                        Alert(title: Text(self.errorMessage))
+                        Alert(title: Text("エラー"), message: Text(self.errorMessage))
                     }
                     .buttonStyle(WideButtonStyle())
                     
@@ -63,7 +63,7 @@ struct LoginView: View {
                         Text("登録してはじめる")
                     }
                     .alert(isPresented: self.$isShowingAlert) {
-                        Alert(title: Text(self.errorMessage))
+                        Alert(title: Text("エラー"), message: Text(self.errorMessage))
                     }
                     .buttonStyle(WideButtonStyle())
                 }
@@ -103,7 +103,7 @@ struct LoginView: View {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 print(error)
-                self.errorMessage = "メールアドレスまたはパスワードが不正です。"
+                self.errorMessage = "アカウントが見つかりません。"
                 self.isShowingAlert = true
             } else {
                 // Success
