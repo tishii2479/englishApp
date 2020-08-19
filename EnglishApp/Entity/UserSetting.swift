@@ -52,6 +52,7 @@ class UserSetting {
             
             setUpWorkbooks()
             resetQuestionData()
+            
             userDefaults.set(version, forKey: "appVersion")
         }
         // 新しいバージョンがある時
@@ -70,7 +71,7 @@ class UserSetting {
             print("normal activate")
             setUpWorkbooks()
         }
-
+        
         // 今日最初の起動かどうか
         if todayDate != userDefaults.string(forKey: "recentActivation") {
             print("first activation of today")
@@ -81,7 +82,13 @@ class UserSetting {
         
         UserDefaultsHelper.setUpUserInformation()
         
+        if User.shared.email == "" {
+            User.shared.showLogin = true
+        }
+        
         User.shared.isLoading = false
+        
+        print(User.shared.email)
         print("load completed")
     }
     
@@ -197,5 +204,38 @@ class UserSetting {
                 RealmDecoder.addDataToRealm(datas: [newWorkbook])
             }
         }
+    }
+    
+    // 正解数、不正解数をリロード
+    static func reloadData() {
+        
+        guard let questionArr: Results<Question> = RealmDecoder.fetchAllDatas(filter: nil),
+            let workbookArr: Results<Workbook> = RealmDecoder.fetchAllDatas(filter: nil) else {
+                print("failed to reloadData")
+                return
+        }
+        
+        var correctCount: Int = 0
+        var missCount: Int = 0
+        var completedWorkbookCount: Int = 0
+        
+        for q in questionArr {
+            correctCount += q.correctCount
+            missCount += q.missCount
+        }
+        
+        for w in workbookArr {
+            if w.isCleared {
+                completedWorkbookCount += 1
+            }
+        }
+        
+        UserDefaults.standard.set(correctCount, forKey: "totalCorrectCount")
+        UserDefaults.standard.set(missCount, forKey: "totalMissCount")
+        UserDefaults.standard.set(completedWorkbookCount, forKey: "completedWorkbookCount")
+        
+        User.shared.totalCorrectCount = correctCount
+        User.shared.totalMissCount = missCount
+        User.shared.completedWorkbookCount = completedWorkbookCount
     }
 }

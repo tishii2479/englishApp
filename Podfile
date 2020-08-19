@@ -7,11 +7,18 @@ target 'EnglishApp' do
 
   # Pods for EnglishApp
   
+  # Firebase
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Crashlytics'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  
+  # Other
   pod 'RealmSwift'
   pod 'Siren'
-  
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Crashlytics'
   pod 'LicensePlist'
   pod 'SwiftyStoreKit'
 

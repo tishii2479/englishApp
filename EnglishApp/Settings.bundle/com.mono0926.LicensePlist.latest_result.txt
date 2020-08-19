@@ -1,30 +1,58 @@
+name: abseil, nameSpecified: 
+body: 
+                   …
+version: 0.20200225.0
+
+name: abseil, nameSpecified: 
+body: 
+                   …
+version: 0.20200225.0
+
+name: BoringSSL-GRPC, nameSpecified: 
+body: BoringSSL is a fork …
+version: 0.0.7
+
+name: BoringSSL-GRPC, nameSpecified: 
+body: BoringSSL is a fork …
+version: 0.0.7
+
 name: Firebase, nameSpecified: 
 body: 
                    …
-version: 6.28.1
+version: 6.30.0
 
 name: Firebase, nameSpecified: 
 body: 
                    …
-version: 6.28.1
+version: 6.30.0
 
 name: FirebaseAnalytics, nameSpecified: 
 body: Copyright 2020 Googl…
-version: 6.6.2
+version: 6.7.2
 
 name: FirebaseAnalytics, nameSpecified: 
 body: Copyright 2020 Googl…
-version: 6.6.2
+version: 6.7.2
+
+name: FirebaseAuth, nameSpecified: 
+body: 
+                   …
+version: 6.8.0
+
+name: FirebaseAuth, nameSpecified: 
+body: 
+                   …
+version: 6.8.0
 
 name: FirebaseCore, nameSpecified: 
 body: 
                    …
-version: 6.9.1
+version: 6.10.0
 
 name: FirebaseCore, nameSpecified: 
 body: 
                    …
-version: 6.9.1
+version: 6.10.0
 
 name: FirebaseCoreDiagnostics, nameSpecified: 
 body: 
@@ -39,50 +67,118 @@ version: 1.5.0
 name: FirebaseCrashlytics, nameSpecified: 
 body: 
                    …
-version: 4.3.0
+version: 4.4.0
 
 name: FirebaseCrashlytics, nameSpecified: 
 body: 
                    …
-version: 4.3.0
+version: 4.4.0
+
+name: FirebaseFirestore, nameSpecified: 
+body: 
+                   …
+version: 1.16.4
+
+name: FirebaseFirestore, nameSpecified: 
+body: 
+                   …
+version: 1.16.4
+
+name: FirebaseFirestoreSwift, nameSpecified: 
+body: 
+                   …
+version: 0.3.0
+
+name: FirebaseFirestoreSwift, nameSpecified: 
+body: 
+                   …
+version: 0.3.0
 
 name: FirebaseInstallations, nameSpecified: 
 body: 
                    …
-version: 1.5.0
+version: 1.6.0
 
 name: FirebaseInstallations, nameSpecified: 
 body: 
                    …
-version: 1.5.0
+version: 1.6.0
+
+name: FirebaseStorage, nameSpecified: 
+body: 
+                   …
+version: 3.9.0
+
+name: FirebaseStorage, nameSpecified: 
+body: 
+                   …
+version: 3.9.0
 
 name: GoogleAppMeasurement, nameSpecified: 
 body: Copyright 2020 Googl…
-version: 6.6.2
+version: 6.7.2
 
 name: GoogleAppMeasurement, nameSpecified: 
 body: Copyright 2020 Googl…
-version: 6.6.2
+version: 6.7.2
 
 name: GoogleDataTransport, nameSpecified: 
 body: 
                    …
-version: 7.0.0
+version: 7.2.0
 
 name: GoogleDataTransport, nameSpecified: 
 body: 
                    …
-version: 7.0.0
+version: 7.2.0
 
 name: GoogleUtilities, nameSpecified: 
 body: 
                    …
-version: 6.7.1
+version: 6.7.2
 
 name: GoogleUtilities, nameSpecified: 
 body: 
                    …
-version: 6.7.1
+version: 6.7.2
+
+name: gRPC-C++, nameSpecified: 
+body: 
+                   …
+version: 
+
+name: gRPC-C++, nameSpecified: 
+body: 
+                   …
+version: 
+
+name: gRPC-Core, nameSpecified: 
+body: 
+                   …
+version: 1.28.2
+
+name: gRPC-Core, nameSpecified: 
+body: 
+                   …
+version: 1.28.2
+
+name: GTMSessionFetcher, nameSpecified: 
+body: 
+                   …
+version: 1.4.0
+
+name: GTMSessionFetcher, nameSpecified: 
+body: 
+                   …
+version: 1.4.0
+
+name: leveldb-library, nameSpecified: 
+body: Copyright (c) 2011 T…
+version: 1.22
+
+name: leveldb-library, nameSpecified: 
+body: Copyright (c) 2011 T…
+version: 1.22
 
 name: LicensePlist, nameSpecified: 
 body: MIT License
@@ -107,36 +203,36 @@ version: 1.30905.0
 name: PromisesObjC, nameSpecified: 
 body: 
                    …
-version: 1.2.9
+version: 1.2.10
 
 name: PromisesObjC, nameSpecified: 
 body: 
                    …
-version: 1.2.9
+version: 1.2.10
 
 name: Realm, nameSpecified: 
 body: TABLE OF CONTENTS
 
 1…
-version: 5.3.2
+version: 5.3.4
 
 name: Realm, nameSpecified: 
 body: TABLE OF CONTENTS
 
 1…
-version: 5.3.2
+version: 5.3.4
 
 name: RealmSwift, nameSpecified: 
 body: TABLE OF CONTENTS
 
 1…
-version: 5.3.2
+version: 5.3.4
 
 name: RealmSwift, nameSpecified: 
 body: TABLE OF CONTENTS
 
 1…
-version: 5.3.2
+version: 5.3.4
 
 name: Siren, nameSpecified: 
 body: The MIT License (MIT…

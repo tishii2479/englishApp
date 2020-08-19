@@ -7,11 +7,10 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct TutorialFirstView: View {
-    
-    @Binding var isShowingTutorial: Bool
-    
+
     var body: some View {
         ZStack {
             Color.offWhite
@@ -32,8 +31,6 @@ struct TutorialFirstView: View {
 }
 
 struct TutorialSecondView: View {
-    
-    @Binding var isShowingTutorial: Bool
     
     var body: some View {
         ZStack {
@@ -56,9 +53,6 @@ struct TutorialSecondView: View {
 }
 
 struct TutorialThirdView: View {
-    
-    @Binding var isShowingTutorial: Bool
-    
     var body: some View {
         ZStack {
             Color.offWhite
@@ -80,9 +74,6 @@ struct TutorialThirdView: View {
 }
 
 struct TutorialFourthView: View {
-    
-    @Binding var isShowingTutorial: Bool
-    
     var body: some View {
         ZStack {
             Color.offWhite
@@ -103,3 +94,37 @@ struct TutorialFourthView: View {
     
 }
 
+struct TutorialFinalView: View {
+    
+    var appleSignInManager = AppleSignInManager()
+    
+    var body: some View {
+        ZStack {
+            Color.offWhite
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Spacer()
+                
+                Button(action: {
+                    self.showAppleLogin()
+                }) {
+                    SignInButton()
+                        .frame(width: 240, height: 50)
+                        .padding(.bottom, 30)
+                }
+            }
+            .padding(.horizontal, 30)
+        }
+    }
+    
+    private func showAppleLogin() {
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+
+        request.requestedScopes = [.fullName, .email]
+
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = appleSignInManager
+        controller.performRequests()
+    }
+}

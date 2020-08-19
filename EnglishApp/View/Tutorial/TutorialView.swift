@@ -10,8 +10,6 @@ import SwiftUI
 
 struct TutorialView: View {
     
-    @Binding var isShowingTutorial: Bool
-    
     @State var currentPage: Int = 0
     
     var body: some View {
@@ -20,10 +18,11 @@ struct TutorialView: View {
                 .edgesIgnoringSafeArea(.all)
             
             PageView([
-                AnyView(TutorialFirstView(isShowingTutorial: self.$isShowingTutorial)),
-                AnyView(TutorialSecondView(isShowingTutorial: self.$isShowingTutorial)),
-                AnyView(TutorialThirdView(isShowingTutorial: self.$isShowingTutorial)),
-                AnyView(TutorialFourthView(isShowingTutorial: self.$isShowingTutorial))
+                AnyView(TutorialFirstView()),
+                AnyView(TutorialSecondView()),
+                AnyView(TutorialThirdView()),
+                AnyView(TutorialFourthView()),
+                AnyView(TutorialFinalView()),
             ], currentPage: $currentPage)
         }
     }
@@ -31,6 +30,6 @@ struct TutorialView: View {
 
 struct TutorialView_Previews: PreviewProvider {
     static var previews: some View {
-        TutorialView(isShowingTutorial: Binding.constant(true))
+        TutorialView()
     }
 }

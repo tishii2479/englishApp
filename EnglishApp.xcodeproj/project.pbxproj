@@ -35,6 +35,13 @@
 		49131DCE24C860BC00BBB379 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49131DCD24C860BC00BBB379 /* UserDefaultsHelper.swift */; };
 		491DBFD524B0A9D600A24A79 /* CSVDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */; };
 		491DBFDA24B0C2EE00A24A79 /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 491DBFD924B0C2EE00A24A79 /* QGrid */; };
+		4926A21924EB85B300124756 /* RestoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4926A21824EB85B300124756 /* RestoreView.swift */; };
+		4926A21B24EB8E5300124756 /* DentTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4926A21A24EB8E5300124756 /* DentTextField.swift */; };
+		4926A21D24EB8F4700124756 /* FieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4926A21C24EB8F4700124756 /* FieldType.swift */; };
+		4926A21F24EB916500124756 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4926A21E24EB916500124756 /* UIApplication.swift */; };
+		4926A22124EBAF5900124756 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4926A22024EBAF5800124756 /* FirebaseManager.swift */; };
+		4926A22424EBCE3B00124756 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4926A22324EBCE3B00124756 /* SignInButton.swift */; };
+		4926A22824EBD27600124756 /* AppleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4926A22724EBD27600124756 /* AppleSignInManager.swift */; };
 		4931A03924B20ED100C26AFD /* CountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A03824B20ED100C26AFD /* CountType.swift */; };
 		4931A03B24B2121400C26AFD /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931A03A24B2121400C26AFD /* Date.swift */; };
 		4937B3C224DFAEFE006AC1C6 /* CoinWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4937B3C124DFAEFE006AC1C6 /* CoinWindowView.swift */; };
@@ -203,6 +210,7 @@
 		49B94D7724C2EDCE009B0D13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49B94D7624C2EDCE009B0D13 /* GoogleService-Info.plist */; };
 		49BED2CC24C2E34600684B70 /* SettingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BED2CB24C2E34600684B70 /* SettingTextView.swift */; };
 		49BED2CE24C2E7A400684B70 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BED2CD24C2E7A400684B70 /* LoadingView.swift */; };
+		49C991E824ED02BA0092E50E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C991E724ED02BA0092E50E /* LoginView.swift */; };
 		49E1A56224ACAF59008EC140 /* QuestionSolveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56124ACAF59008EC140 /* QuestionSolveView.swift */; };
 		49E1A56524ACB087008EC140 /* QuestionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56424ACB087008EC140 /* QuestionResultView.swift */; };
 		49E1A56724ACB0E5008EC140 /* QuestionStartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1A56624ACB0E5008EC140 /* QuestionStartView.swift */; };
@@ -272,6 +280,14 @@
 		490F870824B07CBD00EF5622 /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		49131DCD24C860BC00BBB379 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		491DBFD424B0A9D600A24A79 /* CSVDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSVDecoder.swift; sourceTree = "<group>"; };
+		4926A21824EB85B300124756 /* RestoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreView.swift; sourceTree = "<group>"; };
+		4926A21A24EB8E5300124756 /* DentTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DentTextField.swift; sourceTree = "<group>"; };
+		4926A21C24EB8F4700124756 /* FieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldType.swift; sourceTree = "<group>"; };
+		4926A21E24EB916500124756 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		4926A22024EBAF5800124756 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		4926A22224EBCC0C00124756 /* EnglishApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EnglishApp.entitlements; sourceTree = "<group>"; };
+		4926A22324EBCE3B00124756 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
+		4926A22724EBD27600124756 /* AppleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInManager.swift; sourceTree = "<group>"; };
 		4931A03824B20ED100C26AFD /* CountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountType.swift; sourceTree = "<group>"; };
 		4931A03A24B2121400C26AFD /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		4937B3C124DFAEFE006AC1C6 /* CoinWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinWindowView.swift; sourceTree = "<group>"; };
@@ -446,6 +462,7 @@
 		49B94D7624C2EDCE009B0D13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49BED2CB24C2E34600684B70 /* SettingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTextView.swift; sourceTree = "<group>"; };
 		49BED2CD24C2E7A400684B70 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		49C991E724ED02BA0092E50E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		49E1A56124ACAF59008EC140 /* QuestionSolveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSolveView.swift; sourceTree = "<group>"; };
 		49E1A56424ACB087008EC140 /* QuestionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResultView.swift; sourceTree = "<group>"; };
 		49E1A56624ACB0E5008EC140 /* QuestionStartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionStartView.swift; sourceTree = "<group>"; };
@@ -538,6 +555,7 @@
 				495BBFC124DCE2F200A35B25 /* CustomTabBar.swift */,
 				49E9849024DE6F09002783FE /* LoadingCircle.swift */,
 				4937B3C124DFAEFE006AC1C6 /* CoinWindowView.swift */,
+				4926A21A24EB8E5300124756 /* DentTextField.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -594,6 +612,7 @@
 			children = (
 				4931A03824B20ED100C26AFD /* CountType.swift */,
 				49F3B79924BEB00800012B94 /* SolveMode.swift */,
+				4926A21C24EB8F4700124756 /* FieldType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -606,6 +625,8 @@
 				4904486124B17F1000391FE5 /* RealmDecoder.swift */,
 				490BE05C24BF3A4C00E0F1F9 /* QuestionAudioPlayer.swift */,
 				49131DCD24C860BC00BBB379 /* UserDefaultsHelper.swift */,
+				4926A22024EBAF5800124756 /* FirebaseManager.swift */,
+				4926A22724EBD27600124756 /* AppleSignInManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -637,6 +658,7 @@
 		496CAEDB24AB1CF000F290E9 /* EnglishApp */ = {
 			isa = PBXGroup;
 			children = (
+				4926A22224EBCC0C00124756 /* EnglishApp.entitlements */,
 				496CAEDC24AB1CF000F290E9 /* AppDelegate.swift */,
 				496CAEDE24AB1CF000F290E9 /* SceneDelegate.swift */,
 				4931A03724B20EC300C26AFD /* Enum */,
@@ -686,6 +708,7 @@
 		496CAF0C24AB1DB700F290E9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49C991E624ED02B20092E50E /* Login */,
 				49F213FD24E8D76100A2E265 /* Navigation */,
 				49F213F824E8D4A400A2E265 /* Tutorial */,
 				490F86EB24B01EE200EF5622 /* Shared */,
@@ -720,6 +743,7 @@
 				4931A03A24B2121400C26AFD /* Date.swift */,
 				49F213F424E8D45500A2E265 /* PageViewController.swift */,
 				49F213F624E8D47400A2E265 /* PageView.swift */,
+				4926A21E24EB916500124756 /* UIApplication.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -889,6 +913,14 @@
 			path = 1_0;
 			sourceTree = "<group>";
 		};
+		49C991E624ED02B20092E50E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				49C991E724ED02BA0092E50E /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		49E1A56A24ACB116008EC140 /* Question */ = {
 			isa = PBXGroup;
 			children = (
@@ -911,6 +943,7 @@
 			children = (
 				49E9848824DE4C63002783FE /* ShopView.swift */,
 				49E9848A24DE4F14002783FE /* ShopCellView.swift */,
+				4926A21824EB85B300124756 /* RestoreView.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -920,6 +953,7 @@
 			children = (
 				49F213F924E8D4B800A2E265 /* TutorialView.swift */,
 				49F213FB24E8D5D400A2E265 /* TutorialViewPages.swift */,
+				4926A22324EBCE3B00124756 /* SignInButton.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -1396,6 +1430,8 @@
 				4931A03B24B2121400C26AFD /* Date.swift in Sources */,
 				496CAEDD24AB1CF000F290E9 /* AppDelegate.swift in Sources */,
 				490F86F124B030BF00EF5622 /* HomeViewModel.swift in Sources */,
+				4926A22824EBD27600124756 /* AppleSignInManager.swift in Sources */,
+				49C991E824ED02BA0092E50E /* LoginView.swift in Sources */,
 				49F31A4924D974ED0075FA86 /* QuestionBackView.swift in Sources */,
 				496CAF1124AB218800F290E9 /* Color.swift in Sources */,
 				490F86FF24B062A900EF5622 /* WorkbookView.swift in Sources */,
@@ -1405,6 +1441,7 @@
 				4950F13124B9602700466674 /* CustomNavigationBar.swift in Sources */,
 				490F86E624B0162500EF5622 /* HomeView.swift in Sources */,
 				496CAF0F24AB20DB00F290E9 /* QuestionView.swift in Sources */,
+				4926A22124EBAF5900124756 /* FirebaseManager.swift in Sources */,
 				49E9848B24DE4F14002783FE /* ShopCellView.swift in Sources */,
 				490F86E824B0198B00EF5622 /* ProgressCircleView.swift in Sources */,
 				496CAF1424AB21E600F290E9 /* ButtonStyle.swift in Sources */,
@@ -1432,6 +1469,7 @@
 				499919F924DD6468009B45D4 /* WorkbookGenreCollectionView.swift in Sources */,
 				49F213F524E8D45500A2E265 /* PageViewController.swift in Sources */,
 				490F86F824B0521D00EF5622 /* WorkbookCellView.swift in Sources */,
+				4926A21924EB85B300124756 /* RestoreView.swift in Sources */,
 				495BBFC624DCFAF400A35B25 /* WorkbookGenreCellView.swift in Sources */,
 				49E9848924DE4C63002783FE /* ShopView.swift in Sources */,
 				4904486E24B1DF8100391FE5 /* UserDefaults.swift in Sources */,
@@ -1444,10 +1482,14 @@
 				490F870624B0741400EF5622 /* SettingView.swift in Sources */,
 				490F870124B065F400EF5622 /* WorkbookViewModel.swift in Sources */,
 				490F86EF24B0292B00EF5622 /* HomeDetailTextView.swift in Sources */,
+				4926A22424EBCE3B00124756 /* SignInButton.swift in Sources */,
 				49BED2CC24C2E34600684B70 /* SettingTextView.swift in Sources */,
 				496CAF1624AB238300F290E9 /* ChoiceButtonView.swift in Sources */,
 				49E1A56724ACB0E5008EC140 /* QuestionStartView.swift in Sources */,
+				4926A21F24EB916500124756 /* UIApplication.swift in Sources */,
+				4926A21B24EB8E5300124756 /* DentTextField.swift in Sources */,
 				49E9848624DE4BA3002783FE /* ShopButtonView.swift in Sources */,
+				4926A21D24EB8F4700124756 /* FieldType.swift in Sources */,
 				4904486C24B1D6AE00391FE5 /* HomeNavigationButtonView.swift in Sources */,
 				4904486224B17F1000391FE5 /* RealmDecoder.swift in Sources */,
 				49F3B79E24BEF3D800012B94 /* Category.swift in Sources */,
@@ -1628,6 +1670,7 @@
 			baseConfigurationReference = 7386E48E2950A9DF925D34F3 /* Pods-EnglishApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EnglishApp/EnglishApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1652,6 +1695,7 @@
 			baseConfigurationReference = 9A40F8D62C2AEDFBEC2842DB /* Pods-EnglishApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EnglishApp/EnglishApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_ASSET_PATHS = "\"EnglishApp/Preview Content\"";

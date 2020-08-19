@@ -31,7 +31,11 @@ class User: ObservableObject {
     
     var showCorrectness: Bool = true
     
-    var isLoading: Bool = true
+    @Published var isLoading: Bool = true
+    
+    @Published var showLogin: Bool = false
+    
+    var email: String = ""
     
     static let shared = User()
     
@@ -69,6 +73,8 @@ class User: ObservableObject {
         coin += difference
         
         UserDefaults.standard.set(coin, forKey: "coin")
+        
+        FirebaseManager.setUserPurchaseData()
     }
 
     func setUserSetting(key: String, value: Int) {

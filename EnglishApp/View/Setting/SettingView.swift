@@ -20,9 +20,19 @@ struct SettingView: View {
     
     @State var isLoading: Bool = false
     
+    @State var errorMessage: String = ""
+    
     @Binding var isPresented: Bool
     
     var user = User.shared
+    
+    @State var alertType: AlertType = .restoreAll
+    
+    enum AlertType {
+        case restoreAll
+        case backup
+        case completion
+    }
     
     var body: some View {
         return NavigationView {
@@ -34,6 +44,15 @@ struct SettingView: View {
                     VStack {
                         Form {
                             Section(header: Text("ユーザー設定")) {
+                                HStack {
+                                    Text("ユーザID")
+                                    
+                                    Spacer()
+                                    
+                                    Text(self.user.email)
+                                        .foregroundColor(Color.offGray)
+                                }
+                                
                                 Picker(selection: self.$timePerQuestion, label: Text("一問あたりの時間")) {
                                     Text("10").tag(10)
                                     Text("15").tag(15)
@@ -71,6 +90,23 @@ struct SettingView: View {
                                 }
                             }
                             
+                            Section(header: Text("学習データ")) {
+                                NavigationLink(destination: RestoreView(option: .backup)) {
+                                    HStack {
+                                        Text("学習データをバックアップする")
+                                        Spacer()
+                                    }
+                                }
+                               
+                                NavigationLink(destination: RestoreView(option: .restore)) {
+                                    HStack {
+                                        Text("学習データを復元する")
+                                            .foregroundColor(Color.offRed)
+                                        Spacer()
+                                    }
+                                }
+                            }
+                            
                             Section(header: Text("このアプリについて")) {
                                 HStack {
                                     Text("バージョン")
@@ -81,15 +117,26 @@ struct SettingView: View {
                                 
                                 // TODO: これらのタップアクションの処理
                                 NavigationLink(destination: SettingTextView(content: TextData.termsOfService)) {
-                                    Text("利用規約")
+                                    HStack {
+                                        Text("利用規約")
+                                        Spacer()
+                                    }
                                 }
                                 NavigationLink(destination: SettingTextView(content: TextData.privacyPolicy)) {
-                                    Text("プライバシーポリシー")
+                                    HStack {
+                                        Text("プライバシーポリシー")
+                                        Spacer()
+                                    }
                                 }
                                 NavigationLink(destination: SettingTextView(content: TextData.contact)) {
-                                    Text("問い合わせ")
+                                    HStack {
+                                        Text("問い合わせ")
+                                        Spacer()
+                                    }
                                 }
                             }
+                            
+                            
                              
 //                            Section(header: Text("")) {
 //                                HStack {

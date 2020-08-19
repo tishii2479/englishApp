@@ -12,8 +12,6 @@ struct BaseView: View {
     
     @State var isShowingTabBar: Bool = true
     
-    @State var isShowingTutorial: Bool = false
-    
     @State var selectedIndex: Int = 0
     
     @ObservedObject var user: User = User.shared
@@ -22,6 +20,8 @@ struct BaseView: View {
         ZStack {
             if user.isLoading {
                 LoadingView()
+            } else if user.showLogin {
+                LoginView()
             } else {
                 Group {
                     if selectedIndex == 0 {
@@ -41,10 +41,6 @@ struct BaseView: View {
                     }
                 }
                 .padding(.top, 40)
-                
-                if isShowingTutorial {
-                    TutorialView(isShowingTutorial: self.$isShowingTutorial)
-                }
             }
         }
     }

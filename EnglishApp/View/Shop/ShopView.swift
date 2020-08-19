@@ -81,6 +81,9 @@ struct ShopView: View {
                         NavigationLink(destination: SettingTextView(content: TextData.commericalTransaction)) {
                             Text("特定商取引に基づく表示")
                         }
+                        
+                        Color.offWhite
+                            .frame(height: 50)
                     }
                 }
                 .navigationBarTitle("ショップ", displayMode: .inline)

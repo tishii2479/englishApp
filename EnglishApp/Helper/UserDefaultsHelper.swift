@@ -22,6 +22,7 @@ class UserDefaultsHelper {
         User.shared.totalMissCount              = userDefaults.integer(forKey: "totalMissCount")
         User.shared.completedWorkbookCount      = userDefaults.integer(forKey: "completedWorkbookCount")
         User.shared.coin                        = userDefaults.integer(forKey: "coin")
+        User.shared.email                       = userDefaults.string(forKey: "email") ?? ""
     }
     
     static func resetUserInformation() {
