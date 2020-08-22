@@ -21,167 +21,66 @@ struct RestoreView: View {
     
     @State var isProcessing: Bool = false
     
-    enum Option {
-        case backup
-        case restore
-    }
+    @ObservedObject var screenSwitcher: ScreenSwitcher = ScreenSwitcher.shared
     
-    @State var option: Option
-
     var body: some View {
-        contentView()
-    }
-    
-    private func contentView() -> AnyView {
-        switch option {
-        case .backup:
-            return AnyView(
-                ZStack {
-                    Color.offWhite
-                        .edgesIgnoringSafeArea(.all)
-                    
-                    VStack {
-                        Text("学習データのバックアップ")
-                            .font(.headline)
-                            .bold()
-                            .multilineTextAlignment(.center)
-                            .padding(.bottom, 20)
-                        
-                        DentTextField(placeHolder: "メールアドレス", text: $email, fieldType: .email, isEditable: false)
-                        
-                        Button(action: {
-                            UIApplication.shared.closeKeyboard()
-                            
-                            self.backup()
-                        }) {
-                            Text("学習データをバックアップする")
-                        }
-                        .buttonStyle(WideButtonStyle())
-                        .alert(isPresented: self.$isShowingAlert) {
-                            if self.errorMessage == "" {
-                                return Alert(title: Text("学習データをバックアップしました。"))
-                            } else {
-                                return Alert(title: Text("学習データのバックアップに失敗しました。"), message: Text(self.errorMessage))
-                            }
-                        }
-                        
-                        Text("不具合が生じた方はeidoku1234@gmail.comにお問い合わせください。")
-                            .font(.caption)
-                            .fontWeight(.light)
-                            .padding(.top, 20)
-                        
-                        Spacer()
-                    }
-                    .padding(.horizontal, 30)
-                }
-                .gesture(
-                    TapGesture()
-                        .onEnded { _ in
-                            UIApplication.shared.closeKeyboard()
-                    }
-                )
-            )
-        case .restore:
-            return AnyView(
-                ZStack {
-                    Color.offWhite
-                        .edgesIgnoringSafeArea(.all)
-                    
-                    VStack {
-                        Text("学習データの復元")
-                            .font(.headline)
-                            .bold()
-                            .multilineTextAlignment(.center)
-                            .padding(.bottom, 20)
-                        
-                        DentTextField(placeHolder: "メールアドレス", text: $email, fieldType: .email, isEditable: false)
-                            
-                        Button(action: {
-                            UIApplication.shared.closeKeyboard()
-                            
-                            self.restore()
-                        }) {
-                            Text("学習データを復元する")
-                        }
-                        .buttonStyle(WideButtonStyle())
-                        .alert(isPresented: self.$isShowingAlert) {
-                            if self.errorMessage == "" {
-                                return Alert(title: Text("学習データの復元に成功しました。"), message: Text("アプリを一度再起動するとデータが反映されます。"))
-                            } else {
-                                return Alert(title: Text("学習データの復元に失敗しました。"), message: Text(self.errorMessage))
-                            }
-                        }
-                        
-                        Text("不具合が生じた方はeidoku1234@gmail.comにお問い合わせください。")
-                            .font(.caption)
-                            .fontWeight(.light)
-                            .padding(.top, 20)
-                        
-                        Spacer()
-                    }
-                    .padding(.horizontal, 30)
-                }
-                .gesture(
-                    TapGesture()
-                        .onEnded { _ in
-                            UIApplication.shared.closeKeyboard()
-                    }
-                )
-            )
-        }
-        
-    }
-    
-    private func backup() {
-        
-        let todayDate: String = Date.getTodayDate()
-        
-        if todayDate == UserDefaults.standard.string(forKey: "lastBackup") {
-            self.errorMessage = "バックアップは一日に一回しかできません。"
-            self.isShowingAlert = true
-            return
-        }
-        
-        if self.isProcessing { return }
-        
-        self.isProcessing = true
-        
-        if email == "" {
-            self.errorMessage = "メールアドレスが設定されていません。"
-            self.isProcessing = false
-            self.isShowingAlert = true
-            return
-        }
-    
-        FirebaseManager.setUserPurchaseData()
-        
-        let localFile = Realm.Configuration.defaultConfiguration.fileURL!
-        let storageRef = Storage.storage().reference()
-        let userDataRef = storageRef.child("userData/" + email + "/default.realm")
-        
-        let uploadTask = userDataRef.putFile(from: localFile, metadata: nil) { metadata, error in
-            if let _error = error {
-                print("upload error : \(_error)")
-                self.errorMessage = "エラー: 30001"
-            } else {
-                print("upload success : \(String(describing: metadata))")
+        ZStack {
+            Color.offWhite
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Text("学習データの復元")
+                    .font(.headline)
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .padding(.vertical, 20)
                 
-                UserDefaults.standard.set(todayDate, forKey: "lastBackup")
-                self.errorMessage = ""
+                DentTextField(placeHolder: "メールアドレス", text: $email, fieldType: .email, isEditable: false)
+
+                Text("注意!\nバックアップデータが古い場合には、学習データが失われる可能性があります。\nデータの復元を行う際には、必ず直前にバックアップを取った状態で行ってください。")
+                    .font(.caption)
+                    .fontWeight(.light)
+                    .foregroundColor(Color.red)
+                    .padding(.vertical, 10)
+                
+                Button(action: {
+                    UIApplication.shared.closeKeyboard()
+                    
+                    self.restore()
+                }) {
+                    Text("学習データを復元する")
+                }
+                .buttonStyle(WideButtonStyle())
+                .alert(isPresented: self.$isShowingAlert) {
+                    if self.errorMessage == "" {
+                        return Alert(title: Text("学習データの復元に成功しました。"), message: Text("アプリを一度再起動するとデータが反映されます。"))
+                    } else {
+                        return Alert(title: Text("学習データの復元に失敗しました。"), message: Text(self.errorMessage))
+                    }
+                }
+                
+                Text("不具合が生じた方はeidoku1234@gmail.comにお問い合わせください。")
+                    .font(.caption)
+                    .fontWeight(.light)
+                    .padding(.top, 20)
+                
+                Spacer()
             }
+            .padding(.horizontal, 30)
             
-            self.isProcessing = false
-            self.isShowingAlert = true
+            if screenSwitcher.isLoading {
+                LoadingIndicatorView()
+            }
         }
-        
-        uploadTask.observe(.progress) { snapshot in
-            let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
-            / Double(snapshot.progress!.totalUnitCount)
-            
-            print(percentComplete)
-        }
+        .gesture(
+            TapGesture()
+                .onEnded { _ in
+                    UIApplication.shared.closeKeyboard()
+            }
+        )
     }
     
+   
     private func restore() {
         
         let todayDate: String = Date.getTodayDate()
@@ -192,49 +91,57 @@ struct RestoreView: View {
             return
         }
         
-        if self.isProcessing { return }
-    
-        self.isProcessing = true
-        
         if self.email == "" {
             self.errorMessage = "メールアドレスが設定されていません。"
             self.isShowingAlert = true
             return
         }
         
+        if self.isProcessing { return }
+
+        ScreenSwitcher.shared.isLoading = true
+        self.isProcessing = true
+        
         let localURL = Realm.Configuration.defaultConfiguration.fileURL!
         let storage = Storage.storage()
         let userDataRef = storage.reference(withPath: "userData/" + email + "/default.realm")
         
-        userDataRef.downloadURL { url, error in
-            if let _error = error {
-                print("download error: \(_error)")
-                self.errorMessage = "バックアップデータが存在しません。"
-
-                self.isProcessing = false
-                self.isShowingAlert = true
-            } else {
-                let downloadTask = userDataRef.write(toFile: localURL) { url, error in
-                    if let _error = error {
-                        print("download error : \(_error)")
-                        self.errorMessage = "エラー: 30003"
-                    } else {
-                        print("download success")
-                        UserSetting.reloadData()
-                        
-                        UserDefaults.standard.set(todayDate, forKey: "lastRestore")
-                        self.errorMessage = FirebaseManager.getUserPurchaseData()
-                    }
-
+        DispatchQueue.global(qos: .utility).async {
+            userDataRef.downloadURL { url, error in
+                if let _error = error {
+                    print("download error: \(_error)")
+                    self.errorMessage = "バックアップデータが存在しません。"
+                    ScreenSwitcher.shared.isLoading = false
+                    
                     self.isProcessing = false
                     self.isShowingAlert = true
-                }
-                
-                downloadTask.observe(.progress) { snapshot in
-                    let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
-                    / Double(snapshot.progress!.totalUnitCount)
+                } else {
+                    let downloadTask = userDataRef.write(toFile: localURL) { url, error in
+                        if let _error = error {
+                            print("download error : \(_error)")
+                            self.errorMessage = "エラー: 30003"
+                        } else {
+                            print("download success")
+                            
+                            UserDefaults.standard.set(todayDate, forKey: "lastRestore")
+                            UserDefaults.standard.set(true, forKey: "needReload")
+                            
+                            self.errorMessage = FirebaseManager.getUserPurchaseData()
+                        }
+
+                        DispatchQueue.main.async {
+                            ScreenSwitcher.shared.isLoading = false
+                            self.isProcessing = false
+                            self.isShowingAlert = true
+                        }
+                    }
                     
-                    print(percentComplete)
+                    downloadTask.observe(.progress) { snapshot in
+                        let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount)
+                        / Double(snapshot.progress!.totalUnitCount)
+                        
+                        print(percentComplete)
+                    }
                 }
             }
         }
@@ -243,6 +150,6 @@ struct RestoreView: View {
 
 struct RestoreView_Previews: PreviewProvider {
     static var previews: some View {
-        RestoreView(option: .backup)
+        RestoreView()
     }
 }

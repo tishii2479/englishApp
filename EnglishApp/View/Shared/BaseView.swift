@@ -16,14 +16,14 @@ struct BaseView: View {
     
     @ObservedObject var user: User = User.shared
     
+    @ObservedObject var screenSwitcher: ScreenSwitcher = ScreenSwitcher.shared
+    
     var body: some View {
         ZStack {
-            if user.isLoading {
-                LoadingView()
-            } else if user.showLogin {
+            if screenSwitcher.showLogin {
                 LoginView()
             } else {
-                Group {
+                ZStack {
                     if selectedIndex == 0 {
                         HomeView(homeViewModel: HomeViewModel(), isShowingTabBar: $isShowingTabBar)
                     } else if selectedIndex == 1 {
@@ -41,6 +41,10 @@ struct BaseView: View {
                     }
                 }
                 .padding(.top, 40)
+
+                if screenSwitcher.isLoading {
+                    LoadingIndicatorView()
+                }
             }
         }
     }

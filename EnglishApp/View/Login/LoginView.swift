@@ -110,7 +110,7 @@ struct LoginView: View {
                 UserDefaults.standard.set(self.email, forKey: "email")
                 User.shared.email = self.email
                 
-                User.shared.showLogin = false
+                ScreenSwitcher.shared.showLogin = false
             }
             
             self.isProcessing = false
@@ -154,7 +154,7 @@ struct LoginView: View {
                 
                 FirebaseManager.setUserPurchaseData()
                 
-                User.shared.showLogin = false
+                ScreenSwitcher.shared.showLogin = false
             }
             self.isProcessing = false
         }

@@ -31,10 +31,6 @@ class User: ObservableObject {
     
     var showCorrectness: Bool = true
     
-    @Published var isLoading: Bool = true
-    
-    @Published var showLogin: Bool = false
-    
     var email: String = ""
     
     static let shared = User()

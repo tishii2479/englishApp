@@ -22,9 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             
-            DispatchQueue.main.async {
-                UserSetting.setUp()
-            }
+            UserSetting.setUp()
             
             let baseView = BaseView()
             window.rootViewController = UIHostingController(rootView: baseView)

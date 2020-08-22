@@ -98,7 +98,6 @@ struct SettingView: View {
                                         .fontWeight(.light)
                                 }
                                 
-                                // TODO: これらのタップアクションの処理
                                 NavigationLink(destination: SettingTextView(content: TextData.termsOfService)) {
                                     HStack {
                                         Text("利用規約")
@@ -120,14 +119,14 @@ struct SettingView: View {
                             }
                             
                             Section(header: Text("学習データ")) {
-                                NavigationLink(destination: RestoreView(option: .backup)) {
+                                NavigationLink(destination: BackupView()) {
                                     HStack {
                                         Text("学習データをバックアップする")
                                         Spacer()
                                     }
                                 }
                                
-                                NavigationLink(destination: RestoreView(option: .restore)) {
+                                NavigationLink(destination: RestoreView()) {
                                     HStack {
                                         Text("学習データを復元する")
                                             .foregroundColor(Color.offRed)
@@ -163,12 +162,6 @@ struct SettingView: View {
 //                                }
 //                            }
                         }
-                    }
-                }
-                
-                Group {
-                    if isLoading {
-                        LoadingCircle()
                     }
                 }
             }
