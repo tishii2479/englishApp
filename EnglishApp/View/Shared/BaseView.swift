@@ -21,7 +21,7 @@ struct BaseView: View {
     var body: some View {
         ZStack {
             if screenSwitcher.showLogin {
-                LoginView()
+                StartView()
             } else {
                 ZStack {
                     if selectedIndex == 0 {

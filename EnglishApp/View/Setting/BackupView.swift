@@ -35,7 +35,7 @@ struct BackupView: View {
                     .multilineTextAlignment(.center)
                     .padding(.vertical, 20)
                 
-                DentTextField(placeHolder: "メールアドレス", text: $email, fieldType: .email, isEditable: false)
+                DentTextField(placeHolder: "メールアドレス", text: email != "" ? $email : Binding.constant("未設定"), fieldType: .email, isEditable: false)
                 
                 Text("端末を引き継ぐ際に、バックアップを取るようにしてください。\nバックアップが取れていない場合、学習データの復旧は行うことができません。")
                     .font(.caption)

@@ -1,15 +1,15 @@
 //
-//  LoginView.swift
+//  SetEmailView.swift
 //  EnglishApp
 //
-//  Created by Tatsuya Ishii on 2020/08/19.
+//  Created by Tatsuya Ishii on 2020/09/01.
 //  Copyright © 2020 Tatsuya Ishii. All rights reserved.
 //
 
 import SwiftUI
 import FirebaseAuth
 
-struct LoginView: View {
+struct SetEmailView: View {
     
     @Environment(\.presentationMode) var presentation: Binding<PresentationMode>
     
@@ -21,7 +21,9 @@ struct LoginView: View {
     
     @State var isProcessing: Bool = false
     
-    @State var errorMessage: String = ""
+    @State var title: String = ""
+    
+    @State var message: String = ""
     
     @State var isLogin: Bool = false
     
@@ -31,23 +33,11 @@ struct LoginView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                Image("Icon")
-                    .resizable()
-                    .frame(width: 180, height: 180)
-                    .padding(.vertical, 40)
-                
-                HStack {
-                    Button(action: {
-                        self.presentation.wrappedValue.dismiss()
-                    }) {
-                        Text("< 戻る")
-                            .font(.footnote)
-                    }
-                    
-                    Spacer()
-                }
-                .padding(.horizontal, 40)
-                .padding(.bottom, 5)
+                Text("メールアドレスの設定")
+                    .font(.headline)
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .padding(.vertical, 20)
                 
                 DentTextField(placeHolder: "メールアドレス", text: $email, fieldType: .email, isEditable: true)
 
@@ -64,7 +54,7 @@ struct LoginView: View {
                         Text("ログインする")
                     }
                     .alert(isPresented: self.$isShowingAlert) {
-                        Alert(title: Text("エラー"), message: Text(self.errorMessage))
+                        Alert(title: Text(self.title), message: Text(self.message))
                     }
                     .buttonStyle(WideButtonStyle())
                     
@@ -78,7 +68,7 @@ struct LoginView: View {
                         Text("登録する")
                     }
                     .alert(isPresented: self.$isShowingAlert) {
-                        Alert(title: Text("エラー"), message: Text(self.errorMessage))
+                        Alert(title: Text(self.title), message: Text(self.message))
                     }
                     .buttonStyle(WideButtonStyle())
                 }
@@ -102,8 +92,6 @@ struct LoginView: View {
                 Spacer()
             }
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
         .gesture(
             TapGesture()
                 .onEnded { _ in
@@ -113,6 +101,14 @@ struct LoginView: View {
     }
     
     private func login() {
+        
+        if User.shared.email != "" {
+            self.title = "エラー"
+            self.message = "既に登録しています。"
+            self.isShowingAlert = true
+            return
+        }
+        
         if self.isProcessing { return }
         
         self.isProcessing = true
@@ -120,15 +116,17 @@ struct LoginView: View {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
             if let error = error {
                 print(error)
-                self.errorMessage = "アカウントが見つかりません。"
+                self.title = "エラー"
+                self.message = "アカウントが見つかりません。"
                 self.isShowingAlert = true
             } else {
                 // Success
-                UserDefaults.standard.set(true, forKey: "userStarted")
                 UserDefaults.standard.set(self.email, forKey: "email")
                 User.shared.email = self.email
-                
-                ScreenSwitcher.shared.showLogin = false
+
+                self.title = "ログインに成功しました"
+                self.message = "アプリを再起動後、設定が反映されます。"
+                self.isShowingAlert = true
             }
             
             self.isProcessing = false
@@ -137,6 +135,13 @@ struct LoginView: View {
     }
     
     private func authenticate() {
+        
+        if User.shared.email != "" {
+            self.title = "エラー"
+            self.message = "既に登録しています。"
+            self.isShowingAlert = true
+            return
+        }
         
         if self.isProcessing { return }
         
@@ -147,14 +152,16 @@ struct LoginView: View {
         let result = emailTest.evaluate(with: email)
         
         if result == false {
-            self.errorMessage = "入力がメールアドレスの形式でありません。"
+            self.title = "エラー"
+            self.message = "入力がメールアドレスの形式でありません。"
             self.isShowingAlert = true
             self.isProcessing = false
             return
         }
         
         if password.count < 6 {
-            self.errorMessage = "パスワードは6文字以上にしてください"
+            self.title = "エラー"
+            self.message = "パスワードは6文字以上にしてください"
             self.isShowingAlert = true
             self.isProcessing = false
             return
@@ -163,17 +170,19 @@ struct LoginView: View {
         Auth.auth().createUser(withEmail: self.email, password: self.password) { authResult, error in
             if let error = error {
                 print(error)
-                self.errorMessage = "メールアドレスまたはパスワードが不正です。"
+                self.title = "エラー"
+                self.message = "メールアドレスまたはパスワードが不正です。"
                 self.isShowingAlert = true
             } else {
                 // Success
-                UserDefaults.standard.set(true, forKey: "userStarted")
                 UserDefaults.standard.set(self.email, forKey: "email")
                 User.shared.email = self.email
                 
                 FirebaseManager.setUserPurchaseData()
                 
-                ScreenSwitcher.shared.showLogin = false
+                self.title = "登録に成功しました"
+                self.message = "アプリを再起動後、設定が反映されます。"
+                self.isShowingAlert = true
             }
             self.isProcessing = false
         }
@@ -181,8 +190,8 @@ struct LoginView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct SetEmailView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(email: "")
+        SetEmailView()
     }
 }

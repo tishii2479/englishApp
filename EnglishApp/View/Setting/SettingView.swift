@@ -44,13 +44,24 @@ struct SettingView: View {
                     VStack {
                         Form {
                             Section(header: Text("ユーザー設定")) {
-                                HStack {
-                                    Text("ユーザID")
-                                    
-                                    Spacer()
-                                    
-                                    Text(self.user.email)
-                                        .foregroundColor(Color.offGray)
+                                if self.user.email != "" {
+                                    HStack {
+                                        Text("メールアドレス")
+                                        
+                                        Spacer()
+                                        
+                                        Text(self.user.email)
+                                            .foregroundColor(Color.offGray)
+                                    }
+                                } else {
+                                    NavigationLink(destination: SetEmailView()) {
+                                        HStack {
+                                            Text("メールアドレス")
+                                            Spacer()
+                                            Text("未設定")
+                                                .foregroundColor(Color.offGray)
+                                        }
+                                    }
                                 }
                                 
                                 Picker(selection: self.$timePerQuestion, label: Text("一問あたりの時間")) {

@@ -17,7 +17,10 @@ class FirebaseManager {
     static func setUserPurchaseData() {
         
         let email = User.shared.email
+        
         let db = Firestore.firestore()
+        
+        if email == "" { return }
         
         guard let purchasedWorkbook = Workbook.getPurchasedWorkbook() else {
             fatalError("workbook unexist")
@@ -40,6 +43,8 @@ class FirebaseManager {
         let email = User.shared.email
         
         let db = Firestore.firestore()
+        
+        if email == "" { return "" }
         
         var errorMessage: String = ""
         

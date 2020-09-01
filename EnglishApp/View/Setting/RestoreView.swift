@@ -35,7 +35,7 @@ struct RestoreView: View {
                     .multilineTextAlignment(.center)
                     .padding(.vertical, 20)
                 
-                DentTextField(placeHolder: "メールアドレス", text: $email, fieldType: .email, isEditable: false)
+                DentTextField(placeHolder: "メールアドレス", text: email != "" ? $email : Binding.constant("未設定"), fieldType: .email, isEditable: false)
 
                 Text("注意!\nバックアップデータが古い場合には、学習データが失われる可能性があります。\nデータの復元を行う際には、必ず直前にバックアップを取った状態で行ってください。")
                     .font(.caption)

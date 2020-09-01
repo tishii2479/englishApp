@@ -29,10 +29,9 @@ class UserSetting {
     // 4. UserDefaultsの初期化
     // 5. バージョンの設定
     static func firstActivation(version: String) {
-        ScreenSwitcher.shared.showLogin = true
-        ScreenSwitcher.shared.isLoading = true
-        
         print("first activate")
+
+        ScreenSwitcher.shared.isLoading = true
         UserDefaultsHelper.resetUserInformation()
         
         RealmDecoder.deleteAllDataOf(data: Workbook())
@@ -132,6 +131,17 @@ class UserSetting {
         
         let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         let userDefaults = UserDefaults.standard
+        
+        
+        if UserDefaults.standard.string(forKey: "email") != "" &&
+            UserDefaults.standard.string(forKey: "email") != nil
+            {
+            userDefaults.set(true, forKey: "userStarted")
+        }
+ 
+        if UserDefaults.standard.bool(forKey: "userStarted") == false {
+            ScreenSwitcher.shared.showLogin = true
+        }
         
         if UserDefaults.standard.string(forKey: "appVersion") == nil {
             // 初回起動

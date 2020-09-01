@@ -237,6 +237,8 @@
 		49F3B7A024BEF42300012B94 /* category.csv in Resources */ = {isa = PBXBuildFile; fileRef = 49F3B79F24BEF42300012B94 /* category.csv */; };
 		49F7DD9924E3B89F0071E7B7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49F7DD9824E3B89F0071E7B7 /* StoreKit.framework */; };
 		49F7DD9C24E41A8C0071E7B7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49F7DD9E24E41A8C0071E7B7 /* InfoPlist.strings */; };
+		49FEBFA024FE71F7006D68DF /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEBF9F24FE71F7006D68DF /* StartView.swift */; };
+		49FEBFA224FE7DFC006D68DF /* SetEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEBFA124FE7DFC006D68DF /* SetEmailView.swift */; };
 		580BCA4491F293C86AA5408E /* Pods_EnglishAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -496,6 +498,8 @@
 		49F7DD9D24E41A8C0071E7B7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49F7DD9F24E41AAD0071E7B7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		49F7DDA024E41AAD0071E7B7 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49FEBF9F24FE71F7006D68DF /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		49FEBFA124FE7DFC006D68DF /* SetEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetEmailView.swift; sourceTree = "<group>"; };
 		7386E48E2950A9DF925D34F3 /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		763B43D92BD2283F51B0C5A9 /* Pods-EnglishApp-EnglishAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp-EnglishAppUITests/Pods-EnglishApp-EnglishAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B269D96156807712EAA0546 /* Pods_EnglishAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -595,6 +599,7 @@
 				49BED2CB24C2E34600684B70 /* SettingTextView.swift */,
 				4926A21824EB85B300124756 /* RestoreView.swift */,
 				49ED866324F142DD00DC3E14 /* BackupView.swift */,
+				49FEBFA124FE7DFC006D68DF /* SetEmailView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -933,6 +938,7 @@
 			isa = PBXGroup;
 			children = (
 				49C991E724ED02BA0092E50E /* LoginView.swift */,
+				49FEBF9F24FE71F7006D68DF /* StartView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1477,6 +1483,7 @@
 				49131DCE24C860BC00BBB379 /* UserDefaultsHelper.swift in Sources */,
 				496CAF1824AB27CC00F290E9 /* Question.swift in Sources */,
 				490F86F624B0475700EF5622 /* ReturnButtonView.swift in Sources */,
+				49FEBFA024FE71F7006D68DF /* StartView.swift in Sources */,
 				496CAF1B24AB353900F290E9 /* QuestionViewModel.swift in Sources */,
 				49E9848D24DE598B002783FE /* ShopData.swift in Sources */,
 				49E1A56524ACB087008EC140 /* QuestionResultView.swift in Sources */,
@@ -1495,6 +1502,7 @@
 				49AC0DF424BD797C0077ED39 /* SmallChoiceView.swift in Sources */,
 				491DBFD524B0A9D600A24A79 /* CSVDecoder.swift in Sources */,
 				49924CC724BD6D3200AD962A /* PreviewCellView.swift in Sources */,
+				49FEBFA224FE7DFC006D68DF /* SetEmailView.swift in Sources */,
 				490F86FC24B05D9D00EF5622 /* Workbook.swift in Sources */,
 				49C991EA24ED82A00092E50E /* TimerViewModel.swift in Sources */,
 				49E1A56924ACB0F3008EC140 /* QuestionPauseView.swift in Sources */,
@@ -1692,7 +1700,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EnglishApp/EnglishApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.3;
+				CURRENT_PROJECT_VERSION = 1.0.2.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"EnglishApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 4XV222H52K;
@@ -1702,7 +1710,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tishii24.EnglishApp;
 				PRODUCT_NAME = EnglishApp;
 				SWIFT_VERSION = 5.0;
@@ -1717,7 +1725,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = EnglishApp/EnglishApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.3;
+				CURRENT_PROJECT_VERSION = 1.0.2.1;
 				DEVELOPMENT_ASSET_PATHS = "\"EnglishApp/Preview Content\"";
 				DEVELOPMENT_TEAM = 4XV222H52K;
 				ENABLE_PREVIEWS = YES;
@@ -1726,7 +1734,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tishii24.EnglishApp;
 				PRODUCT_NAME = EnglishApp;
 				SWIFT_VERSION = 5.0;
