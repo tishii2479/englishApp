@@ -86,7 +86,9 @@ class Workbook: Object, Identifiable {
         
         var questionArr = Array<Question>()
         
-        for _ in 0 ..< questionNum {
+        let n = solveMode == .test ? 10 : questionNum
+        
+        for _ in 0 ..< n {
             if temp.count < 1 { return questionArr }
             let index = Int.random(in: 0 ..< temp.count)
             
@@ -95,6 +97,20 @@ class Workbook: Object, Identifiable {
         }
         
         return questionArr
+    }
+    
+    static func getPurchasedWorkbook() -> Array<String>? {
+        var purchasedIdArr = Array<String>()
+        
+        guard let workbookArr: Results<Workbook> = RealmDecoder.fetchAllDatas(filter: nil) else { return nil }
+        
+        for workbook in workbookArr {
+            if workbook.isPurchased {
+                purchasedIdArr.append(workbook.bookId)
+            }
+        }
+        
+        return purchasedIdArr
     }
     
     func setNextWorkbookPlayable() {
@@ -161,9 +177,7 @@ class Workbook: Object, Identifiable {
             
             try realm.write { self.isPurchased = true }
 
-            User.shared.coin -= self.price
-            
-            User.shared.setUserSetting(key: "coin", value: User.shared.coin)
+            User.shared.updateUserCoins(difference: -1 * self.price)
         } catch {
             print("failed to purcahse")
         }

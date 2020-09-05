@@ -165,7 +165,7 @@ extension QuestionViewModel {
     }
     
     func checkClearOfWorkbook(solveMode: SolveMode, maxQuestionNum: Int, correctCount: Int, workbook: Workbook) {
-        let isFirstClear: Bool = solveMode == .test && maxQuestionNum == correctCount && workbook.isCleared == false
+        let isFirstClear: Bool = solveMode == .test && correctCount >= maxQuestionNum - 1 && workbook.isCleared == false
         
         if isFirstClear {
             workbook.setCleared(isCleared: true)

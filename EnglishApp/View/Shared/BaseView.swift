@@ -11,15 +11,19 @@ import SwiftUI
 struct BaseView: View {
     
     @State var isShowingTabBar: Bool = true
+    
     @State var selectedIndex: Int = 0
+    
     @ObservedObject var user: User = User.shared
+    
+    @ObservedObject var screenSwitcher: ScreenSwitcher = ScreenSwitcher.shared
     
     var body: some View {
         ZStack {
-            if user.isLoading {
-                LoadingView()
+            if screenSwitcher.showLogin {
+                StartView()
             } else {
-                Group {
+                ZStack {
                     if selectedIndex == 0 {
                         HomeView(homeViewModel: HomeViewModel(), isShowingTabBar: $isShowingTabBar)
                     } else if selectedIndex == 1 {
@@ -37,6 +41,10 @@ struct BaseView: View {
                     }
                 }
                 .padding(.top, 40)
+
+                if screenSwitcher.isLoading {
+                    LoadingIndicatorView()
+                }
             }
         }
     }

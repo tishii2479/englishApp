@@ -73,7 +73,6 @@ struct QuestionResultView: View {
             }.buttonStyle(WideButtonStyle())
             
             Button(action: {
-                // TODO: 学習終了処理
                 self.questionViewModel.quitSolving()
             }) {
                 Text("学習を終了する")

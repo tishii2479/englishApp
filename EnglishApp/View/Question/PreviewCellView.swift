@@ -45,7 +45,7 @@ struct PreviewCellView: View {
                     Button(action: {
                         self.isLiked.toggle()
                         self.question.changeIsLiked(isLiked: self.isLiked)
-                        self.questionViewModel.workbook.updateCount(type: .like, amount: self.isLiked ? 1 : 0)
+                        self.questionViewModel.workbook.updateCount(type: .like, amount: self.isLiked ? 1 : -1)
                     }) {
                         Image(systemName: self.isLiked ? "star.fill" : "star")
                             .frame(width: 30, height: 30)

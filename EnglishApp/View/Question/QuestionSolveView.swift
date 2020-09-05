@@ -37,7 +37,6 @@ struct QuestionSolveView: View {
                 
                 // PauseButton
                 Button(action: {
-                    // TODO: 一時停止処理
                     self.questionViewModel.pauseSolving()
                 }) {
                     ZStack {

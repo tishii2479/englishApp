@@ -23,6 +23,8 @@ struct ShopView: View {
     
     @State var errorText: String = ""
     
+    @ObservedObject var screenSwitcher: ScreenSwitcher = ScreenSwitcher.shared
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -47,27 +49,34 @@ struct ShopView: View {
                                     return Alert(title: Text("購入に失敗しました"), message: Text("エラー: \(self.errorText)"))
                                 } else {
                                     return Alert(title: Text("商品の購入"), message: Text(self.selectedItem.title), primaryButton: .cancel(Text("キャンセル")), secondaryButton: .default(Text("購入"), action: {
-                                        SwiftyStoreKit.purchaseProduct(self.selectedItem.itemId, quantity: 1, atomically: true) { result in
-                                            switch result {
-                                            case .success(let purchase):
-                                                print("Purchase Success: \(purchase.productId)")
-                                                User.shared.updateUserCoins(difference: self.selectedItem.coin)
-                                            case .error(let error):
-                                                switch error.code {
-                                                case .unknown: self.errorText = "10001"
-                                                case .clientInvalid: self.errorText = "10002"
-                                                case .paymentCancelled: self.errorText = "購入のキャンセル"
-                                                case .paymentInvalid: self.errorText = "10003"
-                                                case .paymentNotAllowed: self.errorText = "10004"
-                                                case .storeProductNotAvailable: self.errorText = "10005"
-                                                case .cloudServicePermissionDenied: self.errorText = "10006"
-                                                case .cloudServiceNetworkConnectionFailed: self.errorText = "10007"
-                                                case .cloudServiceRevoked: self.errorText = "10008"
-                                                default: self.errorText = "20001"
+                                        ScreenSwitcher.shared.isLoading = true
+                                        
+                                        DispatchQueue.global(qos: .utility).async {
+                                            SwiftyStoreKit.purchaseProduct(self.selectedItem.itemId, quantity: 1, atomically: true) { result in
+                                                switch result {
+                                                case .success(let purchase):
+                                                    print("Purchase Success: \(purchase.productId)")
+                                                    User.shared.updateUserCoins(difference: self.selectedItem.coin)
+                                                case .error(let error):
+                                                    switch error.code {
+                                                    case .unknown: self.errorText = "10001"
+                                                    case .clientInvalid: self.errorText = "10002"
+                                                    case .paymentCancelled: self.errorText = "購入のキャンセル"
+                                                    case .paymentInvalid: self.errorText = "10003"
+                                                    case .paymentNotAllowed: self.errorText = "10004"
+                                                    case .storeProductNotAvailable: self.errorText = "10005"
+                                                    case .cloudServicePermissionDenied: self.errorText = "10006"
+                                                    case .cloudServiceNetworkConnectionFailed: self.errorText = "10007"
+                                                    case .cloudServiceRevoked: self.errorText = "10008"
+                                                    default: self.errorText = "20001"
+                                                    }
+                                                    
+                                                    self.isShowingAlert = false
+                                                    self.isShowingError = true
+                                                    self.isShowingAlert = true
                                                 }
-                                                self.isShowingAlert = false
-                                                self.isShowingError = true
-                                                self.isShowingAlert = true
+                                                
+                                                ScreenSwitcher.shared.isLoading = false
                                             }
                                         }
                                     }))
@@ -81,6 +90,9 @@ struct ShopView: View {
                         NavigationLink(destination: SettingTextView(content: TextData.commericalTransaction)) {
                             Text("特定商取引に基づく表示")
                         }
+                        
+                        Color.offWhite
+                            .frame(height: 50)
                     }
                 }
                 .navigationBarTitle("ショップ", displayMode: .inline)
@@ -96,6 +108,10 @@ struct ShopView: View {
                     .frame(width: 30, height: 30))
                 .onAppear{
                     UITableView.appearance().separatorStyle = .singleLine
+                }
+
+                if screenSwitcher.isLoading {
+                    LoadingIndicatorView()
                 }
             }
         }
